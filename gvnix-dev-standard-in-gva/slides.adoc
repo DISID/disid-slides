@@ -19,14 +19,20 @@ v1.0, Apr 08, 2014
 :imagesdir: images
 :backend: dzslides
 :linkcss: true
-//:dzslides-style: stormy
-:dzslides-style: tomorrow
+:dzslides-style: stormy
+//:dzslides-style: tomorrow
 :dzslides-transition: fade
 :dzslides-aspect: 16-9
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :dzslides-highlight: monokai
 // disable syntax highlighting unless turned on explicitly
 :syntax: no-highlight
+
+////
+
+== WHY?
+
+////
 
 == \\
 
@@ -47,6 +53,8 @@ administración a los ciudadanos.
 ====
 
 == \\
+
+image::dgti-transformacion.png[role="pull-right",height=320]
 
 [{statement}]
 *DGTI* la propuesta de la Generalitat
@@ -178,79 +186,90 @@ a la administración), son sólo un ejemplo del aumento de la participación út
 del ciudadano en la gestión de su comunidad.
 ====
 
-== \\
+////
 
-[{statement}]
-*DGTI* el *motor* del cambio
+== HOW?
 
-[template="notesblock"]
-====
-Para dar solución a esta problemática, en 2011 la Generalitat creó la 
-Dirección General de Tecnologías de la Información (DGTI) 
-dependiente de la Conselleria de Hacienda y Administración Pública, que asumió 
-la gestión de recursos y la provisión de servicios TIC de la Generalitat.
+////
 
-Es decir, se puso en marcha la centralización de la gestión de las TIC de la 
-Generalitat en un único departamento, después de 30 años de competencias 
-distribuidas entre las consellerias.
+[{topic}]
+== *Reimaginar* nuevos modelos
 
-El objetivo fundamental de este cambio es eliminar gastos redundantes, 
-aprovechar las sinergias entre los distintos departamentos, y obtener los 
-ahorros propios de las economías de escala.
-====
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
 
-== \\
-
-GVA Cloud (en gris claro) : Añadir URL a hoja de ruta
-Telefonía IP
-Puesto de trabajo TIC
-Seguridad TIC
-Nueva Oficina Judicial
-ITA
-Agenda Digital
-
-Gobernanza
-*Estandarización*
-Gestión económica
+[{stepwise}]
+* Innovar [detail]#aportando valor#
+* Simplificar y homogeneizar
+* Estandarizar
+* Dotar [detail]#de más herramientas#
+* Reutilizar [detail]#experiencia y sinergias#
+* Fomentar [detail]#metodología y calidad#
 
 [template="notesblock"]
 ====
-El modelo centralizado de gestión de las TIC permite abordar la estandarización 
-de los activos TIC de la Generalitat.
+Reimaginar nuevos modelos dirigidos a maximizar la *eficiencia*
 
-El proceso de estandarización se está llevando a cabo, entre otros, para los 
-siguientes tipos de activos:
+// eficiencia = costes vs. productividad
 
-* Puesto de trabajo del empleado público
-* Infraestructuras de red en los edificios
-* Software
+* Necesitamos innovar en la forma de construir aplicaciones, dedicando
+  nuestro esfuerzo sólo a aquello que aporta valor.
 
-En esta línea se incluyen las actuaciones para la estandarización de las 
-tecnologías relativas a las aplicaciones.
+* Buscar la simplicidad huyendo de modelos complejos, y buscando soluciones
+  adaptadas a los distintos proyectos.
 
-En concreto se están definiendo estándares sobre la arquitectura y las 
-tecnologías del software de todo tipo (ej. tecnología de portales, de gestión 
-documental o de gestión de expedientes), y sobre las metodologías y 
-herramientas para el desarrollo de aplicaciones.
+* Facilitar las tareas de soporte y mantenimiento, proyectos homogéneos que
+  reducen el tiempo de puesta en marcha.
 
-Es decir, más por menos, en el desarrollo y mantenimiento de aplicaciones!
+* Fomentar el uso de estándares abiertos que nos dan garantía de 
+  documentación amplia y disponible. Un efecto derivado es que nos dan 
+  independencia respecto a tecnologías propietarias o productos específicos de 
+  fabricantes.
 
+* Dotar a los desarrolladores de la mayor cantidad de herramientas para poder
+  realizar su trabajo sin necesidad de perder tiempo en búsquedas.
+
+** Migrar aplicaciones de gestión rápidamente, utilizando herramientas de
+ingeniería inversa de base de datos.
+
+** Generador de código que genere de forma automática partes de la aplicación.
+
+** Integrar fácilmente con los procesos de una organización.
+
+* Reutilizar la experiencia. No se trata de seguir "recomendaciones de
+  fabricante", sino que está contrastado con aplicaciones reales en clientes.
+
+** Aprovechar sinergias entre diferentes organizaciones y/o administraciones: 
+simplificación de normativas y procedimientos, eliminación de las 
+duplicidades, etc.
+
+* Uso de metodologías de desarrollo, cumplir con los criterios de calidad y
+  seguridad tablecidos, sin penalizar los tiempos de desarrollo.
 ====
 
 == \\
+
+image::open-source.png[role="pull-right",height=160]
 
 [{statement}]
 Software de *código abierto*
 
 [template="notesblock"]
 ====
-Sin embargo, estos retos pueden brindar oportunidades únicas para fomentar la innovación en la administración pública y hacerla más eficiente y transparente. Ante esta coyuntura, emerge como alternativa el uso del software libre. No obstante, justificar el uso estratégico del software libre solo con base en los costos de adquisición sería adoptar una visión limitada sobre el aporte que este tipo de software puede ofrecer ante los retos que la administración pública enfrenta en la actualidad.
+Todo ello sobre la base del software de código abierto, en donde el conjunto 
+de tecnologías y profesionales es tan infinito como el mundo mismo,
+pudiendo ser una palanca para alcanzar el éxito.
 
-En este campo es necesario disponer de plataformas que permitan a las 
-diferentes administraciones intercambiar sus experiencias, sus mejores 
-prácticas, con el fin de aprender rápidamente de los éxitos y fracasos de los 
-demás, y avanzar así más eficazmente en ese camino de innovación permanente 
-en el servicio de las administraciones públicas al ciudadano.
+Sin embargo, justificar el uso estratégico del software libre solo con
+base en los costos de adquisición sería adoptar una visión limitada sobre el
+aporte que este tipo de software puede ofrecer ante los retos que la
+administración pública enfrenta en la actualidad.
+
+Hay que entender el uso del software libre como el medio que permite a las 
+diferentes administraciones, y organizaciones intercambiar sus experiencias, 
+sus mejores prácticas, con el fin de aprender rápidamente de los éxitos y 
+fracasos de los demás, y avanzar así más eficazmente en ese camino de 
+innovación permanente en el servicio de las administraciones públicas al 
+ciudadano.
 
 Otro de los factores que tienen un protagonismo relevante es el uso de 
 programas de código abierto y estándares, que permiten a las administraciones 
@@ -258,6 +277,32 @@ centrar su inversión en la creación de contenidos y servicios de verdadera
 utilidad al ciudadano en lugar de dedicar los recursos simplemente a pagar 
 licencias a los grandes fabricantes de software.
 ====
+
+////
+
+== WHAT?
+
+////
+
+== \\
+
+image::after-create.png[caption="AsciiDoc support on GitHub"]
+
+[{recap-final}]
+== Conclusiones
+
+++++
+<hgroup>
+  <h2>It's all about the text</h2>
+  <h3>Frag the XML and just write docs!</h3>
+</hgroup>
+++++
+
+[{ending}, hrole="name"]
+== Enjoy writing docs!
+
+[role="footer"]
+{website}
 
 ////
 
