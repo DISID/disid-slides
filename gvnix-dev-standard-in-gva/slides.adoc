@@ -14,7 +14,8 @@ v1.0, Apr 08, 2014
 :title: gvNIX, el estándar de desarrollo Java de la Generalitat 
 :description: Slides for DISID presentation about developing with gvNIX delivered at Semana Informatica 2014.
 :copyright: CC BY-NC-SA 3.0
-:website: http://www.disid.com
+:website: www.disid.com
+:gvnixsite: www.gvnix.org
 :slidesurl: https://github.com/DISID/disid-decks
 :imagesdir: images
 :backend: dzslides
@@ -319,19 +320,278 @@ públicas al ciudadano.
 
 == \\
 
-image::after-create.png[caption="AsciiDoc support on GitHub"]
+image::01-create-project_short.png[caption="Generación pasiva",width="570"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Aportar valor
+
+Sistema de generación pasiva : TBC
+
+Proceso guiado : HINT
+
+Ayuda en línea : HELP
+
+Auto completado : CTRL+SPACE
+
+DEMO: Paso 01 a 04-1.
+====
+
+== \\
+
+[{middle}]
+image::petclinic-uml.png[caption="Diseño Dirigido por el Dominio",width="570"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Fomenta el uso de metodologías dirigidas por el dominio:
+
+* Se codifica el modelo del dominio, entidades y lógica, que captura el
+  problema del dominio del sistema a construir.
+* Inicialmente sin capa de servicios que se creará paulatinamente cuando la
+  lógica no pertenezca a ninguna entidad del dominio.
+
+DEMO: Paso 05, 06, 07.
+====
+
+== \\
+
+image::09-finders.png[caption="Convención sobre Configuración",width="570"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+gvNIX aporta simplicidad gracias al paradigma _Convención sobre Configuración_,
+que busca decrementar el número de decisiones que un desarrollador
+necesita hacer, ganando así en simplicidad pero no perdiendo flexibilidad por
+ello.
+
+Por ejemplo, la entidad _Vet_ en el modelo, por convención la tabla
+correspondiente en la base de datos se llamará _vet_. Solo si alguien se
+aparta de esta convención, como llamar a la tabla _myvet_,
+entonces deberá escribir código respecto a ese nombre. Notar que el
+desarrollador siempre puede alterar el comportamiento por defecto y adaptarlo
+a sus necesidades.
+====
+
+== \\
+
+image::10-web-mvc-setup.png[caption="Proyectos homogéneos",width="570"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Un entorno único para generar distintos tipos de proyectos: web MVC, web JSF,
+Flex, portlet, SOA, etc. con una estructura de proyecto única.
+
+DEMO: 10, Enseñar cómo se podría generar jsf o MVC.
+====
+
+== \\
+
+image::11-2-entity-add-fields-manually.png[caption="Generación activa"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Aportar valor
+
+Sistema de generación activa : TBC
+
+DEMO: Paso 11-1, 11-2 y 12.
+====
+
+== \\
+
+image::14-occ-checksum-all.png[caption="Herramientas"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+*Utilidades* de gvNIX
+
+* Configurar idiomas adicionales
+* Configurar control de concurrencia optimista
+* Ingeniería inversa
+* Generación de código que entre otras cosas permite:
+** Integrar fácilmente con procesos externos
+** TBC
+
+DEMO: Paso 13, 14.
+====
+
+== \\
+
+image::15-test-junit.png[caption="Calidad"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Generación de infraestructura necesaria para ejecutar tests unitarios y
+funcionales.
+
+No es necesario leer documentación de calidad, se puede codificar en el
+propio fw para que la generación de código como las herramientas de calidad
+que se deseen integrar, por ejemplo desarrollar un nuevo add-on basado en
+JMeter que permita ejecutar pruebas de rendimiento.
+
+DEMO: Paso 15, 16.
+====
+
+== \\
+
+image::20-bootstrap-setup.png[caption="HTML5 y CSS3"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Fomenta el uso de estándares abiertos como HTML5 y CSS3
+
+DEMO: Pasos 17,18,19,20,21.
+====
+
+== \\
+
+image::22-menu-setup.png[caption="Herramientas"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Gestión la estructura de páginas
+
+DEMO: Paso 22.
+====
+
+== \\
+
+image::23-datatable-owner-details.png[caption="Patrones de pantallas"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+*Reutilizar* experiencia con gvNIX: Patrones de pantallas.
+
+Además diseño gráfico de aplicaciones basado en temas que permite incluir 
+fácilmente cambios en el diseño sin perjudicar la lógica de negocio.
+
+DEMO: Paso 23.
+====
+
+== \\
+
+image::27-web-mvc-batch-all.png[caption="Edición tabular"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+*Reutilizar* experiencia con gvNIX: Patrones de pantallas: Edición tabular
+multi registro
+
+DEMO: Pasos 24,25,26,27.
+====
+
+== \\
+
+image::28-security-setup.png[caption="Seguridad"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Permite añadir seguridad a todas las capas de la apliación.
+
+DEMO: Paso 28.
+====
+
+== \\
+
+image::30-report-setup.png[caption="Seguridad"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Herramienta para incluir soporte para informes fácilmente. Genera valor
+permitiendo que el desarrollador se centre en el propio informe.
+
+DEMO: Paso 30 y 31.
+====
+
+== \\
+
+image::32-create-service.png[caption="Integración de procesos"]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Integrar fácilmente con procesos externos
+
+DEMO: Paso 32 y 33.
+====
+
+== \\
+
+[{statement}]
+*Compartir* experiencia con gvNIX
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Su arquitectura basada en componentes OSGi permite incluir nuevos 
+requerimientos fácilmente y ponerlos a disposición de cualquier organización:
+
+Ejemplo de SAFE, OCC, etc.
+
+Diseño gráfico de aplicaciones basado en temas que permite incluir fácilmente
+cambios en el diseño sin perjudicar la lógica de negocio.
+
+====
+
+== \\
+
+[{statement}]
+Proyecto de código abierto con licencia *GPL v3*
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+TBC: 
+
+====
 
 [{recap-final}]
-== Conclusiones
+== Hoja de ruta
 
-*It's all about the text*
-Frag the XML and just write docs!
+[{stepwise}]
+* Diseño adaptativo
+* Agrupación de datos tabulares y guardar configuración
+* Componente lupa
+* Conexión con distintos gestores de identidades
+* Soporte para desarrollo de aplicaciones con componente geográfica
+* Auditoría de cambios en base de datos.
+* Histórico de cambios de base de datos.
 
-[{ending}, hrole="name"]
-== Enjoy writing docs!
+[{topic}]
+== {gvnixsite}
 
-[role="footer"]
-{website}
+[{middle}]
+image::logo_gvNIX.png[height="160"]
 
 ////
 
