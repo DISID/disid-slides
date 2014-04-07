@@ -44,6 +44,8 @@ ____
 
 [template="notesblock"]
 ====
+*CHARLA (WHY):*
+
 Esta advertencia que hizo Joan Clos en las Jornadas "Internet & City" del 
 2003, es ya una realidad y la administración está reduciendo el actual nivel 
 de inversiones para reducir el gasto corriente.
@@ -61,6 +63,8 @@ image::dgti-transformacion.png[role="pull-right",height=320]
 
 [template="notesblock"]
 ====
+*CHARLA (WHY):*
+
 Ante esta situación, en 2011 la Generalitat creó la 
 Dirección General de Tecnologías de la Información (DGTI) 
 dependiente de la Conselleria de Hacienda y Administración Pública, que asumió 
@@ -92,6 +96,8 @@ con *menos costes* {nbsp} {nbsp}
 
 [template="notesblock"]
 ====
+*CHARLA (WHY):*
+
 Actualmente la administración pública ofrece servicios a través de Internet y 
 nos hemos acostumbrado a interactuar con la administración de forma digital,
 además en algunos casos nos gustaría tener un papel activo de co-creador, de 
@@ -114,13 +120,23 @@ hacer las aapp para solucionar ésta papeleta que tienen entre manos?
 
 ====
 
+////
+
+== HOW?
+
+////
+
 == \\
+
+image::stamp-all-inclusive.png[role="pull-right",width=160]
 
 [{statement}]
 Mayor *productividad*
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
+
 Es importante que la administración pública sea capaz de conseguir un
 *aumento de la productividad* TIC como uno de los factores esenciales para 
 hacer frente a estos retos.
@@ -139,27 +155,193 @@ filón, y dar, en efecto, "más por menos" a los ciudadanos.
 
 == \\
 
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
 [{statement}]
 Nuevas formas de *aumentar* la *eficiencia*
 
 [template="notesblock"]
 ====
-Ese aumento de la productividad se sustenta entre otros en una 
-reorganización e integración de procedimientos y procesos, evitando 
-duplicidades y aprovechando recursos entre las diferentes unidades 
-de una administración.
+*CHARLA (HOW):*
 
-Hay que poner en cuestión la forma de los procedimientos, los flujos de trabajo
-de los procesos. Por tanto, es importante que se permita innovar a las 
-diferentes unidades de la administración, estimular la
-reinvención en aras de mayor eficiencia.
+Debemos reimaginar nuevos modelos organizativos que permitan maximizar la 
+*eficiencia* (binomio costes vs. productividad):
 
-Esta estimulación de la innovación en las administraciones es otro de los 
-retos críticos. Se hace necesario buscar mecanismos de estímulo,
-reconocimiento e incluso remuneración de los innovadores, con el fin de buscar
-formas de aumentar la eficiencia, y conseguir así ese necesario aumento de la
-productividad.
+* Innovar aportando valor (cambiar a siguiente slide y así sucesivamente)
 ====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+*Innovar* aportando valor
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Necesitamos innovar en la forma de construir aplicaciones, dedicando
+nuestro esfuerzo sólo a aquello que aporta valor.
+====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+*Simplificar* y *homogeneizar*
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Buscar la simplicidad huyendo de modelos complejos, y buscando soluciones
+adaptadas a los distintos proyectos.
+
+Facilitar las tareas de soporte y mantenimiento, proyectos homogéneos que
+reducen el tiempo de puesta en marcha.
+====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+Fomentar uso de *estándares* abiertos
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Fomentar el uso de estándares abiertos que nos dan garantía de 
+documentación amplia y disponible. Un efecto derivado es que nos dan 
+independencia respecto a tecnologías propietarias o productos específicos de 
+fabricantes.
+====
+
+[{topic}]
+== Mayor cantidad de *utilidades*
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{stepwise}]
+* Migración de aplicaciones
+* Generación de código
+* Integración con procesos
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Dotar a los desarrolladores de la mayor cantidad de herramientas para poder
+realizar su trabajo sin necesidad de perder tiempo en buscarlas.
+
+* Migrar aplicaciones de gestión rápidamente, utilizando herramientas de
+ingeniería inversa de base de datos.
+
+* Generador de código que genere de forma automática partes de la aplicación.
+
+* Integrar fácilmente con procedimientos y procesos externos, evitando
+duplicidades y aprovechando recursos entre las diferentes unidades de una
+administración.
+====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+Reutilizar *experiencia* y *sinergias*
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Reutilizar la experiencia. No se trata de seguir "recomendaciones de
+fabricante", sino que está contrastado con aplicaciones reales en clientes.
+
+Aprovechar sinergias entre diferentes organizaciones y/o administraciones: 
+simplificación de normativas y procedimientos, eliminación de las 
+duplicidades, etc.
+====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+Fomentar *metodología* y *calidad*
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Uso de metodologías de desarrollo, cumplir con los criterios de calidad y
+seguridad tablecidos, sin penalizar los tiempos de desarrollo.
+====
+
+== \\
+
+image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+
+[{statement}]
+Software de *código abierto*
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Aunque no lo parezca el software de código abierto es muy importante para
+conseguir altas cotas de eficiencia.
+
+Las 4 libertades que nos proporciona el el software de código abierto son:
+
+1. Libertad para ejecutar el programa en cualquier sitio
+2. Libertad para estudiarlo y adaptarlo a nuestras necesidades
+3. Libertad de redistribución
+4. Libertad para mejorar el programa y publicar las mejoras
+
+En mi opinión los puntos 3 y 4 son clave para lograr una mayor eficiencia
+ya que constituyen el medio que 
+permite a las diferentes administraciones, y organizaciones intercambiar sus 
+experiencias, sus mejores prácticas, con el fin de aprender rápidamente de 
+los éxitos y fracasos de los demás, y avanzar así más eficazmente en ese 
+camino de innovación permanente en el servicio de las administraciones 
+públicas al ciudadano.
+====
+
+////
+
+== WHAT?
+
+////
+
+== \\
+
+image::after-create.png[caption="AsciiDoc support on GitHub"]
+
+[{recap-final}]
+== Conclusiones
+
+*It's all about the text*
+Frag the XML and just write docs!
+
+[{ending}, hrole="name"]
+== Enjoy writing docs!
+
+[role="footer"]
+{website}
+
+////
+
+== Resources
+
+////
+
+////
+
+= Dimissed slides
 
 == \\
 
@@ -168,6 +350,8 @@ Incremento de la *participación ciudadana*
 
 [template="notesblock"]
 ====
+*CHARLA:*
+
 El aumento de la eficiencia debe venir acompañada por otro motor importante de 
 transformación: la participación de los ciudadanos. 
 Internet permite un nivel de participación impensable hace 
@@ -188,124 +372,3 @@ del ciudadano en la gestión de su comunidad.
 
 ////
 
-== HOW?
-
-////
-
-[{topic}]
-== *Reimaginar* nuevos modelos
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
-
-[{stepwise}]
-* Innovar [detail]#aportando valor#
-* Simplificar y homogeneizar
-* Estandarizar
-* Dotar [detail]#de más herramientas#
-* Reutilizar [detail]#experiencia y sinergias#
-* Fomentar [detail]#metodología y calidad#
-
-[template="notesblock"]
-====
-Reimaginar nuevos modelos dirigidos a maximizar la *eficiencia*
-
-// eficiencia = costes vs. productividad
-
-* Necesitamos innovar en la forma de construir aplicaciones, dedicando
-  nuestro esfuerzo sólo a aquello que aporta valor.
-
-* Buscar la simplicidad huyendo de modelos complejos, y buscando soluciones
-  adaptadas a los distintos proyectos.
-
-* Facilitar las tareas de soporte y mantenimiento, proyectos homogéneos que
-  reducen el tiempo de puesta en marcha.
-
-* Fomentar el uso de estándares abiertos que nos dan garantía de 
-  documentación amplia y disponible. Un efecto derivado es que nos dan 
-  independencia respecto a tecnologías propietarias o productos específicos de 
-  fabricantes.
-
-* Dotar a los desarrolladores de la mayor cantidad de herramientas para poder
-  realizar su trabajo sin necesidad de perder tiempo en búsquedas.
-
-** Migrar aplicaciones de gestión rápidamente, utilizando herramientas de
-ingeniería inversa de base de datos.
-
-** Generador de código que genere de forma automática partes de la aplicación.
-
-** Integrar fácilmente con los procesos de una organización.
-
-* Reutilizar la experiencia. No se trata de seguir "recomendaciones de
-  fabricante", sino que está contrastado con aplicaciones reales en clientes.
-
-** Aprovechar sinergias entre diferentes organizaciones y/o administraciones: 
-simplificación de normativas y procedimientos, eliminación de las 
-duplicidades, etc.
-
-* Uso de metodologías de desarrollo, cumplir con los criterios de calidad y
-  seguridad tablecidos, sin penalizar los tiempos de desarrollo.
-====
-
-== \\
-
-image::open-source.png[role="pull-right",height=160]
-
-[{statement}]
-Software de *código abierto*
-
-[template="notesblock"]
-====
-Todo ello sobre la base del software de código abierto, en donde el conjunto 
-de tecnologías y profesionales es tan infinito como el mundo mismo,
-pudiendo ser una palanca para alcanzar el éxito.
-
-Sin embargo, justificar el uso estratégico del software libre solo con
-base en los costos de adquisición sería adoptar una visión limitada sobre el
-aporte que este tipo de software puede ofrecer ante los retos que la
-administración pública enfrenta en la actualidad.
-
-Hay que entender el uso del software libre como el medio que permite a las 
-diferentes administraciones, y organizaciones intercambiar sus experiencias, 
-sus mejores prácticas, con el fin de aprender rápidamente de los éxitos y 
-fracasos de los demás, y avanzar así más eficazmente en ese camino de 
-innovación permanente en el servicio de las administraciones públicas al 
-ciudadano.
-
-Otro de los factores que tienen un protagonismo relevante es el uso de 
-programas de código abierto y estándares, que permiten a las administraciones 
-centrar su inversión en la creación de contenidos y servicios de verdadera 
-utilidad al ciudadano en lugar de dedicar los recursos simplemente a pagar 
-licencias a los grandes fabricantes de software.
-====
-
-////
-
-== WHAT?
-
-////
-
-== \\
-
-image::after-create.png[caption="AsciiDoc support on GitHub"]
-
-[{recap-final}]
-== Conclusiones
-
-++++
-<hgroup>
-  <h2>It's all about the text</h2>
-  <h3>Frag the XML and just write docs!</h3>
-</hgroup>
-++++
-
-[{ending}, hrole="name"]
-== Enjoy writing docs!
-
-[role="footer"]
-{website}
-
-////
-
-== Resources
-
-////
