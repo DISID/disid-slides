@@ -54,42 +54,42 @@ Compuesto por herramientas de código abierto entre las que destaca su núcleo, 
 
 image::logo_springroo.png[role="pull-right",height="75"]
 
-== \\
+//== \\
 
-[{statement}]
-¿*Qué ofrece* gvNIX?
+//[{statement}]
+//¿*Qué ofrece* gvNIX?
 
 
-== \\
+//== \\
 
-[{topic}]
-Generación *automática* de código.
+//[{topic}]
+//Generación *automática* de código.
 
-[{topic}]
-Calidad y Seguridad en proyectos sin influir en el *tiempo de desarrollo*.
+//[{topic}]
+//Calidad y Seguridad en proyectos sin influir en el *tiempo de desarrollo*.
 
-[{topic}]
-*Mantenibilidad* de los proyectos generados.
+//[{topic}]
+//*Mantenibilidad* de los proyectos generados.
 
-[{topic}]
-Uso de *estándares*.
+//[{topic}]
+//Uso de *estándares*.
 
-[{topic}]
-Aplicaciones web con interfaz *actual y simple* de utilizar para el usuario.
+//[{topic}]
+//Aplicaciones web con interfaz *actual y simple* de utilizar para el usuario.
 
-== \\
+//== \\
 
-[{topic}]
-*Migración rápida* de aplicaciones utilizando herramientas de ing. inversa de base de datos.
+//[{topic}]
+//*Migración rápida* de aplicaciones utilizando herramientas de ing. inversa de base de datos.
 
-[{topic}]
-*Simple integración* con los procesos de una organización
+//[{topic}]
+//*Simple integración* con los procesos de una organización
 
-[{topic}]
-*Escalar la plataforma* a nuevas necesidades, con un amplio margen para su crecimiento futuro a nuevas tecnologías.
+//[{topic}]
+//*Escalar la plataforma* a nuevas necesidades, con un amplio margen para su crecimiento futuro a nuevas tecnologías.
 
-[{topic}]
-*Independencia tecnológica*, al ser un proyecto de código abierto ya publicado y disponible para la comunidad.
+//[{topic}]
+//*Independencia tecnológica*, al ser un proyecto de código abierto ya publicado y disponible para la comunidad.
 
 == \\
 
