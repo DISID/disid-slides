@@ -1,0 +1,497 @@
+//
+// Build the presentation
+//
+// dzslides with embedded assets:
+// asciidoc -a data-uri -a linkcss! slides.adoc
+//
+// HTML5:
+// asciidoc -b html5 -o outline.html slides.adoc
+//
+**gvNIX** 1.3.0
+===============
+www.disid.com
+v1.0, Apr 08, 2014
+:title: gvNIX 1.3.0 
+:description: Slides for DISID presentation about developing with gvNIX delivered at UPV.
+:copyright: CC BY-NC-SA 3.0
+:website: www.disid.com
+:gvnixsite: www.gvnix.org
+:slidesurl: https://github.com/DISID/disid-decks
+:iconsurl: https://www.iconfinder.com/
+:imagesdir: images
+:backend: dzslides
+:linkcss: true
+:dzslides-style: stormy
+//:dzslides-style: tomorrow
+:dzslides-transition: fade
+:dzslides-aspect: 16-9
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: monokai
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+
+== \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
+[{statement}]
+¿*Qué es* gvNIX?
+
+== \\
+
+[{topic}]
+Entorno de desarrollo de aplicaciones *Java*.
+
+[{topic}]
+*Desarrollo rápido* de aplicaciones web áltamente productivas.
+
+[{topic}]
+No compromete la *calidad* de los proyectos.
+
+[{topic}]
+Compuesto por herramientas de código abierto entre las que destaca su núcleo, *Spring Roo*.
+
+
+image::logo_springroo.png[role="pull-right",height="75"]
+
+== \\
+
+[{statement}]
+¿*Qué ofrece* gvNIX?
+
+
+== \\
+
+[{topic}]
+Generación *automática* de código.
+
+[{topic}]
+Calidad y Seguridad en proyectos sin influir en el *tiempo de desarrollo*.
+
+[{topic}]
+*Mantenibilidad* de los proyectos generados.
+
+[{topic}]
+Uso de *estándares*.
+
+[{topic}]
+Aplicaciones web con interfaz *actual y simple* de utilizar para el usuario.
+
+== \\
+
+[{topic}]
+*Migración rápida* de aplicaciones utilizando herramientas de ing. inversa de base de datos.
+
+[{topic}]
+*Simple integración* con los procesos de una organización
+
+[{topic}]
+*Escalar la plataforma* a nuevas necesidades, con un amplio margen para su crecimiento futuro a nuevas tecnologías.
+
+[{topic}]
+*Independencia tecnológica*, al ser un proyecto de código abierto ya publicado y disponible para la comunidad.
+
+== \\
+
+[{statement}]
+Principales *características* de gvNIX
+
+== \\
+
+[{statement}]
+*Multiplataforma* y *fácil* de instalar
+
+image::logos_instalacion.png[role="pull-right", height=100]
+
+== \\
+
+image::model.png[role="pull-right", height=200]
+
+[{statement}]
+Potencia el uso de *buenas prácticas*
+
+
+== \\
+
+image::tools.png[role="pull-left", height=300]
+
+[{statement}]
+Sistema de *generación automática* de código
+
+== \\
+
+image::spring_servers.png[role="pull-right", height=300]
+
+[{statement}]
+Proyectos *JEE estándar*
+
+== \\
+
+[{statement}]
+*No sobrecarga* el entorno de ejecución
+
+image::server.png[role="pull-right", height=150]
+
+[{topic}]
+== *Ayuda* al desarrollo de aplicaciones
+
+image::tools_help.png[role="pull-right", height=50]
+
+[{stepwise}]
+* *Ingeniería inversa* de Base de Datos
+* *Scaffolding*
+* Clientes de *sistemas externos*: 
+** eMail 
+** WebServices (a partir de WSDL o JAX-WS)
+* *Control de concurrencia* optimista
+
+
+[{topic}]
+== *Ayuda* al desarrollo de aplicaciones
+
+image::tools_help.png[role="pull-right", height=50]
+
+[{stepwise}]
+* Seguridad
+* Informes
+* Pruebas *unitarias y funcionales*
+
+== \\
+
+== \\
+
+image::tutorial.png[role="pull-right", height=250]
+
+[{statement}]
+*gvNIX* paso a paso
+
+== \\
+
+[{statement}]
+*Preparación* del entorno
+
+== \\
+
+image::entorno_sts.png[caption="Entorno - Spring Tool Suite"]
+
+== \\
+
+image::entorno_config_preferencias.png[caption="Utilizar gvNIX 1.3.0"]
+
+== \\ 
+
+
+[{statement}]
+Crear nuevo proyecto *gvNIX*
+
+== \\
+
+image::00-create-project.png[caption="New Spring Roo Project", height=300]
+
+== \\
+
+image::01-create-project.png[caption="Configuración proyecto 'petclinic'", height=300]
+
+== \\
+
+image::01-create-project-console.png[caption="Creación del proyecto"]
+
+== \\
+
+image::01-create-project-created.png[caption="Proyecto generado - Consola gvNIX arrancada"]
+
+== \\
+
+image::persistence.png[role="pull-right", height=100]
+
+[{statement}]
+Instalación de *Persistencia*
+
+== \\
+
+image::02-persistence-setup.png[caption="Persistence Setup", height=300]
+
+== \\
+
+image::model_analysis.png[role="pull-right", height=75]
+
+[{statement}]
+Del *análisis* del modelo a la *implementación*
+
+== \\
+
+image::model.png[caption="Aplicación 'Pet Clinic'", height=300]
+
+== \\
+
+image::03-create-enums.png[caption="Creación de enumerados", height=300]
+
+== \\
+
+image::04-create-entities-pet-visit.png[caption="Creación de entidades Pet y Visit", height=300]
+
+== \\
+
+image::04-create-entities-persons.png[caption="Creación de entidad abstracta, Vet y Owner", height=300]
+
+== \\
+
+image::05-create-fields.png[caption="Creación de fields", height=300]
+
+
+== \\
+
+image::05-create-fields-relations.png[caption="Creación de relaciones"]
+
+
+== \\
+
+image::tools.png[role="pull-right", height=150]
+
+[{statement}]
+*Scaffolding*
+
+== \\
+
+image::06-mvc-setup.png[caption="Instalación de componentes MVC"]
+
+== \\
+
+image::06-mvc-all.png[caption="Creación de Controllers y Views"]
+
+== \\
+
+image::06-finders-add.png[caption="Añadiendo métodos Finder"]
+
+== \\
+
+image::06-finders-all.png[caption="Generando Views de buscadores y métodos en Controllers"]
+
+== \\
+
+image::07-internacionalizacion.png[caption="Internacionalización"]
+
+== \\ 
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas. Paso 1: Preparación
+
+== \\
+
+image::08-batch-entity.png[caption="Generando batch para Entidades"]
+
+== \\
+
+image::08-batch-controller.png[caption="Generando batch para Controllers"]
+
+== \\
+
+image::09-jquery-setup.png[caption="Instalación de componentes jQuery"]
+
+== \\
+
+image::10-datatables-setup.png[caption="Instalación de componentes Datatables"]
+
+== \\
+
+image::11-jquery-all.png[caption="Componentes jQuery en todas las vistas de la aplicación "]
+
+== \\
+
+image::12-bootstrap-setup.png[caption="Modificando estructura HTML y aspecto visual para implementar Bootstrap3 "]
+
+== \\ 
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas. Paso 2: Generación
+
+== \\
+
+image::13-datatables-create.png[caption="Creación de Datatable modo 'show' y 'list'"]
+
+== \\
+
+image::13-datatables-create-inline.png[caption="Creación de Datatable modo Edición en Linea"]
+
+== \\
+
+image::run_app.png[role="pull-right", height=150]
+
+[{statement}]
+En este momento podemos *ejecutar* nuestra *aplicación* gvNIX
+
+== \\
+
+image::14-new-server.png[caption="Añadimos un nuevo servidor Tomcat 6"]
+
+== \\
+
+image::14-new-server-app.png[caption="Incluímos nuestra aplicación petclinic"]
+
+== \\
+
+image::15-server-start.png[caption="Ejecutamos la aplicación"]
+
+== \\
+
+image::16-application-home.png[caption="Aplicación Petclinic!"]
+
+== \\
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas.  Paso 3:  Detalles 
+
+== \\
+
+image::17-datatables-details.png[caption=" Un nivel: Owner > Pets/Vets"]
+
+== \\
+
+image::17-datatables-detail-2.png[caption="Dos niveles: Owner > Pets/Vets > Visits"]
+
+== \\
+
+image::loupe.png[role="pull-right", height=100]
+
+[{statement}]
+Componentes *lupa*
+
+== \\
+
+image::18-loupe-setup.png[caption="Instalación y generación de métodos"]
+
+== \\
+
+image::18-loupe-set.png[caption="Implementando componentes lupa"]
+
+== \\
+
+image::menu.png[role="pull-right", height=100]
+
+[{statement}]
+*Menú* gvNIX
+
+== \\
+
+image::19-menu-setup.png[caption="Aplicando menú gvNIX"]
+
+== \\
+
+image::spring_security.png[role="pull-right", height=100]
+
+[{statement}]
+*Seguridad* gvNIX
+
+== \\
+
+image::20-security-setup.png[caption="Aplicando seguridad al proyecto gvNIX"]
+
+== \\
+
+image::reports_gvNix.png[role="pull-right", height=100]
+
+[{statement}]
+*Informes* con gvNIX
+
+== \\
+
+image::21-reports-setup.png[caption="Instalando componentes JasperReports"]
+
+== \\
+
+image::21-reports-add.png[caption="Generando informe de Propietarios"]
+
+== \\
+
+image::quality.png[role="pull-right", height=100]
+
+[{statement}]
+*Calidad*: Control de concurrencia. Pruebas Unitarias y funcionales. Gestión de entornos.
+
+== \\
+
+image::22-occ.png[caption="Control de Concurrencia en entidad Pet"]
+
+== \\
+
+image::23-junit.png[caption="Pruebas unitarias JUnit"]
+
+== \\
+
+image::24-selenium.png[caption="Pruebas funcionales Selenium"]
+
+== \\
+
+image::25-dynamic.png[caption="Gestión de entornos"]
+
+== \\
+
+image::cloud.png[role="pull-right", height=100]
+
+[{statement}]
+*WebServices* con gvNIX
+
+== \\
+
+image::26-webservice.png[caption="Servicio Web obtener todas las mascotas"]
+
+== \\
+
+image::run_app.png[role="pull-right", height=150]
+
+[{statement}]
+exit, clean & *run*
+
+== \\
+
+image::petclinic-run.png[caption="Aplicación Petclinic!"]
+
+== \\
+
+[{statement}]
+*Compartir* experiencia con gvNIX
+
+== \\
+
+[{statement}]
+Proyecto de código abierto con licencia *GPL v3*
+
+
+[{recap-final}]
+== Hoja de ruta
+
+[{stepwise}]
+* Nuevas funcionalidades Datatable
+* Agrupación de datos tabulares
+* Gestores de identidades
+* Componente geográfica
+
+[{topic}]
+== {gvnixsite}
+
+[{middle}]
+image::logo_gvNIX.png[height="120"]
+
+[{middle}]
+https://github.com/DISID/gvnix-samples
+
+////
+
+== Resources
+
+////
+
+////
+
+= Dimissed slides
+
+== \\
+
+////
+
