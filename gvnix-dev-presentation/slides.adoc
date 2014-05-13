@@ -17,6 +17,7 @@ v1.0, Apr 08, 2014
 :website: www.disid.com
 :gvnixsite: www.gvnix.org
 :slidesurl: https://github.com/DISID/disid-decks
+:iconsurl: https://www.iconfinder.com/
 :imagesdir: images
 :backend: dzslides
 :linkcss: true
@@ -112,627 +113,364 @@ Potencia el uso de *buenas prácticas*
 
 == \\
 
-image::dgti-transformacion.png[role="pull-right",height=320]
+image::tools.png[role="pull-left", height=300]
 
 [{statement}]
-*DGTI* la propuesta de la Generalitat
+Sistema de *generación automática* de código
 
-[template="notesblock"]
-====
-*CHARLA (WHY):*
+== \\
 
-Ante esta situación, en 2011 la Generalitat creó la 
-Dirección General de Tecnologías de la Información (DGTI) 
-dependiente de la Conselleria de Hacienda y Administración Pública, que asumió 
-las competencias sobre los recursos y la provisión de servicios TIC de 
-la Generalitat.
+image::spring_servers.png[role="pull-right", height=300]
 
-Se puso en marcha la centralización de la gestión de las TIC de la 
-Generalitat en un único departamento, después de 30 años de competencias 
-distribuidas entre las consellerias.
-
-El objetivo fundamental de este cambio es eliminar gastos redundantes, 
-aprovechar las sinergias entre los distintos departamentos, y obtener los 
-ahorros propios de las economía de escala.
-====
+[{statement}]
+Proyectos *JEE estándar*
 
 == \\
 
 [{statement}]
-Dar *más servicios*
-con *menos costes* {nbsp} {nbsp}
+*No sobrecarga* el entorno de ejecución
 
-[template="notesblock"]
-====
-*CHARLA (WHY):*
-
-Sin embargo, si bien estamos en una epoca de contención del gasto, 
-la administración, poco a poco proporciona nuevas formas de conectar con los 
-ciudadanos, ofreciendo nuevos servicios vía web y móviles como 
-forma de entender y atender las necesidades de los ciudadanos.
-
-Por tanto, el gran reto de las administraciones públicas 
-consiste en mantener y ampliar los servicios al ciudadano a 
-través de las TIC ... todo ello con menores costes.
-
-*PREGUNTA AL PUBLICO*
-
-En lo que respecta a sistemas de información, ¿alguien me dice qué pueden 
-hacer las aapp para solucionar ésta papeleta que tienen entre manos?
-
-====
-
-////
-
-== HOW?
-
-////
-
-== \\
-
-image::stamp-all-inclusive.png[role="pull-right",width=160]
-
-[{statement}]
-Mayor *productividad*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Respuesta: Aumentando la productividad, o lo que es lo mismo utilizar los 
-mismos recursos para dar más servicios.
-
-Para conseguirlo se hace necesaria una
-transformación sostenible de infraestructuras y sistemas de información
-actuales, dirigiendo la inversión TIC a cambiar y mejorar esos sistemas 
-en pro de conseguir ese *aumento de la productividad* como uno de los factores 
-esenciales para hacer frente al gran reto de la administración.
-====
-
-== \\
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
-
-[{statement}]
-Nuevas formas de *aumentar* la *eficiencia*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-No sólo hay que dar más servicios con los mismos recursos, hay que controlar
-el coste que suponen esos recursos, hay que ser más eficientes.
-
-*EJEMPLO*: Un equipo de leñadores estaba talando árboles para hacer un 
-camino a un ritmo brutal. Cuando llegó el jefe a supervisar el trabajo les 
-dijo: "Está perfecto, pero era para el otro lado"
-
-Los recursos no se han incrementado, la productividad ha sido buena, sin
-embargo el coste ha sido excesivo porque no se ha hecho el trabajo en la
-dirección correcta.
-
-Por tano debemos ser capaces de hacer más y mejor.
-
-*PREGUNTA AL PUBLICO*
-
-¿Qué podemos hacer para aumentar la eficiencia?
-
-====
-
-== \\
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
-
-[{statement}]
-*Innovar* aportando valor
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Necesitamos innovar en la forma de construir aplicaciones, dedicando
-nuestro esfuerzo sólo a aquello que realmente aporta valor.
-
-*EJEMPLO*: ¿Cuántos de aquí trabajais o habéis trabajado con Eclipse?
-
-¿Añadir los métodos get/set a una clase aporta valor? o ¿aporta más valor
-desarrollar métodos que resuelven partes del problema?
-
-Si no tuvieramos las herramientas de Eclipse en clases de multitud de
-atributos podríamos estar un buen rato añadiendo los get/set.
-
-====
-
-== \\
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
-
-[{statement}]
-*Simplificar* y *homogeneizar*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Buscar la simplicidad huyendo de modelos complejos, y buscando soluciones
-adaptadas a los distintos proyectos.
-
-¿Cual es entonces la situación ideal?. Las metodologías ágiles, en general,
-nos dan la solución bien clara. Haz el código lo más simple posible sólo para
-lo que tienes que hacer ahora.
-
-////
-*EJEMPLO KISS:* 
-Imaginad que vamos a hacer un programa que pida al usuario por pantalla los
-coeficientes de una ecuación de segundo grado y nos muestre el resultado por
-pantalla.
-
-Si llevamos la Simplicidad a sus últimas consecuencias y tratamos de
-hacer el código lo más simple posible, sin preocuparnos en absoluto de posible
-reusabilidad de lo que hacemos, lo más sencillo es hacer una única clase con
-un método main(). En ese método pedimos por pantalla los coeficientes, 
-hacemos los cálculos y mostramos el resultado.
-Al final: una clase sencilla, que hace lo que tiene que hacer, con quizás tres 
-métodos además del main(), pero que no es en absoluto reusable. 
-Hace lo que hace y nada más. Sólo
-pide coeficientes por pantalla, echa unas cuentas y saca los resultados por
-pantalla.
-
-Si pensamos más bien en hacer algo reusable y aplicamos orientación a objetos,
-posiblemente hagamos una clase EcuacionSegundoGrado a la que le pasemos los
-coeficientes y nos devuelva los resultados. Haremos otra clase (o dos clases)
-para pedir y sacar cosas por pantalla. Estas clases, idealmente, deberían
-implementar interfaces de pideDato() y muestraDato(), de forma que si más
-adelante en vez de pantalla es una base de datos, nos baste con implementar
-esas interfaces. Finalmente, posiblemente hagamos otra clase más con un main()
-encargada de instanciar las anteriores y hacerlas funcionar conjuntamente. El
-resultado final es que tenemos una serie de clases con responsabilidades
-separadas y reusables. Podemos coger cualquiera de esas clases y llevarla tal
-cual a otro proyecto y usarla a nuestro gusto.
-
-Pero ... hemos perdido la sencillez.
-////
-
-Facilitar las tareas de soporte y mantenimiento, proyectos homogéneos que
-reducen el tiempo de puesta en marcha.
-
-Profesionales que se dediquen al desarrollo en diferentes ámbitos pueden pasar
-de un proyecto a otro fácilmente ya que son estructuras similares, reduciendo
-así el tiempo de puesta en marcha.
-====
-
-== \\
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
-
-[{statement}]
-Fomentar uso de *estándares* abiertos
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Fomentar el uso de estándares abiertos que nos dan garantía de 
-documentación amplia y disponible. Un efecto derivado es que nos dan 
-independencia respecto a tecnologías propietarias o productos específicos de 
-fabricantes.
-
-*EJEMPLO:* HTML, SQL92, OpenDocument.
-====
+image::server.png[role="pull-right", height=150]
 
 [{topic}]
-== Mayor cantidad de *utilidades*
+== *Ayuda* al desarrollo de aplicaciones
 
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+image::tools_help.png[role="pull-right", height=50]
 
 [{stepwise}]
-* Migración de aplicaciones
-* Generación de código
-* Integración con procesos
+* *Ingeniería inversa* de Base de Datos
+* *Scaffolding*
+* Clientes de *sistemas externos*: 
+** eMail 
+** WebServices (a partir de WSDL o JAX-WS)
+* *Control de concurrencia* optimista
 
-[template="notesblock"]
-====
-*CHARLA (HOW):*
 
-Dotar a los desarrolladores de la mayor cantidad de herramientas para poder
-realizar su trabajo sin necesidad de perder tiempo en buscarlas.
+[{topic}]
+== *Ayuda* al desarrollo de aplicaciones
 
-* Migrar aplicaciones de gestión rápidamente, por ejemplo utilizando 
-  herramientas de ingeniería inversa de base de datos.
-* Generador de código que genere de forma automática partes de la aplicación.
-* Integrar fácilmente con procedimientos y procesos externos, evitando
-  duplicidades y aprovechando recursos entre las diferentes unidades de una
-  administración.
-====
+image::tools_help.png[role="pull-right", height=50]
+
+[{stepwise}]
+* Seguridad
+* Informes
+* Pruebas *unitarias y funcionales*
 
 == \\
 
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+== \\
+
+image::tutorial.png[role="pull-right", height=250]
 
 [{statement}]
-Reutilizar *experiencia* y *sinergias*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Reutilizar la experiencia. No se trata de seguir "recomendaciones de
-fabricante", sino aprovechar conocimiento que está contrastado en 
-aplicaciones reales.
-
-*EJEMPLO:* Si en una Conselleria el sistema de informes es crítico es posible
-que lo tengan muy depurado, trabajado y se hayan roto los cuernos miles de 
-veces para hacerlo funcionar, ¿por qué no utilizarlo en el resto de
-Consellerias?
-
-Aprovechar sinergias entre diferentes organizaciones y/o administraciones: 
-simplificación de normativas y procedimientos, eliminación de las 
-duplicidades, etc.
-
-*EJEMPLO:* Ante necesidades comunes, ¿por qué no compartir el coste y
-desarrollarlo sólo 1 vez que sirva para los casos planteados?
-
-====
+*gvNIX* paso a paso
 
 == \\
-
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
 
 [{statement}]
-Fomentar *metodología* y *calidad*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Uso de metodologías de desarrollo, cumplir con los criterios de calidad y
-seguridad tablecidos, sin penalizar los tiempos de desarrollo.
-
-Es frecuente que el hecho de cumplir con ciertas normativas internas se
-dedique más tiempo a leer manuales infumables que al propio desarrollo.
-====
+*Preparación* del entorno
 
 == \\
 
-image::stamp-maximum-efficiency.png[role="pull-right",width=160]
+image::entorno_sts.png[caption="Entorno - Spring Tool Suite"]
+
+== \\
+
+image::entorno_config_preferencias.png[caption="Utilizar gvNIX 1.3.0"]
+
+== \\ 
+
 
 [{statement}]
-Software de *código abierto*
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Aunque no lo parezca el software de código abierto es muy importante para
-conseguir altas cotas de eficiencia.
-
-Las 4 libertades que nos proporciona el software de código abierto son:
-
-1. Libertad para ejecutar el programa en cualquier sitio
-2. Libertad para estudiarlo y adaptarlo a nuestras necesidades
-3. Libertad de redistribución
-4. Libertad para mejorar el programa y publicar las mejoras
-
-La posibilidad de redistribuir y la de publicar las mejoras son clave para 
-lograr una mayor eficiencia ya que constituyen el medio que 
-permite a las diferentes administraciones, y organizaciones intercambiar sus 
-experiencias, sus mejores prácticas, con el fin de aprender rápidamente de 
-los éxitos y fracasos de los demás.
-
-Imaginad el ejemplo del sistema de informes anterior, si todo ese trabajo 
-realizado en 1 Conselleria, se pudiera incluir en herramientas de código
-abierto se podrían redistribuir y/o publicar y se podrían construir 
-nuevos sistemas de informes que ya estuvieran optimizados gracias a la 
-experiencia de la Conselleria del ejemplo.
-====
-
-////
-
-== WHAT?
-
-////
+Crear nuevo proyecto *gvNIX*
 
 == \\
 
-image::01-create-project_short.png[caption="Generación pasiva",width="570"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Pues bien, qué nos ofrece gvNIX para incrementar la productividad y eficiencia
-de los proyectos.
-
-En primer lugar, pone a nuestra disposición herramientas que aportan valor,
-que permiten que el desarrollador se centre en lo que es realmente importante.
-
-Herramientas como:
-
-* Sistema de generación pasiva
-* Proceso guiado : HINT
-* Ayuda en línea : HELP
-* Auto completado : CTRL+SPACE
-
-DEMO: Paso 01 a 04-1.
-====
+image::00-create-project.png[caption="New Spring Roo Project", height=300]
 
 == \\
 
-[{middle}]
-image::petclinic-uml.png[caption="Diseño Dirigido por el Dominio",width="570"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Fomenta el uso de metodologías dirigidas por el dominio:
-
-* Se codifica el modelo del dominio, entidades y lógica, que captura el
-  problema del dominio del sistema a construir.
-* Inicialmente sin capa de servicios que se creará paulatinamente cuando la
-  lógica no pertenezca a ninguna entidad del dominio.
-
-Vamos a construir la típica aplicación PetClinic. Los usuarios de la aplicación 
-son empleados de una clínica que, en el curso de su trabajo, necesitan ver y 
-gestionar la información relativa a los veterinarios, los clientes y sus 
-mascotas.
-
-DEMO: Paso 05, 06, 07.
-====
+image::01-create-project.png[caption="Configuración proyecto 'petclinic'", height=300]
 
 == \\
 
-[{middle}]
-image::petclinic-erd.png[caption="Ingeniería inversa",width="570"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-gvNIX ofrece 2 formas de empezar con un proyecto:
-
-* Codificar el modelo de entidades del dominio
-* Si ya disponemos del modelo de datos de una aplicación antigua podemos
-  utilizar su sistema de ingeniería inversa para generar automáticamente las
-  entidades del dominio. Este sistema además ayuda a la migración de
-  aplicaciones antiguas, sólo la parte de gestión de datos. La lógica
-  especifica deberá codificarse de nuevo.
-
-La ingeniería inversa haría en un sólo paso lo que hemos hecho hasta ahora y a
-partir de este momento el proceso sería igual.
-====
+image::01-create-project-console.png[caption="Creación del proyecto"]
 
 == \\
 
-image::09-finders.png[caption="Convención sobre Configuración",width="570"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-gvNIX aporta simplicidad gracias al paradigma _Convención sobre Configuración_,
-que busca decrementar el número de decisiones que un desarrollador
-necesita hacer, ganando así en simplicidad pero no perdiendo flexibilidad por
-ello.
-
-*EJEMPLO:* La entidad _Vet_ en el modelo, por convención la tabla
-correspondiente en la base de datos se llamará _vet_. Solo si alguien se
-aparta de esta convención, como llamar a la tabla _myvet_,
-entonces deberá escribir código respecto a ese nombre. Notar que el
-desarrollador siempre puede alterar el comportamiento por defecto y adaptarlo
-a sus necesidades.
-
-En el caso de los métodos _finder_ siguiendo la convención de nominación nos
-generará automáticamente la consulta.
-====
+image::01-create-project-created.png[caption="Proyecto generado - Consola gvNIX arrancada"]
 
 == \\
 
-image::10-web-mvc-setup.png[caption="Proyectos homogéneos",width="570"]
+image::persistence.png[role="pull-right", height=100]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Un entorno único para generar distintos tipos de proyectos: web MVC, web JSF,
-Flex, portlet, SOA, etc. con una estructura de proyecto única.
-
-DEMO: 10, Enseñar cómo se podría generar jsf o MVC.
-====
+[{statement}]
+Instalación de *Persistencia*
 
 == \\
 
-image::11-2-entity-add-fields-manually.png[caption="Generación activa"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Aportar valor
-
-Sistema de generación activa : TBC
-
-DEMO: Paso 11-1, 11-2 y 12.
-====
+image::02-persistence-setup.png[caption="Persistence Setup", height=300]
 
 == \\
 
-image::14-occ-checksum-all.png[caption="Herramientas"]
+image::model_analysis.png[role="pull-right", height=75]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-*Utilidades* de gvNIX
-
-* Configurar idiomas adicionales
-* Configurar control de concurrencia optimista
-* Ingeniería inversa
-* Generación de código que entre otras cosas permite:
-** Integrar fácilmente con procesos externos
-** TBC
-
-DEMO: Paso 13, 14.
-====
+[{statement}]
+Del *análisis* del modelo a la *implementación*
 
 == \\
 
-image::15-test-junit.png[caption="Calidad"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Generación de infraestructura necesaria para ejecutar tests unitarios y
-funcionales.
-
-No es necesario leer documentación de calidad, se puede codificar en el
-propio fw para que la generación de código como las herramientas de calidad
-que se deseen integrar, por ejemplo desarrollar un nuevo add-on basado en
-JMeter que permita ejecutar pruebas de rendimiento.
-
-DEMO: Paso 15, 16.
-====
+image::model.png[caption="Aplicación 'Pet Clinic'", height=300]
 
 == \\
 
-image::20-bootstrap-setup.png[caption="HTML5 y CSS3"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Fomenta el uso de estándares abiertos como HTML5 y CSS3
-
-DEMO: Pasos 17,18,19,20,21.
-====
+image::03-create-enums.png[caption="Creación de enumerados", height=300]
 
 == \\
 
-image::22-menu-setup.png[caption="Herramientas"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Gestión la estructura de páginas
-
-DEMO: Paso 22.
-====
+image::04-create-entities-pet-visit.png[caption="Creación de entidades Pet y Visit", height=300]
 
 == \\
 
-image::23-datatable-owner-details.png[caption="Patrones de pantallas"]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-*Reutilizar* experiencia con gvNIX: Patrones de pantallas.
-
-Además diseño gráfico de aplicaciones basado en temas que permite incluir 
-fácilmente cambios en el diseño sin perjudicar la lógica de negocio.
-
-DEMO: Paso 23.
-====
+image::04-create-entities-persons.png[caption="Creación de entidad abstracta, Vet y Owner", height=300]
 
 == \\
 
-image::27-web-mvc-batch-all.png[caption="Edición tabular"]
+image::05-create-fields.png[caption="Creación de fields", height=300]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-*Reutilizar* experiencia con gvNIX: Patrones de pantallas: Edición tabular
-multi registro
-
-DEMO: Pasos 24,25,26,27.
-====
 
 == \\
 
-image::28-security-setup.png[caption="Seguridad"]
+image::05-create-fields-relations.png[caption="Creación de relaciones"]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Permite añadir seguridad a todas las capas de la apliación.
-
-DEMO: Paso 28.
-====
 
 == \\
 
-image::30-report-setup.png[caption="Informes"]
+image::tools.png[role="pull-right", height=150]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Herramienta para incluir soporte para informes fácilmente. Genera valor
-permitiendo que el desarrollador se centre en el propio informe.
-
-DEMO: Paso 30 y 31.
-====
+[{statement}]
+*Scaffolding*
 
 == \\
 
-image::32-create-service.png[caption="Integración de procesos"]
+image::06-mvc-setup.png[caption="Instalación de componentes MVC"]
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
+== \\
 
-Integrar fácilmente con procesos externos
+image::06-mvc-all.png[caption="Creación de Controllers y Views"]
 
-DEMO: Paso 32 y 33.
-====
+== \\
+
+image::06-finders-add.png[caption="Añadiendo métodos Finder"]
+
+== \\
+
+image::06-finders-all.png[caption="Generando Views de buscadores y métodos en Controllers"]
+
+== \\
+
+image::07-internacionalizacion.png[caption="Internacionalización"]
+
+== \\ 
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas. Paso 1: Preparación
+
+== \\
+
+image::08-batch-entity.png[caption="Generando batch para Entidades"]
+
+== \\
+
+image::08-batch-controller.png[caption="Generando batch para Controllers"]
+
+== \\
+
+image::09-jquery-setup.png[caption="Instalación de componentes jQuery"]
+
+== \\
+
+image::10-datatables-setup.png[caption="Instalación de componentes Datatables"]
+
+== \\
+
+image::11-jquery-all.png[caption="Componentes jQuery en todas las vistas de la aplicación "]
+
+== \\
+
+image::12-bootstrap-setup.png[caption="Modificando estructura HTML y aspecto visual para implementar Bootstrap3 "]
+
+== \\ 
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas. Paso 2: Generación
+
+== \\
+
+image::13-datatables-create.png[caption="Creación de Datatable modo 'show' y 'list'"]
+
+== \\
+
+image::13-datatables-create-inline.png[caption="Creación de Datatable modo Edición en Linea"]
+
+== \\
+
+image::run_app.png[role="pull-right", height=150]
+
+[{statement}]
+En este momento podemos *ejecutar* nuestra *aplicación* gvNIX
+
+== \\
+
+image::14-new-server.png[caption="Añadimos un nuevo servidor Tomcat 6"]
+
+== \\
+
+image::14-new-server-app.png[caption="Incluímos nuestra aplicación petclinic"]
+
+== \\
+
+image::15-server-start.png[caption="Ejecutamos la aplicación"]
+
+== \\
+
+image::16-application-home.png[caption="Aplicación Petclinic!"]
+
+== \\
+
+image::web_layer_management.png[role="pull-right", height=100]
+
+[{statement}]
+*Patrones* de pantallas.  Paso 3:  Detalles 
+
+== \\
+
+image::17-datatables-details.png[caption=" Un nivel: Owner > Pets/Vets"]
+
+== \\
+
+image::17-datatables-detail-2.png[caption="Dos niveles: Owner > Pets/Vets > Visits"]
+
+== \\
+
+image::loupe.png[role="pull-right", height=100]
+
+[{statement}]
+Componentes *lupa*
+
+== \\
+
+image::18-loupe-setup.png[caption="Instalación y generación de métodos"]
+
+== \\
+
+image::18-loupe-set.png[caption="Implementando componentes lupa"]
+
+== \\
+
+image::menu.png[role="pull-right", height=100]
+
+[{statement}]
+*Menú* gvNIX
+
+== \\
+
+image::19-menu-setup.png[caption="Aplicando menú gvNIX"]
+
+== \\
+
+image::spring_security.png[role="pull-right", height=100]
+
+[{statement}]
+*Seguridad* gvNIX
+
+== \\
+
+image::20-security-setup.png[caption="Aplicando seguridad al proyecto gvNIX"]
+
+== \\
+
+image::reports_gvNix.png[role="pull-right", height=100]
+
+[{statement}]
+*Informes* con gvNIX
+
+== \\
+
+image::21-reports-setup.png[caption="Instalando componentes JasperReports"]
+
+== \\
+
+image::21-reports-add.png[caption="Generando informe de Propietarios"]
+
+== \\
+
+image::quality.png[role="pull-right", height=100]
+
+[{statement}]
+*Calidad*: Control de concurrencia. Pruebas Unitarias y funcionales. Gestión de entornos.
+
+== \\
+
+image::22-occ.png[caption="Control de Concurrencia en entidad Pet"]
+
+== \\
+
+image::23-junit.png[caption="Pruebas unitarias JUnit"]
+
+== \\
+
+image::24-selenium.png[caption="Pruebas funcionales Selenium"]
+
+== \\
+
+image::25-dynamic.png[caption="Gestión de entornos"]
+
+== \\
+
+image::cloud.png[role="pull-right", height=100]
+
+[{statement}]
+*WebServices* con gvNIX
+
+== \\
+
+image::26-webservice.png[caption="Servicio Web obtener todas las mascotas"]
+
+== \\
+
+image::run_app.png[role="pull-right", height=150]
+
+[{statement}]
+exit, clean & *run*
+
+== \\
+
+image::petclinic-run.png[caption="Aplicación Petclinic!"]
 
 == \\
 
 [{statement}]
 *Compartir* experiencia con gvNIX
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Su arquitectura basada en componentes OSGi permite incluir nuevos 
-requerimientos fácilmente y ponerlos a disposición de cualquier organización:
-
-Ejemplo de SAFE, OCC, etc.
-
-Diseño gráfico de aplicaciones basado en temas que permite incluir fácilmente
-cambios en el diseño sin perjudicar la lógica de negocio.
-
-====
-
 == \\
 
 [{statement}]
 Proyecto de código abierto con licencia *GPL v3*
 
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-TBC: 
-
-====
 
 [{recap-final}]
 == Hoja de ruta
 
 [{stepwise}]
-* Diseño adaptativo
+* Nuevas funcionalidades Datatable
 * Agrupación de datos tabulares
-* Componente lupa
 * Gestores de identidades
 * Componente geográfica
-* Auditoría de cambios en base de datos.
-* Histórico de cambios de base de datos.
 
 [{topic}]
 == {gvnixsite}
@@ -754,31 +492,6 @@ https://github.com/DISID/gvnix-samples
 = Dimissed slides
 
 == \\
-
-[{statement}]
-Incremento de la *participación ciudadana*
-
-[template="notesblock"]
-====
-*CHARLA:*
-
-El aumento de la eficiencia debe venir acompañada por otro motor importante de 
-transformación: la participación de los ciudadanos. 
-Internet permite un nivel de participación impensable hace 
-pocos años. Los ciudadanos pueden opinar, aportar sugerencias, vehicular sus 
-quejas, hacer preguntas, con un dinamismo que puede resultar de gran utilidad 
-tanto al administrado como a las admnistraciones.
-
-Por poner un ejemplo, el ciudadano puede aportar información muy afinada, y 
-totalmente actualizada, sobre el estado de un determinado punto de la 
-geografía de una carretera ("en este calle hay un bache"), de una ciudad 
-("los contenedores de reciclado de plástico están llenos", etc).
-
-El salto desde las webs que informan al ciudadano, hacia estos 
-"sistemas públicos de información" (el ciudadano como informador 
-a la administración), son sólo un ejemplo del aumento de la participación útil 
-del ciudadano en la gestión de su comunidad.
-====
 
 ////
 
