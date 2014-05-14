@@ -1,3 +1,0 @@
-// Adding Web Services
-remote service define ws --class ~.services.PetsServices --serviceName ws_get_all_pets
-remote service operation --name ws_list_pets --service ~.services.PetsServices
