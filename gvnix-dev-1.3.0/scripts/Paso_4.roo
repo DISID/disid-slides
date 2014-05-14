@@ -1,0 +1,11 @@
+// Pattern: master table Owner > detail table Pet
+web mvc datatables detail add --type ~.web.OwnerController --property pets
+
+// Pattern: master table Owner > detail table Vet
+web mvc datatables detail add --type ~.web.OwnerController --property vets
+
+// Pattern: master table Owner > detail table Pet > detail table Visit
+web mvc datatables detail add --type ~.web.PetController --property visits
+
+// Pattern: master table Owner > detail table Vet > detail table Visit
+web mvc datatables detail add --type ~.web.VetController --property visits

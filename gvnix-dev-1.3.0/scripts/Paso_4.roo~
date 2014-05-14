@@ -1,0 +1,5 @@
+// Creating master patterns
+web mvc datatables add --type ~.web.VetController --mode show
+web mvc datatables add --type ~.web.PetController
+web mvc datatables add --type ~.web.OwnerController
+web mvc datatables add --type ~.web.VisitController --inline true --ajax true

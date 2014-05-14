@@ -54,42 +54,6 @@ Compuesto por herramientas de código abierto entre las que destaca su núcleo, 
 
 image::logo_springroo.png[role="pull-right",height="75"]
 
-//== \\
-
-//[{statement}]
-//¿*Qué ofrece* gvNIX?
-
-
-//== \\
-
-//[{topic}]
-//Generación *automática* de código.
-
-//[{topic}]
-//Calidad y Seguridad en proyectos sin influir en el *tiempo de desarrollo*.
-
-//[{topic}]
-//*Mantenibilidad* de los proyectos generados.
-
-//[{topic}]
-//Uso de *estándares*.
-
-//[{topic}]
-//Aplicaciones web con interfaz *actual y simple* de utilizar para el usuario.
-
-//== \\
-
-//[{topic}]
-//*Migración rápida* de aplicaciones utilizando herramientas de ing. inversa de base de datos.
-
-//[{topic}]
-//*Simple integración* con los procesos de una organización
-
-//[{topic}]
-//*Escalar la plataforma* a nuevas necesidades, con un amplio margen para su crecimiento futuro a nuevas tecnologías.
-
-//[{topic}]
-//*Independencia tecnológica*, al ser un proyecto de código abierto ya publicado y disponible para la comunidad.
 
 == \\
 
@@ -132,29 +96,40 @@ Proyectos *JEE estándar*
 
 image::server.png[role="pull-right", height=150]
 
-[{topic}]
-== *Ayuda* al desarrollo de aplicaciones
+== \\
 
-image::tools_help.png[role="pull-right", height=50]
+[{statement}]
+*Ingeniería Inversa* de Base de Datos
 
-[{stepwise}]
-* *Ingeniería inversa* de Base de Datos
-* *Scaffolding*
-* Clientes de *sistemas externos*: 
-** eMail 
-** WebServices (a partir de WSDL o JAX-WS)
-* *Control de concurrencia* optimista
+== \\
 
+[{statement}]
+*Scaffolding*
 
-[{topic}]
-== *Ayuda* al desarrollo de aplicaciones
+== \\
 
-image::tools_help.png[role="pull-right", height=50]
+[{statement}]
+Clientes de *sistemas externos*: email, Webservices
 
-[{stepwise}]
-* Seguridad
-* Informes
-* Pruebas *unitarias y funcionales*
+== \\ 
+
+[{statement}]
+Control de *concurrencia* optimista
+
+== \\ 
+
+[{statement}]
+*Seguridad*
+
+== \\ 
+
+[{statement}]
+*Informes*
+
+== \\ 
+
+[{statement}]
+*Pruebas* unitarias y funcionales
 
 == \\
 
@@ -213,6 +188,13 @@ image::02-persistence-setup.png[caption="Persistence Setup", height=300]
 
 == \\
 
+[{topic}]
+*Gestión de una clínica veterinaria*
+
+Aplicación destinada a empleados de una clínica veterinaria que, durante el día de trabajo, necesitan consultar y actualizar información sobre veterinarios, visitas, clientes y sus mascotas.
+
+== \\
+
 image::model_analysis.png[role="pull-right", height=75]
 
 [{statement}]
@@ -220,7 +202,7 @@ Del *análisis* del modelo a la *implementación*
 
 == \\
 
-image::model.png[caption="Aplicación 'Pet Clinic'", height=300]
+image::model.png[caption="Entidades del dominio", height=300]
 
 == \\
 
@@ -242,6 +224,10 @@ image::05-create-fields.png[caption="Creación de fields", height=300]
 == \\
 
 image::05-create-fields-relations.png[caption="Creación de relaciones"]
+
+== \\
+
+image::script_paso_1.png[caption=""]
 
 
 == \\
@@ -273,7 +259,16 @@ image::07-internacionalizacion.png[caption="Internacionalización"]
 
 == \\ 
 
-image::web_layer_management.png[role="pull-right", height=100]
+image::script_paso_2.png[caption=""]
+
+== \\
+
+[{statement}]
+<- ROO  *gvNIX ->*
+
+== \\ 
+
+image::web_layer_management.png[role="pull-right", height=200]
 
 [{statement}]
 *Patrones* de pantallas. Paso 1: Preparación
@@ -304,18 +299,22 @@ image::12-bootstrap-setup.png[caption="Implementando Bootstrap "]
 
 == \\ 
 
-image::web_layer_management.png[role="pull-right", height=100]
+image::web_layer_management.png[role="pull-right", height=200]
 
 [{statement}]
 *Patrones* de pantallas. Paso 2: Generación
 
 == \\
 
-image::13-datatables-create.png[caption="Creación de Datatable modo 'show' y 'list'"]
+image::13-datatables-create.png[caption="Convertir a Dandelion Datatables 'show' y 'list'"]
 
 == \\
 
-image::13-datatables-create-inline.png[caption="Creación de Datatable modo Edición en Linea"]
+image::13-datatables-create-inline.png[caption="Activar modo Edición en Linea"]
+
+== \\
+
+image::script_paso_3.png[caption=""]
 
 == \\
 
@@ -342,10 +341,10 @@ image::16-application-home.png[caption="Aplicación Petclinic!"]
 
 == \\
 
-image::web_layer_management.png[role="pull-right", height=100]
+image::web_layer_management.png[role="pull-right", height=200]
 
 [{statement}]
-*Patrones* de pantallas.  Paso 3:  Detalles 
+*Patrones* de pantallas.  Paso 3:  Maestro-Detalle 
 
 == \\
 
@@ -357,10 +356,14 @@ image::17-datatables-detail-2.png[caption="Dos niveles: Owner > Pets/Vets > Visi
 
 == \\
 
+image::script_paso_4.png[caption=""]
+
+== \\
+
 image::loupe.png[role="pull-right", height=100]
 
 [{statement}]
-Componentes *lupa*
+Componente *lupa*
 
 == \\
 
@@ -375,7 +378,7 @@ image::18-loupe-set.png[caption="Implementando componentes lupa"]
 image::menu.png[role="pull-right", height=100]
 
 [{statement}]
-*Menú* gvNIX
+Gestión de la *estructura* de la *aplicación*
 
 == \\
 
@@ -409,10 +412,23 @@ image::21-reports-add.png[caption="Generando informe de Propietarios"]
 
 == \\
 
+image::script_paso_5.png[caption=""]
+
+== \\
+
+[{statement}]
+Control de *concurrencia*
+
+== \\
+
+image::22-occ.png[caption="Control de Concurrencia en entidad Pet"]
+
+== \\
+
 image::quality.png[role="pull-right", height=100]
 
 [{statement}]
-*Calidad*: Control de concurrencia. Pruebas Unitarias y funcionales. Gestión de entornos.
+*Calidad*: Pruebas Unitarias y funcionales. Gestión de entornos.
 
 == \\
 
@@ -432,6 +448,10 @@ image::25-dynamic.png[caption="Gestión de entornos"]
 
 == \\
 
+image::script_paso_6.png[caption=""]
+
+== \\
+
 image::cloud.png[role="pull-right", height=100]
 
 [{statement}]
@@ -440,6 +460,10 @@ image::cloud.png[role="pull-right", height=100]
 == \\
 
 image::26-webservice.png[caption="Servicio Web obtener todas las mascotas"]
+
+== \\
+
+image::script_paso_7.png[caption=""]
 
 == \\
 
@@ -452,25 +476,19 @@ exit, clean & *run*
 
 image::petclinic-run.png[caption="Aplicación Petclinic!"]
 
-== \\
-
-[{statement}]
-*Compartir* experiencia con gvNIX
-
-== \\
-
-[{statement}]
-Proyecto de código abierto con licencia *GPL v3*
-
 
 [{recap-final}]
 == Hoja de ruta
 
 [{stepwise}]
-* Nuevas funcionalidades Datatable
 * Agrupación de datos tabulares
 * Gestores de identidades
 * Componente geográfica
+
+== \\
+
+[{statement}]
+Proyecto de código abierto con licencia *GPL v3*
 
 [{topic}]
 == {gvnixsite}
