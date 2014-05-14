@@ -300,7 +300,7 @@ image::11-jquery-all.png[caption="Componentes jQuery en todas las vistas de la a
 
 == \\
 
-image::12-bootstrap-setup.png[caption="Modificando estructura HTML y aspecto visual para implementar Bootstrap3 "]
+image::12-bootstrap-setup.png[caption="Implementando Bootstrap "]
 
 == \\ 
 
@@ -383,7 +383,7 @@ image::19-menu-setup.png[caption="Aplicando menú gvNIX"]
 
 == \\
 
-image::spring_security.png[role="pull-right", height=100]
+image::spring_security.png[role="pull-left", height=100]
 
 [{statement}]
 *Seguridad* gvNIX
