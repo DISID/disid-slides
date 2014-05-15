@@ -43,7 +43,7 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 Entorno de desarrollo de aplicaciones *Java*.
 
 [{topic}]
-*Desarrollo rápido* de aplicaciones web áltamente productivas.
+*Desarrollo rápido* de aplicaciones web altamente productivas.
 
 [{topic}]
 No compromete la *calidad* de los proyectos.
@@ -310,7 +310,7 @@ image::13-datatables-create.png[caption="Convertir a Dandelion Datatables 'show'
 
 == \\
 
-image::13-datatables-create-inline.png[caption="Activar modo Edición en Linea"]
+image::13-datatables-create-inline.png[caption="Activar modo Edición en Línea"]
 
 == \\
 
@@ -432,10 +432,6 @@ image::quality.png[role="pull-right", height=100]
 
 == \\
 
-image::22-occ.png[caption="Control de Concurrencia en entidad Pet"]
-
-== \\
-
 image::23-junit.png[caption="Pruebas unitarias JUnit"]
 
 == \\
@@ -490,14 +486,15 @@ image::petclinic-run.png[caption="Aplicación Petclinic!"]
 [{statement}]
 Proyecto de código abierto con licencia *GPL v3*
 
+
 [{topic}]
-== {gvnixsite}
+== www.disid.com
+
+image::logo_disid.png[height="89"]
+
 
 [{middle}]
-image::logo_gvNIX.png[height="120"]
-
-[{middle}]
-https://github.com/DISID/gvnix-samples
+*Proyecto gvNIX* -> http://www.gvnix.org
 
 ////
 
