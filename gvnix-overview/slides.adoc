@@ -1,0 +1,222 @@
+//
+// Build the presentation
+//
+// dzslides with embedded assets:
+// asciidoc -a data-uri -a linkcss! slides.adoc
+//
+// HTML5:
+// asciidoc -b html5 -o outline.html slides.adoc
+//
+Visión estratégica **gvNIX** 
+============================
+www.disid.com
+v1.0, Apr 08, 2014
+:title: gvNIX 1.3.0 
+:description: These slides are a short strategic overview to gvNIX.
+:copyright: CC BY-NC-SA 3.0
+:website: www.disid.com
+:gvnixsite: www.gvnix.org
+:slidesurl: https://github.com/DISID/disid-decks
+:iconsurl: https://www.iconfinder.com/
+:imagesdir: images
+:backend: dzslides
+:linkcss: true
+:dzslides-style: stormy
+//:dzslides-style: tomorrow
+:dzslides-transition: fade
+:dzslides-aspect: 16-9
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: monokai
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+
+== \\
+
+[{statement}]
+¿Por qué es necesario un marco de trabajo para el desarrollo Java?
+
+[template="notesblock"]
+====
+*CHARLA (WHY):*
+
+Cualquier desarrollador cuando programa con cualquier entorno necesita el
+propio lenguaje de programación elegido y utiliza conjuntos de funciones ya 
+implementadas conocidas como librerías. Habitualmente cualquier plataforma de
+desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
+conjunto de librerías básicas con la funcionalidad imprescindible, en el caso
+de la plataforma Java estas librerías se conocen como el *API Java*.
+
+Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
+usando solo el lenguaje y las librerías básicas tendríamos un problema, ya que
+sólo suelen contener utilidades a bajo nivel: programación concurrente,
+sockets, seguridad, estructuras de datos, etc. ya que funciones básicas como
+manejo de sesiones web, envío de correo, etc.  tendríamos que desarrollarlas,
+probarlas y parchearlas en caso de algún bug.
+
+En lugar de ello es más productivo y eficiente usar librerías de terceros que
+ofrezcan unas mínimas garantías como: soporte, a poder ser LTS;
+amplía documentación, librería activa y en evolución, etc.
+
+Esto que a priori es bueno, supone una nueva problemática para los proyectos
+de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
+aplicación que necesitamos no nos es suficiente con usar un único framework
+sino que necesitamos utilizar varios frameworks.
+
+Esta situación genera problemas ya que cada framework es totalmente
+independiente, con su propia configuración y gestión del ciclo de vida de 
+los objetos que genera.
+====
+
+== \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
+[{statement}]
+¿*Qué es* un marco de trabajo (framework)?
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Framework o marco de trabajo como se le conoce en español, ofrece el conjunto
+de distintas librerías y otros frameworks de alto nivel que amplían las
+librerías básicas del lenguaje de programación, como persistencia de objetos,
+protocolos de comunicación de alto nivel como WebSocket, etc., además definen
+un conjunto estándares, metodología de trabajo y estructura de proyectos que
+minora en gran medida la problemática indicada y que sirven como base para el
+desarrollo de aplicaciones.
+
+Además, al menos los más serios de hoy en día, ofrecen estas funcionalidades ya
+previamente programadas, probadas y con soporte a largo plazo.
+
+La gran ventaja de los frameworks es que facilitan y aceleran el
+proceso de desarrollo debido a que evita hacer a mano muchos de los procesos
+propios del ciclo de vida de los proyectos de desarrollo de software:
+
+* Las funciones ya estan implementadas como parte de librerías del framework.
+* Proporciona herramientas que codifican estan funciones automáticamente.
+* Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura MVC
+* Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
+  o el problema al cual debe dar solución con la aplicación.
+
+Un framework para aplicaciones web es un framework diseñado para apoyar el
+desarrollo de sitios web dinámicos, aplicaciones web y servicios web. Este
+tipo de frameworks intenta aliviar el exceso de carga asociado con actividades
+comunes usadas en desarrollos web. Por ejemplo, muchos framework proporcionan
+sistemas de plantillas para generación de la vista, gestión de sesiones, etc.
+y con frecuencia facilitan la reutilización de código.
+
+Utilizar un framework tiene algunas ventajas, como:
+
+* Facilidad para el programador a la hora de diseñar la estructura global de
+la aplicación. El framework proporciona esta estructura, la cuál hay que ir
+programando.
+* Facilita la colaboración, ya que está todo más estandarizado y definido
+según el framework. Es un código menos personal y más automatizado.
+* Hay un mayor número de utilidades y liberías adaptadas a frameworks en
+concreto.
+* Aunque al desarrollar una aplicación, se necesita un cierto tiempo y costes
+iniciales de aprendizaje, a largo plazo se facilita el desarrollo de la
+aplicación y el mantenimiento de la misma.
+====
+
+== \\
+
+[{statement}]
+Runtime
+
+[{statement}]
+*Develtime*
+
+[template="notesblock"]
+====
+Hay multitud de formas de clasificar los frameworks de desarrollo, en nuestro
+caso diferenciamos 2 grandes grupos: runtime y develtime
+
+Los entornos runtime son aquellos que generan una aplicación dependiente de
+código del propio framework, es decir crean aplicaciones que utilizan las
+librerías del framework para ejecutarse, sin las cuales la aplicación no puede 
+ejecutarse. Ejemplos: Struts, gvHIDRA, ...
+
+Los entornos en tiempo de desarrollo son aquellos que sólo proporcionan
+herramientas al desarrollador, no introducen librerías propias en la
+aplicación. Ejemplos: Eclipse, gvNIX, ... Por lo que suelen generar
+aplicaciones que utilizan librerías de amplía difusión y soporte, como Spring
+Framework, y basadas en estándares, como JPA 2, etc.
+====
+
+== \\
+
+[{statement}]
+Mapa global
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Componentes
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Arquitectura
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Casos de uso
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Internacionalización
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Geomática
+
+[template="notesblock"]
+====
+TBC bla bla.
+====
+
+== \\
+
+[{statement}]
+Distribuciones
+
+[template="notesblock"]
+====
+* Spring Roo.
+* gvNIX.
+* gvNIX DGTI.
+====
+
+////
+////
+
