@@ -33,7 +33,7 @@ v1.0, Apr 08, 2014
 == \\
 
 [{statement}]
-¿Por qué es necesario un marco de trabajo para el desarrollo Java?
+¿Por qué es necesario un entorno de desarrollo para la producción de software?
 
 [template="notesblock"]
 ====
@@ -48,21 +48,22 @@ de la plataforma Java estas librerías se conocen como el *API Java*.
 
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
 usando solo el lenguaje y las librerías básicas tendríamos un problema, ya que
-sólo suelen contener utilidades a bajo nivel: programación concurrente,
-sockets, seguridad, estructuras de datos, etc. ya que funciones básicas como
-manejo de sesiones web, envío de correo, etc.  tendríamos que desarrollarlas,
-probarlas y parchearlas en caso de algún bug.
+sólo ofrecen utilidades de bajo nivel (programación concurrente, sockets,
+estructuras de datos, etc) y por tanto funciones tan necesarias como manejo de
+sesiones web, componentes de interfaz de usuario, envío de correo, etc.
+tendríamos que desarrollarlas a mano.
 
 En lugar de ello es más productivo y eficiente usar librerías de terceros que
-ofrezcan unas mínimas garantías como: soporte, a poder ser LTS;
-amplía documentación, librería activa y en evolución, etc.
+ofrezcan estas funciones de más alto nivel. Librerías que además deben ofrecer
+unas mínimas garantías como: soporte, a poder ser LTS; amplía documentación, 
+proyecto activo y en evolución, etc.
 
 Esto que a priori es bueno, supone una nueva problemática para los proyectos
 de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
-aplicación que necesitamos no nos es suficiente con usar un único framework
-sino que necesitamos utilizar varios frameworks.
+aplicación que necesitamos no nos es suficiente con usar un única librería
+sino que necesitamos utilizar varias.
 
-Esta situación genera problemas ya que cada framework es totalmente
+Esta situación genera problemas ya que cada librería es totalmente
 independiente, con su propia configuración y gestión del ciclo de vida de 
 los objetos que genera.
 ====
@@ -72,14 +73,13 @@ los objetos que genera.
 image::logo_gvNIX.png[role="pull-right",height="50"]
 
 [{statement}]
-¿*Qué es* un marco de trabajo (framework)?
+¿*Qué es* un entorno de desarrollo (framework)?
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-Framework o marco de trabajo como se le conoce en español, ofrece el conjunto
-de distintas librerías y otros frameworks de alto nivel que amplían las
+Framework o entorno de desarrollo como se le conoce en español, ofrece el conjunto de distintas librerías y otros frameworks de alto nivel que amplían las
 librerías básicas del lenguaje de programación, como persistencia de objetos,
 protocolos de comunicación de alto nivel como WebSocket, etc., además definen
 un conjunto estándares, metodología de trabajo y estructura de proyectos que
@@ -123,6 +123,45 @@ aplicación y el mantenimiento de la misma.
 == \\
 
 [{statement}]
+Mapa global
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+gvNIX es un entorno de desarrollo rápido de aplicaciones, que se ha
+consolidado recientemente como el estándar para desarrollo Java de la
+Dirección General de Tecnologías de la Información (DGTI) de la Generalitat,
+siendo la propuesta de la DGTI a los nuevos retos, condicionantes y
+expectativas que existen en el ámbito del desarrollo y mantenimiento de
+aplicaciones.
+
+Es una distribución de Spring Roo centrada en reutilizar el conocimiento y los
+estándares de las organizaciones para construir sus aplicaciones Java. Es un
+proyecto de código abierto bajo licencia GPL v3.
+
+Las 4 libertades que obtiene la organización al utilizar software de código
+abierto:
+
+1. Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para siempre. 
+2. Libertad para estudiarlo y adaptarlo a nuestras necesidades. Esto exige el acceso al código fuente. 
+3. Libertad de redistribución, de modo que se nos permita colaborar con vecinos y amigos. 
+4. Libertad para mejorar el programa y publicar las mejoras. También exige el código fuente.
+
+Y como estrategia de continuidad de producto: la creación de una comunidad
+participada por la Generalitat, que permita su evolución, de forma
+independiente de una organización concreta (ya sea pública o privada),
+aplicando criterios técnicos, de oportunidad, profesionales; y buscando su
+sostenibilidad.
+
+
+TBC: Software libre. Licencia.
+Recursos del proyecto, repositorios, quien es quien, ...
+====
+
+== \\
+
+[{statement}]
 Runtime
 
 [{statement}]
@@ -130,6 +169,8 @@ Runtime
 
 [template="notesblock"]
 ====
+*CHARLA (WHAT):*
+
 Hay multitud de formas de clasificar los frameworks de desarrollo, en nuestro
 caso diferenciamos 2 grandes grupos: runtime y develtime
 
@@ -143,16 +184,25 @@ herramientas al desarrollador, no introducen librerías propias en la
 aplicación. Ejemplos: Eclipse, gvNIX, ... Por lo que suelen generar
 aplicaciones que utilizan librerías de amplía difusión y soporte, como Spring
 Framework, y basadas en estándares, como JPA 2, etc.
-====
 
-== \\
+TODO: Más ejemplos.
 
-[{statement}]
-Mapa global
+Ventajas:
 
-[template="notesblock"]
-====
-TBC bla bla.
+* La evolucion de las aplicaciones no están bloqueda por la evolución del
+  propio marco de trabajo. Por ejemplo, integrar una nueva funcionalidad en
+  una aplicación no requiere que previamente se añada a gvNIX.
+* Las correcciones de errores funcionales no están bloqueadas por gvNIX, se
+  corrigen en la propia aplicación y posteriormente se reporta al proyecto
+  gvNIX para incluir la mejora en futuras versiones.
+** El proceso de atención de incidencias que se sigue actualmente en gvNIX es: 1. el usuario final informa de una incidencia en una aplicación al equipo de
+   desarrollo de esa aplicación; 2. el equipo de desarrollo da solución a la
+   incidencia; 3. el equipo de desarrollo reporta la incidencia en el ámbito
+   de gvNIX al proyecto gvNIX.
+* Diferencia explícita entre desarrolladores de aplicaciones como el usuario
+  tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
+
+TODO: Revisar.
 ====
 
 == \\
@@ -162,7 +212,58 @@ Componentes
 
 [template="notesblock"]
 ====
-TBC bla bla.
+TBC: Hablar de lo que ofrece gvNIX en desarrollo.
+TBC: Componentes actuales.
+
+Ingeniería inversa de base de datos
+Permite crear el modelo completo de entidades Java de la aplicación vía la introspección
+de la base de datos del proyecto. Además, incrementalmente mantiene el modelo de
+entidades sincronizado con todos los cambios realizados en el modelo de datos.
+• Scaffolding
+Construcción automática de la aplicación a partir de un meta-modelo definido en
+anotaciones Java, en sólo unos minutos se puede generar una aplicación funcional.
+• Generación automática de clientes de sistemas externos: email, JMS y WebServices.
+• Exponer automáticamente servicios de la aplicación vía interfaz WebService
+gvNIX permite integrar la aplicación con procesos de negocio remotos fácilmente. A
+partir de código Java con anotaciones JAX-WS o partir de archivos WSDL, genera
+automáticamente toda la infraestructura necesaria para recibir llamadas desde procesos
+externos.
+• Control de concurrencia optimista
+En entornos multiusuario, como las aplicaciones web, es frecuente que dos usuarios
+accedan simultáneamente al mismo registro para editarlo. El control de concurrencia
+permite evitar que se pierdan los cambios del primero que guarde.
+El patrón de control de concurrencia más aceptado en entornos web es el conocido
+como control de concurrencia optimista. La forma más habitual de implementarlo es
+utilizar un campo de versión que debe incluirse en todas las tablas del modelo de datos.
+En organizaciones públicas el modelo de datos sigue unas políticas de seguridad muy
+rigurosas y es frecuente que no se pueda añadir un nuevo campo de versión.
+gvNIX proporciona una implementación del control de concurrencia optimista basado en
+el estado de los objetos, igualmente efectivo pero no intrusivo.
+• Seguridad
+Incorpora control de acceso y autorización por roles de usuario fácilmente.
+• Informes:
+Utiliza JasperReports para generar informes operativos dinámicamente y en diferentes
+formatos: PDF, LibreOffice, MSOffice, CSV. Cada informe es accesible desde el menú de la
+aplicación y genera un formulario previo para especificar los parámetros de filtrado.
+Los informes son totalmente funcionales desde su creación, incluyendo la generación de la
+plantilla .jrxml para permitir una personalización cómoda y fácil.
+• Pruebas unitarias y funcionales:
+Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit como
+funcionales con Selenium.
+
+La futura versión de gvNIX (prevista para el último trimestre de 2014), incluirá:
+• Generación de pantallas con diseño adaptativo para poder gestionar la información desde
+cualquier dispositivo: tableta, PC, móvil, etc.
+• Soporte de HTML5 y CSS3.
+• Ampliar las opciones de configuración de la visualización de los datos tabulares por el
+usuario final: agrupación de datos, guardar configuración, etc.• Nuevo componente lupa para búsqueda en datos relacionados.
+• Conexión con distintos gestores de identidades.
+• Soporte para desarrollo de aplicaciones con componente geográfica: soporte de atributos
+geométricos en el modelo de datos, visualización de datos sobre el mapa, gestión de
+información de localización, etc.
+• Auditoría de cambios en base de datos.
+• Histórico de cambios de base de datos.
+
 ====
 
 == \\
@@ -172,7 +273,9 @@ Arquitectura
 
 [template="notesblock"]
 ====
-TBC bla bla.
+TBC: Arquitectura en ejecución.
+TBC: Relación entre add-ons (desarrollo) y librerías ejecución.
+TBC: Lo que ofrece Spring Framework en ejecución.
 ====
 
 == \\
@@ -182,7 +285,47 @@ Casos de uso
 
 [template="notesblock"]
 ====
-TBC bla bla.
+
+*Aplicaciones de gestión*
+
+Las grandes organizaciones están en constante evolución, todos los días surgen nuevas necesidades y requerimientos que deben cubrirse con nuevas aplicaciones.
+gvNIX ofrece una infraestructura común para los desarrollos propios y
+externos, garantizando que todos los proyectos son similares para facilitar el
+mantenimiento y la evolución.
+
+TBC: Aplicaciones de gestión medias-grandes con un alto número de accesos
+concurrentes vía web.
+TBC: Aplicaciones de gestión con gran volumen de datos.
+
+*Migración de aplicaciones a entorno web*
+
+La evolución tecnológica durante años hace que en las organizaciones exista gran diversidad de aplicaciones que por diferentes motivos carecen de mantenimiento.
+
+gvNIX es un entorno a la medida de cualquier perfil que permite migrar aplicaciones de gestión de datos rápidamente.
+
+*Integración de aplicaciones en procesos de negocio*
+
+Las organizaciones acumulan diversidad de procesos en un entorno tecnológico heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
+
+gvNIX permite conectar entre sí distintas aplicaciones con distintas tecnologías con tiempos y costes de desarrollo reducidos.
+
+TBC: Sistemas mixtos móvil-web (poner arquitectura medioambiente)
+TBC: Aplicaciones de gestión de datos con componente geo.
+TBC: Aplicaciones de para el ciudadano incrustadas en portales Liferay.
+Ejemplo portlet buscador Sanidad; o de gestión.
+
+====
+
+== \\
+
+[{statement}]
+Geomática
+
+[template="notesblock"]
+====
+TBC: 1r marco de trabajo Java de código abierto que permite desarrollar 
+aplicaciones cuyo modelo de datos incluye información geográfica.
+
 ====
 
 == \\
@@ -193,16 +336,14 @@ Internacionalización
 [template="notesblock"]
 ====
 TBC bla bla.
-====
 
-== \\
+Sobre el NIX. Nosotros ya veis que vamos a un repositorio interno y luego el
+repositorio genérico. La dgti quiere que el genérico lo sostengan la
+'empresas' puede ser interesante el día que nos presenteis el nix a juan y a
+mi comentar que para sostener el nix, pues para buscar negocio por el mundo,
+veis interesante buscar actividad a través de la asociacion vamos, que la
+asociacion mercadee también el nix, etc etc.
 
-[{statement}]
-Geomática
-
-[template="notesblock"]
-====
-TBC bla bla.
 ====
 
 == \\
@@ -212,9 +353,15 @@ Distribuciones
 
 [template="notesblock"]
 ====
+TBC: Actualmente hay una distribución que incluye todo.
+TBC: Proceso de release actual.
+
+TBC: Nueva organización. Explicar.
 * Spring Roo.
 * gvNIX.
 * gvNIX DGTI.
+TBC: Nuevo proceso de release. gvNIX independiente de Roo (al menos versiones
+minor) y gvNIX DGTI independiente de gvNIX.
 ====
 
 ////
