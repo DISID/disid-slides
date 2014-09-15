@@ -66,6 +66,7 @@ sino que necesitamos utilizar varias.
 Esta situación genera problemas ya que cada librería es totalmente
 independiente, con su propia configuración y gestión del ciclo de vida de 
 los objetos que genera.
+
 ====
 
 == \\
@@ -79,45 +80,51 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 ====
 *CHARLA (WHAT):*
 
-Framework o entorno de desarrollo como se le conoce en español, ofrece el conjunto de distintas librerías y otros frameworks de alto nivel que amplían las
-librerías básicas del lenguaje de programación, como persistencia de objetos,
-protocolos de comunicación de alto nivel como WebSocket, etc., además definen
-un conjunto estándares, metodología de trabajo y estructura de proyectos que
-minora en gran medida la problemática indicada y que sirven como base para el
-desarrollo de aplicaciones.
+Framework o entorno de desarrollo como se le conoce en español, ofrece de
+forma cohesionada el conjunto de distintas librerías y otros frameworks de 
+alto nivel que amplían las librerías básicas del lenguaje de programación, 
+como persistencia de objetos, protocolos de comunicación de alto nivel como 
+WebSocket, etc., además definen un conjunto estándares, metodología de trabajo 
+y estructura de proyectos que minora en gran medida la problemática indicada y 
+que sirven como base para el desarrollo de aplicaciones.
 
-Además, al menos los más serios de hoy en día, ofrecen estas funcionalidades ya
-previamente programadas, probadas y con soporte a largo plazo.
+Además, los entornos más serios de hoy en día, ofrecen estas funcionalidades 
+ya previamente programadas, probadas y con soporte a largo plazo.
 
 La gran ventaja de los frameworks es que facilitan y aceleran el
 proceso de desarrollo debido a que evita hacer a mano muchos de los procesos
 propios del ciclo de vida de los proyectos de desarrollo de software:
 
 * Las funciones ya estan implementadas como parte de librerías del framework.
-* Proporciona herramientas que codifican estan funciones automáticamente.
-* Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura MVC
+* Propone una forma homogénea de configurar y usar todas las librerías que
+  integra.
+* Proporciona herramientas que ayudan a integrar estan funciones 
+  fácilmente, y en algunos caso automáticamente, en los proyectos.
+* Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura
+  MVC.
 * Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
+* TODO: Sobre el espacio de objetos común ... inyección dependencias, etc.
+
+* Facilidad para el programador a la hora de diseñar la estructura global de
+  la aplicación. El framework proporciona esta estructura, la cuál hay que ir
+  programando.
+* Facilita la colaboración, ya que está todo más estandarizado y definido
+  según el framework. Es un código menos personal y más automatizado.
+* Hay un mayor número de utilidades y liberías adaptadas a frameworks en
+  concreto.
+* Aunque al desarrollar una aplicación, se necesita un cierto tiempo y costes
+  iniciales de aprendizaje, a largo plazo se facilita el desarrollo de la
+  aplicación y el mantenimiento de la misma.
+
+TODO: Revisar puntos ... algunos estan duplicados
 
 Un framework para aplicaciones web es un framework diseñado para apoyar el
 desarrollo de sitios web dinámicos, aplicaciones web y servicios web. Este
 tipo de frameworks intenta aliviar el exceso de carga asociado con actividades
 comunes usadas en desarrollos web. Por ejemplo, muchos framework proporcionan
 sistemas de plantillas para generación de la vista, gestión de sesiones, etc.
-y con frecuencia facilitan la reutilización de código.
 
-Utilizar un framework tiene algunas ventajas, como:
-
-* Facilidad para el programador a la hora de diseñar la estructura global de
-la aplicación. El framework proporciona esta estructura, la cuál hay que ir
-programando.
-* Facilita la colaboración, ya que está todo más estandarizado y definido
-según el framework. Es un código menos personal y más automatizado.
-* Hay un mayor número de utilidades y liberías adaptadas a frameworks en
-concreto.
-* Aunque al desarrollar una aplicación, se necesita un cierto tiempo y costes
-iniciales de aprendizaje, a largo plazo se facilita el desarrollo de la
-aplicación y el mantenimiento de la misma.
 ====
 
 == \\
@@ -125,20 +132,122 @@ aplicación y el mantenimiento de la misma.
 [{statement}]
 Mapa global
 
+TODO: Roo, gvNIX, principios, desventajas
+
+
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-gvNIX es un entorno de desarrollo rápido de aplicaciones, que se ha
-consolidado recientemente como el estándar para desarrollo Java de la
-Dirección General de Tecnologías de la Información (DGTI) de la Generalitat,
-siendo la propuesta de la DGTI a los nuevos retos, condicionantes y
-expectativas que existen en el ámbito del desarrollo y mantenimiento de
-aplicaciones.
+En todo proyecto, lo más importante es la fase inicial en la que se definen 
+las especificaciones de la aplicación, el modelo de dominio y los servicios 
+necesarios a partir del dominio; como resultado, tendremos el núcleo del
+sistema a desarrollar.
 
-Es una distribución de Spring Roo centrada en reutilizar el conocimiento y los
-estándares de las organizaciones para construir sus aplicaciones Java. Es un
-proyecto de código abierto bajo licencia GPL v3.
+Indudablemente, en función de la metodología empleada, se realizarán los 
+diferentes artefactos seleccionados para generar la documentación de esta fase 
+inicial; y, las pruebas de concepto, junto con los prototipos. Todo este 
+proceso conlleva un coste en tiempo y en personas y, como es comprensible, un 
+coste hasta que se comprende el modelo de dominio.
+
+Todos estos costes, pueden ser reducidos empleando Spring Roo porque, de una
+forma sencilla y declarativa, nos permite definir el núcleo del sistema
+(dominio, repositorios y servicios) de una forma declarativa y, además, crear
+una aplicación web funcional (vista y control) de forma automática y en pocos
+minutos.
+
+Spring Roo toma prestadas algunas de las ideas típicas de las plataformas al
+estilo Rails (la convención por encima de la configuración, el active record
+para la persistencia,...), pero conceptualmente está más cerca de las
+herramientas MDA y de las de generación de código. Es decir, básicamente Roo
+nos va a generar el esqueleto de una aplicación Spring completa, ahorrándonos
+el tedioso trabajo de tener que configurarlo todo manualmente y tener que
+escribir el típico código repetitivo, como por ejemplo las partes de CRUD en
+JPA o en la web.
+
+Esta aplicación Spring funcionará sobre la plataforma Java EE, una plataforma
+que casi nadie niega que sea una plataforma robusta, escalable.
+
+Roo respeta los siguientes principios:
+
+* Uso de tecnologías "estándar" (en el sentido de ampliamente conocidas y 
+  probadas): genera un proyecto Maven con código Spring, JPA y Tiles entre 
+  otros.
+* No incorpora componentes en tiempo de ejecución. No hay lenguajes 
+  interpretados ni librerías adicionales.
+* Separa físicamente el código generado de los archivos editables por el 
+  desarrollador, de modo que al modificar estos últimos no "rompamos" o 
+  trastoquemos la aplicación, que es un problema típico de las herramientas de 
+  generación de código. Como veremos, esto se consigue mediante el uso de 
+  AOP. Esto no significa que no haya que tener cuidado al editar el 
+  código. Luego veremos algunas directrices.
+* Intenta evitar convertirse en una dependencia imprescindible: de modo que 
+  si en algún momento deseamos dejar de usarlo podamos refactorizar el 
+  código de manera sencilla y pasar a tener un código fuente sin dependencias 
+  de él.
+
+*Características principales*
+
+* Generación de código
+* ...
+
+*Problemas de la generación de código*
+
+Al ser Roo una herramienta de generación de código, hay que llevar cuidado al
+modificar manualmente nuestro proyecto porque podemos eliminar o cambiar algo
+vital para Roo y "romper" el código. En la práctica, como todo el código
+generado por Roo está separado del código escrito por el desarrollador
+esto no va a pasar con tanta facilidad como con otras herramientas de 
+generación de código.
+
+_Directrices generales de qué editar y cómo y qué no_
+
+  Este punto no es necesario para la presentación, simplemente me ha 
+  parecido interesante tenerlo documentado.
+  .
+  * No se deben modificar/eliminar los archivos .aj ya que es Roo el que los
+    gestiona y modifica automáticamente.
+  * Se puede modificar código de los .java generados por Roo. Ya que Roo
+    vigilará los cambios y modificará los .aj para que los reflejen. Como iremos
+    viendo, algunos comandos de Roo lo único que hacen en realidad es introducir
+    ciertas anotaciones propias del framework en el código Java. Estas
+    anotaciones, de hecho, son las que hacen que Roo genere y actualice los .aj.
+    De modo que también podemos introducirlas a mano en lugar de hacerlo
+    mediante los comandos del shell de Roo. Evidentemente, esto quiere decir que
+    si las eliminamos o modificamos inadvertidamente, la "magia" de Roo podría
+    dejar de funcionar.
+  * En general también se pueden editar los artefactos estándar, por ejemplo el
+    pom.xml para añadir dependencias o plugins, eso sí, llevando cuidado de no
+    eliminar nada que haya introducido Roo.
+
+_FIN: Directrices generales_
+
+Evidentemente, en desarrollo software no hay fórmulas mágicas, así que Roo no
+puede resolver todos nuestros problemas ni escribir automáticamente una
+aplicación no trivial, pero quizá pueda darnos un 60% del código hecho para
+concentrarnos en el otro 40%. 
+
+
+TODO: Ahí es donde entra gvNIX, llegar a generar aplicaciones no triviales
+aumentando así el % que nos da hecho.
+
+Esa es la diferencia principal entre Spring Roo y gvNIX, Roo permite generar
+aplicaciones triviales, es decir que disponen de una serie de funcionalidades 
+básicas. 
+
+gvNIX amplia esas funcionalidades básicas con un conjunto de componentes 
+orientados a reutilizar el conocimiento y los estándares de las organizaciones 
+permitiendo así automatizar el desarrollo aplicaciones no triviales.
+
+
+
+
+
+
+
+gvNIX es un proyecto de código abierto bajo licencia GPL v3.
+
+TBC: Por qué es un proyecto de C.Ab? Ventajas/Beneficios?
 
 Las 4 libertades que obtiene la organización al utilizar software de código
 abierto:
@@ -154,9 +263,20 @@ independiente de una organización concreta (ya sea pública o privada),
 aplicando criterios técnicos, de oportunidad, profesionales; y buscando su
 sostenibilidad.
 
+[width="100%",cols="<50%,<50%",]
+|=======================================================================
+|Página principal del proyecto |http://www.gvnix.org
+|Código fuente |https://github.com/DISID/gvnix/
+|Binarios |http://sourceforge.net/projects/gvnix/files/
+|Repositorio Maven |https://code.google.com/p/gvnix/source/browse/
+|Soporte |https://code.google.com/p/gvnix/issues/list
 
-TBC: Software libre. Licencia.
-Recursos del proyecto, repositorios, quien es quien, ...
+http://stackoverflow.com/questions/tagged/gvnix
+|Documentación |http://www.gvnix.org/documentacion
+
+https://github.com/DISID/gvnix-samples
+|=======================================================================
+
 ====
 
 == \\
@@ -192,7 +312,14 @@ Ventajas:
 * La evolucion de las aplicaciones no están bloqueda por la evolución del
   propio marco de trabajo. Por ejemplo, integrar una nueva funcionalidad en
   una aplicación no requiere que previamente se añada a gvNIX.
-* Las correcciones de errores funcionales no están bloqueadas por gvNIX, se
+* Libertad para usar gvNIX en cualquiera de las capas de la arquitectura de la
+  aplicación. Se pueden utilizar gvNIX para generar cualquiera de las capas de
+  la aplicación: sólo modelo, modelo-controlador o modelo-vista-controlador.
+  De esta forma gvNIX ayuda en aquello que necesita el proyecto y permite
+  integrar otras tecnologías en una aplicación desarrollada con gvNIX. Por
+  ejemplo, se puede desarrollar una aplicación con gvNIX cuya vista esté
+  desarrollada con ExtJS.
+* Las correcciones de errores funcionales no dependen de gvNIX, se
   corrigen en la propia aplicación y posteriormente se reporta al proyecto
   gvNIX para incluir la mejora en futuras versiones.
 ** El proceso de atención de incidencias que se sigue actualmente en gvNIX es: 1. el usuario final informa de una incidencia en una aplicación al equipo de
@@ -203,79 +330,154 @@ Ventajas:
   tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
 
 TODO: Revisar.
+
+Importante es que al no contener ningún componente en tiempo de ejecución no
+interfiere en el despliegue de las soluciones ni crea dependencias con el
+producto final, de forma tal que resulta transparente para el despliegue en
+producción.
+
 ====
 
 == \\
 
 [{statement}]
-Componentes
+Arquitectura de gvNIX
+
+[template="notesblock"]
+====
+
+El framework ha sido implementado con lenguaje Java y sigue un modelo de
+arquitectura orientado a componentes sobre plataforma OSGi en el que cada
+funcionalidad que ofrece el framework es implementada como un 
+add-on que colabora con el resto en las distintas tareas de generación.
+Esta arquitectura es empleada en el desarrollo de grandes sistemas modulares
+como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera. 
+
+====
+
+== \\
+
+[{statement}]
+Uso de gvNIX
 
 [template="notesblock"]
 ====
 TBC: Hablar de lo que ofrece gvNIX en desarrollo.
 TBC: Componentes actuales.
 
-Ingeniería inversa de base de datos
-Permite crear el modelo completo de entidades Java de la aplicación vía la introspección
-de la base de datos del proyecto. Además, incrementalmente mantiene el modelo de
-entidades sincronizado con todos los cambios realizados en el modelo de datos.
-• Scaffolding
-Construcción automática de la aplicación a partir de un meta-modelo definido en
-anotaciones Java, en sólo unos minutos se puede generar una aplicación funcional.
-• Generación automática de clientes de sistemas externos: email, JMS y WebServices.
-• Exponer automáticamente servicios de la aplicación vía interfaz WebService
-gvNIX permite integrar la aplicación con procesos de negocio remotos fácilmente. A
-partir de código Java con anotaciones JAX-WS o partir de archivos WSDL, genera
-automáticamente toda la infraestructura necesaria para recibir llamadas desde procesos
-externos.
-• Control de concurrencia optimista
-En entornos multiusuario, como las aplicaciones web, es frecuente que dos usuarios
-accedan simultáneamente al mismo registro para editarlo. El control de concurrencia
-permite evitar que se pierdan los cambios del primero que guarde.
-El patrón de control de concurrencia más aceptado en entornos web es el conocido
-como control de concurrencia optimista. La forma más habitual de implementarlo es
-utilizar un campo de versión que debe incluirse en todas las tablas del modelo de datos.
-En organizaciones públicas el modelo de datos sigue unas políticas de seguridad muy
-rigurosas y es frecuente que no se pueda añadir un nuevo campo de versión.
-gvNIX proporciona una implementación del control de concurrencia optimista basado en
-el estado de los objetos, igualmente efectivo pero no intrusivo.
-• Seguridad
-Incorpora control de acceso y autorización por roles de usuario fácilmente.
-• Informes:
-Utiliza JasperReports para generar informes operativos dinámicamente y en diferentes
-formatos: PDF, LibreOffice, MSOffice, CSV. Cada informe es accesible desde el menú de la
-aplicación y genera un formulario previo para especificar los parámetros de filtrado.
-Los informes son totalmente funcionales desde su creación, incluyendo la generación de la
-plantilla .jrxml para permitir una personalización cómoda y fácil.
-• Pruebas unitarias y funcionales:
-Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit como
-funcionales con Selenium.
+Desde el punto de vista de su uso, Roo (y por tanto gvNIX) está diseñado como 
+un intérprete de comandos interactivo al estilo de Rails o de Grails. Para 
+facilitar su uso tiene autocompletado de los comandos y ayuda contextual. 
+Además en todo momento nos mostrará solo los comandos que sean válidos y nos 
+dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
+perdidos.
 
-La futura versión de gvNIX (prevista para el último trimestre de 2014), incluirá:
-• Generación de pantallas con diseño adaptativo para poder gestionar la información desde
-cualquier dispositivo: tableta, PC, móvil, etc.
-• Soporte de HTML5 y CSS3.
-• Ampliar las opciones de configuración de la visualización de los datos tabulares por el
-usuario final: agrupación de datos, guardar configuración, etc.• Nuevo componente lupa para búsqueda en datos relacionados.
-• Conexión con distintos gestores de identidades.
-• Soporte para desarrollo de aplicaciones con componente geográfica: soporte de atributos
-geométricos en el modelo de datos, visualización de datos sobre el mapa, gestión de
-información de localización, etc.
-• Auditoría de cambios en base de datos.
-• Histórico de cambios de base de datos.
+Aquí se ve cómo se interactúa con Roo a nivel básico, teclearemos comandos sin
+explicar en mucho detalle qué hace cada uno, en eso ya entraremos en los
+siguientes apartados.
+
+El desarrollador interactúa con el framework a través de un intérprete de
+comandos o shell.
+
+Cada componente proporciona al shell un conjunto de comandos a través de los
+cuales proporciona sus funciones al desarrollador, el cual decide si aplica o
+no durante el proceso de desarrollo.
+
+Además el propio framework proporciona sus propios comandos o funcionalidades
+para facilitar el desarrollo. Los más destacados son:
+
+* *help*: Muestra al desarrollador todos los comandos o funcionalidades 
+  disponibles.
+* *hint*: Aconseja el siguiente paso posible en el proceso de desarrollo.
+* TODO: Más, como instalar nuevos componentes, ...
+
+TODO: Imagen shell con componentes
+
+*Ingeniería inversa de base de datos*
+
+Permite crear el modelo completo de entidades Java de la aplicación vía la introspección de la base de datos del proyecto. Además, incrementalmente mantiene el modelo de entidades sincronizado con todos los cambios realizados en el modelo de datos.
+
+*Scaffolding*
+
+Construcción automática de la aplicación a partir de un meta-modelo definido 
+en anotaciones Java, en sólo unos minutos se puede generar una aplicación
+funcional.
+
+*Generación automática* de clientes de sistemas externos: email, JMS y WebServices.
+
+*Exponer automáticamente* servicios de la aplicación vía interfaz WebService
+gvNIX permite integrar la aplicación con procesos de negocio remotos
+fácilmente. A partir de código Java con anotaciones JAX-WS o partir de
+archivos WSDL, genera automáticamente toda la infraestructura necesaria para
+recibir llamadas desde procesos externos.
+
+*Control de concurrencia optimista*
+
+En entornos multiusuario, como las aplicaciones web, es frecuente que dos usuarios accedan simultáneamente al mismo registro para editarlo. El control de concurrencia permite evitar que se pierdan los cambios del primero que guarde.
+
+El patrón de control de concurrencia más aceptado en entornos web es el conocido
+como control de concurrencia optimista. La forma más habitual de implementarlo es utilizar un campo de versión que debe incluirse en todas las tablas del modelo de datos.
+
+En organizaciones públicas el modelo de datos sigue unas políticas de seguridad muy rigurosas y es frecuente que no se pueda añadir un nuevo campo de versión.
+
+gvNIX proporciona una implementación del control de concurrencia optimista basado en el estado de los objetos, igualmente efectivo pero no intrusivo.
+
+*Seguridad*
+
+Incorpora control de acceso y autorización por roles de usuario fácilmente.
+
+*Informes*
+
+Utiliza JasperReports para generar informes operativos dinámicamente y en diferentes formatos: PDF, LibreOffice, MSOffice, CSV. Cada informe es accesible desde el menú de la aplicación y genera un formulario previo para especificar los parámetros de filtrado.
+
+Los informes son totalmente funcionales desde su creación, incluyendo la generación de la plantilla .jrxml para permitir una personalización cómoda y fácil.
+
+*Pruebas unitarias y funcionales:*
+
+Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit como funcionales con Selenium.
+
+*Generación de pantallas con diseño adaptativo* 
+
+Gestionar la información desde cualquier dispositivo: tableta, PC, móvil, etc.
+
+*Soporte de HTML5 y CSS3.*
+
+Ampliar las opciones de configuración de la visualización de los datos
+tabulares por el usuario final: agrupación de datos, guardar configuración,
+etc.
+
+Nuevo *componente lupa* para búsqueda en datos relacionados.
+
+*Auditoría de cambios en base de datos.*
+
+*Histórico de cambios de base de datos.*
 
 ====
 
 == \\
 
 [{statement}]
-Arquitectura
+Arquitectura de las aplicaciones
 
 [template="notesblock"]
 ====
 TBC: Arquitectura en ejecución.
 TBC: Relación entre add-ons (desarrollo) y librerías ejecución.
 TBC: Lo que ofrece Spring Framework en ejecución.
+
+Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
+capa web, la de control y la de modelo del dominio.
+
+La capa de dominio del problema suele haber una "sub-capa" de servicios  
+que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
+Tiene otra "sub-capa" de de acceso a datos donde habitualmente tenemos 
+los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
+clases que modelan las entidades del dominio, que se encargan no solo de 
+modelar el dominio sino también de la validación de sus datos e incluso su 
+serialización a JSON.
+
+Esta es la arquitectura de las aplicaciones generadas por Roo por defecto. 
+
 ====
 
 == \\
@@ -325,6 +527,8 @@ Geomática
 ====
 TBC: 1r marco de trabajo Java de código abierto que permite desarrollar 
 aplicaciones cuyo modelo de datos incluye información geográfica.
+
+Soporte para desarrollo de *aplicaciones con componente geográfica*: soporte de atributos geométricos en el modelo de datos, visualización de datos sobre el mapa, gestión de información de localización, etc.
 
 ====
 
