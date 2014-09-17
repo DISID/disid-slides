@@ -2,38 +2,41 @@
 // Build the presentation
 //
 // dzslides with embedded assets:
-// asciidoc -a data-uri -a linkcss! slides.adoc
+// asciidoc -a data-uri slides.adoc
 //
-// HTML5:
+// HTML5 (print):
 // asciidoc -b html5 -o outline.html slides.adoc
 //
-Visión estratégica **gvNIX** 
-============================
+ 
+= Visión estratégica **gvNIX**
 www.disid.com
-v1.0, Apr 08, 2014
-:title: gvNIX 1.3.0 
-:description: These slides are a short strategic overview to gvNIX.
+v1.0, Sep 18, 2014
 :copyright: CC BY-NC-SA 3.0
 :website: www.disid.com
 :gvnixsite: www.gvnix.org
-:slidesurl: https://github.com/DISID/disid-decks
-:iconsurl: https://www.iconfinder.com/
 :imagesdir: images
+:figure-caption!:
+:source-highlighter: highlightjs
 :backend: dzslides
-:linkcss: true
+//:dzslides-style: truffle
 :dzslides-style: stormy
-//:dzslides-style: tomorrow
-:dzslides-transition: fade
 :dzslides-aspect: 16-9
-:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
-:dzslides-highlight: monokai
-// disable syntax highlighting unless turned on explicitly
-:syntax: no-highlight
+//:dzslides-fonts: family=Comfortaa:400
+//:dzslides-fonts: family=Sansita+One:400
+:dzslides-fonts: family=Racing+Sans+One:400
+//:dzslides-transition: none
+:dzslides-highlight: default
+
+////
+These slides are a short strategic overview to gvNIX.
+////
 
 == \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
 [{statement}]
-¿Por qué es necesario un entorno de desarrollo para la producción de software?
+¿*Por qué* un entorno de desarrollo?
 
 [template="notesblock"]
 ====
@@ -74,52 +77,47 @@ los objetos que genera.
 image::logo_gvNIX.png[role="pull-right",height="50"]
 
 [{statement}]
-¿*Qué es* un entorno de desarrollo (framework)?
+¿*Qué es* un entorno de desarrollo?
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-Framework o entorno de desarrollo como se le conoce en español, ofrece de
-forma cohesionada el conjunto de distintas librerías y otros frameworks de 
-alto nivel que amplían las librerías básicas del lenguaje de programación, 
-como persistencia de objetos, protocolos de comunicación de alto nivel como 
-WebSocket, etc., además definen un conjunto estándares, metodología de trabajo 
-y estructura de proyectos que minora en gran medida la problemática indicada y 
-que sirven como base para el desarrollo de aplicaciones.
+Framework o entorno de desarrollo, ofrece de forma cohesionada el conjunto de
+distintas librerías que amplían las funciones de las librerías
+básicas del lenguaje de programación, como persistencia de objetos, protocolos
+de comunicación de alto nivel como WebSocket, etc., además definen un conjunto
+estándares, metodología de trabajo y estructura de proyectos que minora en
+gran medida la problemática indicada y que sirven como base para el desarrollo
+de aplicaciones.
 
-Además, los entornos más serios de hoy en día, ofrecen estas funcionalidades 
-ya previamente programadas, probadas y con soporte a largo plazo.
+Además, los entornos más serios de hoy en día, garantizan que estas 
+funcionalidades han sido probadas y ofrecen un soporte a largo plazo.
 
 La gran ventaja de los frameworks es que facilitan y aceleran el
 proceso de desarrollo debido a que evita hacer a mano muchos de los procesos
 propios del ciclo de vida de los proyectos de desarrollo de software:
 
+TODO: A altra slide:
+
 * Las funciones ya estan implementadas como parte de librerías del framework.
-* Propone una forma homogénea de configurar y usar todas las librerías que
-  integra.
+* Define una estructura de aplicación, una forma homogénea de configurar y 
+  usar todas las librerías que integra.
 * Proporciona herramientas que ayudan a integrar estan funciones 
   fácilmente, y en algunos caso automáticamente, en los proyectos.
+* Facilita la colaboración, ya que está todo más estandarizado y definido
+  según el framework. Es un código menos personal y más automatizado.
 * Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura
   MVC.
 * Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
-* TODO: Sobre el espacio de objetos común ... inyección dependencias, etc.
-
-* Facilidad para el programador a la hora de diseñar la estructura global de
-  la aplicación. El framework proporciona esta estructura, la cuál hay que ir
-  programando.
-* Facilita la colaboración, ya que está todo más estandarizado y definido
-  según el framework. Es un código menos personal y más automatizado.
-* Hay un mayor número de utilidades y liberías adaptadas a frameworks en
-  concreto.
 * Aunque al desarrollar una aplicación, se necesita un cierto tiempo y costes
   iniciales de aprendizaje, a largo plazo se facilita el desarrollo de la
   aplicación y el mantenimiento de la misma.
 
-TODO: Revisar puntos ... algunos estan duplicados
+TODO: Altra slide:
 
-Un framework para aplicaciones web es un framework diseñado para apoyar el
+Un *framework para aplicaciones web* es un framework diseñado para apoyar el
 desarrollo de sitios web dinámicos, aplicaciones web y servicios web. Este
 tipo de frameworks intenta aliviar el exceso de carga asociado con actividades
 comunes usadas en desarrollos web. Por ejemplo, muchos framework proporcionan
@@ -129,15 +127,14 @@ sistemas de plantillas para generación de la vista, gestión de sesiones, etc.
 
 == \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
 [{statement}]
-Mapa global
-
-TODO: Roo, gvNIX, principios, desventajas
-
+*Mapa* global
 
 [template="notesblock"]
 ====
-*CHARLA (HOW):*
+*CHARLA (WHAT):*
 
 En todo proyecto, lo más importante es la fase inicial en la que se definen 
 las especificaciones de la aplicación, el modelo de dominio y los servicios 
@@ -165,16 +162,26 @@ el tedioso trabajo de tener que configurarlo todo manualmente y tener que
 escribir el típico código repetitivo, como por ejemplo las partes de CRUD en
 JPA o en la web.
 
+Al ser Roo una herramienta de generación de código, hay que llevar cuidado al
+modificar manualmente nuestro proyecto porque podemos eliminar o cambiar algo
+vital para Roo y "romper" el código. En la práctica, como todo el código
+generado por Roo está separado del código escrito por el desarrollador
+esto no va a pasar con tanta facilidad como con otras herramientas de 
+generación de código.
+
 Esta aplicación Spring funcionará sobre la plataforma Java EE, una plataforma
 que casi nadie niega que sea una plataforma robusta, escalable.
+
+TODO: A altra slide
 
 Roo respeta los siguientes principios:
 
 * Uso de tecnologías "estándar" (en el sentido de ampliamente conocidas y 
   probadas): genera un proyecto Maven con código Spring, JPA y Tiles entre 
   otros.
-* No incorpora componentes en tiempo de ejecución. No hay lenguajes 
-  interpretados ni librerías adicionales.
+* Es un entorno en tiempo de desarrollo, es decir, no incorpora componentes 
+  en tiempo de ejecución. No hay lenguajes interpretados ni librerías 
+  adicionales.
 * Separa físicamente el código generado de los archivos editables por el 
   desarrollador, de modo que al modificar estos últimos no "rompamos" o 
   trastoquemos la aplicación, que es un problema típico de las herramientas de 
@@ -185,20 +192,6 @@ Roo respeta los siguientes principios:
   si en algún momento deseamos dejar de usarlo podamos refactorizar el 
   código de manera sencilla y pasar a tener un código fuente sin dependencias 
   de él.
-
-*Características principales*
-
-* Generación de código
-* ...
-
-*Problemas de la generación de código*
-
-Al ser Roo una herramienta de generación de código, hay que llevar cuidado al
-modificar manualmente nuestro proyecto porque podemos eliminar o cambiar algo
-vital para Roo y "romper" el código. En la práctica, como todo el código
-generado por Roo está separado del código escrito por el desarrollador
-esto no va a pasar con tanta facilidad como con otras herramientas de 
-generación de código.
 
 _Directrices generales de qué editar y cómo y qué no_
 
@@ -224,12 +217,8 @@ _FIN: Directrices generales_
 
 Evidentemente, en desarrollo software no hay fórmulas mágicas, así que Roo no
 puede resolver todos nuestros problemas ni escribir automáticamente una
-aplicación no trivial, pero quizá pueda darnos un 60% del código hecho para
-concentrarnos en el otro 40%. 
-
-
-TODO: Ahí es donde entra gvNIX, llegar a generar aplicaciones no triviales
-aumentando así el % que nos da hecho.
+aplicación no trivial, pero quizá pueda darnos un 40% del código hecho para
+concentrarnos en el otro 60%. 
 
 Esa es la diferencia principal entre Spring Roo y gvNIX, Roo permite generar
 aplicaciones triviales, es decir que disponen de una serie de funcionalidades 
@@ -237,17 +226,33 @@ básicas.
 
 gvNIX amplia esas funcionalidades básicas con un conjunto de componentes 
 orientados a reutilizar el conocimiento y los estándares de las organizaciones 
-permitiendo así automatizar el desarrollo aplicaciones no triviales.
+permitiendo así automatizar el desarrollo aplicaciones no triviales. De esta
+forma gvNIX consigue generar automáticamente entre un 60% y un 80% de la
+aplicación.
 
+====
 
+== \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
 
+Proyecto de código abierto *GPL v3*
 
+[{incremental}]
+* http://www.gvnix.org
+* https://github.com/DISID/gvnix/
+* http://sourceforge.net/projects/gvnix/files/
+* https://code.google.com/p/gvnix/source/browse/
+* https://code.google.com/p/gvnix/issues/list
+* http://stackoverflow.com/questions/tagged/gvnix
+* http://www.gvnix.org/documentacion
+* https://github.com/DISID/gvnix-samples
 
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
 
 gvNIX es un proyecto de código abierto bajo licencia GPL v3.
-
-TBC: Por qué es un proyecto de C.Ab? Ventajas/Beneficios?
 
 Las 4 libertades que obtiene la organización al utilizar software de código
 abierto:
@@ -256,12 +261,6 @@ abierto:
 2. Libertad para estudiarlo y adaptarlo a nuestras necesidades. Esto exige el acceso al código fuente. 
 3. Libertad de redistribución, de modo que se nos permita colaborar con vecinos y amigos. 
 4. Libertad para mejorar el programa y publicar las mejoras. También exige el código fuente.
-
-Y como estrategia de continuidad de producto: la creación de una comunidad
-participada por la Generalitat, que permita su evolución, de forma
-independiente de una organización concreta (ya sea pública o privada),
-aplicando criterios técnicos, de oportunidad, profesionales; y buscando su
-sostenibilidad.
 
 [width="100%",cols="<50%,<50%",]
 |=======================================================================
@@ -281,6 +280,8 @@ https://github.com/DISID/gvnix-samples
 
 == \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
 [{statement}]
 Runtime
 
@@ -291,8 +292,8 @@ Runtime
 ====
 *CHARLA (WHAT):*
 
-Hay multitud de formas de clasificar los frameworks de desarrollo, en nuestro
-caso diferenciamos 2 grandes grupos: runtime y develtime
+Una de las principales características de gvNIX es ser un entorno en tiempo de
+desarrollo.
 
 Los entornos runtime son aquellos que generan una aplicación dependiente de
 código del propio framework, es decir crean aplicaciones que utilizan las
@@ -307,7 +308,7 @@ Framework, y basadas en estándares, como JPA 2, etc.
 
 TODO: Más ejemplos.
 
-Ventajas:
+Beneficios:
 
 * La evolucion de las aplicaciones no están bloqueda por la evolución del
   propio marco de trabajo. Por ejemplo, integrar una nueva funcionalidad en
@@ -322,10 +323,14 @@ Ventajas:
 * Las correcciones de errores funcionales no dependen de gvNIX, se
   corrigen en la propia aplicación y posteriormente se reporta al proyecto
   gvNIX para incluir la mejora en futuras versiones.
-** El proceso de atención de incidencias que se sigue actualmente en gvNIX es: 1. el usuario final informa de una incidencia en una aplicación al equipo de
-   desarrollo de esa aplicación; 2. el equipo de desarrollo da solución a la
-   incidencia; 3. el equipo de desarrollo reporta la incidencia en el ámbito
-   de gvNIX al proyecto gvNIX.
+** El proceso de atención de incidencias que se sigue actualmente en gvNIX es: 
+   1. el usuario final informa de una incidencia en una aplicación al equipo de
+   desarrollo de esa aplicación.
+   2. el equipo de desarrollo da solución a la incidencia, pudiendo así dar
+      mejores tiempos de respuesta que si se gestionara desde gvNIX.
+   3. el equipo de desarrollo reporta la incidencia en el ámbito de gvNIX al
+      proyecto gvNIX, incluyendola en la hoja de ruta y corrigiendola dentro
+      de la siguiente versión de gvNIX.
 * Diferencia explícita entre desarrolladores de aplicaciones como el usuario
   tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
 
@@ -339,6 +344,8 @@ producción.
 ====
 
 == \\
+
+image::gvnix-arquitectura-develtime.png[role="pull-left"]
 
 [{statement}]
 Arquitectura de gvNIX
@@ -357,6 +364,8 @@ como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera.
 
 == \\
 
+image::gvnix-shell.png[role="pull-left"]
+
 [{statement}]
 Uso de gvNIX
 
@@ -372,12 +381,7 @@ Además en todo momento nos mostrará solo los comandos que sean válidos y nos
 dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
 perdidos.
 
-Aquí se ve cómo se interactúa con Roo a nivel básico, teclearemos comandos sin
-explicar en mucho detalle qué hace cada uno, en eso ya entraremos en los
-siguientes apartados.
-
-El desarrollador interactúa con el framework a través de un intérprete de
-comandos o shell.
+En la imagen se ve cómo se interactúa con Roo.
 
 Cada componente proporciona al shell un conjunto de comandos a través de los
 cuales proporciona sus funciones al desarrollador, el cual decide si aplica o
@@ -456,6 +460,8 @@ Nuevo *componente lupa* para búsqueda en datos relacionados.
 
 == \\
 
+image::gvnix-arquitectura-runtime.png[role="pull-left"]
+
 [{statement}]
 Arquitectura de las aplicaciones
 
@@ -468,7 +474,7 @@ TBC: Lo que ofrece Spring Framework en ejecución.
 Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
 capa web, la de control y la de modelo del dominio.
 
-La capa de dominio del problema suele haber una "sub-capa" de servicios  
+La capa de dominio del problema suele contener una "sub-capa" de servicios  
 que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
 Tiene otra "sub-capa" de de acceso a datos donde habitualmente tenemos 
 los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
@@ -476,24 +482,39 @@ clases que modelan las entidades del dominio, que se encargan no solo de
 modelar el dominio sino también de la validación de sus datos e incluso su 
 serialización a JSON.
 
-Esta es la arquitectura de las aplicaciones generadas por Roo por defecto. 
+Esta es la arquitectura de las aplicaciones generadas por Roo por defecto.
+Cada parte de la aplicación, siguiendo el patrón marcado por la arquitectura,
+se genera por uno de los addons de Roo o de gvNIX. Por ejemplo:
+
+* El componente DBRE genera la capa de persistencia y las entidades del modelo.
+* El componente Services genera la capa de servicios.
+* El componente WebServices genera la interfaz de comunicación via WebService
+  que permite recibir invocaciones remotas, tanto en entidades como en
+  servicios internos.
+* El componente MVC ...
+* El componente Datatables
+* El componente Bootstrap
+* TBC
 
 ====
 
 == \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
 [{statement}]
-Casos de uso
+*Casos de uso*
 
 [template="notesblock"]
 ====
 
 *Aplicaciones de gestión*
 
-Las grandes organizaciones están en constante evolución, todos los días surgen nuevas necesidades y requerimientos que deben cubrirse con nuevas aplicaciones.
-gvNIX ofrece una infraestructura común para los desarrollos propios y
-externos, garantizando que todos los proyectos son similares para facilitar el
-mantenimiento y la evolución.
+Las grandes organizaciones están en constante evolución, todos los días surgen
+nuevas necesidades y requerimientos que deben cubrirse con nuevas
+aplicaciones.  gvNIX ofrece una infraestructura común para los desarrollos
+propios y externos, garantizando que todos los proyectos son similares para
+facilitar el mantenimiento y la evolución.
 
 TBC: Aplicaciones de gestión medias-grandes con un alto número de accesos
 concurrentes vía web.
@@ -501,18 +522,23 @@ TBC: Aplicaciones de gestión con gran volumen de datos.
 
 *Migración de aplicaciones a entorno web*
 
-La evolución tecnológica durante años hace que en las organizaciones exista gran diversidad de aplicaciones que por diferentes motivos carecen de mantenimiento.
+La evolución tecnológica durante años hace que en las organizaciones exista
+gran diversidad de aplicaciones que por diferentes motivos carecen de
+mantenimiento.
 
-gvNIX es un entorno a la medida de cualquier perfil que permite migrar aplicaciones de gestión de datos rápidamente.
+gvNIX es un entorno a la medida de cualquier perfil que permite migrar
+aplicaciones de gestión de datos rápidamente.
 
 *Integración de aplicaciones en procesos de negocio*
 
-Las organizaciones acumulan diversidad de procesos en un entorno tecnológico heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
+Las organizaciones acumulan diversidad de procesos en un entorno tecnológico
+heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
 
-gvNIX permite conectar entre sí distintas aplicaciones con distintas tecnologías con tiempos y costes de desarrollo reducidos.
+gvNIX permite conectar entre sí distintas aplicaciones con distintas
+tecnologías con tiempos y costes de desarrollo reducidos.
 
 TBC: Sistemas mixtos móvil-web (poner arquitectura medioambiente)
-TBC: Aplicaciones de gestión de datos con componente geo.
+TBC: Aplicaciones de gestión de datos con componente geo (captura proof geo).
 TBC: Aplicaciones de para el ciudadano incrustadas en portales Liferay.
 Ejemplo portlet buscador Sanidad; o de gestión.
 
@@ -520,43 +546,171 @@ Ejemplo portlet buscador Sanidad; o de gestión.
 
 == \\
 
+image::map_generic.png[role="pull-left"]
+
 [{statement}]
 Geomática
 
 [template="notesblock"]
 ====
-TBC: 1r marco de trabajo Java de código abierto que permite desarrollar 
-aplicaciones cuyo modelo de datos incluye información geográfica.
 
-Soporte para desarrollo de *aplicaciones con componente geográfica*: soporte de atributos geométricos en el modelo de datos, visualización de datos sobre el mapa, gestión de información de localización, etc.
+Cada vez son más áreas del saber que requieren el uso de datos geoespaciales
+para cumplir con mayor acierto sus procesos, como la gestión pública, gestión
+medioambiental, ingeniería, entre otras, por lo que existe hoy en día una
+creciente necesidad de aplicaciones web que requieren compartir e integrar
+datos georeferenciados con datos alfanuméricos para realizar diferentes tipos
+de análisis espacio-territoriales y ayudar en la toma de decisiones.
+
+De igual forma, los ciudadanos comunes se interesan cada vez más en 
+herramientas que les permitan visualizar mapas y obtener información de su 
+interés (rutas de transporte, estado del tráfico, sitios turísticos, 
+localización de direcciones).
+
+Una de las principales necesidades a cubrir en una aplicación que gestione
+datos con componente geográfica es la gestión de datos en una BBDD con soporte
+espacial. Ejemplos de ello son: PostgreSQL con PostGIS, Oracle con Spatial,
+etc.  En estos casos se trata de incluir, junto con el resto de datos
+alfanuméricos habituales, nuevos campos geométricos que representen la
+localización y forma de los datos. Por ejemplo, si tenemos una tabla con las
+ciudades de un país, tendremos datos como el nombre, el número de habitantes,
+etc. y por otro lado podemos tener un punto geográfico que indique la posición
+de la ciudad en el mapa, o un polígono con la forma del término municipal.
+
+La problemática principal que tienen los tipos de datos geográficos es que las
+librerías que suelen usar los desarrolladores para trabajar con las BBDD no
+los soportan por defecto. Es necesario integrar y configurar librerías
+adicionales que incluyan dicho soporte.
+
+A nivel de modelo de datos gvNIX permite:
+
+* Incorporar atributos geográficos vectoriales como un dato más en el modelo
+  de datos de una aplicación, integrando y configurando las librerías
+  necesarias para ello.
+* Soporte para consultas a BBDD con filtros espaciales. Es decir, poder buscar
+  datos no sólo por sus valores alfanuméricos, sino también por sus
+  características geográficas: elementos que estén cerca de una localización,
+  dentro de un área determinada, etc.
+
+A nivel de presentación el objetivo principal es la visualización de los datos 
+sobre un mapa, empleando para ello librerías Javascript como Leaflet. En este 
+aspecto, las funcionalidades son:
+
+* gvNIX genera automáticamente páginas para la visualización, listado,
+  búsqueda, creación y edición de datos alfanuméricos y además incorpora la
+  visualización sobre un mapa de estos mismos datos. Por ejemplo, si tenemos
+  un listado de ciudades que se muestran sobre una tabla, se podría incorporar
+  también un mapa en el que se muestre la localización de estas ciudades.
+* Permite la edición de la localización de elementos. Incorpora a los
+  formularios de creación y edición de datos que genera gvNIX el poder
+  establecer la localización del dato que se está editando mediante la
+  selección de un punto sobre un mapa.
+* Generación de geoportales. Cualquier aplicación gvNIX puede incorporar
+  un geoportal en el que se muestren todos los datos que se gestionan desde la
+  aplicación como diferentes capas, con opciones de búsqueda, activación,
+  etc., así como integración con el resto de páginas de la aplicación: 
+  herramienta de edición que al seleccionar un elemento sobre el mapa, nos 
+  lleva al formulario de edición de dicho elemento.
 
 ====
 
 == \\
 
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
 [{statement}]
-Internacionalización
+Sostenibilidad e internacionalización
 
 [template="notesblock"]
 ====
-TBC bla bla.
 
-Sobre el NIX. Nosotros ya veis que vamos a un repositorio interno y luego el
-repositorio genérico. La dgti quiere que el genérico lo sostengan la
-'empresas' puede ser interesante el día que nos presenteis el nix a juan y a
-mi comentar que para sostener el nix, pues para buscar negocio por el mundo,
-veis interesante buscar actividad a través de la asociacion vamos, que la
-asociacion mercadee también el nix, etc etc.
+Es innegable el papel que está jugando el software libre en el ámbito de la
+gestión de empresas y administraciones públicas. Hasta hace unos pocos años,
+se consideraba una rareza y aventurarse en un proyecto Open Source en la
+empresa o en una administración pública, era cuanto menos, bastante
+arriesgado. Hoy día, estos proyectos, en algunos ámbitos, están desplazando a
+sus homólogos de software privativo. Una de las fortalezas mayores desde mi
+punto de vista es la posibilidad de *escalar el producto en base a las
+aportaciones de múltiples contribuidores*, y que en el software privativo queda
+reducido a los recursos de los que dispone la propia empresa. Es decir, que
+uno de los factores más importantes corresponde a las comunidades de
+desarrollo de software.
+
+Los objetivos de una comunidad de desarrollo de software es aglutinar grupos
+de personas, empresas, organizaciones, universidades e individuos con un
+objetivo y beneficio común sobre la base de promover el acceso y distribución
+de una herramienta software permitiendo la libertad de su uso, estudio, copia,
+modificación y redistribución a todo aquel que lo desee. Empresas como DiSiD
+que en torno al desarrollo de un modelo de negocio basado en el conocimiento
+compartido, ve que el hecho de que las herramientas que utilizan para la
+producción de las soluciones que ofrece, sean cada vez más potentes, le ofrece
+más oportunidades. De ahí que a esas empresas y organizaciones les puede
+interesar que se potencie gvNIX, el gvSIG, Postgresql, etc.
+
+La cooperación entre estos grupos de personas y organizaciones en todos los
+ámbitos de la producción del software (usuarios, desarrolladores,
+documentadores, testers, traductores, ...) permite generar las sinergias
+necesarias para conseguir una mejora sustancial de la calidad del software,
+así como de una mayor difusión y sostenibilidad en el tiempo, y primando el
+beneficio de la sociedad sobre cualquier otro.
+
+Esa sostenibilidad pasa por crear las condiciones para gestionar todas esas
+colaboraciones - portaciones, fijándonos sobre todo en la red de empresas que
+por afinidad con los intereses en el modelo de negocio, quieran partiendo de
+gvNIX enriquecerlo.
+
+Para ello, en mi opinión, hacen falta 3 elementos fundamentales:
+
+* Una entidad gestora
+* Internacionalización
+* Facilitar la colaboración
+
+Una entidad gestora del proyecto, que vele por los intereses del proyecto, que
+defina y modere el modelo de sostenibilidad, que organice la comunidad de
+desarrollo, la difusión, los recursos del proyecto, etc. 
+
+Diferenciar distribuciones públicas, como gvNIX, de las privadas, como gvNIX
+DGTI, sentaría las bases para facilitar la cooperación, colaboración y
+contribución al código fuente de gvNIX.
+
+Desde esta visión, generar y potenciar una distribución pública repercutirá en
+el beneficio de toda la comunidad, tanto aquellos que utilicen la distribución
+pública como aquellos que utilicen una distribución privada, ya que todos los
+complementos de interés general contribuidos a la distribución pública estarán
+automáticamente y por defecto incluidos en cualquier distribución privada.
+
+Será importante para la sostenibilidad de las Distros privadas, la
+sostenibilidad de las Públicas, en las que se define el marco de cooperación
+comentado anterioremente.
+
+Aquí vemos que para esta sostenibilidad de las Distribuciones Pública, la
+Asociación gvSIG, de la que DiSiD forma parte, puede resultar una oportunidad,
+de forma que actue con el gvNIX Público como con el gvSIG Público: que lo 
+difunda, que abra mercados, genere oportunidades, ayude a la 
+internacionalización del proyecto.
+
+Siendo conscientes de que gvNIX ha surgido desde la Generalitat, uno de los
+temas a tratar es si desde la DGTI se vería problema que existiendo esos dos
+gvNIX el Público y el DGTI, desde DiSiD se potenciara, en este caso mediante
+la Asociación gvSIG a la sostenibilidad en el marco indicado.
+
+Una de la acciones más cercanas es aprovechando la cercanía de las 10as
+jornada gvSIG, organizar talleres y ponencias gvNIX para que empiecen a 
+ayudar a su difusión.
 
 ====
 
 == \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
 
 [{statement}]
 Distribuciones
 
 [template="notesblock"]
 ====
+
+TODO: Esta no
+
 TBC: Actualmente hay una distribución que incluye todo.
 TBC: Proceso de release actual.
 
