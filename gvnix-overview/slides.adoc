@@ -19,7 +19,7 @@ v1.0, Sep 18, 2014
 :source-highlighter: highlightjs
 :backend: dzslides
 :dzslides-style: stormy
-:dzslides-aspect: 16-9
+:dzslides-aspect: 4-3 
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :dzslides-highlight: monokai
@@ -30,7 +30,7 @@ These slides are a short strategic overview to gvNIX.
 ////
 
 [{topic}]
-== ¿*Por qué* un entorno de desarrollo?
+== ¿*Por qué* un framework?
 
 [role="incremental scatter"]
 * Lenguaje + *API*
@@ -71,7 +71,7 @@ proyecto activo y en evolución, etc.
 
 [template="notesblock"]
 ====
-*CHARLA (WHAT):*
+*CHARLA (WHY):*
 
 Esto que a priori es bueno, supone una nueva problemática para los proyectos
 de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
@@ -82,22 +82,25 @@ Esta situación genera problemas ya que cada librería es totalmente
 independiente, con su propia configuración y gestión del ciclo de vida de 
 los objetos que genera.
 
+Además aunque actualmente existe disponibilidad de tal diversidad de librerías
+que prácticamente se cubren todos los aspectos que se necesita en el proceso
+de desarrollo, todavía es necesario una configuración e instalación manual por
+parte de los desarrolladores.
 ====
 
 [{topic}]
-== ¿*Qué es* un entorno de desarrollo?
+== ¿*Qué es* un framework?
 
 [{stepwise}]
 * Librerías *cohesionadas*
 * Conjunto de *estándares*, *metodología* y *estructura*
 * *Garantía*
-* *Procesos automáticos*
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-Framework o entorno de desarrollo, ofrece de forma cohesionada el conjunto de
+Un framework o entorno de desarrollo, ofrece de forma cohesionada el conjunto de
 distintas librerías que amplían las funciones de las librerías
 básicas del lenguaje de programación, como persistencia de objetos, protocolos
 de comunicación de alto nivel como WebSocket, etc.
@@ -112,14 +115,13 @@ funcionalidades han sido probadas y ofrecen un soporte a largo plazo.
 ====
 
 [{topic}]
-== Entorno desarrollo = *productividad*
+== Framework = *productividad*
 
 [role="incremental scatter"]
 * Estructura aplicación
-* Incluye librerías
+* Integra librerías
 * Estándares = colaboración
 * Patrones y buenas prácticas
-* Focalizar en lógica de negocio
 
 [template="notesblock"]
 ====
@@ -142,208 +144,66 @@ propios del ciclo de vida de los proyectos de desarrollo de software:
 
 ====
 
-== \\
+[{topic}]
+== *Herramienta desarrollo* = *productividad++*
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-*gvNIX* desarrollo rápido de *aplicaciones web*
+[role="incremental scatter"]
+* Procesos automáticos [detail]#generación de código, configuración, ...#
+* Focalizar en lógica de negocio
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-*gvNIX es un framework para desarrollo rápido de aplicaciones web*.
+Aún con toda la productividad que proporcionan los frameworks, sigue siendo
+un problema para los desarrolladores si tienen necesidad de utilizar varios
+frameworks.
 
-Un *framework para aplicaciones web* es un framework diseñado para apoyar el
-desarrollo de sitios web dinámicos, aplicaciones web y servicios web. Este
-tipo de frameworks intenta aliviar el exceso de carga asociado con actividades
-comunes usadas en desarrollos web. Por ejemplo, muchos framework proporcionan
-sistemas de plantillas para generación de la vista, gestión de sesiones, etc.
+Las herramientas de desarrollo proporcionan todo lo necesario al desarrollador,
+para generar aplicaciones basadas en uno o varios frameworks de amplía 
+difusión y soporte, como Spring Framework, y basadas en estándares, como 
+JPA 2, etc.
 
+Además no introducen librerías propias en la aplicación. Ejemplos: Eclipse, 
+gvNIX, ... 
+
+====
+
+== \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
+[{statement}]
+*gvNIX* herramienta de desarrollo rápido de *aplicaciones web*
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*gvNIX es una herramienta de desarrollo rápido de aplicaciones web*.
+
+Herramienta diseñada para apoyar el desarrollo de sitios web dinámicos, 
+aplicaciones web y servicios web. 
+
+Alivia el exceso de carga asociado con actividades
+comunes usadas en desarrollos web. 
+
+Por ejemplo, generación de la vista (scaffolding), gestión de sesiones, etc.
 ====
 
 [{topic}]
-== *Mapa* global *proceso* desarrollo
+== *Beneficios* gvNIX
 
 [role="incremental scatter"]
-* Fase 1: *Especificación* de la aplicación
-* Fase 2: *Desarrollo* [detail]#modelo, servicios, CRUD, persistencia, ...#
-* Fase N: Sucesivas iteraciones
+* No limita [detail]#manteniento evolutivo de las aplicaciones#
+* Uso por capas [detail]#modelo, modelo-control, modelo-control-vista#
+* Mantenimiento correctivo [detail]#ágil e independiente#
+* Usuario gvNIX [detail]#*desarrollador* de aplicaciones#
+* Independencia aplicaciones -> gvNIX
 
 [template="notesblock"]
 ====
-*CHARLA (WHAT):*
-
-En todo proyecto, lo más importante es la fase inicial en la que se definen 
-las especificaciones de la aplicación, el modelo de dominio y los servicios 
-necesarios a partir del dominio; como resultado, tendremos el núcleo del
-sistema a desarrollar.
-
-
-Indudablemente, en función de la metodología empleada, se realizarán los 
-diferentes artefactos seleccionados para generar la documentación de esta fase 
-inicial; y, las pruebas de concepto, junto con los prototipos. Todo este 
-proceso conlleva un coste en tiempo y en personas y, como es comprensible, un 
-coste hasta que se comprende el modelo de dominio.
-
-Todos estos costes, pueden ser reducidos empleando gvNIX porque, de una
-forma sencilla y declarativa, nos permite definir el núcleo del sistema
-(dominio, repositorios y servicios) de una forma declarativa y, además, crear
-una aplicación web funcional (vista y control) de forma automática y en pocos
-minutos.
-
-gvNIX toma prestadas algunas de las ideas típicas de las plataformas al
-estilo Rails (la convención por encima de la configuración, el active record
-para la persistencia,...), pero conceptualmente está más cerca de las
-herramientas MDA y de las de generación de código. Es decir, básicamente Roo
-nos va a generar el esqueleto de una aplicación Spring completa, ahorrándonos
-el tedioso trabajo de tener que configurarlo todo manualmente y tener que
-escribir el típico código repetitivo, como por ejemplo las partes de CRUD en
-JPA o en la web.
-
-Al ser Roo una herramienta de generación de código, hay que llevar cuidado al
-modificar manualmente nuestro proyecto porque podemos eliminar o cambiar algo
-vital para Roo y "romper" el código. En la práctica, como todo el código
-generado por Roo está separado del código escrito por el desarrollador
-esto no va a pasar con tanta facilidad como con otras herramientas de 
-generación de código.
-
-Esta aplicación Spring funcionará sobre la plataforma Java EE, una plataforma
-que casi nadie niega que sea una plataforma robusta, escalable.
-
-TODO: A altra slide
-
-Roo respeta los siguientes principios:
-
-* Uso de tecnologías "estándar" (en el sentido de ampliamente conocidas y 
-  probadas): genera un proyecto Maven con código Spring, JPA y Tiles entre 
-  otros.
-* Es un entorno en tiempo de desarrollo, es decir, no incorpora componentes 
-  en tiempo de ejecución. No hay lenguajes interpretados ni librerías 
-  adicionales.
-* Separa físicamente el código generado de los archivos editables por el 
-  desarrollador, de modo que al modificar estos últimos no "rompamos" o 
-  trastoquemos la aplicación, que es un problema típico de las herramientas de 
-  generación de código. Como veremos, esto se consigue mediante el uso de 
-  AOP. Esto no significa que no haya que tener cuidado al editar el 
-  código. Luego veremos algunas directrices.
-* Intenta evitar convertirse en una dependencia imprescindible: de modo que 
-  si en algún momento deseamos dejar de usarlo podamos refactorizar el 
-  código de manera sencilla y pasar a tener un código fuente sin dependencias 
-  de él.
-
-_Directrices generales de qué editar y cómo y qué no_
-
-  Este punto no es necesario para la presentación, simplemente me ha 
-  parecido interesante tenerlo documentado.
-  .
-  * No se deben modificar/eliminar los archivos .aj ya que es Roo el que los
-    gestiona y modifica automáticamente.
-  * Se puede modificar código de los .java generados por Roo. Ya que Roo
-    vigilará los cambios y modificará los .aj para que los reflejen. Como iremos
-    viendo, algunos comandos de Roo lo único que hacen en realidad es introducir
-    ciertas anotaciones propias del framework en el código Java. Estas
-    anotaciones, de hecho, son las que hacen que Roo genere y actualice los .aj.
-    De modo que también podemos introducirlas a mano en lugar de hacerlo
-    mediante los comandos del shell de Roo. Evidentemente, esto quiere decir que
-    si las eliminamos o modificamos inadvertidamente, la "magia" de Roo podría
-    dejar de funcionar.
-  * En general también se pueden editar los artefactos estándar, por ejemplo el
-    pom.xml para añadir dependencias o plugins, eso sí, llevando cuidado de no
-    eliminar nada que haya introducido Roo.
-
-_FIN: Directrices generales_
-
-Evidentemente, en desarrollo software no hay fórmulas mágicas, así que Roo no
-puede resolver todos nuestros problemas ni escribir automáticamente una
-aplicación no trivial, pero quizá pueda darnos un 40% del código hecho para
-concentrarnos en el otro 60%. 
-
-Esa es la diferencia principal entre Spring Roo y gvNIX, Roo permite generar
-aplicaciones triviales, es decir que disponen de una serie de funcionalidades 
-básicas. 
-
-gvNIX amplia esas funcionalidades básicas con un conjunto de componentes 
-orientados a reutilizar el conocimiento y los estándares de las organizaciones 
-permitiendo así automatizar el desarrollo aplicaciones no triviales. De esta
-forma gvNIX consigue generar automáticamente entre un 60% y un 80% de la
-aplicación.
-
-====
-
-== \\
-
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-Proyecto de código abierto *GPL v3*
-
-[{stepwise}]
-* www.gvnix.org & documentacion
-* github.com/DISID/gvnix & samples
-* sourceforge.net/projects/gvnix
-* code.google.com/p/gvnix/source & issues
-* stackoverflow.com
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-gvNIX es un proyecto de código abierto bajo licencia GPL v3.
-
-Las 4 libertades que obtiene la organización al utilizar software de código
-abierto:
-
-1. Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para siempre. 
-2. Libertad para estudiarlo y adaptarlo a nuestras necesidades. Esto exige el acceso al código fuente. 
-3. Libertad de redistribución, de modo que se nos permita colaborar con vecinos y amigos. 
-4. Libertad para mejorar el programa y publicar las mejoras. También exige el código fuente.
-
-[width="100%",cols="<50%,<50%",]
-|=======================================================================
-|Página principal del proyecto |http://www.gvnix.org
-|Código fuente |https://github.com/DISID/gvnix/
-|Binarios |http://sourceforge.net/projects/gvnix/files/
-|Repositorio Maven |https://code.google.com/p/gvnix/source/browse/
-|Soporte |https://code.google.com/p/gvnix/issues/list
-
-http://stackoverflow.com/questions/tagged/gvnix
-|Documentación |http://www.gvnix.org/documentacion
-
-https://github.com/DISID/gvnix-samples
-|=======================================================================
-
-====
-
-== \\
-
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-Runtime
-
-[{statement}]
-*Develtime*
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-Una de las principales características de gvNIX es ser un entorno en tiempo de
-desarrollo.
-
-Los entornos runtime son aquellos que generan una aplicación dependiente de
-código del propio framework, es decir crean aplicaciones que utilizan las
-librerías del framework para ejecutarse, sin las cuales la aplicación no puede 
-ejecutarse. Ejemplos: Struts, gvHIDRA, ...
-
-Los entornos en tiempo de desarrollo son aquellos que sólo proporcionan
-herramientas al desarrollador, no introducen librerías propias en la
-aplicación. Ejemplos: Eclipse, gvNIX, ... Por lo que suelen generar
-aplicaciones que utilizan librerías de amplía difusión y soporte, como Spring
-Framework, y basadas en estándares, como JPA 2, etc.
-
-TODO: Más ejemplos.
+*CHARLA (HOW):*
 
 Beneficios:
 
@@ -371,16 +231,13 @@ Beneficios:
 * Diferencia explícita entre desarrolladores de aplicaciones como el usuario
   tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
 
-TODO: Revisar.
-
 Importante es que al no contener ningún componente en tiempo de ejecución no
 interfiere en el despliegue de las soluciones ni crea dependencias con el
 producto final, de forma tal que resulta transparente para el despliegue en
 producción.
-
 ====
 
-== \\
+== Arquitectura gvNIX
 
 [{middle}]
 image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX",width="570"]
@@ -397,16 +254,16 @@ como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera.
 
 ====
 
-== \\
+== Intérprete de comandos
 
-image::gvnix-shell-eclipse.png[caption="Intérprete de comandos"]
+image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="570"]
 
 [template="notesblock"]
 ====
 TBC: Hablar de lo que ofrece gvNIX en desarrollo.
 TBC: Componentes actuales.
 
-Desde el punto de vista de su uso, Roo (y por tanto gvNIX) está diseñado como 
+Desde el punto de vista de su uso, gvNIX está diseñado como 
 un intérprete de comandos interactivo al estilo de Rails o de Grails. Para 
 facilitar su uso tiene autocompletado de los comandos y ayuda contextual. 
 Además en todo momento nos mostrará solo los comandos que sean válidos y nos 
@@ -426,8 +283,21 @@ para facilitar el desarrollo. Los más destacados son:
   disponibles.
 * *hint*: Aconseja el siguiente paso posible en el proceso de desarrollo.
 * TODO: Más, como instalar nuevos componentes, ...
+====
 
-TODO: Imagen shell con componentes
+[{topic}]
+== Funciones en intérprete de comandos 
+
+[role="incremental scatter"]
+* Ingeniería inversa, auditoría bbdd
+* Scaffolding
+* Generación automática [detail]#email, JMS, WS#
+* Control de concurrencia
+* Seguridad, informes, pruebas, ...
+* Diseño adaptativo
+
+[template="notesblock"]
+====
 
 *Ingeniería inversa de base de datos*
 
@@ -490,15 +360,13 @@ Nuevo *componente lupa* para búsqueda en datos relacionados.
 
 ====
 
-== \\
+== Arquitectura de las aplicaciones
 
 [{middle}]
 image::gvnix-arquitectura-runtime.png[caption="Arquitectura de las aplicaciones",width="570"]
 
 [template="notesblock"]
 ====
-TBC: Arquitectura en ejecución.
-TBC: Relación entre add-ons (desarrollo) y librerías ejecución.
 TBC: Lo que ofrece Spring Framework en ejecución.
 
 Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
@@ -511,29 +379,37 @@ los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
 clases que modelan las entidades del dominio, que se encargan no solo de 
 modelar el dominio sino también de la validación de sus datos e incluso su 
 serialización a JSON.
-
-Esta es la arquitectura de las aplicaciones generadas por Roo por defecto.
-Cada parte de la aplicación, siguiendo el patrón marcado por la arquitectura,
-se genera por uno de los addons de Roo o de gvNIX. Por ejemplo:
-
-* El componente DBRE genera la capa de persistencia y las entidades del modelo.
-* El componente Services genera la capa de servicios.
-* El componente WebServices genera la interfaz de comunicación via WebService
-  que permite recibir invocaciones remotas, tanto en entidades como en
-  servicios internos.
-* El componente MVC ...
-* El componente Datatables
-* El componente Bootstrap
-* TBC
-
 ====
 
-== \\
+== Aplicación con ExtJS
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
+[{middle}]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="570"]
 
-[{statement}]
-*Casos de uso*
+[template="notesblock"]
+====
+Una de las grandes ventajas de Spring Framework es que permite cambiar
+fácilmente cualquiera de los elementos de una aplicación, no sólo los
+soportados, sino que proporciona los mecanismos necesarios para integrar
+cualquier librería o estándar nuevo en cualquiera de las versiones del
+framework. A diferencia por ejemplo de entornos como Developer.
+
+Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
+no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
+mano ExtJS en la aplicación generada con gvNIX.
+====
+
+[{topic}]
+== Casos de uso
+
+[role="incremental"]
+* Aplicaciones de gestión [detail]#número accesos, volumen datos,
+  ...#
+* Migración a web
+* Integración con procesos de negocio
+* Sistemas mixtos móvil-web
+* Gestión con componente geo
+* Gestión en Liferay
 
 [template="notesblock"]
 ====
@@ -546,9 +422,9 @@ aplicaciones.  gvNIX ofrece una infraestructura común para los desarrollos
 propios y externos, garantizando que todos los proyectos son similares para
 facilitar el mantenimiento y la evolución.
 
-TBC: Aplicaciones de gestión medias-grandes con un alto número de accesos
+* Aplicaciones de gestión medias-grandes con un alto número de accesos
 concurrentes vía web.
-TBC: Aplicaciones de gestión con gran volumen de datos.
+* Aplicaciones de gestión con gran volumen de datos.
 
 *Migración de aplicaciones a entorno web*
 
@@ -567,14 +443,21 @@ heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
 gvNIX permite conectar entre sí distintas aplicaciones con distintas
 tecnologías con tiempos y costes de desarrollo reducidos.
 
-TBC: Sistemas mixtos móvil-web (poner arquitectura medioambiente)
-TBC: Aplicaciones de gestión de datos con componente geo (captura proof geo).
-TBC: Aplicaciones de para el ciudadano incrustadas en portales Liferay.
+*Sistemas mixtos móvil-web*
+
+Poner arquitectura medioambiente
+
+*Aplicaciones de gestión de datos con componente geo*
+
+Proof geo
+
+*Aplicaciones de para el ciudadano incrustadas en portales Liferay*
+
 Ejemplo portlet buscador Sanidad; o de gestión.
 
 ====
 
-== \\
+== Componente geográfica
 
 [{middle}]
 image::map_generic.png[caption="Componente geográfica",width="570"]
@@ -641,12 +524,14 @@ aspecto, las funcionalidades son:
 
 ====
 
-== \\
+[{topic}]
+== Sostenibilidad
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-Sostenibilidad e internacionalización
+[role="incremental"]
+* Escalabilidad [detail]#basada en múltiples contribuidores#
+* Comunidad de desarrollo [detail]#empresas, organizaciones, universidades#
+* Cooperación = mayor calidad
+* Sostenibilidad <- gestionar la cooperación
 
 [template="notesblock"]
 ====
@@ -685,6 +570,19 @@ Esa sostenibilidad pasa por crear las condiciones para gestionar todas esas
 colaboraciones - portaciones, fijándonos sobre todo en la red de empresas que
 por afinidad con los intereses en el modelo de negocio, quieran partiendo de
 gvNIX enriquecerlo.
+====
+
+[{topic}]
+== Sostenibilidad
+
+[role="incremental scatter"]
+* Entidad gestora
+* Distribuciones [detail]#pública y privada#
+* Internacionalización
+* Propiciar la colaboración
+
+[template="notesblock"]
+====
 
 Para ello, en mi opinión, hacen falta 3 elementos fundamentales:
 
@@ -706,8 +604,8 @@ pública como aquellos que utilicen una distribución privada, ya que todos los
 complementos de interés general contribuidos a la distribución pública estarán
 automáticamente y por defecto incluidos en cualquier distribución privada.
 
-Será importante para la sostenibilidad de las Distros privadas, la
-sostenibilidad de las Públicas, en las que se define el marco de cooperación
+Será importante para la sostenibilidad de las distribuciones privadas, la
+sostenibilidad de las públicas, en las que se define el marco de cooperación
 comentado anterioremente.
 
 Aquí vemos que para esta sostenibilidad de las Distribuciones Pública, la
@@ -726,6 +624,16 @@ jornada gvSIG, organizar talleres y ponencias gvNIX para que empiecen a
 ayudar a su difusión.
 
 ====
+
+[{topic}]
+== {gvnixsite}
+
+image::logo_gvNIX.png[height="120"]
+
+[{topic}]
+https://github.com/DISID/gvnix-samples
+
+////
 
 == \\
 
@@ -750,6 +658,48 @@ TBC: Nuevo proceso de release. gvNIX independiente de Roo (al menos versiones
 minor) y gvNIX DGTI independiente de gvNIX.
 ====
 
-////
+== \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
+Proyecto de código abierto *GPL v3*
+
+[{stepwise}]
+* www.gvnix.org & documentacion
+* github.com/DISID/gvnix & samples
+* sourceforge.net/projects/gvnix
+* code.google.com/p/gvnix/source & issues
+* stackoverflow.com
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+gvNIX es un proyecto de código abierto bajo licencia GPL v3.
+
+Las 4 libertades que obtiene la organización al utilizar software de código
+abierto:
+
+1. Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para siempre. 
+2. Libertad para estudiarlo y adaptarlo a nuestras necesidades. Esto exige el acceso al código fuente. 
+3. Libertad de redistribución, de modo que se nos permita colaborar con vecinos y amigos. 
+4. Libertad para mejorar el programa y publicar las mejoras. También exige el código fuente.
+
+[width="100%",cols="<50%,<50%",]
+|=======================================================================
+|Página principal del proyecto |http://www.gvnix.org
+|Código fuente |https://github.com/DISID/gvnix/
+|Binarios |http://sourceforge.net/projects/gvnix/files/
+|Repositorio Maven |https://code.google.com/p/gvnix/source/browse/
+|Soporte |https://code.google.com/p/gvnix/issues/list
+
+http://stackoverflow.com/questions/tagged/gvnix
+|Documentación |http://www.gvnix.org/documentacion
+
+https://github.com/DISID/gvnix-samples
+|=======================================================================
+
+====
+
 ////
 
