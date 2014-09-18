@@ -15,28 +15,27 @@ v1.0, Sep 18, 2014
 :website: www.disid.com
 :gvnixsite: www.gvnix.org
 :imagesdir: images
-:figure-caption!:
+:linkcss!:
 :source-highlighter: highlightjs
 :backend: dzslides
-//:dzslides-style: truffle
 :dzslides-style: stormy
 :dzslides-aspect: 16-9
-//:dzslides-fonts: family=Comfortaa:400
-//:dzslides-fonts: family=Sansita+One:400
-:dzslides-fonts: family=Racing+Sans+One:400
-//:dzslides-transition: none
-:dzslides-highlight: default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: monokai
+:syntax: no-highlight
 
 ////
 These slides are a short strategic overview to gvNIX.
 ////
 
-== \\
+[{topic}]
+== ¿*Por qué* un entorno de desarrollo?
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-¿*Por qué* un entorno de desarrollo?
+[role="incremental scatter"]
+* Lenguaje + *API*
+* Problema [detail]#programar *sólo* con lenguaje#
+* Más *productividad* [detail]#usando *librerías*#
 
 [template="notesblock"]
 ====
@@ -61,6 +60,19 @@ ofrezcan estas funciones de más alto nivel. Librerías que además deben ofrece
 unas mínimas garantías como: soporte, a poder ser LTS; amplía documentación, 
 proyecto activo y en evolución, etc.
 
+====
+
+[{topic}]
+== *Librerías* = nuevos *problemas*
+
+[role="incremental scatter"]
+* *Diversidad* de librerías
+* Librerías *independientes*
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
 Esto que a priori es bueno, supone una nueva problemática para los proyectos
 de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
 aplicación que necesitamos no nos es suficiente con usar un única librería
@@ -72,12 +84,14 @@ los objetos que genera.
 
 ====
 
-== \\
+[{topic}]
+== ¿*Qué es* un entorno de desarrollo?
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-¿*Qué es* un entorno de desarrollo?
+[{stepwise}]
+* Librerías *cohesionadas*
+* Conjunto de *estándares*, *metodología* y *estructura*
+* *Garantía*
+* *Procesos automáticos*
 
 [template="notesblock"]
 ====
@@ -86,21 +100,35 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 Framework o entorno de desarrollo, ofrece de forma cohesionada el conjunto de
 distintas librerías que amplían las funciones de las librerías
 básicas del lenguaje de programación, como persistencia de objetos, protocolos
-de comunicación de alto nivel como WebSocket, etc., además definen un conjunto
+de comunicación de alto nivel como WebSocket, etc.
+
+Definen un conjunto
 estándares, metodología de trabajo y estructura de proyectos que minora en
 gran medida la problemática indicada y que sirven como base para el desarrollo
 de aplicaciones.
 
-Además, los entornos más serios de hoy en día, garantizan que estas 
+Los entornos más serios de hoy en día, garantizan que estas 
 funcionalidades han sido probadas y ofrecen un soporte a largo plazo.
+====
+
+[{topic}]
+== Entorno desarrollo = *productividad*
+
+[role="incremental scatter"]
+* Estructura aplicación
+* Incluye librerías
+* Estándares = colaboración
+* Patrones y buenas prácticas
+* Focalizar en lógica de negocio
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
 
 La gran ventaja de los frameworks es que facilitan y aceleran el
 proceso de desarrollo debido a que evita hacer a mano muchos de los procesos
 propios del ciclo de vida de los proyectos de desarrollo de software:
 
-TODO: A altra slide:
-
-* Las funciones ya estan implementadas como parte de librerías del framework.
 * Define una estructura de aplicación, una forma homogénea de configurar y 
   usar todas las librerías que integra.
 * Proporciona herramientas que ayudan a integrar estan funciones 
@@ -111,11 +139,21 @@ TODO: A altra slide:
   MVC.
 * Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
-* Aunque al desarrollar una aplicación, se necesita un cierto tiempo y costes
-  iniciales de aprendizaje, a largo plazo se facilita el desarrollo de la
-  aplicación y el mantenimiento de la misma.
 
-TODO: Altra slide:
+====
+
+== \\
+
+image::logo_gvNIX.png[role="pull-right",height="50"]
+
+[{statement}]
+*gvNIX* desarrollo rápido de *aplicaciones web*
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+*gvNIX es un framework para desarrollo rápido de aplicaciones web*.
 
 Un *framework para aplicaciones web* es un framework diseñado para apoyar el
 desarrollo de sitios web dinámicos, aplicaciones web y servicios web. Este
@@ -125,12 +163,13 @@ sistemas de plantillas para generación de la vista, gestión de sesiones, etc.
 
 ====
 
-== \\
+[{topic}]
+== *Mapa* global *proceso* desarrollo
 
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-*Mapa* global
+[role="incremental scatter"]
+* Fase 1: *Especificación* de la aplicación
+* Fase 2: *Desarrollo* [detail]#modelo, servicios, CRUD, persistencia, ...#
+* Fase N: Sucesivas iteraciones
 
 [template="notesblock"]
 ====
@@ -141,19 +180,20 @@ las especificaciones de la aplicación, el modelo de dominio y los servicios
 necesarios a partir del dominio; como resultado, tendremos el núcleo del
 sistema a desarrollar.
 
+
 Indudablemente, en función de la metodología empleada, se realizarán los 
 diferentes artefactos seleccionados para generar la documentación de esta fase 
 inicial; y, las pruebas de concepto, junto con los prototipos. Todo este 
 proceso conlleva un coste en tiempo y en personas y, como es comprensible, un 
 coste hasta que se comprende el modelo de dominio.
 
-Todos estos costes, pueden ser reducidos empleando Spring Roo porque, de una
+Todos estos costes, pueden ser reducidos empleando gvNIX porque, de una
 forma sencilla y declarativa, nos permite definir el núcleo del sistema
 (dominio, repositorios y servicios) de una forma declarativa y, además, crear
 una aplicación web funcional (vista y control) de forma automática y en pocos
 minutos.
 
-Spring Roo toma prestadas algunas de las ideas típicas de las plataformas al
+gvNIX toma prestadas algunas de las ideas típicas de las plataformas al
 estilo Rails (la convención por encima de la configuración, el active record
 para la persistencia,...), pero conceptualmente está más cerca de las
 herramientas MDA y de las de generación de código. Es decir, básicamente Roo
@@ -238,15 +278,12 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 
 Proyecto de código abierto *GPL v3*
 
-[{incremental}]
-* http://www.gvnix.org
-* https://github.com/DISID/gvnix/
-* http://sourceforge.net/projects/gvnix/files/
-* https://code.google.com/p/gvnix/source/browse/
-* https://code.google.com/p/gvnix/issues/list
-* http://stackoverflow.com/questions/tagged/gvnix
-* http://www.gvnix.org/documentacion
-* https://github.com/DISID/gvnix-samples
+[{stepwise}]
+* www.gvnix.org & documentacion
+* github.com/DISID/gvnix & samples
+* sourceforge.net/projects/gvnix
+* code.google.com/p/gvnix/source & issues
+* stackoverflow.com
 
 [template="notesblock"]
 ====
@@ -345,10 +382,8 @@ producción.
 
 == \\
 
-image::gvnix-arquitectura-develtime.png[role="pull-left"]
-
-[{statement}]
-Arquitectura de gvNIX
+[{middle}]
+image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX",width="570"]
 
 [template="notesblock"]
 ====
@@ -364,10 +399,7 @@ como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera.
 
 == \\
 
-image::gvnix-shell.png[role="pull-left"]
-
-[{statement}]
-Uso de gvNIX
+image::gvnix-shell-eclipse.png[caption="Intérprete de comandos"]
 
 [template="notesblock"]
 ====
@@ -460,10 +492,8 @@ Nuevo *componente lupa* para búsqueda en datos relacionados.
 
 == \\
 
-image::gvnix-arquitectura-runtime.png[role="pull-left"]
-
-[{statement}]
-Arquitectura de las aplicaciones
+[{middle}]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura de las aplicaciones",width="570"]
 
 [template="notesblock"]
 ====
@@ -546,10 +576,8 @@ Ejemplo portlet buscador Sanidad; o de gestión.
 
 == \\
 
-image::map_generic.png[role="pull-left"]
-
-[{statement}]
-Geomática
+[{middle}]
+image::map_generic.png[caption="Componente geográfica",width="570"]
 
 [template="notesblock"]
 ====
