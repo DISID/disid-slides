@@ -19,7 +19,7 @@ v1.0, Sep 18, 2014
 :source-highlighter: highlightjs
 :backend: dzslides
 :dzslides-style: stormy
-:dzslides-aspect: 4-3 
+:dzslides-aspect: 16-9
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :dzslides-highlight: monokai
@@ -91,7 +91,7 @@ parte de los desarrolladores.
 [{topic}]
 == ¿*Qué es* un framework?
 
-[{stepwise}]
+[role="incremental middle"]
 * Librerías *cohesionadas*
 * Conjunto de *estándares*, *metodología* y *estructura*
 * *Garantía*
