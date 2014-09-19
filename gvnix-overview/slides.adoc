@@ -244,6 +244,7 @@ image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX",width="5
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 El framework ha sido implementado con lenguaje Java y sigue un modelo de
 arquitectura orientado a componentes sobre plataforma OSGi en el que cada
@@ -260,8 +261,7 @@ image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="570"]
 
 [template="notesblock"]
 ====
-TBC: Hablar de lo que ofrece gvNIX en desarrollo.
-TBC: Componentes actuales.
+*CHARLA (HOW):*
 
 Desde el punto de vista de su uso, gvNIX está diseñado como 
 un intérprete de comandos interactivo al estilo de Rails o de Grails. Para 
@@ -282,7 +282,8 @@ para facilitar el desarrollo. Los más destacados son:
 * *help*: Muestra al desarrollador todos los comandos o funcionalidades 
   disponibles.
 * *hint*: Aconseja el siguiente paso posible en el proceso de desarrollo.
-* TODO: Más, como instalar nuevos componentes, ...
+* TODO: Más?, como instalar nuevos componentes, ... valorar si es demasiado
+  técnico
 ====
 
 [{topic}]
@@ -298,6 +299,7 @@ para facilitar el desarrollo. Los más destacados son:
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 *Ingeniería inversa de base de datos*
 
@@ -367,7 +369,9 @@ image::gvnix-arquitectura-runtime.png[caption="Arquitectura de las aplicaciones"
 
 [template="notesblock"]
 ====
-TBC: Lo que ofrece Spring Framework en ejecución.
+*CHARLA (HOW):*
+
+TODO: Lo que ofrece Spring Framework en ejecución.
 
 Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
 capa web, la de control y la de modelo del dominio.
@@ -388,6 +392,8 @@ image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",widt
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
+
 Una de las grandes ventajas de Spring Framework es que permite cambiar
 fácilmente cualquiera de los elementos de una aplicación, no sólo los
 soportados, sino que proporciona los mecanismos necesarios para integrar
@@ -413,6 +419,7 @@ mano ExtJS en la aplicación generada con gvNIX.
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 *Aplicaciones de gestión*
 
@@ -464,6 +471,7 @@ image::map_generic.png[caption="Componente geográfica",width="570"]
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 Cada vez son más áreas del saber que requieren el uso de datos geoespaciales
 para cumplir con mayor acierto sus procesos, como la gestión pública, gestión
@@ -535,6 +543,7 @@ aspecto, las funcionalidades son:
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 Es innegable el papel que está jugando el software libre en el ámbito de la
 gestión de empresas y administraciones públicas. Hasta hace unos pocos años,
@@ -583,6 +592,7 @@ gvNIX enriquecerlo.
 
 [template="notesblock"]
 ====
+*CHARLA (HOW):*
 
 Para ello, en mi opinión, hacen falta 3 elementos fundamentales:
 
