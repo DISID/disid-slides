@@ -100,18 +100,17 @@ parte de los desarrolladores.
 ====
 *CHARLA (WHAT):*
 
-Un framework o entorno de desarrollo, ofrece de forma cohesionada el conjunto de
-distintas librerías que amplían las funciones de las librerías
-básicas del lenguaje de programación, como persistencia de objetos, protocolos
-de comunicación de alto nivel como WebSocket, etc.
+Un framework o marco de desarrollo, ofrece de forma cohesionada un conjunto de
+distintas librerías, como persistencia de objetos, protocolos de comunicación
+de alto nivel como WebSocket, etc.
 
-Definen un conjunto
-estándares, metodología de trabajo y estructura de proyectos que minora en
-gran medida la problemática indicada y que sirven como base para el desarrollo
-de aplicaciones.
+Los framework sirven de base para el desarrollo de aplicaciones: definen un 
+conjunto estándares, metodología de trabajo y estructura de proyectos que 
+minora en gran medida la problemática de tener que utilizar
+diversidad de librerías.
 
-Los entornos más serios de hoy en día, garantizan que estas 
-funcionalidades han sido probadas y ofrecen un soporte a largo plazo.
+Los frameworks más serios de hoy en día, garantizan que estas funcionalidades
+han sido probadas y ofrecen un soporte a largo plazo.
 ====
 
 [{topic}]
@@ -127,20 +126,45 @@ funcionalidades han sido probadas y ofrecen un soporte a largo plazo.
 ====
 *CHARLA (WHAT):*
 
-La gran ventaja de los frameworks es que facilitan y aceleran el
-proceso de desarrollo debido a que evita hacer a mano muchos de los procesos
-propios del ciclo de vida de los proyectos de desarrollo de software:
+Los marcos de trabajo son sinónimo de productividad porque facilitan y 
+aceleran el proceso de desarrollo debido a que evita hacer a mano muchos de 
+los procesos propios del ciclo de vida de los proyectos de desarrollo de 
+software:
 
 * Define una estructura de aplicación, una forma homogénea de configurar y 
   usar todas las librerías que integra.
-* Proporciona herramientas que ayudan a integrar estan funciones 
-  fácilmente, y en algunos caso automáticamente, en los proyectos.
+* Especifica mecanismos para integrar nuevas funciones o librerías.
 * Facilita la colaboración, ya que está todo más estandarizado y definido
   según el framework. Es un código menos personal y más automatizado.
 * Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura
   MVC.
 * Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
+
+====
+
+[{topic}]
+== *Frameworks* = nuevos *problemas*
+
+[role="incremental scatter"]
+* *Diversidad* de frameworks
+* Frameworks *independientes*
+
+[template="notesblock"]
+====
+*CHARLA (WHY):*
+
+Sin embargo, aún con toda la productividad que proporcionan los frameworks,
+sigue siendo un problema para los desarrolladores si tienen necesidad de
+utilizar varios frameworks y/o librerías:
+
+* Spring Framework
+* Spring MVC
+* Spring Security
+* CXF: an Open-Source Services Framework
+* Tiles
+* JasperReports
+* etc.
 
 ====
 
@@ -154,10 +178,6 @@ propios del ciclo de vida de los proyectos de desarrollo de software:
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
-
-Aún con toda la productividad que proporcionan los frameworks, sigue siendo
-un problema para los desarrolladores si tienen necesidad de utilizar varios
-frameworks.
 
 Las herramientas de desarrollo proporcionan todo lo necesario al desarrollador,
 para generar aplicaciones basadas en uno o varios frameworks de amplía 
@@ -176,6 +196,12 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 [{statement}]
 *gvNIX* herramienta de desarrollo rápido de *aplicaciones web*
 
+* Multiplataforma y fácil de instalar
+* Generación automática de código
+* Potencia uso buenas prácticas
+* Proyectos JEE estándar
+* No añade dependencias de componentes
+
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
@@ -185,10 +211,30 @@ image::logo_gvNIX.png[role="pull-right",height="50"]
 Herramienta diseñada para apoyar el desarrollo de sitios web dinámicos, 
 aplicaciones web y servicios web. 
 
-Alivia el exceso de carga asociado con actividades
-comunes usadas en desarrollos web. 
+Características:
 
-Por ejemplo, generación de la vista (scaffolding), gestión de sesiones, etc.
+* *Es multiplataforma y fácil de instalar*.
+  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
+  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
+  desarrollo: STS o Eclipse.
+  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
+  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
+  al PATH del sistema y lanzamos el entorno con el comando gvnix.
+* *Sistema de generación automática de código*.
+  Crea código en unidades de compilación separadas del código fuente creado
+  por los desarrolladores, de esta forma, la generación de código es 
+  totalmente inocua porque independiza el ciclo de vida del código generado del
+  ciclo de vida del código mantenido por los desarrolladores.
+* *Potencia el uso de buenas prácticas*.
+  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
+  plasmado sobre un modelo de clases que sirve como punto de partida del
+  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
+  del ciclo de vida de un proyecto*.
+* *Proyectos JEE estándar Los proyectos creados con gvNIX son aplicaciones Java
+  que cumplen con el estándar JEE.
+* *No sobrecarga el entorno de ejecución*.
+  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+
 ====
 
 [{topic}]
@@ -196,8 +242,8 @@ Por ejemplo, generación de la vista (scaffolding), gestión de sesiones, etc.
 
 [role="incremental scatter"]
 * No limita [detail]#manteniento evolutivo de las aplicaciones#
-* Uso por capas [detail]#modelo, modelo-control, modelo-control-vista#
 * Mantenimiento correctivo [detail]#ágil e independiente#
+* Uso por capas [detail]#modelo, modelo-control, modelo-control-vista#
 * Usuario gvNIX [detail]#*desarrollador* de aplicaciones#
 * Independencia aplicaciones -> gvNIX
 
@@ -207,9 +253,31 @@ Por ejemplo, generación de la vista (scaffolding), gestión de sesiones, etc.
 
 Beneficios:
 
-* La evolucion de las aplicaciones no están bloqueda por la evolución del
-  propio marco de trabajo. Por ejemplo, integrar una nueva funcionalidad en
-  una aplicación no requiere que previamente se añada a gvNIX.
+* La evolucion de las aplicaciones no están bloqueda por la evolución de
+  gvNIX. Ejemplos:
+** Integrar una nueva funcionalidad en una aplicación no requiere que 
+   previamente se añada a gvNIX.
+** Los estándares Java garantizan que las aplicaciones funcionarán en
+   cualquier servidor de aplicaciones, sin embargo, estos estándares también
+   evolucionan y aplicaciones que funcionaban perfectamente en versiones de
+   servidores antiguas, por ejemplo JBoss 5, pueden no funcionar en versiones 
+   más recientes, por ejemplo JBoss 6. Hacer los cambios necesarios para que
+   una aplicación funcione sobre nuevos servidores de aplicaciones no requiere
+   que previamente se añada a gvNIX.
+** Correcciones de errores.
+* En todos estos casos, son funcionalidades de la aplicación que no dependen 
+  de gvNIX, se pueden desarrollar, mejorar, modificar y/o corregir en la propia 
+  aplicación y posteriormente se reporta al proyecto gvNIX para incluir la 
+  mejora en futuras versiones.
+** Un posible proceso de atención de incidencias o solicitud de mejoras que 
+   se puede seguir con gvNIX es: 
+   1. el usuario final informa de una incidencia, mejora, etc. en una 
+      aplicación al equipo de desarrollo de esa aplicación.
+   2. el equipo de desarrollo da solución a la incidencia, pudiendo así dar
+      mejores tiempos de respuesta que si se gestionara desde gvNIX.
+   3. el equipo de desarrollo reporta la incidencia en el ámbito de gvNIX al
+      proyecto gvNIX, incluyendola en la hoja de ruta y corrigiendola dentro
+      de la siguiente versión de gvNIX.
 * Libertad para usar gvNIX en cualquiera de las capas de la arquitectura de la
   aplicación. Se pueden utilizar gvNIX para generar cualquiera de las capas de
   la aplicación: sólo modelo, modelo-controlador o modelo-vista-controlador.
@@ -217,24 +285,18 @@ Beneficios:
   integrar otras tecnologías en una aplicación desarrollada con gvNIX. Por
   ejemplo, se puede desarrollar una aplicación con gvNIX cuya vista esté
   desarrollada con ExtJS.
-* Las correcciones de errores funcionales no dependen de gvNIX, se
-  corrigen en la propia aplicación y posteriormente se reporta al proyecto
-  gvNIX para incluir la mejora en futuras versiones.
-** El proceso de atención de incidencias que se sigue actualmente en gvNIX es: 
-   1. el usuario final informa de una incidencia en una aplicación al equipo de
-   desarrollo de esa aplicación.
-   2. el equipo de desarrollo da solución a la incidencia, pudiendo así dar
-      mejores tiempos de respuesta que si se gestionara desde gvNIX.
-   3. el equipo de desarrollo reporta la incidencia en el ámbito de gvNIX al
-      proyecto gvNIX, incluyendola en la hoja de ruta y corrigiendola dentro
-      de la siguiente versión de gvNIX.
 * Diferencia explícita entre desarrolladores de aplicaciones como el usuario
   tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
+* Importante es que al *no contener ningún componente en tiempo de ejecución* 
+  no interfiere en el despliegue de las soluciones ni crea dependencias con el
+  producto final, de forma tal que resulta transparente para el despliegue en
+  producción.
 
-Importante es que al no contener ningún componente en tiempo de ejecución no
-interfiere en el despliegue de las soluciones ni crea dependencias con el
-producto final, de forma tal que resulta transparente para el despliegue en
-producción.
+Además como veremos, las aplicaciones generadas por gvNIX estan sobre una base
+tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
+nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
+gvNIX.
+
 ====
 
 == Arquitectura gvNIX
@@ -252,6 +314,25 @@ funcionalidad que ofrece el framework es implementada como un
 add-on que colabora con el resto en las distintas tareas de generación.
 Esta arquitectura es empleada en el desarrollo de grandes sistemas modulares
 como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera. 
+
+*¿Qué es OSGi?*
+
+* OSGI (Open Services Gateway Initiative) es una capa sobre Java que permite
+crear módulos o componentes que pueden interactuar entre sí en tiempo de 
+ejecución.
+* OSGi intenta solventar los problemas del tradicional "classloader" de la 
+máquina virtual y de los servidores de aplicaciones Java (como JINI).
+* En OSGI, cada componente tiene su propio classpath separado del resto de 
+classpath de los demás módulos.
+
+OSGi ofrece:
+
+* OSGI proporciona un entorno que soporta el despliegue dinámico de
+  componentes ("bundles" o módulos).
+* Sistema modular que incluye reglas de visibilidad, gestión de dependencias y versionado de los bundles.
+* La instalación, arranque, parada, actualización y desinstalación de bundles se realiza dinámicamente en tiempo de ejecución sin tener que detener por completo la plataforma.
+* Es una arquitectura orientada a servicios.
+* Los servicios pueden ser registrados y consumidos dentro de la VM.
 
 ====
 
@@ -403,6 +484,9 @@ framework. A diferencia por ejemplo de entornos como Developer.
 Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
 no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
 mano ExtJS en la aplicación generada con gvNIX.
+
+Aún así el desarrollador obtendrá toda la productividad que le brinda gvNIX,
+aunque evidentemente sólo en 2 capas de la aplicación.
 ====
 
 [{topic}]
@@ -425,7 +509,7 @@ mano ExtJS en la aplicación generada con gvNIX.
 
 Las grandes organizaciones están en constante evolución, todos los días surgen
 nuevas necesidades y requerimientos que deben cubrirse con nuevas
-aplicaciones.  gvNIX ofrece una infraestructura común para los desarrollos
+aplicaciones. gvNIX ofrece una infraestructura común para los desarrollos
 propios y externos, garantizando que todos los proyectos son similares para
 facilitar el mantenimiento y la evolución.
 
@@ -530,6 +614,13 @@ aspecto, las funcionalidades son:
   herramienta de edición que al seleccionar un elemento sobre el mapa, nos 
   lleva al formulario de edición de dicho elemento.
 
+Este es el ejemplo más claro de los beneficios de gvNIX, en la versión 1.4
+conseguirá integrar no sólo Spring Framework, CXF, JasperReports, etc. con
+frameworks propios de aplicaciones de geomática como Leaflet, JTS (Java
+Topology Suite), Hibernate Spatial, etc. de tal forma que desarrolladores 
+sin conocimientos Geo serán perfectamente capaces de desarrollar aplicaciones 
+de gestión, aplicaciones Geo, ambas, mixtas, etc.
+
 ====
 
 [{topic}]
@@ -539,7 +630,7 @@ aspecto, las funcionalidades son:
 * Escalabilidad [detail]#basada en múltiples contribuidores#
 * Comunidad de desarrollo [detail]#empresas, organizaciones, universidades#
 * Cooperación = mayor calidad
-* Sostenibilidad <- gestionar la cooperación
+* Sostenibilidad <- facilitar y gestionar la cooperación
 
 [template="notesblock"]
 ====
@@ -550,63 +641,56 @@ gestión de empresas y administraciones públicas. Hasta hace unos pocos años,
 se consideraba una rareza y aventurarse en un proyecto Open Source en la
 empresa o en una administración pública, era cuanto menos, bastante
 arriesgado. Hoy día, estos proyectos, en algunos ámbitos, están desplazando a
-sus homólogos de software privativo. Una de las fortalezas mayores desde mi
-punto de vista es la posibilidad de *escalar el producto en base a las
+sus homólogos de software privativo. Una de las fortalezas mayores desde
+nuestro punto de vista es la posibilidad de *escalar el producto en base a las
 aportaciones de múltiples contribuidores*, y que en el software privativo queda
 reducido a los recursos de los que dispone la propia empresa. Es decir, que
 uno de los factores más importantes corresponde a las comunidades de
 desarrollo de software.
 
-Los objetivos de una comunidad de desarrollo de software es aglutinar grupos
+Los objetivos de una *comunidad de desarrollo* de software es aglutinar grupos
 de personas, empresas, organizaciones, universidades e individuos con un
 objetivo y beneficio común sobre la base de promover el acceso y distribución
 de una herramienta software permitiendo la libertad de su uso, estudio, copia,
-modificación y redistribución a todo aquel que lo desee. Empresas como DiSiD
-que en torno al desarrollo de un modelo de negocio basado en el conocimiento
+modificación y redistribución a todo aquel que lo desee. Empresas 
+que entorno al desarrollo de un modelo de negocio basado en el conocimiento
 compartido, ve que el hecho de que las herramientas que utilizan para la
 producción de las soluciones que ofrece, sean cada vez más potentes, le ofrece
 más oportunidades. De ahí que a esas empresas y organizaciones les puede
-interesar que se potencie gvNIX, el gvSIG, Postgresql, etc.
+interesar que se potencie gvNIX, etc.
 
-La cooperación entre estos grupos de personas y organizaciones en todos los
+La *cooperación* entre estos grupos de personas y organizaciones en todos los
 ámbitos de la producción del software (usuarios, desarrolladores,
 documentadores, testers, traductores, ...) permite generar las sinergias
-necesarias para conseguir una mejora sustancial de la calidad del software,
+necesarias para conseguir una *mejora sustancial de la calidad del software*,
 así como de una mayor difusión y sostenibilidad en el tiempo, y primando el
 beneficio de la sociedad sobre cualquier otro.
 
-Esa sostenibilidad pasa por crear las condiciones para gestionar todas esas
-colaboraciones - portaciones, fijándonos sobre todo en la red de empresas que
-por afinidad con los intereses en el modelo de negocio, quieran partiendo de
-gvNIX enriquecerlo.
+Esa *sostenibilidad* pasa por potenciar, facilitar y dirigir todas esas 
+colaboraciones y aportaciones de empresas y organizaciones que, por afinidad 
+con los intereses en el modelo de negocio, quieran partiendo de gvNIX 
+enriquecerlo.
+
 ====
 
 [{topic}]
-== Sostenibilidad
+== Crear las condiciones para un proyecto sostenible
 
 [role="incremental scatter"]
-* Entidad gestora
 * Distribuciones [detail]#pública y privada#
+* Propiciar la cooperación
 * Internacionalización
-* Propiciar la colaboración
+* Entidad gestora
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-Para ello, en mi opinión, hacen falta 3 elementos fundamentales:
+Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y 
+organizaciones que hacen falta 4 elementos fundamentales:
 
-* Una entidad gestora
-* Internacionalización
-* Facilitar la colaboración
-
-Una entidad gestora del proyecto, que vele por los intereses del proyecto, que
-defina y modere el modelo de sostenibilidad, que organice la comunidad de
-desarrollo, la difusión, los recursos del proyecto, etc. 
-
-Diferenciar distribuciones públicas, como gvNIX, de las privadas, como gvNIX
-DGTI, sentaría las bases para facilitar la cooperación, colaboración y
-contribución al código fuente de gvNIX.
+*Diferenciar distribuciones públicas*, como gvNIX, de las privadas, como gvNIX
+DGTI, con el objetivo de facilitar la contribución al código fuente de gvNIX.
 
 Desde esta visión, generar y potenciar una distribución pública repercutirá en
 el beneficio de toda la comunidad, tanto aquellos que utilicen la distribución
@@ -614,24 +698,21 @@ pública como aquellos que utilicen una distribución privada, ya que todos los
 complementos de interés general contribuidos a la distribución pública estarán
 automáticamente y por defecto incluidos en cualquier distribución privada.
 
-Será importante para la sostenibilidad de las distribuciones privadas, la
-sostenibilidad de las públicas, en las que se define el marco de cooperación
-comentado anterioremente.
+*Fomentar la cooperación*, es decir, más allá de los conceptos teóricos,
+filosóficos y jurídicos, un proyecto software se desarrolla gracias a una 
+serie de herramientas técnicas: gestores de proyectos, control de versiones de 
+código, wikis, listas de correo, gestores de errores o bugs, etc.; que 
+facilitan la colaboración simultánea, deslocalizada y la coordinación de 
+los miembros.
 
-Aquí vemos que para esta sostenibilidad de las Distribuciones Pública, la
-Asociación gvSIG, de la que DiSiD forma parte, puede resultar una oportunidad,
-de forma que actue con el gvNIX Público como con el gvSIG Público: que lo 
-difunda, que abra mercados, genere oportunidades, ayude a la 
-internacionalización del proyecto.
+*Internacionalización* o conjunto de tareas a realizar para que el
+proyecto pueda expandirse a distintas regiones, como forma de crecimiento de
+la comunidad de desarrollo y así conseguir involucrar a más organizaciones
+y empresas para ganar en calidad, desarrollo del producto, etc.
 
-Siendo conscientes de que gvNIX ha surgido desde la Generalitat, uno de los
-temas a tratar es si desde la DGTI se vería problema que existiendo esos dos
-gvNIX el Público y el DGTI, desde DiSiD se potenciara, en este caso mediante
-la Asociación gvSIG a la sostenibilidad en el marco indicado.
-
-Una de la acciones más cercanas es aprovechando la cercanía de las 10as
-jornada gvSIG, organizar talleres y ponencias gvNIX para que empiecen a 
-ayudar a su difusión.
+Una *entidad gestora del proyecto*, que vele por los intereses del proyecto, que
+defina y modere el modelo de sostenibilidad, que organice la comunidad de
+desarrollo, la difusión, los recursos del proyecto, etc. 
 
 ====
 
