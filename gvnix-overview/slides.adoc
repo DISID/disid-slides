@@ -9,10 +9,11 @@
 //
  
 = Visión estratégica **gvNIX**
-www.disid.com
-v1.0, Sep 18, 2014
+v1.1, 30 sep 2014
+:title: Visión estratégica gvNIX
+:description: These slides are a strategic overview to gvNIX.
 :copyright: CC BY-NC-SA 3.0
-:website: www.disid.com
+:corpsite: www.disid.com
 :gvnixsite: www.gvnix.org
 :imagesdir: images
 :linkcss!:
@@ -26,16 +27,33 @@ v1.0, Sep 18, 2014
 :syntax: no-highlight
 
 ////
-These slides are a short strategic overview to gvNIX.
+
 ////
+
+[template="notesblock"]
+====
+*CHARLA (INTRODUCCIÓN):*
+
+Presentación: Nombre, cargo en DISID
+
+En esta charla/presentación explicaremos qué es gvNIX, en qué se diferencia de
+un framework de desarrollo.
+
+Haremos un repaso de las funcionalidades y componentes que nos ofrece para el 
+desarrollo de aplicaciones web.
+
+Veremos las nuevas funcionalidades de la nueva versión 1.4 que saldrá en 
+noviembre y una demo de una aplicación desarrollada con gvNIX.
+
+====
 
 [{topic}]
 == ¿*Por qué* un framework?
 
 [role="incremental scatter"]
-* Lenguaje + *API*
+* Lenguaje + *Librerías API*
 * Problema [detail]#programar *sólo* con lenguaje#
-* Más *productividad* [detail]#usando *librerías*#
+* Más *productividad* = *librerías* de terceros
 
 [template="notesblock"]
 ====
@@ -67,7 +85,8 @@ proyecto activo y en evolución, etc.
 
 [role="incremental scatter"]
 * *Diversidad* de librerías
-* Librerías *independientes*
+* Librerías independientes
+* *Configuración manual*
 
 [template="notesblock"]
 ====
@@ -93,7 +112,7 @@ parte de los desarrolladores.
 
 [role="incremental middle"]
 * Librerías *cohesionadas*
-* Conjunto de *estándares*, *metodología* y *estructura*
+* *Base de desarrollo* [detail]#estándares, metodología y estructura#
 * *Garantía*
 
 [template="notesblock"]
@@ -117,7 +136,8 @@ han sido probadas y ofrecen un soporte a largo plazo.
 == Framework = *productividad*
 
 [role="incremental scatter"]
-* Estructura aplicación
+* *Especifica* partes proceso desarrollo
+* Estructura y configuración
 * Integra librerías
 * Estándares = colaboración
 * Patrones y buenas prácticas
@@ -127,7 +147,7 @@ han sido probadas y ofrecen un soporte a largo plazo.
 *CHARLA (WHAT):*
 
 Los marcos de trabajo son sinónimo de productividad porque facilitan y 
-aceleran el proceso de desarrollo debido a que evita hacer a mano muchos de 
+aceleran el proceso de desarrollo debido especifica y define muchos de 
 los procesos propios del ciclo de vida de los proyectos de desarrollo de 
 software:
 
@@ -138,7 +158,8 @@ software:
   según el framework. Es un código menos personal y más automatizado.
 * Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura
   MVC.
-* Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
+  .
+  Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
 
 ====
@@ -166,6 +187,8 @@ utilizar varios frameworks y/o librerías:
 * JasperReports
 * etc.
 
+TODO: es importante poner enfasis en los problemas que presenta trabajar de cierta manera con fw independientes y que es lo que aporta una herramienta de desarrollo
+
 ====
 
 [{topic}]
@@ -187,11 +210,14 @@ JPA 2, etc.
 Además no introducen librerías propias en la aplicación. Ejemplos: Eclipse, 
 gvNIX, ... 
 
+TODO: Más ventajas respecto a fws independientes
+
+Dar la vision de que trabajar un una herramienta de desarrollo es un nivel
+superior, que te permite trabajar de forma organizada y controlada con este tipo de fw
+
 ====
 
 == \\
-
-image::logo_gvNIX.png[role="pull-right",height="50"]
 
 [{statement}]
 *gvNIX* herramienta de desarrollo rápido de *aplicaciones web*
@@ -241,10 +267,9 @@ Características:
 == *Beneficios* gvNIX
 
 [role="incremental scatter"]
-* No limita [detail]#manteniento evolutivo de las aplicaciones#
-* Mantenimiento correctivo [detail]#ágil e independiente#
-* Uso por capas [detail]#modelo, modelo-control, modelo-control-vista#
+* No limita [detail]#manteniento evolutivo ni correctivo#
 * Usuario gvNIX [detail]#*desarrollador* de aplicaciones#
+* Uso por capas [detail]#modelo, modelo-control, modelo-control-vista#
 * Independencia aplicaciones -> gvNIX
 
 [template="notesblock"]
@@ -292,11 +317,6 @@ Beneficios:
   producto final, de forma tal que resulta transparente para el despliegue en
   producción.
 
-Además como veremos, las aplicaciones generadas por gvNIX estan sobre una base
-tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
-nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
-gvNIX.
-
 ====
 
 == Arquitectura gvNIX
@@ -334,11 +354,19 @@ OSGi ofrece:
 * Es una arquitectura orientada a servicios.
 * Los servicios pueden ser registrados y consumidos dentro de la VM.
 
+Esta imagen ilustra la separación entre gvNIX y los proyectos y se aprecia como efectivamente es una herramienta que genera nuestras aplicaciones.
+
 ====
 
 == Intérprete de comandos
 
+ifndef::backend-dzslides[]
 image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-shell-eclipse.png[caption="Intérprete de comandos"]
+endif::[]
 
 [template="notesblock"]
 ====
@@ -363,24 +391,49 @@ para facilitar el desarrollo. Los más destacados son:
 * *help*: Muestra al desarrollador todos los comandos o funcionalidades 
   disponibles.
 * *hint*: Aconseja el siguiente paso posible en el proceso de desarrollo.
-* TODO: Más?, como instalar nuevos componentes, ... valorar si es demasiado
-  técnico
+
 ====
 
 [{topic}]
-== Funciones en intérprete de comandos 
+== Funcionalidades de gvNIX
 
 [role="incremental scatter"]
-* Ingeniería inversa, auditoría bbdd
-* Scaffolding
-* Generación automática [detail]#email, JMS, WS#
-* Control de concurrencia
-* Seguridad, informes, pruebas, ...
-* Diseño adaptativo
+* *Scaffolding*
+* Seguridad *autorización* y *autenticación*
+* Integración con *SAFE*
+* Exportar/Importar *servicios web*
+* Calidad de desarrollo [detail]#pruebas unitarias y funcionales#
+
+[{topic}]
+== Funcionalidades de gvNIX
+
+[role="incremental scatter"]
+* *Informes*
+* *Ingeniería inversa*
+* Control de *concurrencia*
+* *Auditoría* e *histórico* de cambios en bbdd
+
+[{topic}]
+== Funcionalidades de gvNIX
+
+[role="incremental scatter"]
+* Interfaz usuario *adaptativa* [detail]#(responsive UI)#
+* Componentes avanzados: *tablas AJAX*, *lupa*
+* Maestro -> detalle *multinivel*
+
+[{topic}]
+== Nuevas funcionalidades de gvNIX
+
+[role="incremental scatter"]
+* Monitorización *rendimiento* en producción
+* Componente *geográfica*
+* *Asistente* para *filtros*
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
+
+TODO Objetivo: Visualizar que existe una inversión y un plan desde la dgti sobre el NIX.
 
 *Ingeniería inversa de base de datos*
 
@@ -421,7 +474,7 @@ Utiliza JasperReports para generar informes operativos dinámicamente y en difer
 
 Los informes son totalmente funcionales desde su creación, incluyendo la generación de la plantilla .jrxml para permitir una personalización cómoda y fácil.
 
-*Pruebas unitarias y funcionales:*
+*Pruebas unitarias y funcionales*
 
 Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit como funcionales con Selenium.
 
@@ -429,47 +482,137 @@ Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit
 
 Gestionar la información desde cualquier dispositivo: tableta, PC, móvil, etc.
 
-*Soporte de HTML5 y CSS3.*
+*Soporte de HTML5 y CSS3*
 
 Ampliar las opciones de configuración de la visualización de los datos
 tabulares por el usuario final: agrupación de datos, guardar configuración,
 etc.
 
-Nuevo *componente lupa* para búsqueda en datos relacionados.
+*Componente lupa*
 
-*Auditoría de cambios en base de datos.*
+TODO
 
-*Histórico de cambios de base de datos.*
+*Auditoría de cambios en base de datos*
+
+TODO
+
+*Histórico de cambios de base de datos*
+
+TODO
+
+Como no, 2 de las nuevas funcionalidades de la versión 1.4 que saldrá a
+finales de noviembre:
+
+*Componente geográfica*
+
+Funcionalidad estrella que veremos a fondo más adelante.
+
+*Monitorización rendimiento en producción*
+
+TODO
+
+TODO También será necesario responder a esto de: "El NIX está verde, cuantos
+proyectos de NIX hay?
+
+Ahí se podrá responder:
+
+- Bueno, realmente lo del NIX está verde, sería decir que Spring, que
+Jquery, que Hibernate está verde, pues como hemos visto NIX no es un FW
+sino una herramienta de desarrollo que surge para solventar el problema
+de la proliferación de tantos FW independientes
+
+- Dicho esto, proyectos relacionados con las funcionalidades y
+automatismos que nos proporciona NIX: Pues comentáis los que hay tanto
+dgti como fuera dgti.
+
+- Y volviendo a recordar, pero esto no es hablar de la madurez de NIX,
+pues la base de NIX es un proyecto como spring etc.
 
 ====
 
 == Arquitectura de las aplicaciones
 
-[{middle}]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura de las aplicaciones",width="570"]
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
+endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
-
-TODO: Lo que ofrece Spring Framework en ejecución.
 
 Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
 capa web, la de control y la de modelo del dominio.
 
 La capa de dominio del problema suele contener una "sub-capa" de servicios  
 que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
-Tiene otra "sub-capa" de de acceso a datos donde habitualmente tenemos 
+Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos 
 los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
 clases que modelan las entidades del dominio, que se encargan no solo de 
 modelar el dominio sino también de la validación de sus datos e incluso su 
 serialización a JSON.
+
+TODO: Lo que ofrece Spring Framework en ejecución.
+====
+
+== Pila tecnológica
+
+ifndef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Por qué esta pila tecnológica?*
+
+Dos datos muy rápidos sobre las tecnologías que integra gvNIX en las
+aplicaciones:
+
+* Spring MVC es el framework para desarrollo web más utilizado
+
+====
+
+== Pila tecnológica
+
+ifndef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Por qué esta pila tecnológica?*
+
+Las aplicaciones generadas por gvNIX estan sobre una base
+tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
+nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
+gvNIX.
+
 ====
 
 == Aplicación con ExtJS
 
-[{middle}]
+ifndef::backend-dzslides[]
 image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS"]
+endif::[]
 
 [template="notesblock"]
 ====
@@ -493,8 +636,7 @@ aunque evidentemente sólo en 2 capas de la aplicación.
 == Casos de uso
 
 [role="incremental"]
-* Aplicaciones de gestión [detail]#número accesos, volumen datos,
-  ...#
+* Aplicaciones de gestión *homogéneas*
 * Migración a web
 * Integración con procesos de negocio
 * Sistemas mixtos móvil-web
@@ -614,12 +756,16 @@ aspecto, las funcionalidades son:
   herramienta de edición que al seleccionar un elemento sobre el mapa, nos 
   lleva al formulario de edición de dicho elemento.
 
+A nivel de proyecto:
+
+* gvNIX permite integrar y combinar distintos frameworks y librerías de tal 
+  forma que desarrolladores sin conocimientos geo serán perfectamente capaces
+  de desarrollar aplicaciones de gestión con componente geográfica.
+
 Este es el ejemplo más claro de los beneficios de gvNIX, en la versión 1.4
 conseguirá integrar no sólo Spring Framework, CXF, JasperReports, etc. con
 frameworks propios de aplicaciones de geomática como Leaflet, JTS (Java
-Topology Suite), Hibernate Spatial, etc. de tal forma que desarrolladores 
-sin conocimientos Geo serán perfectamente capaces de desarrollar aplicaciones 
-de gestión, aplicaciones Geo, ambas, mixtas, etc.
+Topology Suite), Hibernate Spatial, etc.
 
 ====
 
@@ -678,7 +824,7 @@ enriquecerlo.
 
 [role="incremental scatter"]
 * Distribuciones [detail]#pública y privada#
-* Propiciar la cooperación
+* Fomentar la cooperación
 * Internacionalización
 * Entidad gestora
 
@@ -713,6 +859,63 @@ y empresas para ganar en calidad, desarrollo del producto, etc.
 Una *entidad gestora del proyecto*, que vele por los intereses del proyecto, que
 defina y modere el modelo de sostenibilidad, que organice la comunidad de
 desarrollo, la difusión, los recursos del proyecto, etc. 
+
+====
+
+== Demo: Entidades
+
+[{middle}]
+image::petclinic-uml.png[caption="Análisis del dominio",width="570"]
+
+== Demo: Funcional
+
+[{middle}]
+image::../wireframes/wireframes.png[caption="Análisis funcional",width="570"]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+El objetivo de esta demo es ver un ejemplo de aplicación que incluye 
+funcionalidades que se podrán desarrollar con la nueva versión de
+gvNIX, la 1.4 que saldrá en noviembre de este año:
+
+* Interfaz adaptativo (desde 1.3)
+* Patrones de pantallas (desde 1.3)
+* Asistente para filtros (1.4)
+* Monitorización rendimiento en producción (1.4)
+* Componente geográfica (1.4)
+
+TODO: Más allá de Maven: donde nos presentaban que ellos tenían una forma de
+trabajar muy ordenada que les permitía focalizar en la lógica de negocio.
+
+Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
+métodos, el que mejor se ajusta a las características de gvNIX es DDD o
+*Desarrollo Dirigido por el Dominio*:
+
+* Un proyecto de gvNIX debería comenzar por un análisis del dominio 
+  y un análisis funcional, de tal forma que sobre las pantallas funcionales
+  pueda concretarse con el usuario final el flujo y organización funcional de
+  las mismas y seamos capaces de revisar el análisis del dominio para que se
+  ajuste a los requerimientos validados con el usuario sobre las pantallas 
+  funcionales.
+* Si la aplicación tiene interfaz de usuario, se genera automáticamente y 
+  se ajusta la interfaz a las especificaciones de requerimientos.
+* A continuación se inicia un proceso evolutivo donde se codifica la lógica 
+  de negocio y las pruebas unitarias para hacer crecer el sistema hasta tener 
+  la aplicación final.
+
+La aplicación demo es para *gestión de una clínica veterinaria*. Los usuarios 
+de la aplicación son trabajadores de una clínica que, en el desempeño de su
+trabajo, necesitan ver y gestionar información de veterinarios, agenda de
+visitas, clientes y sus mascotas.
+
+Veremos cómo se ajusta el interfaz automáticamente al dispositivo, los
+patrones de pantallas y cómo se unen los datos alfanuméricos con los
+geográficos.
+
+Este diagrama de clases representa un modelo simplificado del dominio del
+problema de una clínica veterinaria.
 
 ====
 
