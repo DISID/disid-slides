@@ -59,11 +59,10 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 ====
 *CHARLA (WHY):*
 
-Cualquier desarrollador cuando programa con cualquier entorno necesita el
-propio lenguaje de programación elegido y utiliza conjuntos de funciones ya 
-implementadas conocidas como librerías. Habitualmente cualquier plataforma de
+Habitualmente cualquier plataforma de
 desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
-conjunto de librerías básicas con la funcionalidad imprescindible, en el caso
+conjunto de librerías que no son más que conjuntos de funciones ya 
+implementadas básicas con funcionalidad imprescindible, en el caso
 de la plataforma Java estas librerías se conocen como el *API Java*.
 
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
@@ -87,6 +86,7 @@ proyecto activo y en evolución, etc.
 * *Diversidad* de librerías
 * Librerías *independientes*
 * Configuración *manual*
+* *Carencia* de homogeneidad
 
 [template="notesblock"]
 ====
@@ -105,6 +105,10 @@ Además aunque actualmente existe disponibilidad de tal diversidad de librerías
 que prácticamente se cubren todos los aspectos que se necesita en el proceso
 de desarrollo, todavía es necesario una configuración e instalación manual por
 parte de los desarrolladores.
+
+Las librerías no aportan una estructura concreta a nuestros proyectos, por lo
+que ésta depende de cada desarrollador y nos podemos encontrar en la situación
+que cada proyecto y aplicación tiene una estructura diferente.
 ====
 
 [{topic}]
@@ -119,11 +123,13 @@ parte de los desarrolladores.
 ====
 *CHARLA (WHAT):*
 
-Un framework o marco de desarrollo, ofrece de forma cohesionada un conjunto de
-distintas librerías, como persistencia de objetos, protocolos de comunicación
-de alto nivel como WebSocket, etc.
+Un framework no es mñas que un conjunto de librerías cohesionadas que ofrecen
+funciones de más alto nivel y para las que se necesitan varias librerías:
 
-Los framework sirven de base para el desarrollo de aplicaciones: definen un 
+Por ejemplo, un framework de persistencia de objetos: integra librerías de
+log, el API JDBC, librerías para trabajar con archivos XML, etc.
+
+Algunos framework sirven de base para el desarrollo de aplicaciones: definen un 
 conjunto estándares, metodología de trabajo y estructura de proyectos que 
 minora en gran medida la problemática de tener que utilizar
 diversidad de librerías.
@@ -136,7 +142,6 @@ han sido probadas y ofrecen un soporte a largo plazo.
 == Framework = *productividad*
 
 [role="incremental scatter"]
-* *Especifica* partes *proceso* desarrollo
 * *Estructura* y *configuración*
 * *Integra* librerías
 * *Estándares* = *colaboración*
@@ -147,9 +152,7 @@ han sido probadas y ofrecen un soporte a largo plazo.
 *CHARLA (WHAT):*
 
 Los marcos de trabajo son sinónimo de productividad porque facilitan y 
-aceleran el proceso de desarrollo debido a que especifica y define partes 
-de los procesos propios del ciclo de vida de los proyectos de desarrollo de 
-software:
+aceleran el proceso de desarrollo debido a:
 
 * Define una estructura de aplicación, una forma homogénea de configurar y 
   usar todas las librerías que integra.
@@ -161,17 +164,16 @@ software:
   .
   Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
-
 ====
 
 [{topic}]
 == *Frameworks* = nuevos *problemas*
 
 [role="incremental scatter"]
-* *Múltiples* frameworks para una aplicación
-* Frameworks solucionan *aspectos concretos*
-* *Configuración* diferente
-* *Pérdida* de *homogeneidad*
+* *Múltiples* en una aplicación
+* *Aspectos concretos* [detail]#DI, MVC, seguridad, ...#
+* Diferente *configuración*
+* *Homogeneidad* <- problema
 
 [template="notesblock"]
 ====
@@ -199,34 +201,30 @@ Por ejemplo:
 Ahora el problema no está en integrar librerías, sino en integrar frameworks,
 en configurarlos, en resolver colisiones de dependencias, etc etc etc
 
-No sólo eso dependiendo del tipo de proyecto se puede perder la homogeneidad
-porque la plataforma destino ofrece unas herramientas de desarrollo
-específicas que son las que se suelen utilizar porque da sensación de rapidez
-o porque efectivamente desarrollar siguiendo los estándares marcados es más
-complicado que utilizar a las herramientas del proveedor.
-
+Aunque es cierto que los frameworks permiten que distintas aplicaciones tengan
+la misma estructura y por tanto introduce cierta homogeneidad en los proyectos
+de una organización, existe un problema: cada framework define su propia
+estructura, por lo que si por cualquier circunstancia utilizamos frameworks
+diferentes en distintas aplicaciones se pierde la homogeneidad en esos
+proyectos.
 ====
 
 [{topic}]
 == *Herramienta desarrollo* = *productividad++*
 
 [role="incremental scatter"]
-* Procesos automáticos [detail]#generación de código, configuración, ...#
-* Focalizar en lógica de negocio
+* Procesos automáticos [detail]#integrar frameworks, configurar, ...#
 * Patrones y *buenas prácticas++*
+* Focalizar en lógica de negocio
 * *Homogeneidad++*
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-Las herramientas de desarrollo proporcionan todo lo necesario al desarrollador,
-para generar aplicaciones basadas en uno o varios frameworks de amplía 
-difusión y soporte, como Spring Framework, y basadas en estándares, como 
-JPA 2, etc.
-
-Además no introducen librerías propias en la aplicación. Ejemplos: Eclipse, 
-gvNIX, ... 
+Una herramienta de desarrollo es una aplicación para crear otras
+aplicaciones basadas en varios frameworks y además integrar,
+configurar esos frameworks y cómo se relacionan.
 
 Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
 allá de cada framework o librería:
@@ -235,11 +233,12 @@ allá de cada framework o librería:
 * Mayor porcentaje del tiempo dedicado a lógica de negocio
 
 La homogeneidad no depende del framework, depende de la herramienta que se
-utiliza que debe ser única para cualquier tipo de proyecto.
+utiliza, definiendo una estructura de proyectos que debe ser única para 
+cualquier tipo de proyecto.
 
 ====
 
-== Características
+== Qué es gvNIX
 
 [{statement}]
 *gvNIX* es una *herramienta* de *desarrollo* rápido de aplicaciones web
@@ -250,45 +249,7 @@ utiliza que debe ser única para cualquier tipo de proyecto.
 
 Pues bien, *gvNIX es una herramienta de desarrollo rápido de aplicaciones
 web*. Es la herramienta de desarrollo que nos va a proporcionar todos los
-beneficios de un herramienta de desarrollo de aplicaciones web dinámicas.
-
-====
-
-[{topic}]
-== Características
-
-[role="incremental scatter"]
-* *Multiplataforma* y fácil de instalar
-* Generación *no-intrusiva* de código
-* [detail]#Buenas prácticas desde# *Análisis*
-* Proyectos *JEE* estándar
-* *No* añade *dependencias* de componentes
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-* *Es multiplataforma y fácil de instalar*.
-  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
-  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
-  desarrollo: STS o Eclipse.
-  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
-  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
-  al PATH del sistema y lanzamos el entorno con el comando gvnix.
-* *Sistema de generación automática de código*.
-  Crea código en unidades de compilación separadas del código fuente creado
-  por los desarrolladores, de esta forma, la generación de código es 
-  totalmente inocua porque independiza el ciclo de vida del código generado del
-  ciclo de vida del código mantenido por los desarrolladores.
-* *Potencia el uso de buenas prácticas*.
-  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
-  plasmado sobre un modelo de clases que sirve como punto de partida del
-  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
-  del ciclo de vida de un proyecto*.
-* *Proyectos JEE estándar Los proyectos creados con gvNIX son aplicaciones Java
-  que cumplen con el estándar JEE.
-* *No sobrecarga el entorno de ejecución*.
-  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+beneficios de un herramienta de desarrollo para crear aplicaciones web.
 
 ====
 
@@ -345,6 +306,52 @@ Beneficios:
   no interfiere en el despliegue de las soluciones ni crea dependencias con el
   producto final, de forma tal que resulta transparente para el despliegue en
   producción.
+
+====
+
+[{topic}]
+== Características
+
+[role="incremental scatter"]
+* *Multiplataforma* y fácil de instalar
+* Generación *no-intrusiva* de código
+* [detail]#Buenas prácticas desde# *Análisis*
+* Proyectos *JEE* estándar
+* *No* añade *dependencias* de componentes
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+* *Es multiplataforma y fácil de instalar*.
+  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
+  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
+  desarrollo: STS o Eclipse.
+  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
+  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
+  al PATH del sistema y lanzamos el entorno con el comando gvnix.
+* *Sistema de generación automática de código*.
+  Crea código en unidades de compilación separadas del código fuente creado
+  por los desarrolladores, de esta forma, la generación de código es 
+  totalmente inocua porque independiza el ciclo de vida del código generado del
+  ciclo de vida del código mantenido por los desarrolladores.
+* *Potencia el uso de buenas prácticas*.
+  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
+  plasmado sobre un modelo de clases que sirve como punto de partida del
+  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
+  del ciclo de vida de un proyecto*.
+  .
+  Hay que ver que el ciclo de vida va más allá de Maven: no es solo compilar,
+  ejecutar tests, desplegar, etc. es forzar para que se hagan los análisis,
+  facilitar incluir pruebas unitarias, funcionales, etc.
+* *Proyectos JEE estándar* Los proyectos creados con gvNIX son aplicaciones Java
+  que cumplen con el estándar JEE
+* *No sobrecarga el entorno de ejecución*.
+  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+
+TODO: Pensar diferencia con un sistema de trabajo basado en Maven, donde nos 
+presentaban que ellos tenían una forma de trabajar muy ordenada que les 
+permitía focalizar en la lógica de negocio.
 
 ====
 
@@ -940,9 +947,6 @@ gvNIX, la 1.4 que saldrá en noviembre de este año:
 * Asistente para filtros (1.4)
 * Monitorización rendimiento en producción (1.4)
 * Componente geográfica (1.4)
-
-TODO: Más allá de Maven: donde nos presentaban que ellos tenían una forma de
-trabajar muy ordenada que les permitía focalizar en la lógica de negocio.
 
 Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
 métodos, el que mejor se ajusta a las características de gvNIX es DDD o
