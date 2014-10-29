@@ -9,7 +9,7 @@
 //
  
 = Visión estratégica **gvNIX**
-v1.1, 30 sep 2014
+v1.2, 17 oct 2014
 :title: Visión estratégica gvNIX
 :description: These slides are a strategic overview to gvNIX.
 :copyright: CC BY-NC-SA 3.0
@@ -48,7 +48,7 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 ====
 
 [{topic}]
-== ¿*Por qué* un framework?
+== ¿*Por qué* usamos *librerías*?
 
 [role="incremental scatter"]
 * Lenguaje + *Librerías API*
@@ -59,11 +59,10 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 ====
 *CHARLA (WHY):*
 
-Cualquier desarrollador cuando programa con cualquier entorno necesita el
-propio lenguaje de programación elegido y utiliza conjuntos de funciones ya 
-implementadas conocidas como librerías. Habitualmente cualquier plataforma de
+Habitualmente cualquier plataforma de
 desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
-conjunto de librerías básicas con la funcionalidad imprescindible, en el caso
+conjunto de librerías que no son más que conjuntos de funciones ya 
+implementadas básicas con funcionalidad imprescindible, en el caso
 de la plataforma Java estas librerías se conocen como el *API Java*.
 
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
@@ -85,8 +84,9 @@ proyecto activo y en evolución, etc.
 
 [role="incremental scatter"]
 * *Diversidad* de librerías
-* Librerías independientes
-* *Configuración manual*
+* Librerías *independientes*
+* Configuración *manual*
+* *Carencia* de homogeneidad
 
 [template="notesblock"]
 ====
@@ -105,12 +105,16 @@ Además aunque actualmente existe disponibilidad de tal diversidad de librerías
 que prácticamente se cubren todos los aspectos que se necesita en el proceso
 de desarrollo, todavía es necesario una configuración e instalación manual por
 parte de los desarrolladores.
+
+Las librerías no aportan una estructura concreta a nuestros proyectos, por lo
+que ésta depende de cada desarrollador y nos podemos encontrar en la situación
+que cada proyecto y aplicación tiene una estructura diferente.
 ====
 
 [{topic}]
-== ¿*Qué es* un framework?
+== ¿*Por qué* usamos *frameworks*?
 
-[role="incremental middle"]
+[role="incremental scatter"]
 * Librerías *cohesionadas*
 * *Base de desarrollo* [detail]#estándares, metodología y estructura#
 * *Garantía*
@@ -119,11 +123,13 @@ parte de los desarrolladores.
 ====
 *CHARLA (WHAT):*
 
-Un framework o marco de desarrollo, ofrece de forma cohesionada un conjunto de
-distintas librerías, como persistencia de objetos, protocolos de comunicación
-de alto nivel como WebSocket, etc.
+Un framework no es mñas que un conjunto de librerías cohesionadas que ofrecen
+funciones de más alto nivel y para las que se necesitan varias librerías:
 
-Los framework sirven de base para el desarrollo de aplicaciones: definen un 
+Por ejemplo, un framework de persistencia de objetos: integra librerías de
+log, el API JDBC, librerías para trabajar con archivos XML, etc.
+
+Algunos framework sirven de base para el desarrollo de aplicaciones: definen un 
 conjunto estándares, metodología de trabajo y estructura de proyectos que 
 minora en gran medida la problemática de tener que utilizar
 diversidad de librerías.
@@ -136,20 +142,17 @@ han sido probadas y ofrecen un soporte a largo plazo.
 == Framework = *productividad*
 
 [role="incremental scatter"]
-* *Especifica* partes proceso desarrollo
-* Estructura y configuración
-* Integra librerías
-* Estándares = colaboración
-* Patrones y buenas prácticas
+* *Estructura* y *configuración*
+* *Integra* librerías
+* *Estándares* = *colaboración*
+* *Patrones* y buenas prácticas
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
 Los marcos de trabajo son sinónimo de productividad porque facilitan y 
-aceleran el proceso de desarrollo debido especifica y define muchos de 
-los procesos propios del ciclo de vida de los proyectos de desarrollo de 
-software:
+aceleran el proceso de desarrollo debido a:
 
 * Define una estructura de aplicación, una forma homogénea de configurar y 
   usar todas las librerías que integra.
@@ -161,105 +164,92 @@ software:
   .
   Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
   o el problema al cual debe dar solución con la aplicación.
-
 ====
 
 [{topic}]
 == *Frameworks* = nuevos *problemas*
 
 [role="incremental scatter"]
-* *Diversidad* de frameworks
-* Frameworks *independientes*
+* *Múltiples* en una aplicación
+* *Aspectos concretos* [detail]#DI, MVC, seguridad, ...#
+* Diferente *configuración*
+* *Homogeneidad* <- problema
 
 [template="notesblock"]
 ====
 *CHARLA (WHY):*
 
 Sin embargo, aún con toda la productividad que proporcionan los frameworks,
-sigue siendo un problema para los desarrolladores si tienen necesidad de
-utilizar varios frameworks y/o librerías:
+sigue siendo un problema para los desarrolladores porque las aplicaciones 
+necesitan de varios frameworks y/o librerías para poder satisfacer los
+requerimientos del usuario.
 
-* Spring Framework
-* Spring MVC
-* Spring Security
-* CXF: an Open-Source Services Framework
-* Tiles
-* JasperReports
-* etc.
+Ocurre algo parecido a lo que ocurría con las librerías, las librerías agrupan
+funciones de utilidad, los frameworks agrupan librerías que dan solución a un
+aspecto concreto de una aplicación.
 
-TODO: es importante poner enfasis en los problemas que presenta trabajar de cierta manera con fw independientes y que es lo que aporta una herramienta de desarrollo
+Por ejemplo:
 
+* Spring Framework, soluciona cómo se suministran los objetos a otros objetos
+  en lugar de dejar que sean éstos quienes creen el propio objeto.
+* Spring MVC, gestión de la vista y control de aplicaciones web.
+* Spring Security, autenticación y autorización.
+* CXF, desarrollo de servicios web
+* JasperReports, desarrollo de informes
+* Bootstrap, jQuery, etc.
+
+Ahora el problema no está en integrar librerías, sino en integrar frameworks,
+en configurarlos, en resolver colisiones de dependencias, etc etc etc
+
+Aunque es cierto que los frameworks permiten que distintas aplicaciones tengan
+la misma estructura y por tanto introduce cierta homogeneidad en los proyectos
+de una organización, existe un problema: cada framework define su propia
+estructura, por lo que si por cualquier circunstancia utilizamos frameworks
+diferentes en distintas aplicaciones se pierde la homogeneidad en esos
+proyectos.
 ====
 
 [{topic}]
 == *Herramienta desarrollo* = *productividad++*
 
 [role="incremental scatter"]
-* Procesos automáticos [detail]#generación de código, configuración, ...#
+* Procesos automáticos [detail]#integrar frameworks, configurar, ...#
+* Patrones y *buenas prácticas++*
 * Focalizar en lógica de negocio
+* *Homogeneidad++*
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
 
-Las herramientas de desarrollo proporcionan todo lo necesario al desarrollador,
-para generar aplicaciones basadas en uno o varios frameworks de amplía 
-difusión y soporte, como Spring Framework, y basadas en estándares, como 
-JPA 2, etc.
+Una herramienta de desarrollo es una aplicación para crear otras
+aplicaciones basadas en varios frameworks y además integrar,
+configurar esos frameworks y cómo se relacionan.
 
-Además no introducen librerías propias en la aplicación. Ejemplos: Eclipse, 
-gvNIX, ... 
+Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
+allá de cada framework o librería:
 
-TODO: Más ventajas respecto a fws independientes
+* El ciclo de vida va desde el análisis hasta el mantenimiento
+* Mayor porcentaje del tiempo dedicado a lógica de negocio
 
-Dar la vision de que trabajar un una herramienta de desarrollo es un nivel
-superior, que te permite trabajar de forma organizada y controlada con este tipo de fw
+La homogeneidad no depende del framework, depende de la herramienta que se
+utiliza, definiendo una estructura de proyectos que debe ser única para 
+cualquier tipo de proyecto.
 
 ====
 
-== \\
+== Qué es gvNIX
 
 [{statement}]
-*gvNIX* herramienta de desarrollo rápido de *aplicaciones web*
-
-* Multiplataforma y fácil de instalar
-* Generación automática de código
-* Potencia uso buenas prácticas
-* Proyectos JEE estándar
-* No añade dependencias de componentes
+*gvNIX* es una *herramienta* de *desarrollo* rápido de aplicaciones web
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-*gvNIX es una herramienta de desarrollo rápido de aplicaciones web*.
-
-Herramienta diseñada para apoyar el desarrollo de sitios web dinámicos, 
-aplicaciones web y servicios web. 
-
-Características:
-
-* *Es multiplataforma y fácil de instalar*.
-  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
-  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
-  desarrollo: STS o Eclipse.
-  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
-  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
-  al PATH del sistema y lanzamos el entorno con el comando gvnix.
-* *Sistema de generación automática de código*.
-  Crea código en unidades de compilación separadas del código fuente creado
-  por los desarrolladores, de esta forma, la generación de código es 
-  totalmente inocua porque independiza el ciclo de vida del código generado del
-  ciclo de vida del código mantenido por los desarrolladores.
-* *Potencia el uso de buenas prácticas*.
-  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
-  plasmado sobre un modelo de clases que sirve como punto de partida del
-  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
-  del ciclo de vida de un proyecto*.
-* *Proyectos JEE estándar Los proyectos creados con gvNIX son aplicaciones Java
-  que cumplen con el estándar JEE.
-* *No sobrecarga el entorno de ejecución*.
-  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+Pues bien, *gvNIX es una herramienta de desarrollo rápido de aplicaciones
+web*. Es la herramienta de desarrollo que nos va a proporcionar todos los
+beneficios de un herramienta de desarrollo para crear aplicaciones web.
 
 ====
 
@@ -316,6 +306,52 @@ Beneficios:
   no interfiere en el despliegue de las soluciones ni crea dependencias con el
   producto final, de forma tal que resulta transparente para el despliegue en
   producción.
+
+====
+
+[{topic}]
+== Características
+
+[role="incremental scatter"]
+* *Multiplataforma* y fácil de instalar
+* Generación *no-intrusiva* de código
+* [detail]#Buenas prácticas desde# *Análisis*
+* Proyectos *JEE* estándar
+* *No* añade *dependencias* de componentes
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+* *Es multiplataforma y fácil de instalar*.
+  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
+  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
+  desarrollo: STS o Eclipse.
+  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
+  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
+  al PATH del sistema y lanzamos el entorno con el comando gvnix.
+* *Sistema de generación automática de código*.
+  Crea código en unidades de compilación separadas del código fuente creado
+  por los desarrolladores, de esta forma, la generación de código es 
+  totalmente inocua porque independiza el ciclo de vida del código generado del
+  ciclo de vida del código mantenido por los desarrolladores.
+* *Potencia el uso de buenas prácticas*.
+  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
+  plasmado sobre un modelo de clases que sirve como punto de partida del
+  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
+  del ciclo de vida de un proyecto*.
+  .
+  Hay que ver que el ciclo de vida va más allá de Maven: no es solo compilar,
+  ejecutar tests, desplegar, etc. es forzar para que se hagan los análisis,
+  facilitar incluir pruebas unitarias, funcionales, etc.
+* *Proyectos JEE estándar* Los proyectos creados con gvNIX son aplicaciones Java
+  que cumplen con el estándar JEE
+* *No sobrecarga el entorno de ejecución*.
+  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+
+TODO: Pensar diferencia con un sistema de trabajo basado en Maven, donde nos 
+presentaban que ellos tenían una forma de trabajar muy ordenada que les 
+permitía focalizar en la lógica de negocio.
 
 ====
 
@@ -395,6 +431,40 @@ para facilitar el desarrollo. Los más destacados son:
 ====
 
 [{topic}]
+== Madurez de gvNIX
+
+[role="incremental scatter"]
+* *Funcionalidades* que incluye
+* *Tecnología* de las aplicaciones
+* *Casos* de *uso*
+* *Sostenibilidad* del proyecto
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Muy bien, está claro por qué gvNIX es más que un framework, que no 
+bloquea el ciclo de vida de las aplicaciones, es decir no tiene sentido 
+aquello de "si gvNIX no lo soporta -> no se puede hacer con gvNIX", que se 
+ha utilizado una tecnología que va a permitir que gvNIX crezca en la medida 
+que se necesite en la DGTI. Pero, *¿está gvNIX lo suficientemente maduro?*
+
+Para contestar a esta pregunta vamos a ver:
+
+* *Funcionalidades* desarrolladas hasta la fecha y *nuevas funcionalidades* de la versión 1.4
+* Tecnologías que gvNIX incluye y sobre las que base las aplicaciones.
+* *Sostenibilidad* del proyecto
+
+- Dicho esto, proyectos relacionados con las funcionalidades y
+automatismos que nos proporciona NIX: Pues comentáis los que hay tanto
+dgti como fuera dgti.
+
+- Y volviendo a recordar, pero esto no es hablar de la madurez de NIX,
+pues la base de NIX es un proyecto como spring etc.
+
+====
+
+[{topic}]
 == Funcionalidades de gvNIX
 
 [role="incremental scatter"]
@@ -426,8 +496,8 @@ para facilitar el desarrollo. Los más destacados son:
 
 [role="incremental scatter"]
 * Monitorización *rendimiento* en producción
-* Componente *geográfica*
 * *Asistente* para *filtros*
+* Componente *geográfica*
 
 [template="notesblock"]
 ====
@@ -503,190 +573,9 @@ TODO
 Como no, 2 de las nuevas funcionalidades de la versión 1.4 que saldrá a
 finales de noviembre:
 
-*Componente geográfica*
-
-Funcionalidad estrella que veremos a fondo más adelante.
-
 *Monitorización rendimiento en producción*
 
 TODO
-
-TODO También será necesario responder a esto de: "El NIX está verde, cuantos
-proyectos de NIX hay?
-
-Ahí se podrá responder:
-
-- Bueno, realmente lo del NIX está verde, sería decir que Spring, que
-Jquery, que Hibernate está verde, pues como hemos visto NIX no es un FW
-sino una herramienta de desarrollo que surge para solventar el problema
-de la proliferación de tantos FW independientes
-
-- Dicho esto, proyectos relacionados con las funcionalidades y
-automatismos que nos proporciona NIX: Pues comentáis los que hay tanto
-dgti como fuera dgti.
-
-- Y volviendo a recordar, pero esto no es hablar de la madurez de NIX,
-pues la base de NIX es un proyecto como spring etc.
-
-====
-
-== Arquitectura de las aplicaciones
-
-ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
-capa web, la de control y la de modelo del dominio.
-
-La capa de dominio del problema suele contener una "sub-capa" de servicios  
-que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
-Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos 
-los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
-clases que modelan las entidades del dominio, que se encargan no solo de 
-modelar el dominio sino también de la validación de sus datos e incluso su 
-serialización a JSON.
-
-TODO: Lo que ofrece Spring Framework en ejecución.
-====
-
-== Pila tecnológica
-
-ifndef::backend-dzslides[]
-image::Java-web-fw-report.png[caption="Tecnología consolidada",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::Java-web-fw-report.png[caption="Tecnología consolidada"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-*Por qué esta pila tecnológica?*
-
-Dos datos muy rápidos sobre las tecnologías que integra gvNIX en las
-aplicaciones:
-
-* Spring MVC es el framework para desarrollo web más utilizado
-
-====
-
-== Pila tecnológica
-
-ifndef::backend-dzslides[]
-image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-*Por qué esta pila tecnológica?*
-
-Las aplicaciones generadas por gvNIX estan sobre una base
-tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
-nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
-gvNIX.
-
-====
-
-== Aplicación con ExtJS
-
-ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Una de las grandes ventajas de Spring Framework es que permite cambiar
-fácilmente cualquiera de los elementos de una aplicación, no sólo los
-soportados, sino que proporciona los mecanismos necesarios para integrar
-cualquier librería o estándar nuevo en cualquiera de las versiones del
-framework. A diferencia por ejemplo de entornos como Developer.
-
-Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
-no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
-mano ExtJS en la aplicación generada con gvNIX.
-
-Aún así el desarrollador obtendrá toda la productividad que le brinda gvNIX,
-aunque evidentemente sólo en 2 capas de la aplicación.
-====
-
-[{topic}]
-== Casos de uso
-
-[role="incremental"]
-* Aplicaciones de gestión *homogéneas*
-* Migración a web
-* Integración con procesos de negocio
-* Sistemas mixtos móvil-web
-* Gestión con componente geo
-* Gestión en Liferay
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-*Aplicaciones de gestión*
-
-Las grandes organizaciones están en constante evolución, todos los días surgen
-nuevas necesidades y requerimientos que deben cubrirse con nuevas
-aplicaciones. gvNIX ofrece una infraestructura común para los desarrollos
-propios y externos, garantizando que todos los proyectos son similares para
-facilitar el mantenimiento y la evolución.
-
-* Aplicaciones de gestión medias-grandes con un alto número de accesos
-concurrentes vía web.
-* Aplicaciones de gestión con gran volumen de datos.
-
-*Migración de aplicaciones a entorno web*
-
-La evolución tecnológica durante años hace que en las organizaciones exista
-gran diversidad de aplicaciones que por diferentes motivos carecen de
-mantenimiento.
-
-gvNIX es un entorno a la medida de cualquier perfil que permite migrar
-aplicaciones de gestión de datos rápidamente.
-
-*Integración de aplicaciones en procesos de negocio*
-
-Las organizaciones acumulan diversidad de procesos en un entorno tecnológico
-heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
-
-gvNIX permite conectar entre sí distintas aplicaciones con distintas
-tecnologías con tiempos y costes de desarrollo reducidos.
-
-*Sistemas mixtos móvil-web*
-
-Poner arquitectura medioambiente
-
-*Aplicaciones de gestión de datos con componente geo*
-
-Proof geo
-
-*Aplicaciones de para el ciudadano incrustadas en portales Liferay*
-
-Ejemplo portlet buscador Sanidad; o de gestión.
 
 ====
 
@@ -766,6 +655,179 @@ Este es el ejemplo más claro de los beneficios de gvNIX, en la versión 1.4
 conseguirá integrar no sólo Spring Framework, CXF, JasperReports, etc. con
 frameworks propios de aplicaciones de geomática como Leaflet, JTS (Java
 Topology Suite), Hibernate Spatial, etc.
+
+====
+
+== Tecnología
+
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
+endif::[]
+
+[{notes-caption}]
+====
+*CHARLA (HOW):*
+
+Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
+capa web, la de control y la de modelo del dominio.
+
+La capa de dominio del problema suele contener una "sub-capa" de servicios  
+que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
+Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos 
+los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
+clases que modelan las entidades del dominio, que se encargan no solo de 
+modelar el dominio sino también de la validación de sus datos e incluso su 
+serialización a JSON.
+
+TODO: Lo que ofrece Spring Framework en ejecución.
+====
+
+== Tecnología
+
+ifndef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+¿Y que hay de la tecnología que incluye gvNIX en las aplicaciones? Pues es la
+tecnología más utilizada en la actualidad. Spring MVC es el framework web
+comunmente utilizado. El 40% de la población de estudio manifestó que
+utilizaba Spring MVC.
+
+Dos datos muy rápidos sobre las tecnologías que integra gvNIX en las
+aplicaciones:
+
+* Spring MVC es el framework para desarrollo web más utilizado
+
+====
+
+== Tecnología
+
+ifndef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Por qué esta pila tecnológica?*
+
+Las aplicaciones generadas por gvNIX estan sobre una base
+tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
+nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
+gvNIX.
+
+Por tanto, está maduro gvNIX, *claro*, lo contrario sería decir que Spring, 
+que jQuery, que Hibernate no están maduros, pues como hemos visto gvNIX no es 
+un FW sino una herramienta de desarrollo que surge para solventar el problema
+de la proliferación de tantos FW independientes.
+
+====
+
+== Aplicación con ExtJS
+
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Vamos a ver un ejemplo, ¿qué pasa si queremos usa una tecnología diferentes 
+con gvNIX? Nada, podemos utilizar gvNIX para aquellas capas en las que nos
+pueda ayudar y facilitar el desarrollo y aquellas capas que queremos una
+tecnología diferente hacerlo a mano.
+
+Una de las grandes ventajas de Spring Framework es que permite cambiar
+fácilmente cualquiera de los elementos de una aplicación, no sólo los
+soportados, sino que proporciona los mecanismos necesarios para integrar
+cualquier librería o estándar nuevo en cualquiera de las versiones del
+framework. A diferencia por ejemplo de entornos como Developer.
+
+Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
+no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
+mano ExtJS en la aplicación generada con gvNIX.
+
+Aún así el desarrollador obtendrá toda la productividad que le brinda gvNIX,
+aunque evidentemente sólo en 2 capas de la aplicación.
+====
+
+[{topic}]
+== Casos de uso
+
+[role="incremental"]
+* Aplicaciones de gestión *homogéneas*
+* Migración a *entorno web*
+* *Integración* con procesos de negocio
+* Sistemas mixtos *móvil-web*
+* Gestión *datos geográficos*
+* *Portlets* Liferay
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Aplicaciones de gestión*
+
+Las grandes organizaciones están en constante evolución, todos los días surgen
+nuevas necesidades y requerimientos que deben cubrirse con nuevas
+aplicaciones. gvNIX ofrece una infraestructura común para los desarrollos
+propios y externos, garantizando que todos los proyectos son similares para
+facilitar el mantenimiento y la evolución.
+
+* Aplicaciones de gestión medias-grandes con un alto número de accesos
+concurrentes vía web.
+* Aplicaciones de gestión con gran volumen de datos.
+
+*Migración de aplicaciones a entorno web*
+
+La evolución tecnológica durante años hace que en las organizaciones exista
+gran diversidad de aplicaciones que por diferentes motivos carecen de
+mantenimiento.
+
+gvNIX es un entorno a la medida de cualquier perfil que permite migrar
+aplicaciones de gestión de datos rápidamente.
+
+*Integración de aplicaciones en procesos de negocio*
+
+Las organizaciones acumulan diversidad de procesos en un entorno tecnológico
+heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
+
+gvNIX permite conectar entre sí distintas aplicaciones con distintas
+tecnologías con tiempos y costes de desarrollo reducidos.
+
+*Sistemas mixtos móvil-web*
+
+Poner arquitectura medioambiente
+
+*Aplicaciones de gestión de datos con componente geo*
+
+Proof geo
+
+*Aplicaciones de para el ciudadano incrustadas en portales Liferay*
+
+Ejemplo portlet buscador Sanidad; o de gestión.
 
 ====
 
@@ -862,14 +924,14 @@ desarrollo, la difusión, los recursos del proyecto, etc.
 
 ====
 
+[role="topic recap"]
 == Demo: Entidades
 
-[{middle}]
 image::petclinic-uml.png[caption="Análisis del dominio",width="570"]
 
+[role="topic recap"]
 == Demo: Funcional
 
-[{middle}]
 image::../wireframes/wireframes.png[caption="Análisis funcional",width="570"]
 
 [template="notesblock"]
@@ -885,9 +947,6 @@ gvNIX, la 1.4 que saldrá en noviembre de este año:
 * Asistente para filtros (1.4)
 * Monitorización rendimiento en producción (1.4)
 * Componente geográfica (1.4)
-
-TODO: Más allá de Maven: donde nos presentaban que ellos tenían una forma de
-trabajar muy ordenada que les permitía focalizar en la lógica de negocio.
 
 Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
 métodos, el que mejor se ajusta a las características de gvNIX es DDD o
@@ -919,13 +978,11 @@ problema de una clínica veterinaria.
 
 ====
 
-[{topic}]
+[role="topic recap"]
 == {gvnixsite}
 
+[{middle}]
 image::logo_gvNIX.png[height="120"]
-
-[{topic}]
-https://github.com/DISID/gvnix-samples
 
 ////
 
