@@ -2,14 +2,23 @@
 // Build the presentation
 //
 // dzslides with embedded assets:
-// asciidoc -a data-uri slides.adoc
+//
+//   $ asciidoc -a data-uri slides.adoc
 //
 // HTML5 (print):
-// asciidoc -b html5 -o outline.html slides.adoc
+//
+//   $ asciidoc -b html5 -o outline.html slides.adoc
+//
+// PDF:
+// 
+//   $ dzslides2pdf.rb slides.adoc
+//
+//   PDF conversion requires: ruby, qt4-make, ruby-qt4, ruby-qt4-webkit, 
+//   capybara, capybara-webkit,
 //
  
 = Visión estratégica **gvNIX**
-v1.2, 17 oct 2014
+v1.4, 30 oct 2014
 :title: Visión estratégica gvNIX
 :description: These slides are a strategic overview to gvNIX.
 :copyright: CC BY-NC-SA 3.0
@@ -20,7 +29,7 @@ v1.2, 17 oct 2014
 :source-highlighter: highlightjs
 :backend: dzslides
 :dzslides-style: stormy
-:dzslides-aspect: 16-9
+:dzslides-aspect: 4-3
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
 :dzslides-highlight: monokai
@@ -338,8 +347,8 @@ Beneficios:
 * *Potencia el uso de buenas prácticas*.
   Todo proyecto de gvNIX comienza por un análisis del dominio del problema
   plasmado sobre un modelo de clases que sirve como punto de partida del
-  proyecto.  Un sistema de ayuda integrado guía al desarrollador a lo largo
-  del ciclo de vida de un proyecto*.
+  proyecto. Un sistema de ayuda integrado guía al desarrollador a lo largo
+  del ciclo de vida de un proyecto.
   .
   Hay que ver que el ciclo de vida va más allá de Maven: no es solo compilar,
   ejecutar tests, desplegar, etc. es forzar para que se hagan los análisis,
@@ -357,14 +366,19 @@ permitía focalizar en la lógica de negocio.
 
 == Arquitectura gvNIX
 
-[{middle}]
-image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX",width="570"]
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX",width="370"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-develtime.png[caption="Arquitectura de gvNIX"]
+endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-El framework ha sido implementado con lenguaje Java y sigue un modelo de
+gvNIX ha sido implementado con lenguaje Java y sigue un modelo de
 arquitectura orientado a componentes sobre plataforma OSGi en el que cada
 funcionalidad que ofrece el framework es implementada como un 
 add-on que colabora con el resto en las distintas tareas de generación.
@@ -397,7 +411,7 @@ Esta imagen ilustra la separación entre gvNIX y los proyectos y se aprecia como
 == Intérprete de comandos
 
 ifndef::backend-dzslides[]
-image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="570"]
+image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="370"]
 endif::[]
 
 ifdef::backend-dzslides[]
@@ -445,7 +459,7 @@ para facilitar el desarrollo. Los más destacados son:
 
 Muy bien, está claro por qué gvNIX es más que un framework, que no 
 bloquea el ciclo de vida de las aplicaciones, es decir no tiene sentido 
-aquello de "si gvNIX no lo soporta -> no se puede hacer con gvNIX", que se 
+aquello de *si gvNIX no lo soporta -> no se puede hacer con gvNIX*, que se 
 ha utilizado una tecnología que va a permitir que gvNIX crezca en la medida 
 que se necesite en la DGTI. Pero, *¿está gvNIX lo suficientemente maduro?*
 
@@ -455,20 +469,13 @@ Para contestar a esta pregunta vamos a ver:
 * Tecnologías que gvNIX incluye y sobre las que base las aplicaciones.
 * *Sostenibilidad* del proyecto
 
-- Dicho esto, proyectos relacionados con las funcionalidades y
-automatismos que nos proporciona NIX: Pues comentáis los que hay tanto
-dgti como fuera dgti.
-
-- Y volviendo a recordar, pero esto no es hablar de la madurez de NIX,
-pues la base de NIX es un proyecto como spring etc.
-
 ====
 
 [{topic}]
 == Funcionalidades de gvNIX
 
 [role="incremental scatter"]
-* *Scaffolding*
+* Análisis -> *Scaffolding*
 * Seguridad *autorización* y *autenticación*
 * Integración con *SAFE*
 * Exportar/Importar *servicios web*
@@ -488,6 +495,7 @@ pues la base de NIX es un proyecto como spring etc.
 
 [role="incremental scatter"]
 * Interfaz usuario *adaptativa* [detail]#(responsive UI)#
+* Internacionalización
 * Componentes avanzados: *tablas AJAX*, *lupa*
 * Maestro -> detalle *multinivel*
 
@@ -503,25 +511,56 @@ pues la base de NIX es un proyecto como spring etc.
 ====
 *CHARLA (HOW):*
 
-TODO Objetivo: Visualizar que existe una inversión y un plan desde la dgti sobre el NIX.
+*Análisis -> Scaffolding*
 
-*Ingeniería inversa de base de datos*
+Todo proyecto de gvNIX comienza por un análisis del dominio del problema
+plasmado sobre un modelo de clases que sirve como punto de partida del
+proyecto.
 
-Permite crear el modelo completo de entidades Java de la aplicación vía la introspección de la base de datos del proyecto. Además, incrementalmente mantiene el modelo de entidades sincronizado con todos los cambios realizados en el modelo de datos.
+Una vez tenemos el análisis del modelo de entidades, se 
+el scaffolding permite construir automáticamente
+la aplicación que permite gestionar la información representada por ese modelo
+de entidades.
 
-*Scaffolding*
+*Seguridad autorización y autenticación*
 
-Construcción automática de la aplicación a partir de un meta-modelo definido 
-en anotaciones Java, en sólo unos minutos se puede generar una aplicación
-funcional.
+* Instalar Spring Security
+* Activar control de acceso
+* Activar control de autorización
+* Sistema de proveedores (Drivers) para conectar a distintos sistemas de
+  gestión de usuarios: *SAFE*, *APLUSU*, ...
+* Facilidad para incluir nuevos sistemas en caliente sin necesidad de estar
+  preempaquetados en gvNIX.
 
-*Generación automática* de clientes de sistemas externos: email, JMS y WebServices.
+*Exportar/Importar servicios web*
 
-*Exponer automáticamente* servicios de la aplicación vía interfaz WebService
+Publica servicios de la aplicación vía interfaz WebService
 gvNIX permite integrar la aplicación con procesos de negocio remotos
 fácilmente. A partir de código Java con anotaciones JAX-WS o partir de
 archivos WSDL, genera automáticamente toda la infraestructura necesaria para
 recibir llamadas desde procesos externos.
+
+También genera automáticamente clientes de servicios web simplemente indicando
+la URL donde está publicado el WSDL genera las clases *Stub* en nuestra
+aplicación que permitirá que el resto de clases puedan invocar esos servicios
+remotos como si de llamadas a servicios locales se tratara.
+
+*Pruebas unitarias y funcionales*
+
+Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit 
+como funcionales con Selenium.
+
+*Informes*
+
+Instala JasperReports para generar informes.
+
+Cada informe es accesible desde el menú de la aplicación y genera un formulario previo para especificar los parámetros de filtrado.
+
+Los informes son totalmente funcionales desde su creación, incluyendo la generación de la plantilla .jrxml para permitir una personalización cómoda y fácil.
+
+*Ingeniería inversa de base de datos*
+
+Permite crear el modelo completo de entidades Java de la aplicación vía la introspección de la base de datos del proyecto. Además, incrementalmente mantiene el modelo de entidades sincronizado con todos los cambios realizados en el modelo de datos.
 
 *Control de concurrencia optimista*
 
@@ -534,55 +573,90 @@ En organizaciones públicas el modelo de datos sigue unas políticas de segurida
 
 gvNIX proporciona una implementación del control de concurrencia optimista basado en el estado de los objetos, igualmente efectivo pero no intrusivo.
 
-*Seguridad*
-
-Incorpora control de acceso y autorización por roles de usuario fácilmente.
-
-*Informes*
-
-Utiliza JasperReports para generar informes operativos dinámicamente y en diferentes formatos: PDF, LibreOffice, MSOffice, CSV. Cada informe es accesible desde el menú de la aplicación y genera un formulario previo para especificar los parámetros de filtrado.
-
-Los informes son totalmente funcionales desde su creación, incluyendo la generación de la plantilla .jrxml para permitir una personalización cómoda y fácil.
-
-*Pruebas unitarias y funcionales*
-
-Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit como funcionales con Selenium.
-
-*Generación de pantallas con diseño adaptativo* 
-
-Gestionar la información desde cualquier dispositivo: tableta, PC, móvil, etc.
-
-*Soporte de HTML5 y CSS3*
-
-Ampliar las opciones de configuración de la visualización de los datos
-tabulares por el usuario final: agrupación de datos, guardar configuración,
-etc.
-
-*Componente lupa*
-
-TODO
-
 *Auditoría de cambios en base de datos*
 
-TODO
+Añade soporte a la aplicación para hacer auditoría de cambios en datos de las
+entidades del modelo: registrar quien y cuándo crea o modifica una instancia,
+o en términos de base de datos quien y cuándo modifica una registro
 
 *Histórico de cambios de base de datos*
 
-TODO
+Esta funcionalidad almacena todos los cambios sufridos por las entidades 
+auditadas de forma que sea posible identificar qué, quién y cuándo se 
+produjeron, incluyendo las eliminaciones de los registros.
 
-Como no, 2 de las nuevas funcionalidades de la versión 1.4 que saldrá a
-finales de noviembre:
+*Generación de pantallas con diseño adaptativo y accesibles*
+
+Integran frameworks de desarrollo web en la aplicación para generar la vista 
+con una estructura HTML5 y CSS3 adaptativa, es decir, automáticamente se 
+adaptan para su visualización desde múltiples dispositivos: tabletas, móviles, 
+portátiles, PCs ...
+
+Ademá, estos frameworks de desarrollo utilizan estándares web de tal forma que 
+se sientan las bases de sitios web accesibles para personas que utilizan 
+tecnologías de apoyo para navegar.
+
+*I18n*
+
+Permite añadir soporte para nuevos idiomas en el proyecto. Al incluir un nuevo
+idioma, se añaden en la aplicación de forma automática y infraestructura
+necesaria y los textos traducidos a dicho idioma.
+
+*Componentes avanzados: tablas AJAX, lupa*
+
+*Datatables*
+
+Integra componentes de tablas más dinámicas y funcionales: paginación,
+búsqueda global, filtrado por columna, ordenación, diversas fuentes de
+datos: AJAX, DOM, etc; visualización en modo registro, edición en línea, 
+edición y borrado múltiple, conjunto predefinido de filtros simples, 
+registro creado a primera posición, selección siempre visible.
+
+*Lupa*
+
+Permite utilizar componentes de tipo lupa en las aplicaciones. Gracias a estos
+componentes, podemos buscar registros de forma sencilla de campos relacionados 
+sin tener que visualizar todos los datos en un desplegable.
+
+*Maestro -> detalle multinivel*
+
+Crear patrones de visualización sobre entidades y sus relaciones: permitiendo
+cualquier combinación [maestro-tabular | maestro-registro] con
+[detalle-tabular | detalle-registro], sin límite en el número de relaciones
+tanto directas como indirectas.
 
 *Monitorización rendimiento en producción*
 
-TODO
+Integra un sistema de monitorización para aplicaciones web en producción.
+
+Se crea la infraestructura necesaria para registrar tiempos de ejecución de
+los distintos elementos de la aplicación: generación de vista, consultas SQL,
+ejecución de métodos, petición HTTP.
+
+Además se crea una página desde donde podemos ver estadísticas de los
+datos recopilados.
+
+*Asistente para filtros*
+
+Los sistemas de filtrado de datos de la tabla permiten no sólo comparar texto
+plano sino que permite definir operaciones de filtrado como *CONTIENE()*,
+*>=*, *FECHA()*, etc
+
+Dado que es complicado acordarse de todas las operaciones, al activar el
+filtrado por columna se integra automáticamente un asistente que permite al 
+usuario elegir la operación de filtrado por columna.
 
 ====
 
 == Componente geográfica
 
-[{middle}]
-image::map_generic.png[caption="Componente geográfica",width="570"]
+ifndef::backend-dzslides[]
+image::console-screens.png[caption="Componente Geo",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::console-screens.png[caption="Geo"]
+endif::[]
 
 [template="notesblock"]
 ====
@@ -615,39 +689,53 @@ librerías que suelen usar los desarrolladores para trabajar con las BBDD no
 los soportan por defecto. Es necesario integrar y configurar librerías
 adicionales que incluyan dicho soporte.
 
-A nivel de modelo de datos gvNIX permite:
+No estamos hablando de que nuestra aplicación integre un plugin Javascript que
+muestre un mapita de Google Maps donde geoposicionamos información concreta de
+la aplicación, estamos hablando de:
 
-* Incorporar atributos geográficos vectoriales como un dato más en el modelo
+* Edición de datos de tipo GEO
+* Visualizar datos en un mapa
+* Poder filtrar registros del mapa
+* Mostrar en el mapa registros seleccionados
+* Generar listado de capas disponibles
+* Añadir fácilmente nuevas capas:
+- Datos de entidades
+- open street map,
+- GVA IDE
+- ...
+* Habilitar herramientas de mapas y permitir crear nuevas herramientas:
+  medición, zoom, escala, ...
+* Accesible desde cualquier dispositivo: tableta, móvil, PC ...
+
+Qué proporciona gvNIX a los desarrolladores que deseen incorporar estas
+funcionalidades a sus aplicaciones:
+
+* A nivel de modelo de datos:
+- Incorporar atributos geográficos vectoriales como un dato más en el modelo
   de datos de una aplicación, integrando y configurando las librerías
   necesarias para ello.
-* Soporte para consultas a BBDD con filtros espaciales. Es decir, poder buscar
+- Soporte para consultas a BBDD con filtros espaciales. Es decir, poder buscar
   datos no sólo por sus valores alfanuméricos, sino también por sus
   características geográficas: elementos que estén cerca de una localización,
   dentro de un área determinada, etc.
-
-A nivel de presentación el objetivo principal es la visualización de los datos 
-sobre un mapa, empleando para ello librerías Javascript como Leaflet. En este 
-aspecto, las funcionalidades son:
-
-* gvNIX genera automáticamente páginas para la visualización, listado,
+* A nivel de presentación:
+- gvNIX genera automáticamente páginas para la visualización, listado,
   búsqueda, creación y edición de datos alfanuméricos y además incorpora la
   visualización sobre un mapa de estos mismos datos. Por ejemplo, si tenemos
   un listado de ciudades que se muestran sobre una tabla, se podría incorporar
   también un mapa en el que se muestre la localización de estas ciudades.
-* Permite la edición de la localización de elementos. Incorpora a los
+- Permite la edición de la localización de elementos. Incorpora a los
   formularios de creación y edición de datos que genera gvNIX el poder
   establecer la localización del dato que se está editando mediante la
   selección de un punto sobre un mapa.
-* Generación de geoportales. Cualquier aplicación gvNIX puede incorporar
+- Generación de geoportales. Cualquier aplicación gvNIX puede incorporar
   un geoportal en el que se muestren todos los datos que se gestionan desde la
   aplicación como diferentes capas, con opciones de búsqueda, activación,
   etc., así como integración con el resto de páginas de la aplicación: 
   herramienta de edición que al seleccionar un elemento sobre el mapa, nos 
   lleva al formulario de edición de dicho elemento.
-
-A nivel de proyecto:
-
-* gvNIX permite integrar y combinar distintos frameworks y librerías de tal 
+* A nivel de proyecto:
+- gvNIX permite integrar y combinar distintos frameworks y librerías de tal 
   forma que desarrolladores sin conocimientos geo serán perfectamente capaces
   de desarrollar aplicaciones de gestión con componente geográfica.
 
@@ -661,14 +749,14 @@ Topology Suite), Hibernate Spatial, etc.
 == Tecnología
 
 ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="570"]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="370"]
 endif::[]
 
 ifdef::backend-dzslides[]
 image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
 endif::[]
 
-[{notes-caption}]
+[template="notesblock"]
 ====
 *CHARLA (HOW):*
 
@@ -689,7 +777,7 @@ TODO: Lo que ofrece Spring Framework en ejecución.
 == Tecnología
 
 ifndef::backend-dzslides[]
-image::Java-web-fw-report.png[caption="Tecnología consolidada",width="570"]
+image::Java-web-fw-report.png[caption="Tecnología consolidada",width="370"]
 endif::[]
 
 ifdef::backend-dzslides[]
@@ -715,7 +803,7 @@ aplicaciones:
 == Tecnología
 
 ifndef::backend-dzslides[]
-image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="570"]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="370"]
 endif::[]
 
 ifdef::backend-dzslides[]
@@ -733,8 +821,8 @@ tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
 nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
 gvNIX.
 
-Por tanto, está maduro gvNIX, *claro*, lo contrario sería decir que Spring, 
-que jQuery, que Hibernate no están maduros, pues como hemos visto gvNIX no es 
+Por tanto, *está maduro gvNIX*, claro, *lo contrario sería decir que Spring, 
+que jQuery, que Hibernate no están maduros*, pues como hemos visto gvNIX no es 
 un FW sino una herramienta de desarrollo que surge para solventar el problema
 de la proliferación de tantos FW independientes.
 
@@ -743,7 +831,7 @@ de la proliferación de tantos FW independientes.
 == Aplicación con ExtJS
 
 ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="570"]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="370"]
 endif::[]
 
 ifdef::backend-dzslides[]
@@ -809,6 +897,19 @@ mantenimiento.
 gvNIX es un entorno a la medida de cualquier perfil que permite migrar
 aplicaciones de gestión de datos rápidamente.
 
+Ejemplos:
+
+* Gestión de acuses de recibo electrónicos de la CITMA
+* Gestión de aplicaciones y usuarios de la CITMA
+* Aplicación web Explorador de servicios web
+* Gestión de proyectos de la CITMA
+* Gestión de sentencias judiciales del CITMA
+* Gestión de Terceros de la CITMA
+* Gestión de catálogos de obras de arte para el museo de Alzira
+* Gestión de recursos agrícolas en la Florida Universitaria (XL)
+* Gestión de Caza y Pesca (Peyca)
+* gvCarrera: 1ra fase desarrollada en 4 semanas (análisis funcional incluido)
+
 *Integración de aplicaciones en procesos de negocio*
 
 Las organizaciones acumulan diversidad de procesos en un entorno tecnológico
@@ -817,17 +918,34 @@ heterogéneo: cliente/servidor, aplicaciones web, servicios SOA, etc.
 gvNIX permite conectar entre sí distintas aplicaciones con distintas
 tecnologías con tiempos y costes de desarrollo reducidos.
 
+Ejemplos:
+
+* Generación de acuses de recibo electrónicos de la CITMA
+* Servicios web de Mastín: Integración entre las aplicaciones Serpre y Mastín
+  de la CITMA
+* Gestión y recepción de información de sistemas de tiempo real RFID (M).
+
 *Sistemas mixtos móvil-web*
 
 Poner arquitectura medioambiente
+
+Ejemplos:
+
+* Gestión de denuncias Medio Ambientales
 
 *Aplicaciones de gestión de datos con componente geo*
 
 Proof geo
 
+Ejemplos:
+
+* Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
+
 *Aplicaciones de para el ciudadano incrustadas en portales Liferay*
 
-Ejemplo portlet buscador Sanidad; o de gestión.
+Ejemplos:
+
+* Gestión de inmuebles en un entorno de portlets Liferay para Cúspide Inmobiliaria
 
 ====
 
@@ -927,12 +1045,24 @@ desarrollo, la difusión, los recursos del proyecto, etc.
 [role="topic recap"]
 == Demo: Entidades
 
+ifndef::backend-dzslides[]
 image::petclinic-uml.png[caption="Análisis del dominio",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::petclinic-uml.png[caption="Análisis del dominio"]
+endif::[]
 
 [role="topic recap"]
 == Demo: Funcional
 
+ifndef::backend-dzslides[]
 image::../wireframes/wireframes.png[caption="Análisis funcional",width="570"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::../wireframes/wireframes.png[caption="Análisis funcional"]
+endif::[]
 
 [template="notesblock"]
 ====
@@ -985,72 +1115,6 @@ problema de una clínica veterinaria.
 image::logo_gvNIX.png[height="120"]
 
 ////
-
-== \\
-
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-[{statement}]
-Distribuciones
-
-[template="notesblock"]
-====
-
-TODO: Esta no
-
-TBC: Actualmente hay una distribución que incluye todo.
-TBC: Proceso de release actual.
-
-TBC: Nueva organización. Explicar.
-* Spring Roo.
-* gvNIX.
-* gvNIX DGTI.
-TBC: Nuevo proceso de release. gvNIX independiente de Roo (al menos versiones
-minor) y gvNIX DGTI independiente de gvNIX.
-====
-
-== \\
-
-image::logo_gvNIX.png[role="pull-right",height="50"]
-
-Proyecto de código abierto *GPL v3*
-
-[{stepwise}]
-* www.gvnix.org & documentacion
-* github.com/DISID/gvnix & samples
-* sourceforge.net/projects/gvnix
-* code.google.com/p/gvnix/source & issues
-* stackoverflow.com
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-gvNIX es un proyecto de código abierto bajo licencia GPL v3.
-
-Las 4 libertades que obtiene la organización al utilizar software de código
-abierto:
-
-1. Libertad para ejecutar el programa en cualquier sitio, con cualquier propósito y para siempre. 
-2. Libertad para estudiarlo y adaptarlo a nuestras necesidades. Esto exige el acceso al código fuente. 
-3. Libertad de redistribución, de modo que se nos permita colaborar con vecinos y amigos. 
-4. Libertad para mejorar el programa y publicar las mejoras. También exige el código fuente.
-
-[width="100%",cols="<50%,<50%",]
-|=======================================================================
-|Página principal del proyecto |http://www.gvnix.org
-|Código fuente |https://github.com/DISID/gvnix/
-|Binarios |http://sourceforge.net/projects/gvnix/files/
-|Repositorio Maven |https://code.google.com/p/gvnix/source/browse/
-|Soporte |https://code.google.com/p/gvnix/issues/list
-
-http://stackoverflow.com/questions/tagged/gvnix
-|Documentación |http://www.gvnix.org/documentacion
-
-https://github.com/DISID/gvnix-samples
-|=======================================================================
-
-====
 
 ////
 
