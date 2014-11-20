@@ -19,8 +19,9 @@
  
 = Visión estratégica **gvNIX**
 v1.4, 30 oct 2014
-:title: Visión estratégica gvNIX
-:description: These slides are a strategic overview to gvNIX.
+:title: Desarrollo rápido de geoportales para visualización y gestión de datos
+:description: These slides are a strategic overview to gvNIX Geo component
+support included in release 1.4 for 10 international gvSIG Conference
 :copyright: CC BY-NC-SA 3.0
 :corpsite: www.disid.com
 :gvnixsite: www.gvnix.org
