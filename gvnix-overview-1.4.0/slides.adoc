@@ -68,12 +68,14 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 ====
 *CHARLA (WHY):*
 
+*Lenguaje + Librerías API*
 Habitualmente cualquier plataforma de
 desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
 conjunto de librerías que no son más que conjuntos de funciones ya 
 implementadas básicas con funcionalidad imprescindible, en el caso
 de la plataforma Java estas librerías se conocen como el *API Java*.
 
+*Problema programar sólo con lenguaje*
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
 usando solo el lenguaje y las librerías básicas tendríamos un problema, ya que
 sólo ofrecen utilidades de bajo nivel (programación concurrente, sockets,
@@ -81,6 +83,7 @@ estructuras de datos, etc) y por tanto aspectos de programación
 tan necesarios como manejo de sesiones web, componentes de interfaz de 
 usuario, envío de correo, etc. tendríamos que desarrollarlas a mano.
 
+*Más productividad = librerías de terceros*
 En lugar de ello es más productivo y eficiente usar librerías de terceros que
 ofrezcan estas funciones de más alto nivel.
 
@@ -99,6 +102,8 @@ ofrezcan estas funciones de más alto nivel.
 ====
 *CHARLA (WHY):*
 
+*Diversidad de librerías*
+
 Esto que a priori es bueno, supone una nueva problemática para los proyectos
 de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
 aplicación que necesitamos no nos es suficiente con usar un única librería
@@ -106,11 +111,12 @@ sino que necesitamos utilizar varias.
 
 Usar varias librerías genera nueva problemática:
 
-* Cada librería es totalmente independiente, con su propia configuración.
-* Es necesaria una configuración e instalación manual particulares para cada 
+* Cada *librería es totalmente independiente*, con su propia configuración.
+* Es necesaria una *configuración e instalación manual particulares* para cada 
   librería
-* Las librerías no aportan una estructura concreta a nuestros proyectos, por lo
-  que ésta depende de cada desarrollador y nos podemos encontrar en la situación
+* Las librerías *no aportan una estructura* concreta a nuestros proyectos, por 
+  lo que ésta depende de cada desarrollador y nos podemos encontrar en la 
+  situación
   que cada proyecto y aplicación tiene una estructura diferente.
 
 ====
