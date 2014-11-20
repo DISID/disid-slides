@@ -1,0 +1,14 @@
+// yUML Class Diagram
+[«enumeration»;Speciality|Cardiology;Dentistry;Nutriology]
+[«enumeration»;PetType|Dog;Cat;Bird]
+[AbstractPerson|firstName : String;lastName : String;address : String;city : String;telephone : String;homepage : String;email : String;birthday : Date;distance : LineString;location : Point;area : Polygon;streets : MultiLineString|]
+[Vet|employedSince : Date;speciality : Speciality|]
+[AbstractPerson]^-[Owner]
+[AbstractPerson]^-[Vet]
+[Owner]<>1->*[Pet]
+[Pet]->[Owner]
+[Pet|sendReminders : Boolean;name : String;weight : Float;type : PetType|]
+[Visit|description : String;visitDate : Date|]
+[Visit]->[Pet]
+[Visit]->[Vet]
+
