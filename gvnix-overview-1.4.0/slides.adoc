@@ -314,7 +314,7 @@ Beneficios:
   gvNIX es fácil de instalar tanto como herramienta independiente que funciona
   en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
   desarrollo: STS o Eclipse.
-  Los únicos requerimientos son Java 6 SDK y Apache Maven 3. Una vez
+  Los únicos requerimientos son Java (6 o superior) SDK y Apache Maven 3. Una vez
   instalados, se descarga la distribución de gvNIX, se descomprime y se añade
   al PATH del sistema y lanzamos el entorno con el comando gvnix.
 * *Generación no-intrusiva de código*
@@ -461,7 +461,7 @@ Para contestar a esta pregunta vamos a ver:
 * Seguridad *autorización* y *autenticación*
 * Integración con *SAFE*
 * Exportar/Importar *servicios web*
-* *Pruebas* unitarias y funcionales
+* *Pruebas* de integración y funcionales
 
 [{topic}]
 == Funcionalidades de gvNIX
@@ -516,7 +516,7 @@ de entidades.
 
 *Exportar/Importar servicios web*
 
-Publica servicios de la aplicación vía interfaz WebService
+Publica servicios de la aplicación vía interfaz WebService.
 gvNIX permite integrar la aplicación con procesos de negocio remotos
 fácilmente. A partir de código Java con anotaciones JAX-WS o partir de
 archivos WSDL, genera automáticamente toda la infraestructura necesaria para
@@ -527,9 +527,9 @@ la URL donde está publicado el WSDL genera las clases *Stub* en nuestra
 aplicación que permitirá que el resto de clases puedan invocar esos servicios
 remotos como si de llamadas a servicios locales se tratara.
 
-*Pruebas unitarias y funcionales*
+*Pruebas de integración y funcionales*
 
-Genera automáticamente pruebas de calidad de código, tanto unitarias con Junit 
+Genera automáticamente pruebas de validación de código, tanto de integración con Junit 
 como funcionales con Selenium.
 
 *Informes*
@@ -786,7 +786,7 @@ endif::[]
 
 *Por qué esta pila tecnológica?*
 
-Las aplicaciones generadas por gvNIX estan sobre una base
+Las aplicaciones generadas por gvNIX están sobre una base
 tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
 nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
 gvNIX.
@@ -1059,7 +1059,7 @@ métodos, el que mejor se ajusta a las características de gvNIX es DDD o
 * Si la aplicación tiene interfaz de usuario, se genera automáticamente y 
   se ajusta la interfaz a las especificaciones de requerimientos.
 * A continuación se inicia un proceso evolutivo donde se codifica la lógica 
-  de negocio y las pruebas unitarias para hacer crecer el sistema hasta tener 
+  de negocio y las pruebas de integración para hacer crecer el sistema hasta tener 
   la aplicación final.
 
 La aplicación demo es para *gestión de una clínica veterinaria*. Los usuarios 
