@@ -499,7 +499,7 @@ Todo proyecto de gvNIX comienza por un análisis del dominio del problema
 plasmado sobre un modelo de clases que sirve como punto de partida del
 proyecto.
 
-Una vez tenemos el análisis del modelo de entidades, se 
+Una vez tenemos el análisis del modelo de entidades,
 el scaffolding permite construir automáticamente
 la aplicación que permite gestionar la información representada por ese modelo
 de entidades.
@@ -560,7 +560,7 @@ gvNIX proporciona una implementación del control de concurrencia optimista
 
 Añade soporte a la aplicación para hacer auditoría de cambios en datos de las
 entidades del modelo: registrar quien y cuándo crea o modifica una instancia,
-o en términos de base de datos quien y cuándo modifica una registro
+o en términos de base de datos quien y cuándo modifica un registro
 
 *Histórico de cambios de base de datos*
 
@@ -645,7 +645,7 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-Cada vez son más áreas del saber que requieren el uso de datos geoespaciales
+Cada vez son más las áreas del saber que requieren el uso de datos geoespaciales
 para cumplir con mayor acierto sus procesos, como la gestión pública, gestión
 medioambiental, ingeniería, entre otras, por lo que existe hoy en día una
 creciente necesidad de aplicaciones web que requieren compartir e integrar
