@@ -17,9 +17,9 @@
 //   capybara, capybara-webkit,
 //
  
-= Visión estratégica **gvNIX**
-v1.4, 30 oct 2014
-:title: Desarrollo rápido de geoportales para visualización y gestión de datos
+= **gvNIX** - Desarrollo rápido de geoportales para visualización y gestión de datos 
+v1.1, 26 nov 2014
+:title: gvNIX - Desarrollo rápido de geoportales para visualización y gestión de datos
 :description: These slides are a strategic overview to gvNIX Geo component
 support included in release 1.4 for 10 international gvSIG Conference
 :copyright: CC BY-NC-SA 3.0
@@ -29,7 +29,7 @@ support included in release 1.4 for 10 international gvSIG Conference
 :linkcss!:
 :source-highlighter: highlightjs
 :backend: dzslides
-:dzslides-style: stormy
+:dzslides-style: gvsig-jornadas
 :dzslides-aspect: 4-3
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
@@ -110,9 +110,9 @@ proyectos.
 
 [role="incremental scatter"]
 * *Crear*, *integrar*, *configurar*, ...
-* Patrones y *buenas prácticas++*
-* *Focalizar++* en lógica de negocio
-* *Homogeneidad++*
+* Patrones y *buenas prácticas*
+* *Focalizar* en lógica de negocio
+* *Homogeneidad*
 
 [template="notesblock"]
 ====
@@ -394,7 +394,7 @@ No estamos hablando de que nuestra aplicación integre un plugin Javascript que
 muestre un *mapita de Google Maps* donde geoposicionamos información concreta de
 la aplicación, estamos hablando de:
 
-* Edición de datos de tipo GEO
+* Edición de datos de tipo geofráfico
 * Cruzar información de múltiples entidades en un mapa
 * Poder filtrar registros del mapa
 * Mostrar en el mapa sólo registros seleccionados
@@ -424,7 +424,7 @@ funcionalidades a sus aplicaciones:
 * A nivel de modelo de datos:
 - Configurar soporte para BBDD espaciales. Ejemplos de ello son: PostgreSQL 
   con PostGIS, Oracle con Spatial, etc. que permiten unir datos
-  alfanuméricos habituales con nuevos campos geométricos que representen la
+  alfanuméricos habituales con nuevos campos geográficos que representen la
   localización y forma de los datos. Por ejemplo, si tenemos una tabla con las
   ciudades de un país, tendremos datos como el nombre, el número de habitantes,
   etc. y por otro lado podemos tener un punto geográfico que indique la posición
@@ -454,7 +454,7 @@ funcionalidades a sus aplicaciones:
   lleva al formulario de edición de dicho elemento.
 * A nivel de proyecto:
 - gvNIX permite integrar y combinar distintos frameworks y librerías de tal 
-  forma que desarrolladores sin conocimientos geo serán perfectamente capaces
+  forma que desarrolladores sin conocimientos geográficos serán perfectamente capaces
   de desarrollar aplicaciones de gestión con componente geográfica.
 
 Este es el ejemplo más claro de los beneficios de gvNIX, en la versión 1.4
