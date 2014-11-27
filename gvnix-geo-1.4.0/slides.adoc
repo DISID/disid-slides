@@ -56,93 +56,64 @@ Veremos cómo incluir datos georeferenciados en una aplicación desarrollada con
 ====
 
 [{intro}]
-== *Frameworks*
+== *Problemática*
 
 [{topic}]
-== *Frameworks*
+== *Problemática*
+
+ifndef::backend-dzslides[]
+image::geoportal-problem.png[width="700"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::geoportal-problem.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Problemática*
 
 [role="incremental scatter"]
-* Conjunto de librerías cohesionadas
-* *Múltiples* en una aplicación
-* *Aspectos concretos* [detail]#DAO, MVC, GEO, ...#
-* Problema -> *Integrar frameworks*
-* *Homogeneidad* limitada
+* Distintas aplicaciones
+* *Experto:* Aplicación de escritorio con información geográfica
+* *Usuario:* Aplicación web con información alfanumérica
 
 [template="notesblock"]
 ====
 *CHARLA (WHY):*
 
-Un framework es un conjunto de librerías cohesionadas que cubren aspectos
-específicos de las necesidades de las aplicaciones, funciones de más alto 
-nivel que una única librería no cubre, se necesitan varias librerías para
-poder dar una solución que genere mayor productividad:
-
-*EJEMPLO: un framework de persistencia de objetos espaciales:
-integra librerías de log, el API JDBC, Hibernate Spatial, Postgis, etc.*
-
-Sin embargo, aún con toda la productividad que proporcionan los frameworks,
-los desarrolladores necesitan de varios frameworks y/o librerías para poder 
-satisfacer los requerimientos del proyecto.
-
-Ocurre algo parecido a lo que ocurre con las librerías, las librerías agrupan
-funciones de utilidad, los frameworks agrupan librerías que dan solución a un
-aspecto concreto de una aplicación.
-
-Por ejemplo, es fácil o habitual que nuestras aplicaciones web necesiten usar 
-varios de los siguientes frameworks:
-
-* Spring Framework.
-* Hibernate Spatial, Postgis, etc.
-* Spring MVC
-* Bootstrap, jQuery, etc.
-* Leaflet, JTS (Java Topology Suite), etc.
- 
-El problema está en integrar frameworks, en configurarlos,
-en resolver colisiones de dependencias, etc etc etc
-
-Aunque es cierto que los frameworks permiten que distintas aplicaciones tengan
-la misma estructura y por tanto introduce cierta homogeneidad en los proyectos
-de una organización, existe un problema: cada framework define su propia
-estructura, por lo que si por cualquier circunstancia utilizamos frameworks
-diferentes en distintas aplicaciones se pierde la homogeneidad en esos
-proyectos.
 ====
 
 [{intro}]
-== *Herramienta desarrollo*
+== *Objetivo*
 
 [{topic}]
-== Herramienta desarrollo = *productividad*
+== *Objetivo*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Objetivo*
 
 [role="incremental scatter"]
-* *Crear*, *integrar*, *configurar*, ...
-* Patrones y *buenas prácticas*
-* *Focalizar* en lógica de negocio
-* *Homogeneidad*
+* Integrar información geográfica al *usuario*
+* Explotar la información en un geoportal
 
 [template="notesblock"]
 ====
 *CHARLA (WHAT):*
-
-* Una herramienta de desarrollo es una aplicación para crear otras aplicaciones 
-  basadas en varios frameworks y además integrar, configurar esos frameworks y 
-  cómo se relacionan.
-* Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
-  allá de cada framework o librería:
-- El ciclo de vida va desde el análisis hasta el mantenimiento
-* Mayor porcentaje del tiempo dedicado a lógica de negocio ya que dedicamos el
-  tiempo de buscar cómo se configuran los frameworks, como se integran, etc
-  etc a programar.
-* La homogeneidad no depende de cada framework, la define la herramienta de
-  desarrollo, pudiendo crear una estructura de proyectos única para 
-  cualquier tipo de proyecto.
 
 ====
 
 [{intro}]
 == *gvNIX*
 
-== Qué es gvNIX
+[{topic}]
+== *Qué es gvNIX*
 
 [{statement}]
 *gvNIX* es una *herramienta* de *desarrollo* rápido de aplicaciones web
@@ -170,14 +141,13 @@ previamente se añada a gvNIX.
 ====
 
 [{topic}]
-== Características
+== *Características*
 
 [role="incremental scatter"]
-* *Multiplataforma* y fácil de instalar
-* Generación *no-intrusiva* de código
-* [detail]#Buenas prácticas desde# *Análisis*
-* Proyectos *JEE* estándar
-* *No* añade *dependencias* de componentes
+* Multiplataforma y fácil de instalar
+* Generación no-intrusiva de código
+* Buenas prácticas desde Análisis
+* Proyectos web JEE estándar
 
 [template="notesblock"]
 ====
@@ -204,13 +174,11 @@ previamente se añada a gvNIX.
 * *Proyectos JEE estándar*
   Los proyectos creados con gvNIX son aplicaciones Java
   que cumplen con el estándar JEE
-* *No añade dependencias de componentes*
-  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
 
 ====
 
 [{topic}]
-== Intérprete de comandos
+== *Intérprete de comandos*
 
 ifndef::backend-dzslides[]
 image::gvnix-shell-eclipse.png[width="700"]
@@ -247,49 +215,28 @@ para facilitar el desarrollo. Los más destacados son:
 
 ====
 
-[{intro}]
-== *Funcionalidades de gvNIX*
-
 [{topic}]
-== Funcionalidades de gvNIX
+== *Funcionalidades*
 
 [role="incremental scatter"]
-* Análisis -> *Scaffolding*
-* Seguridad *autorización* y *autenticación*
-* Exportar/Importar *servicios web*
-* *Pruebas* de integración y funcionales
+* Crear modelo de entidades
+* Generar automáticamente la capa web
+* ... entre muchas otras
 
 [{topic}]
-== Funcionalidades de gvNIX
+== *Funcionalidades*
 
-[role="incremental scatter"]
-* *Informes*
-* *Ingeniería inversa*
-* Control de *concurrencia*
-* *Auditoría* e *histórico* de cambios en bbdd
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add.png[width="700"]
+endif::[]
 
-[{topic}]
-== Funcionalidades de gvNIX
-
-[role="incremental scatter"]
-* Interfaz usuario *adaptativa* [detail]#(responsive UI)#
-* Internacionalización
-* Componentes avanzados: *tablas AJAX*, *lupa*
-* Maestro -> detalle *multinivel*
-
-[{topic}]
-== Funcionalidades de gvNIX
-
-[role="incremental scatter"]
-* Monitorización *rendimiento* en producción
-* *Asistente* para *filtros*
-* Componente *geográfica*: geoportales
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add.png[width="700"]
+endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
-
-*Análisis -> Scaffolding*
 
 Todo proyecto de gvNIX comienza por un análisis del dominio del problema
 plasmado sobre un modelo de clases que sirve como punto de partida del
@@ -300,91 +247,10 @@ el scaffolding permite construir automáticamente
 la aplicación que permite gestionar la información representada por ese modelo
 de entidades.
 
-*Seguridad autorización y autenticación*
-
-* Instalar Spring Security
-
-Activa un control de acceso y de autorización.
-
-*Exportar/Importar servicios web*
-
-Publica servicios de la aplicación vía interfaz WebService.
-Genera automáticamente toda la infraestructura necesaria para
-recibir llamadas desde procesos externos.
-También genera automáticamente clientes de servicios web.
-
-*Pruebas de integración y funcionales*
-
-Genera automáticamente pruebas de validación de código, tanto de integración con Junit 
-como funcionales con Selenium.
-
-*Informes*
-
-Instala JasperReports para generar informes.
-
-*Ingeniería inversa de base de datos*
-
-gvNIX proporciona una implementación del control de concurrencia optimista 
-*basado en el estado de los objetos*, igualmente efectivo pero no tan intrusivo
-como el método clásico de un campo de versión que debe incluirse en todas las tablas del modelo de datos.
-
-*Auditoría de cambios en base de datos*
-
-Añade soporte a la aplicación para hacer auditoría de cambios en datos de las
-entidades del modelo.
-
-*Histórico de cambios de base de datos*
-
-Esta funcionalidad almacena todos los cambios sufridos por las entidades 
-auditadas.
-
-*Interfaz usuario adaptativa (responsive UI)*
-
-Integran frameworks de desarrollo web en la aplicación para generar la vista 
-con una estructura HTML5 y CSS3 adaptativa.
-
-*I18n*
-
-Permite añadir soporte para nuevos idiomas en el proyecto.
-
-*Componentes avanzados: tablas AJAX, lupa*
-
-*Datatables*
-
-Integra componentes de tablas más dinámicas y funcionales.
-
-*Lupa*
-
-Permite utilizar componentes de tipo lupa en las aplicaciones.
-
-*Maestro -> detalle multinivel*
-
-Permite definir patrones de visualización sobre entidades y sus relaciones.
-
-*Monitorización rendimiento en producción*
-
-Integra un sistema de monitorización para aplicaciones web en producción.
-
-*Asistente para filtros*
-
-Los sistemas de filtrado de datos de la tabla permiten definir operaciones
-de filtrado complejas por columna mediante un asistente.
-
 ====
 
 [{intro}]
 == *Geoportales*
-
-[{topic}]
-== Geoportales
-
-ifndef::backend-dzslides[]
-image::console-screens.png[width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::console-screens.png[width="500"]
-endif::[]
 
 [template="notesblock"]
 ====
@@ -396,23 +262,6 @@ medioambiental, ingeniería, entre otras, por lo que existe hoy en día una
 creciente necesidad de aplicaciones web que requieren compartir e integrar
 datos georeferenciados con datos alfanuméricos para realizar diferentes tipos
 de análisis espacio-territoriales y ayudar en la toma de decisiones.
-
-====
-
-[{topic}]
-== Modelo de entidades
-
-ifndef::backend-dzslides[]
-image::diagrama-uml-callejero.png[width="300"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::diagrama-uml-callejero.png[width="300"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
 
 Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
 métodos, el que mejor se ajusta a las características de gvNIX es DDD o
@@ -442,27 +291,7 @@ del problema de una callejero.
 ====
 
 [{topic}]
-== Campo geográfico tipo texto
-
-ifndef::backend-dzslides[]
-image::callejero-field-geo.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-field-geo.png[width="700"]
-endif::[]
-
-[{topic}]
-== Campo geográfico tipo mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-field.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-field.png[width="700"]
-endif::[]
-
-[{topic}]
-== Incluir mapa del geoportal
+== *Generar automático geoportal base*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-controller.png[width="700"]
@@ -472,57 +301,7 @@ image::callejero-web-mvc-geo-controller.png[width="700"]
 endif::[]
 
 [{topic}]
-== Mostrar entidades en el mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all.png[width="700"]
-endif::[]
-
-[{topic}]
-== Seleccionar entidades en el mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
-endif::[]
-
-[{topic}]
-== Gestión entidades desde el mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
-endif::[]
-
-[{topic}]
-== Marcar entidades en el mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-selected.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-selected.png[width="700"]
-endif::[]
-
-[{topic}]
-== Filtrar entidades en el mapa
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
-endif::[]
-
-[{topic}]
-== Incluir nuevas capas en el mapa
+== *Incluir capas externas*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-tilelayer.png[width="700"]
@@ -532,7 +311,67 @@ image::callejero-web-mvc-geo-tilelayer.png[width="700"]
 endif::[]
 
 [{topic}]
-== Incluir herramientas en el mapa
+== *Visualización de datos como capas*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Activar capas de datos*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Editar los datos*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Gestión del dato geográfico*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Selección de datos*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-selected.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-selected.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Filtrado de datos*
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
+endif::[]
+
+[{topic}]
+== *Inclusión de herramientas*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-tool-measure.png[width="700"]
@@ -612,13 +451,13 @@ Topology Suite), Hibernate Spatial, etc.
 == *Casos de uso*
 
 [{topic}]
-== Casos de uso
+== *Casos de uso*
 
 [role="incremental"]
-* Aplicaciones de gestión *homogéneas*
-* *Integración* con procesos de negocio
-* Sistemas mixtos *móvil-web*
-* Gestión *datos geográficos*
+* Aplicaciones de gestión homogéneas
+* Integración con procesos de negocio
+* Sistemas mixtos móvil-web
+* Gestión datos geográficos
 
 [template="notesblock"]
 ====
