@@ -55,6 +55,9 @@ Veremos cómo incluir datos georeferenciados en una aplicación desarrollada con
 
 ====
 
+[{intro}]
+== *Frameworks*
+
 [{topic}]
 == *Frameworks*
 
@@ -105,6 +108,9 @@ diferentes en distintas aplicaciones se pierde la homogeneidad en esos
 proyectos.
 ====
 
+[{intro}]
+== *Herramienta desarrollo*
+
 [{topic}]
 == Herramienta desarrollo = *productividad*
 
@@ -132,6 +138,9 @@ proyectos.
   cualquier tipo de proyecto.
 
 ====
+
+[{intro}]
+== *gvNIX*
 
 == Qué es gvNIX
 
@@ -200,14 +209,15 @@ previamente se añada a gvNIX.
 
 ====
 
+[{topic}]
 == Intérprete de comandos
 
 ifndef::backend-dzslides[]
-image::gvnix-shell-eclipse.png[caption="Intérprete de comandos",width="370"]
+image::gvnix-shell-eclipse.png[width="700"]
 endif::[]
 
 ifdef::backend-dzslides[]
-image::gvnix-shell-eclipse.png[caption="Intérprete de comandos"]
+image::gvnix-shell-eclipse.png[width="700"]
 endif::[]
 
 [template="notesblock"]
@@ -237,6 +247,9 @@ para facilitar el desarrollo. Los más destacados son:
 
 ====
 
+[{intro}]
+== *Funcionalidades de gvNIX*
+
 [{topic}]
 == Funcionalidades de gvNIX
 
@@ -265,12 +278,12 @@ para facilitar el desarrollo. Los más destacados son:
 * Maestro -> detalle *multinivel*
 
 [{topic}]
-== Nuevas funcionalidades de gvNIX
+== Funcionalidades de gvNIX
 
 [role="incremental scatter"]
 * Monitorización *rendimiento* en producción
 * *Asistente* para *filtros*
-* Componente *geográfica*
+* Componente *geográfica*: geoportales
 
 [template="notesblock"]
 ====
@@ -359,14 +372,18 @@ de filtrado complejas por columna mediante un asistente.
 
 ====
 
-== Componente geográfica: requerimientos
+[{intro}]
+== *Geoportales*
+
+[{topic}]
+== Geoportales
 
 ifndef::backend-dzslides[]
-image::console-screens.png[caption="Componente Geo",width="570"]
+image::console-screens.png[width="570"]
 endif::[]
 
 ifdef::backend-dzslides[]
-image::console-screens.png[caption="Geo"]
+image::console-screens.png[width="500"]
 endif::[]
 
 [template="notesblock"]
@@ -382,10 +399,147 @@ de análisis espacio-territoriales y ayudar en la toma de decisiones.
 
 ====
 
-== Componente geográfica: funcionalidades
+[{topic}]
+== Modelo de entidades
 
-[role="incremental scatter"]
-TODO
+ifndef::backend-dzslides[]
+image::diagrama-uml-callejero.png[width="300"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::diagrama-uml-callejero.png[width="300"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
+métodos, el que mejor se ajusta a las características de gvNIX es DDD o
+*Desarrollo Dirigido por el Dominio*:
+
+* Un proyecto de gvNIX debería comenzar por un análisis del dominio 
+  y un análisis funcional, de tal forma que sobre las pantallas funcionales
+  pueda concretarse con el usuario final el flujo y organización funcional de
+  las mismas y seamos capaces de revisar el análisis del dominio para que se
+  ajuste a los requerimientos validados con el usuario sobre las pantallas 
+  funcionales.
+* Si la aplicación tiene interfaz de usuario, se genera automáticamente y 
+  se ajusta la interfaz a las especificaciones de requerimientos.
+* A continuación se inicia un proceso evolutivo donde se codifica la lógica 
+  de negocio y las pruebas de integración para hacer crecer el sistema hasta tener 
+  la aplicación final.
+
+La aplicación de ejemplo representa la *gestión de un pequeño callejero*. 
+cuyos usuarios necesitan ver y gestionar información de edificios y calles.
+
+Veremos cómo cómo se unen los datos alfanuméricos con los geográficos
+y cómo se representan en el geoportal.
+
+Este diagrama de clases representa un modelo muy simplificado del dominio
+del problema de una callejero.
+
+====
+
+[{topic}]
+== Campo geográfico tipo texto
+
+ifndef::backend-dzslides[]
+image::callejero-field-geo.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-field-geo.png[width="700"]
+endif::[]
+
+[{topic}]
+== Campo geográfico tipo mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-field.png[width="700"]
+endif::[]
+
+[{topic}]
+== Incluir mapa del geoportal
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-controller.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-controller.png[width="700"]
+endif::[]
+
+[{topic}]
+== Mostrar entidades en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all.png[width="700"]
+endif::[]
+
+[{topic}]
+== Seleccionar entidades en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
+endif::[]
+
+[{topic}]
+== Gestión entidades desde el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
+endif::[]
+
+[{topic}]
+== Marcar entidades en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-selected.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-selected.png[width="700"]
+endif::[]
+
+[{topic}]
+== Filtrar entidades en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
+endif::[]
+
+[{topic}]
+== Incluir nuevas capas en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-tilelayer.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-tilelayer.png[width="700"]
+endif::[]
+
+[{topic}]
+== Incluir herramientas en el mapa
+
+ifndef::backend-dzslides[]
+image::callejero-web-mvc-geo-tool-measure.png[width="700"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-web-mvc-geo-tool-measure.png[width="700"]
+endif::[]
 
 [template="notesblock"]
 ====
@@ -407,16 +561,6 @@ la aplicación, estamos hablando de:
 * Habilitar herramientas de mapas y permitir crear nuevas herramientas:
   medición, zoom, escala, ...
 * Accesible desde cualquier dispositivo: tableta, móvil, PC ...
-
-====
-
-== Componente geográfica: desarrollo
-
-[role="incremental scatter"]
-TODO
-
-[template="notesblock"]
-====
 
 Qué proporciona gvNIX a los desarrolladores que deseen incorporar estas
 funcionalidades a sus aplicaciones:
@@ -464,61 +608,8 @@ Topology Suite), Hibernate Spatial, etc.
 
 ====
 
-[role="topic recap"]
-== Demo: Entidades
-
-ifndef::backend-dzslides[]
-image::petclinic-uml.png[caption="Análisis del dominio",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::petclinic-uml.png[caption="Análisis del dominio"]
-endif::[]
-
-[role="topic recap"]
-== Demo: Funcional
-
-ifndef::backend-dzslides[]
-image::../wireframes/wireframes.png[caption="Análisis funcional",width="570"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::../wireframes/wireframes.png[caption="Análisis funcional"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
-métodos, el que mejor se ajusta a las características de gvNIX es DDD o
-*Desarrollo Dirigido por el Dominio*:
-
-* Un proyecto de gvNIX debería comenzar por un análisis del dominio 
-  y un análisis funcional, de tal forma que sobre las pantallas funcionales
-  pueda concretarse con el usuario final el flujo y organización funcional de
-  las mismas y seamos capaces de revisar el análisis del dominio para que se
-  ajuste a los requerimientos validados con el usuario sobre las pantallas 
-  funcionales.
-* Si la aplicación tiene interfaz de usuario, se genera automáticamente y 
-  se ajusta la interfaz a las especificaciones de requerimientos.
-* A continuación se inicia un proceso evolutivo donde se codifica la lógica 
-  de negocio y las pruebas de integración para hacer crecer el sistema hasta tener 
-  la aplicación final.
-
-La aplicación demo es para *gestión de una clínica veterinaria*. Los usuarios 
-de la aplicación son trabajadores de una clínica que, en el desempeño de su
-trabajo, necesitan ver y gestionar información de veterinarios, agenda de
-visitas, clientes y sus mascotas.
-
-Veremos cómo se ajusta el interfaz automáticamente al dispositivo, los
-patrones de pantallas y cómo se unen los datos alfanuméricos con los
-geográficos.
-
-Este diagrama de clases representa un modelo simplificado del dominio del
-problema de una clínica veterinaria.
-
-====
+[{intro}]
+== *Casos de uso*
 
 [{topic}]
 == Casos de uso
@@ -548,8 +639,10 @@ Ejemplos:
 [role="topic recap"]
 == {gvnixsite}
 
-[{middle}]
 image::logo_gvNIX.png[height="120"]
+
+Gracias +
+[smaller]#disid.com |# [smaller]#@disid_corp#
 
 ////
 
