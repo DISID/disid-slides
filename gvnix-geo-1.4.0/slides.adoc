@@ -23,8 +23,7 @@
 = **gvNIX** - Desarrollo rápido de geoportales para visualización y gestión de datos 
 v1.1, 26 nov 2014
 :title: gvNIX - Desarrollo rápido de geoportales para visualización y gestión de datos
-:description: These slides are a strategic overview to gvNIX Geo component
-support included in release 1.4 for 10 international gvSIG Conference
+:description: These slides are a strategic overview to gvNIX Geo component support included in release 1.4 for 10 international gvSIG Conference
 :copyright: CC BY-NC-SA 3.0
 :corpsite: www.disid.com
 :gvnixsite: www.gvnix.org
@@ -112,7 +111,7 @@ aplicaciones debido al tipo de dato que deben gestionar.
 
 [role="incremental scatter"]
 * Presentar la información geográfica al *Usuario*
-* Integrar el mantenimiento de la información geográfica en la aplicación web
+* Integrar la gestión de la información geográfica en la aplicación web
 * Explotar la información en un geoportal
 
 [{topic}]
@@ -176,6 +175,7 @@ facilitar el mantenimiento y la evolución.
 [role="incremental scatter"]
 * Multiplataforma
 * Generación de código
+* Base tecnológica ampliamente utilizada
 * Buenas prácticas
 * Proyectos web JEE estándar
 
@@ -183,23 +183,22 @@ facilitar el mantenimiento y la evolución.
 ====
 *CHARLA (HOW):*
 
-Las aplicaciones generadas por gvNIX están sobre una base
-tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
-nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas
-con gvNIX.
-
-* *Multiplataforma y fácil de instalar*.
-  gvNIX es fácil de instalar tanto en Windows, Mac OSX y Linux
-  o como herramienta integrada en un entorno gráfico de desarrollo.
-* *Generación de código*
+* *Multiplataforma y fácil de instalar*:
+  gvNIX es fácil de instalar tanto en Windows, Mac OSX y Linux.
+* *Generación de código*:
   Es capaz de generar el código de la aplicación que no aporta valor al proyecto,
   de forma que el desarrollador puede centrarse en implementar la lógica de negocio
   que es lo que realmente aporta valor al proyecto.
-* *Buenas prácticas*
+* *Base tecnológica*:
+  Las aplicaciones generadas por gvNIX están sobre una base
+  tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
+  nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas
+  con gvNIX. 
+* *Buenas prácticas*:
   La herramienta fomenta buenas prácticas en lo referente a la estructura de los
   proyectos y su codificación.
-* *Proyectos JEE estándar*
-  Los proyectos creados con gvNIX son aplicaciones Java que cumplen con el estándar JEE
+* *Proyectos JEE estándar*:
+  Los proyectos creados con gvNIX son aplicaciones Java que cumplen con el estándar JEE.
 
 ====
 
@@ -230,6 +229,9 @@ Cada componente proporciona intérprete un conjunto de comandos a través de los
 cuales proporciona sus funciones al desarrollador, el cual decide si aplica o
 no durante el proceso de desarrollo.
 
+La herramienta también se puede instalar integrada dentro de un entorno gráfico
+de desarrollo como, por ejemplo Eclipse.
+
 ====
 
 [{topic}]
@@ -255,16 +257,16 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-Todo proyecto desarrollado con gvNIX comienza por un análisis del dominio del
-problema plasmado sobre un modelo de clases.
+Todo proyecto desarrollado con gvNIX comienza por un análisis del problema
+plasmado sobre un modelo de datos. gvNIX nos facilitará la generación de
+dicho modelo de datos.
 
-Una vez tenemos el análisis del modelo de entidades, permite construir automáticamente
-la aplicación web que permite gestionar la información representada por ese modelo
-de clases.
+Entonces permite construir automáticamente la aplicación web para
+gestionar la información representada por ese modelo de datos.
 
 Estas son dos de las muchas funcionalidades que proporciona la herramienta gvNIX.
 Proporciona otras como seguridad, servicios web, pruebas o informes, entre otras,
-pero quedan fuera del alcance de esta charla.
+pero por tiempo quedan fuera del alcance de esta charla.
 
 ====
 
@@ -275,21 +277,18 @@ pero quedan fuera del alcance de esta charla.
 ====
 *CHARLA (WHY):*
 
-Cada vez son más las áreas del saber que requieren el uso de datos geográficos
-para cumplir con mayor acierto sus procesos, como la gestión pública, gestión
-medioambiental, ingeniería, entre otras, por lo que existe hoy en día una
-creciente necesidad de aplicaciones web que requieren compartir e integrar
-datos geográficos con datos alfanuméricos para realizar diferentes tipos
-de análisis espacio-territoriales y ayudar en la toma de decisiones.
-
 La herramienta de desarrollo gvNIX nos va a facilitar la inclusión de una
-componente geográfica en nuestras aplicaciones. 
+componente geográfica en nuestras aplicaciones.
 
-No estamos hablando solo de que nuestra aplicación integre un plugin que
-muestre un mapa donde geoposicionamos datos concretos de la aplicación,
-sino de un amplio conjunto de funcionalidades interrelacionadas entre sí
-para mantener y explotar la información geográfica en una aplicación web
-como veremos a continuación.
+Se trata de un amplio conjunto de funcionalidades interrelacionadas entre sí
+para gestionar la información geográfica y explotarla en un geoportal.
+
+A continuación vamos a ver con mas detalle todas estas funcionalidades.
+
+Para ello seguiremos un ejemplo de un pequeño callejero en el que disponemos
+de calles y edificios. Cabe destacar que todas todas las funcionalidades que
+vamos a ver son generadas automáticamente por la herramienta de desarrollo
+sin necesidad de implementar ni una sola línea de código.  
 
 ====
 
@@ -307,8 +306,8 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Añade en la capa web un mapa que será la plantilla del geoportal.
-* El geoportal solo muestra la capa geográfica base de "Open Street Maps".
+* Añade en la capa web una página con un mapa que será la base del geoportal.
+* El geoportal base incluye por defecto una capa con la cartografía de "Open Street Maps".
 
 ====
 
@@ -327,7 +326,8 @@ endif::[]
 *CHARLA (WHAT):*
 
 * Incluye una nueva capa externa en el geoportal.
-* Hay disponible una nueva capa de vista satélite.
+* Por ejemplo, una nueva capa con una vista aérea.
+* Las capas pueden obtenerse de servicios WMS o Tiles.
 
 ====
 
@@ -345,7 +345,7 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Permite mostrar y filtrar todos los datos geográficos en el geoportal como capas en el geoportal.
+* Permite mostrar y filtrar todos los datos geográficos como capas en el geoportal.
 * Los datos geográficos están integrados como distintas capas en el geoportal.
 
 ====
@@ -364,7 +364,7 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Los datos geográficos que muestra el geoportal pueden ser activados por capas.
+* Cada uno de los datos geográficos que muestra el geoportal pueden ser activados por capas.
 
 ====
 
@@ -382,7 +382,7 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Se puede consultar y editar la información que contienen cada dato geográfico desde el geoportal.
+* Se puede consultar y editar la información que contienen cada dato desde el geoportal.
 
 ====
 
@@ -455,9 +455,9 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Incluye una herramienta de medida en el geoportal.
-* Disponemos de nuevas herramientas en la parte inferior derecha del geoportal
+* Incluye nuevas herramientas en la parte inferior derecha del geoportal
   como, por ejemplo la herramienta de medida.
+* Los desarrolladores podrán incluir sus propias herramientas a medida.
 
 ====
 
@@ -465,8 +465,9 @@ endif::[]
 == *Tecnología*
 
 [role="incremental"]
-* *Hibernate Spatial*: capa de datos 
-* *Leaflet*: capa web 
+* *PostgreSQL/PostGIS* y *Oracle/Spatial*: base de datos
+* *Hibernate Spatial* y *JTS*: capa de datos
+* *Leaflet*: capa web
 
 [template="notesblock"]
 ====
@@ -475,8 +476,9 @@ endif::[]
 gvNIX configura en la aplicación web el soporte para bases de datos espaciales.
 Ejemplos de ello son PostgreSQL con PostGIS u Oracle con Spatial, etc.
 
-Integra en la aplicación web frameworks propios de geomática
-como son Leaflet, JTS (Java Topology Suite), Hibernate Spatial, etc.
+Integra en la aplicación web tecnologías ampliamente utilizadas como son
+Hibernate Spatial y JTS (Java Topology Suite) en la capa de datos
+y Leaflet en la capa web.
 
 ====
 
@@ -484,7 +486,6 @@ como son Leaflet, JTS (Java Topology Suite), Hibernate Spatial, etc.
 == *Futuras versiones*
 
 [role="incremental"]
-* Ingeniería inversa  
 * Mapa de referencia
 * Coordenadas del ratón
 * Escala gráfica y numérica
@@ -495,6 +496,17 @@ como son Leaflet, JTS (Java Topology Suite), Hibernate Spatial, etc.
 ====
 *CHARLA (WHAT):*
 
+Las próximas versiones incluirán las siguientes funcionalidades:
+
+* Mapa de referencia:
+  Permite tener siempre una vista completa del mapa, independientemente del nivel de zoom aplicado.
+* Coordenadas del ratón:
+  Mostrar las coordenadas de mapa sobre las que está el puntero de ratón en cada momento.
+* Escala gráfica y numérica:
+  Visualizada en función del nivel de zoom actual.
+* Agrupar, ordenar, plegar y estilo capas:
+  Múltiples mejoras en la gestión de capas.
+* Imprimir mapa.
 
 ====
 
@@ -507,9 +519,9 @@ como son Leaflet, JTS (Java Topology Suite), Hibernate Spatial, etc.
 [role="incremental"]
 * Aplicaciones de explotación de datos
 * Gestión de datos geográficos
-* Explotación de datos geográficos
+* Explotar datos geográficos en geoportal
 * Integración con procesos de negocio
-* Sistemas mixtos web y móvil
+* Sistemas web y móvil
 
 [template="notesblock"]
 ====
@@ -518,21 +530,30 @@ como son Leaflet, JTS (Java Topology Suite), Hibernate Spatial, etc.
 La herramienta de desarrollo gvNIX está orientada al desarrollo
 de aplicaciones de explotación de datos y facilita en gran medida
 la gestión y explotación de datos geográficos, la inclusión de los
-procesos del negocio y su visualización en entornos web y móvil. 
+procesos de negocio de la organización
+y su visualización en entornos web y móvil. 
 
-Ejemplos:
+Un ejemplo de ello es la aplicación:
 
 * Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
 
 ====
 
 [role="topic recap"]
-== {gvnixsite}
+== Taller
 
 image::logo_gvNIX.png[height="120"]
 
 Gracias +
 [smaller]#disid.com |# [smaller]#@disid_corp#
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Existe un taller práctico en el que se verá todo esto con detalle.  
+
+====
 
 ////
 
