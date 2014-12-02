@@ -21,7 +21,7 @@
 // If not access, change "dzslides-style" property with value "stormy".
  
 = **gvNIX** - Desarrollo rápido de geoportales para visualización y gestión de datos 
-v1.1, 26 nov 2014
+v1.2, 01 dic 2014
 :title: gvNIX - Desarrollo rápido de geoportales para visualización y gestión de datos
 :description: These slides are a strategic overview to gvNIX Geo component support included in release 1.4 for 10 international gvSIG Conference
 :copyright: CC BY-NC-SA 3.0
@@ -46,7 +46,7 @@ v1.1, 26 nov 2014
 ====
 *CHARLA (INTRODUCCIÓN):*
 
-Presentación: Mario Martínez Sánchez, Director de Proyectos en DISID
+Presentación: Mario Martínez Sánchez, Director de Proyectos en DISID.
 
 Esta charla va enfocada a presentar la problemática de la explotación
 de datos alfanuméricos y geográficos en aplicaciones.
@@ -87,7 +87,7 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-Historicamente la explotación de datos geográficos y alfanuméricos
+Históricamente la explotación de datos geográficos y alfanuméricos
 se ha realizado desde distintas aplicaciones.
 
 La explotación de datos geográficos se realiza desde una aplicación,
@@ -141,7 +141,7 @@ endif::[]
 El objetivo sería integrar en una misma aplicación la gestión
 de la información alfanumérica y geográfica para que los usuarios
 pudiesen explotar dicha información sin hacer uso de otras
-aplicaciones espacializadas en la materia que serían del dominio
+aplicaciones especializadas en la materia que serían del dominio
 de los perfiles expertos.
 
 ====
@@ -220,7 +220,7 @@ endif::[]
 Desde el punto de vista de su uso, gvNIX está diseñado como 
 un intérprete de comandos interactivo. 
 
-Para facilitar su uso tiene autocompletado de los comandos y ayuda contextual. 
+Para facilitar su uso tiene auto completado de los comandos y ayuda contextual. 
 Además en todo momento nos mostrará solo los comandos que sean válidos y nos 
 dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
 perdidos.
@@ -327,7 +327,7 @@ endif::[]
 
 * Incluye una nueva capa externa en el geoportal.
 * Por ejemplo, una nueva capa con una vista aérea.
-* Las capas pueden obtenerse de servicios WMS o Tiles.
+* Las capas pueden obtenerse de servicios "WMS" o "Tiles".
 
 ====
 
