@@ -56,8 +56,8 @@ Haremos un repaso de las funcionalidades que nos ofrece para el
 desarrollo de aplicaciones web, centrándose en la componente geográfica
 de los datos.
 
-Veremos cómo incluir datos geográficos en una aplicación desarrollada con gvNIX
-y cómo construir un geoportal para la explotación de dicha información.
+Veremos cómo gestionar datos geográficos en una aplicación desarrollada con gvNIX,
+cómo construir un geoportal y cómo explotar dicha información.
 
 ====
 
@@ -183,7 +183,7 @@ facilitar el mantenimiento y la evolución.
 ====
 *CHARLA (HOW):*
 
-* *Multiplataforma y fácil de instalar*:
+* *Multiplataforma*:
   gvNIX es fácil de instalar tanto en Windows, Mac OSX y Linux.
 * *Generación de código*:
   Es capaz de generar el código de la aplicación que no aporta valor al proyecto,
@@ -225,7 +225,7 @@ Además en todo momento nos mostrará solo los comandos que sean válidos y nos
 dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
 perdidos.
 
-Cada componente proporciona intérprete un conjunto de comandos a través de los
+Cada componente proporciona al intérprete un conjunto de comandos a través de los
 cuales proporciona sus funciones al desarrollador, el cual decide si aplica o
 no durante el proceso de desarrollo.
 
@@ -332,7 +332,7 @@ endif::[]
 ====
 
 [{topic}]
-== *Visualización de datos como capas*
+== *Incluir datos como capas*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-entity-all.png[width="700"]
@@ -345,104 +345,13 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-* Permite mostrar y filtrar todos los datos geográficos como capas en el geoportal.
-* Los datos geográficos están integrados como distintas capas en el geoportal.
+* Incluye los datos geográficos como capas del geoportal.
+* Cada dato geográfico está incluido en el geoportal como una capa separada.
 
 ====
 
 [{topic}]
-== *Activar capas de datos*
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-filter.png[width="700"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-* Cada uno de los datos geográficos que muestra el geoportal pueden ser activados por capas.
-
-====
-
-[{topic}]
-== *Editar los datos*
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-entity-all-edit.png[width="700"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-* Se puede consultar y editar la información que contienen cada dato desde el geoportal.
-
-====
-
-[{topic}]
-== *Gestión del dato geográfico*
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-geo-field.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-geo-field.png[width="700"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-* Los valores de los datos geográficos son mantenidos mediante un componente gráfico amigable. 
-
-====
-
-[{topic}]
-== *Selección de datos*
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-selected.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-selected.png[width="700"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-* Se pueden seleccionar elementos desde la lista de datos que son resaltados en el geoportal.
-
-====
-
-[{topic}]
-== *Filtrado de datos*
-
-ifndef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
-endif::[]
-ifdef::backend-dzslides[]
-image::callejero-web-mvc-datatables-add-filtered.png[width="700"]
-endif::[]
-
-[template="notesblock"]
-====
-*CHARLA (WHAT):*
-
-* Se pueden filtrar elementos desde la lista de datos de forma que los datos
-  del mismo tipo que no cumplan con el filtro no serán mostrados.
-
-====
-
-[{topic}]
-== *Inclusión de herramientas*
+== *Añadir herramientas*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-tool-measure.png[width="700"]
@@ -458,6 +367,60 @@ endif::[]
 * Incluye nuevas herramientas en la parte inferior derecha del geoportal
   como, por ejemplo la herramienta de medida.
 * Los desarrolladores podrán incluir sus propias herramientas a medida.
+
+====
+
+[{topic}]
+== *Funcionalidad*
+
+++++
+<video width="700">
+  <source src="images/gvnix-geo.mp4" />
+</video>
+++++
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+* Se pueden introducir datos alfanuméricos y geográficos.
+  Los datos geográficos se introducen mediante un componente gráfico amigable.
+  Los posibles tipos de campo geográfico son:
+
+  ** Punto
+  ** Línea
+  ** Multi línea
+  ** Polígono
+  ** Geometría 
+
+* Cada uno de los datos geográficos se muestra en una capa en el geoportal.
+  La visualización de cada una de estas capas pueden ser activada o desactivada.
+* Se puede consultar y editar la información que contienen cada dato desde el geoportal
+  y desde la lista de datos.
+* Se pueden seleccionar elementos desde la lista de datos que son resaltados en el geoportal.
+* Se pueden filtrar elementos desde la lista de datos de forma que los datos
+  del mismo tipo que no cumplan con el filtro no serán mostrados en el geoportal.
+
+====
+
+[{topic}]
+== *Diseño adaptativo*
+
+ifndef::backend-dzslides[]
+image::callejero-movil.png[width="180", role="middle"]
+endif::[]
+ifdef::backend-dzslides[]
+image::callejero-movil.png[width="180", role="middle"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (WHAT):*
+
+Las aplicaciones desarrolladas con la herramienta de desarrollo gvNIX
+incluyen un diseño adaptativo de forma que la misma aplicación se visualiza
+correctamente en distintos dispositivos. La aplicación adapta su visualización
+de forma automática en función del tamaño de pantalla del dispositivo.  
 
 ====
 
@@ -496,7 +459,7 @@ y Leaflet en la capa web.
 ====
 *CHARLA (WHAT):*
 
-Las próximas versiones incluirán las siguientes funcionalidades:
+Las próximas versiones se incluirán las siguientes funcionalidades:
 
 * Mapa de referencia:
   Permite tener siempre una vista completa del mapa, independientemente del nivel de zoom aplicado.
@@ -528,12 +491,12 @@ Las próximas versiones incluirán las siguientes funcionalidades:
 *CHARLA (HOW):*
 
 La herramienta de desarrollo gvNIX está orientada al desarrollo
-de aplicaciones de explotación de datos y facilita en gran medida
-la gestión y explotación de datos geográficos, la inclusión de los
-procesos de negocio de la organización
+de aplicaciones de explotación de datos, facilita en gran medida
+la gestión de datos geográficos, su explotación en un geoportal,
+la inclusión de los procesos de negocio de la organización
 y su visualización en entornos web y móvil. 
 
-Un ejemplo de ello es la aplicación:
+Un ejemplo de todo ello es la aplicación:
 
 * Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
 
