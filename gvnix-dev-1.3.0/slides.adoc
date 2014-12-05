@@ -11,7 +11,7 @@
 ===============
 www.disid.com
 v1.0, Apr 08, 2014
-:title: gvNIX 1.3.0 
+:title: gvNIX 1.3.0
 :description: Slides for DISID presentation about developing with gvNIX delivered at UPV.
 :copyright: CC BY-NC-SA 3.0
 :website: www.disid.com
@@ -111,22 +111,22 @@ image::server.png[role="pull-right", height=150]
 [{statement}]
 Clientes de *sistemas externos*: email, Webservices
 
-== \\ 
+== \\
 
 [{statement}]
 Control de *concurrencia* optimista
 
-== \\ 
+== \\
 
 [{statement}]
 *Seguridad*
 
-== \\ 
+== \\
 
 [{statement}]
 *Informes*
 
-== \\ 
+== \\
 
 [{statement}]
 *Pruebas* unitarias y funcionales
@@ -153,7 +153,7 @@ image::entorno_sts.png[caption="Entorno - Spring Tool Suite"]
 
 image::entorno_config_preferencias.png[caption="Utilizar gvNIX 1.3.0"]
 
-== \\ 
+== \\
 
 
 [{statement}]
@@ -257,7 +257,7 @@ image::06-finders-all.png[caption="Generando Views de buscadores y métodos en C
 
 image::07-internacionalizacion.png[caption="Internacionalización"]
 
-== \\ 
+== \\
 
 image::script_paso_2.png[caption=""]
 
@@ -266,7 +266,7 @@ image::script_paso_2.png[caption=""]
 [{statement}]
 <- ROO  *gvNIX ->*
 
-== \\ 
+== \\
 
 image::web_layer_management.png[role="pull-right", height=200]
 
@@ -297,7 +297,7 @@ image::11-jquery-all.png[caption="Componentes jQuery en todas las vistas de la a
 
 image::12-bootstrap-setup.png[caption="Implementando Bootstrap "]
 
-== \\ 
+== \\
 
 image::web_layer_management.png[role="pull-right", height=200]
 
@@ -344,7 +344,7 @@ image::16-application-home.png[caption="Aplicación Petclinic!"]
 image::web_layer_management.png[role="pull-right", height=200]
 
 [{statement}]
-*Patrones* de pantallas.  Paso 3:  Maestro-Detalle 
+*Patrones* de pantallas.  Paso 3:  Maestro-Detalle
 
 == \\
 
@@ -492,9 +492,16 @@ Proyecto de código abierto con licencia *GPL v3*
 
 image::logo_disid.png[height="89"]
 
-
 [{middle}]
 *Proyecto gvNIX* -> http://www.gvnix.org
+
+== \\
+
+[{middle}]
+
+http://creativecommons.org/licenses/by-sa/3.0/es/[Este obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 España.]
+
+
 
 ////
 

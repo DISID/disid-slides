@@ -10,13 +10,13 @@
 //   $ asciidoc -b html5 -o outline.html slides.adoc
 //
 // PDF:
-// 
+//
 //   $ dzslides2pdf.rb slides.adoc
 //
-//   PDF conversion requires: ruby, qt4-make, ruby-qt4, ruby-qt4-webkit, 
+//   PDF conversion requires: ruby, qt4-make, ruby-qt4, ruby-qt4-webkit,
 //   capybara, capybara-webkit,
 //
- 
+
 = Visión estratégica **gvNIX**
 v1.4, 30 oct 2014
 :title: Visión estratégica gvNIX
@@ -48,10 +48,10 @@ Presentación: Nombre, cargo en DISID
 En esta charla/presentación explicaremos qué es gvNIX, en qué se diferencia de
 un framework de desarrollo.
 
-Haremos un repaso de las funcionalidades y componentes que nos ofrece para el 
+Haremos un repaso de las funcionalidades y componentes que nos ofrece para el
 desarrollo de aplicaciones web.
 
-Veremos las nuevas funcionalidades de la nueva versión 1.4 que saldrá en 
+Veremos las nuevas funcionalidades de la nueva versión 1.4 que saldrá en
 noviembre y una demo de una aplicación desarrollada con gvNIX.
 
 ====
@@ -71,7 +71,7 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 *Lenguaje + Librerías API*
 Habitualmente cualquier plataforma de
 desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
-conjunto de librerías que no son más que conjuntos de funciones ya 
+conjunto de librerías que no son más que conjuntos de funciones ya
 implementadas básicas con funcionalidad imprescindible, en el caso
 de la plataforma Java estas librerías se conocen como el *API Java*.
 
@@ -79,8 +79,8 @@ de la plataforma Java estas librerías se conocen como el *API Java*.
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
 usando solo el lenguaje y las librerías básicas tendríamos un problema, ya que
 sólo ofrecen utilidades de bajo nivel (programación concurrente, sockets,
-estructuras de datos, etc) y por tanto aspectos de programación  
-tan necesarios como manejo de sesiones web, componentes de interfaz de 
+estructuras de datos, etc) y por tanto aspectos de programación
+tan necesarios como manejo de sesiones web, componentes de interfaz de
 usuario, envío de correo, etc. tendríamos que desarrollarlas a mano.
 
 *Más productividad = librerías de terceros*
@@ -112,10 +112,10 @@ sino que necesitamos utilizar varias.
 Usar varias librerías genera nueva problemática:
 
 * Cada *librería es totalmente independiente*, con su propia configuración.
-* Es necesaria una *configuración e instalación manual particulares* para cada 
+* Es necesaria una *configuración e instalación manual particulares* para cada
   librería
-* Las librerías *no aportan una estructura* concreta a nuestros proyectos, por 
-  lo que ésta depende de cada desarrollador y nos podemos encontrar en la 
+* Las librerías *no aportan una estructura* concreta a nuestros proyectos, por
+  lo que ésta depende de cada desarrollador y nos podemos encontrar en la
   situación
   que cada proyecto y aplicación tiene una estructura diferente.
 
@@ -135,16 +135,16 @@ Usar varias librerías genera nueva problemática:
 *CHARLA (WHAT):*
 
 Un framework es un conjunto de librerías cohesionadas que cubren aspectos
-específicos de las necesidades de las aplicaciones, funciones de más alto 
+específicos de las necesidades de las aplicaciones, funciones de más alto
 nivel que una única librería no cubre, se necesitan varias librerías para
 poder dar una solución que genere mayor productividad:
 
 *EJEMPLO: un framework de persistencia de objetos: integra librerías de log, el API JDBC, librerías para trabajar con archivos XML, etc.*
 
-Los frameworks son sinónimo de productividad porque facilitan y 
+Los frameworks son sinónimo de productividad porque facilitan y
 aceleran el proceso de desarrollo debido a:
 
-* Define una estructura de aplicación, una forma homogénea de configurar y 
+* Define una estructura de aplicación, una forma homogénea de configurar y
   usar todas las librerías que integra.
 * Especifica mecanismos para integrar nuevas funciones o librerías.
 * Facilita la colaboración, ya que está todo más estandarizado y definido
@@ -170,14 +170,14 @@ aceleran el proceso de desarrollo debido a:
 *CHARLA (WHY):*
 
 Sin embargo, aún con toda la productividad que proporcionan los frameworks,
-los desarrolladores necesitan de varios frameworks y/o librerías para poder 
+los desarrolladores necesitan de varios frameworks y/o librerías para poder
 satisfacer los requerimientos del proyecto.
 
 Ocurre algo parecido a lo que ocurría con las librerías, las librerías agrupan
 funciones de utilidad, los frameworks agrupan librerías que dan solución a un
 aspecto concreto de una aplicación.
 
-Por ejemplo, es fácil o habitual que nuestras aplicaciones web necesiten usar 
+Por ejemplo, es fácil o habitual que nuestras aplicaciones web necesiten usar
 varios de los siguientes frameworks:
 
 * Spring Framework, soluciona cómo se suministran los objetos a otros objetos
@@ -212,8 +212,8 @@ proyectos.
 ====
 *CHARLA (WHAT):*
 
-* Una herramienta de desarrollo es una aplicación para crear otras aplicaciones 
-  basadas en varios frameworks y además integrar, configurar esos frameworks y 
+* Una herramienta de desarrollo es una aplicación para crear otras aplicaciones
+  basadas en varios frameworks y además integrar, configurar esos frameworks y
   cómo se relacionan.
 * Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
   allá de cada framework o librería:
@@ -222,7 +222,7 @@ proyectos.
   tiempo de buscar cómo se configuran los frameworks, como se integran, etc
   etc a programar.
 * La homogeneidad no depende de cada framework, la define la herramienta de
-  desarrollo, pudiendo crear una estructura de proyectos única para 
+  desarrollo, pudiendo crear una estructura de proyectos única para
   cualquier tipo de proyecto.
 
 ====
@@ -259,21 +259,21 @@ Beneficios:
 
 * La evolucion de las aplicaciones no está bloqueda por la evolución de
   gvNIX. Ejemplos:
-** Integrar una nueva funcionalidad en una aplicación no requiere que 
+** Integrar una nueva funcionalidad en una aplicación no requiere que
    previamente se añada a gvNIX.
 ** Los estándares Java garantizan que las aplicaciones funcionarán en
    cualquier servidor de aplicaciones, sin embargo, estos estándares también
    evolucionan y aplicaciones que funcionaban perfectamente en versiones de
-   servidores antiguas, por ejemplo JBoss 5, pueden no funcionar en versiones 
+   servidores antiguas, por ejemplo JBoss 5, pueden no funcionar en versiones
    más recientes, por ejemplo JBoss 6. Hacer los cambios necesarios para que
    una aplicación funcione sobre nuevos servidores de aplicaciones no requiere
    que previamente se añada a gvNIX.
-* Corregir incidencias en la aplicación no depende de gvNIX, se pueden 
-  corregir en la propia aplicación y posteriormente se reporta al proyecto 
+* Corregir incidencias en la aplicación no depende de gvNIX, se pueden
+  corregir en la propia aplicación y posteriormente se reporta al proyecto
   gvNIX para incluir la mejora en futuras versiones.
-** Un posible proceso de atención de incidencias o solicitud de mejoras que 
-   se puede seguir con gvNIX es: 
-   1. el usuario final informa de una incidencia, mejora, etc. en una 
+** Un posible proceso de atención de incidencias o solicitud de mejoras que
+   se puede seguir con gvNIX es:
+   1. el usuario final informa de una incidencia, mejora, etc. en una
       aplicación al equipo de desarrollo de esa aplicación.
    2. el equipo de desarrollo da solución a la incidencia, pudiendo así dar
       mejores tiempos de respuesta que si se gestionara desde gvNIX.
@@ -289,7 +289,7 @@ Beneficios:
   desarrollada con ExtJS.
 * Diferencia explícita entre desarrolladores de aplicaciones como el usuario
   tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
-* Importante es que al *no contener ningún componente en tiempo de ejecución* 
+* Importante es que al *no contener ningún componente en tiempo de ejecución*
   no interfiere en el despliegue de las soluciones ni crea dependencias con el
   producto final, de forma tal que resulta transparente para el despliegue en
   producción.
@@ -319,7 +319,7 @@ Beneficios:
   al PATH del sistema y lanzamos el entorno con el comando gvnix.
 * *Generación no-intrusiva de código*
   Crea código en unidades de compilación separadas del código fuente creado
-  por los desarrolladores, de esta forma, la generación de código es 
+  por los desarrolladores, de esta forma, la generación de código es
   totalmente inocua porque independiza el ciclo de vida del código generado del
   ciclo de vida del código mantenido por los desarrolladores.
 * *Buenas prácticas desde Análisis*
@@ -335,8 +335,8 @@ Beneficios:
 * *No añade dependencias de componentes*
   gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
 
-TODO: Pensar diferencia con un sistema de trabajo basado en Maven, donde nos 
-presentaban que ellos tenían una forma de trabajar muy ordenada que les 
+TODO: Pensar diferencia con un sistema de trabajo basado en Maven, donde nos
+presentaban que ellos tenían una forma de trabajar muy ordenada que les
 permitía focalizar en la lógica de negocio.
 
 ====
@@ -357,29 +357,29 @@ endif::[]
 
 gvNIX ha sido implementado con lenguaje Java y sigue un modelo de
 arquitectura orientado a componentes sobre plataforma OSGi en el que cada
-funcionalidad que ofrece el framework es implementada como un componente o 
+funcionalidad que ofrece el framework es implementada como un componente o
 add-on que colabora con el resto en las distintas tareas de generación.
 
 Esta arquitectura es empleada en el desarrollo de grandes sistemas modulares
-como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera. 
+como, por ejemplo Eclipse, JBoss, Servicemix y un largo etcétera.
 
 *¿Qué es OSGi?*
 
 * OSGI (Open Services Gateway Initiative) es una capa sobre Java que permite
-crear módulos o componentes que pueden interactuar entre sí en tiempo de 
+crear módulos o componentes que pueden interactuar entre sí en tiempo de
 ejecución.
-* OSGi intenta solventar los problemas del tradicional "classloader" de la 
+* OSGi intenta solventar los problemas del tradicional "classloader" de la
 máquina virtual y de los servidores de aplicaciones Java (como JINI).
-* En OSGI, cada componente tiene su propio classpath separado del resto de 
+* En OSGI, cada componente tiene su propio classpath separado del resto de
 classpath de los demás módulos.
 
 OSGi ofrece:
 
 * La principal característica, que aquellos que trabajeis con Eclipse ya
-  conoceis es que OSGi proporciona un entorno que soporta el despliegue 
+  conoceis es que OSGi proporciona un entorno que soporta el despliegue
   dinámico de componentes ("bundles" o módulos).
-* La instalación, arranque, parada, actualización y desinstalación de bundles 
-  se realiza dinámicamente en tiempo de ejecución sin tener que detener por 
+* La instalación, arranque, parada, actualización y desinstalación de bundles
+  se realiza dinámicamente en tiempo de ejecución sin tener que detener por
   completo la plataforma.
 * Es una arquitectura orientada a servicios.
 * Los servicios pueden ser registrados y consumidos dentro de la VM.
@@ -402,12 +402,12 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-Desde el punto de vista de su uso, gvNIX está diseñado como 
-un intérprete de comandos interactivo *al estilo de Rails o de Grails*. 
+Desde el punto de vista de su uso, gvNIX está diseñado como
+un intérprete de comandos interactivo *al estilo de Rails o de Grails*.
 
-Para facilitar su uso tiene autocompletado de los comandos y ayuda contextual. 
-Además en todo momento nos mostrará solo los comandos que sean válidos y nos 
-dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
+Para facilitar su uso tiene autocompletado de los comandos y ayuda contextual.
+Además en todo momento nos mostrará solo los comandos que sean válidos y nos
+dará pistas de cuál es la siguiente tarea a realizar si estamos un poco
 perdidos.
 
 En la imagen se ve cómo se interactúa con Roo.
@@ -419,7 +419,7 @@ no durante el proceso de desarrollo.
 Además el propio framework proporciona sus propios comandos o funcionalidades
 para facilitar el desarrollo. Los más destacados son:
 
-* *help*: Muestra al desarrollador todos los comandos o funcionalidades 
+* *help*: Muestra al desarrollador todos los comandos o funcionalidades
   disponibles.
 * *hint*: Aconseja el siguiente paso posible en el proceso de desarrollo.
 
@@ -438,15 +438,15 @@ para facilitar el desarrollo. Los más destacados son:
 ====
 *CHARLA (HOW):*
 
-Muy bien, está claro por qué gvNIX es más que un framework, que no 
-bloquea el ciclo de vida de las aplicaciones, es decir no tiene sentido 
-aquello de *si gvNIX no lo soporta -> no se puede hacer con gvNIX*, que se 
-ha utilizado una tecnología que va a permitir que gvNIX crezca en la medida 
+Muy bien, está claro por qué gvNIX es más que un framework, que no
+bloquea el ciclo de vida de las aplicaciones, es decir no tiene sentido
+aquello de *si gvNIX no lo soporta -> no se puede hacer con gvNIX*, que se
+ha utilizado una tecnología que va a permitir que gvNIX crezca en la medida
 que se necesite en la DGTI. Pero, *¿está gvNIX lo suficientemente maduro?*
 
 Para contestar a esta pregunta vamos a ver:
 
-* *Funcionalidades* desarrolladas hasta la fecha y *nuevas funcionalidades* de 
+* *Funcionalidades* desarrolladas hasta la fecha y *nuevas funcionalidades* de
   la versión 1.4
 * Tecnologías que gvNIX incluye como base de las aplicaciones que genera.
 * *Sostenibilidad* del proyecto
@@ -529,7 +529,7 @@ remotos como si de llamadas a servicios locales se tratara.
 
 *Pruebas de integración y funcionales*
 
-Genera automáticamente pruebas de validación de código, tanto de integración con Junit 
+Genera automáticamente pruebas de validación de código, tanto de integración con Junit
 como funcionales con Selenium.
 
 *Informes*
@@ -553,7 +553,7 @@ como control de concurrencia optimista. La forma más habitual de implementarlo 
 
 En organizaciones públicas el modelo de datos sigue unas políticas de seguridad muy rigurosas y es frecuente que no se pueda añadir un nuevo campo de versión.
 
-gvNIX proporciona una implementación del control de concurrencia optimista 
+gvNIX proporciona una implementación del control de concurrencia optimista
 *basado en el estado de los objetos*, igualmente efectivo pero no intrusivo.
 
 *Auditoría de cambios en base de datos*
@@ -564,19 +564,19 @@ o en términos de base de datos quien y cuándo modifica un registro
 
 *Histórico de cambios de base de datos*
 
-Esta funcionalidad almacena todos los cambios sufridos por las entidades 
-auditadas de forma que sea posible identificar qué, quién y cuándo se 
+Esta funcionalidad almacena todos los cambios sufridos por las entidades
+auditadas de forma que sea posible identificar qué, quién y cuándo se
 produjeron, incluyendo las eliminaciones de los registros.
 
 *Interfaz usuario adaptativa (responsive UI)*
 
-Integran frameworks de desarrollo web en la aplicación para generar la vista 
-con una estructura HTML5 y CSS3 adaptativa, es decir, automáticamente se 
-adaptan para su visualización desde múltiples dispositivos: tabletas, móviles, 
+Integran frameworks de desarrollo web en la aplicación para generar la vista
+con una estructura HTML5 y CSS3 adaptativa, es decir, automáticamente se
+adaptan para su visualización desde múltiples dispositivos: tabletas, móviles,
 portátiles, PCs ...
 
-Ademá, estos frameworks de desarrollo utilizan estándares web de tal forma que 
-se sientan las bases de sitios web accesibles para personas que utilizan 
+Ademá, estos frameworks de desarrollo utilizan estándares web de tal forma que
+se sientan las bases de sitios web accesibles para personas que utilizan
 tecnologías de apoyo para navegar.
 
 *I18n*
@@ -591,19 +591,19 @@ necesaria y los textos traducidos a dicho idioma.
 
 Integra componentes de tablas más dinámicas y funcionales: paginación,
 búsqueda global, filtrado por columna, ordenación, diversas fuentes de
-datos: AJAX, DOM, etc; visualización en modo registro, edición en línea, 
-edición y borrado múltiple, conjunto predefinido de operaciones, 
+datos: AJAX, DOM, etc; visualización en modo registro, edición en línea,
+edición y borrado múltiple, conjunto predefinido de operaciones,
 registro creado a primera posición, selección siempre visible.
 
 *Lupa*
 
 Permite utilizar componentes de tipo lupa en las aplicaciones. Gracias a estos
-componentes, podemos buscar registros de forma sencilla de campos relacionados 
+componentes, podemos buscar registros de forma sencilla de campos relacionados
 sin tener que visualizar todos los datos en un desplegable.
 
 *Maestro -> detalle multinivel*
 
-Permite definir patrones de visualización sobre entidades y sus relaciones: 
+Permite definir patrones de visualización sobre entidades y sus relaciones:
 permitiendo cualquier combinación [maestro-tabular | maestro-registro] con
 [detalle-tabular | detalle-registro], sin límite en el número de relaciones
 tanto directas como indirectas.
@@ -626,7 +626,7 @@ plano sino que permite definir operaciones de filtrado como *CONTIENE()*,
 *>=*, *FECHA()*, etc
 
 Dado que es complicado acordarse de todas las operaciones, al activar el
-filtrado por columna se integra automáticamente un asistente que permite al 
+filtrado por columna se integra automáticamente un asistente que permite al
 usuario elegir la operación de filtrado por columna.
 
 ====
@@ -674,7 +674,7 @@ Qué proporciona gvNIX a los desarrolladores que deseen incorporar estas
 funcionalidades a sus aplicaciones:
 
 * A nivel de modelo de datos:
-- Configurar soporte para BBDD espaciales. Ejemplos de ello son: PostgreSQL 
+- Configurar soporte para BBDD espaciales. Ejemplos de ello son: PostgreSQL
   con PostGIS, Oracle con Spatial, etc. que permiten unir datos
   alfanuméricos habituales con nuevos campos geométricos que representen la
   localización y forma de los datos. Por ejemplo, si tenemos una tabla con las
@@ -701,11 +701,11 @@ funcionalidades a sus aplicaciones:
 - Generación de geoportales. Cualquier aplicación gvNIX puede incorporar
   un geoportal en el que se muestren todos los datos que se gestionan desde la
   aplicación como diferentes capas, con opciones de búsqueda, activación,
-  etc., así como integración con el resto de páginas de la aplicación: 
-  herramienta de edición que al seleccionar un elemento sobre el mapa, nos 
+  etc., así como integración con el resto de páginas de la aplicación:
+  herramienta de edición que al seleccionar un elemento sobre el mapa, nos
   lleva al formulario de edición de dicho elemento.
 * A nivel de proyecto:
-- gvNIX permite integrar y combinar distintos frameworks y librerías de tal 
+- gvNIX permite integrar y combinar distintos frameworks y librerías de tal
   forma que desarrolladores sin conocimientos geo serán perfectamente capaces
   de desarrollar aplicaciones de gestión con componente geográfica.
 
@@ -733,12 +733,12 @@ endif::[]
 Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
 capa web, la de control y la de modelo del dominio.
 
-La capa de dominio del problema suele contener una "sub-capa" de servicios  
-que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos. 
-Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos 
+La capa de dominio del problema suele contener una "sub-capa" de servicios
+que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos.
+Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos
 los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
-clases que modelan las entidades del dominio, que se encargan no solo de 
-modelar el dominio sino también de la validación de sus datos e incluso su 
+clases que modelan las entidades del dominio, que se encargan no solo de
+modelar el dominio sino también de la validación de sus datos e incluso su
 serialización a JSON.
 
 TODO: Lo que ofrece Spring Framework en ejecución.
@@ -791,8 +791,8 @@ tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
 nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
 gvNIX.
 
-Por tanto, *está maduro gvNIX*, claro, *lo contrario sería decir que Spring, 
-que jQuery, que Hibernate no están maduros*, pues como hemos visto gvNIX no es 
+Por tanto, *está maduro gvNIX*, claro, *lo contrario sería decir que Spring,
+que jQuery, que Hibernate no están maduros*, pues como hemos visto gvNIX no es
 un FW sino una herramienta de desarrollo que surge para solventar el problema
 de la proliferación de tantos FW independientes.
 
@@ -812,7 +812,7 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-Vamos a ver un ejemplo, ¿qué pasa si queremos usar una tecnología diferente 
+Vamos a ver un ejemplo, ¿qué pasa si queremos usar una tecnología diferente
 con gvNIX? Nada, podemos utilizar gvNIX para aquellas capas en las que nos
 pueda ayudar y facilitar el desarrollo y aquellas capas que queremos una
 tecnología diferente hacerlo a mano.
@@ -942,8 +942,8 @@ Ejemplos:
 * Una de las fortalezas mayores desde nuestro punto de vista es la posibilidad
   de *escalar el producto en base a las aportaciones de múltiples
   contribuidores*, y que en el software privativo queda reducido a los
-  recursos de los que dispone la empresa propietaria. 
-* Estos colaboradores constituyen la *comunidad de desarrollo*, 
+  recursos de los que dispone la empresa propietaria.
+* Estos colaboradores constituyen la *comunidad de desarrollo*,
   cuyo objetivo es aglutinar
   grupos de personas, empresas, organizaciones, universidades e individuos con
   un objetivo y beneficio común sobre la base de promover el acceso y
@@ -980,7 +980,7 @@ Ejemplos:
 ====
 *CHARLA (HOW):*
 
-Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y 
+Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y
 organizaciones que hacen falta 4 elementos fundamentales:
 
 *Diferenciar distribuciones públicas*, como gvNIX, de las privadas, como gvNIX
@@ -993,10 +993,10 @@ complementos de interés general contribuidos a la distribución pública estar�
 automáticamente y por defecto incluidos en cualquier distribución privada.
 
 *Fomentar la cooperación*, es decir, más allá de los conceptos teóricos,
-filosóficos y jurídicos, un proyecto software se desarrolla gracias a una 
-serie de herramientas técnicas: gestores de proyectos, control de versiones de 
-código, wikis, listas de correo, gestores de errores o bugs, etc.; que 
-facilitan la colaboración simultánea, deslocalizada y la coordinación de 
+filosóficos y jurídicos, un proyecto software se desarrolla gracias a una
+serie de herramientas técnicas: gestores de proyectos, control de versiones de
+código, wikis, listas de correo, gestores de errores o bugs, etc.; que
+facilitan la colaboración simultánea, deslocalizada y la coordinación de
 los miembros.
 
 *Internacionalización* o conjunto de tareas a realizar para que el
@@ -1006,7 +1006,7 @@ y empresas para ganar en calidad, desarrollo del producto, etc.
 
 Una *entidad gestora del proyecto*, que vele por los intereses del proyecto, que
 defina y modere el modelo de sostenibilidad, que organice la comunidad de
-desarrollo, la difusión, los recursos del proyecto, etc. 
+desarrollo, la difusión, los recursos del proyecto, etc.
 
 ====
 
@@ -1036,7 +1036,7 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-El objetivo de esta demo es ver un ejemplo de aplicación que incluye 
+El objetivo de esta demo es ver un ejemplo de aplicación que incluye
 funcionalidades que se podrán desarrollar con la nueva versión de
 gvNIX, la 1.4 que saldrá en noviembre de este año:
 
@@ -1050,19 +1050,19 @@ Aunque con gvNIX se pueden desarrollar aplicaciones siguiendo distintos
 métodos, el que mejor se ajusta a las características de gvNIX es DDD o
 *Desarrollo Dirigido por el Dominio*:
 
-* Un proyecto de gvNIX debería comenzar por un análisis del dominio 
+* Un proyecto de gvNIX debería comenzar por un análisis del dominio
   y un análisis funcional, de tal forma que sobre las pantallas funcionales
   pueda concretarse con el usuario final el flujo y organización funcional de
   las mismas y seamos capaces de revisar el análisis del dominio para que se
-  ajuste a los requerimientos validados con el usuario sobre las pantallas 
+  ajuste a los requerimientos validados con el usuario sobre las pantallas
   funcionales.
-* Si la aplicación tiene interfaz de usuario, se genera automáticamente y 
+* Si la aplicación tiene interfaz de usuario, se genera automáticamente y
   se ajusta la interfaz a las especificaciones de requerimientos.
-* A continuación se inicia un proceso evolutivo donde se codifica la lógica 
-  de negocio y las pruebas de integración para hacer crecer el sistema hasta tener 
+* A continuación se inicia un proceso evolutivo donde se codifica la lógica
+  de negocio y las pruebas de integración para hacer crecer el sistema hasta tener
   la aplicación final.
 
-La aplicación demo es para *gestión de una clínica veterinaria*. Los usuarios 
+La aplicación demo es para *gestión de una clínica veterinaria*. Los usuarios
 de la aplicación son trabajadores de una clínica que, en el desempeño de su
 trabajo, necesitan ver y gestionar información de veterinarios, agenda de
 visitas, clientes y sus mascotas.
@@ -1081,6 +1081,13 @@ problema de una clínica veterinaria.
 
 [{middle}]
 image::logo_gvNIX.png[height="120"]
+
+== \\
+
+[{middle}]
+
+http://creativecommons.org/licenses/by-sa/3.0/es/[Este obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 España.]
+
 
 ////
 

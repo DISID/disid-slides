@@ -3,24 +3,24 @@
 //
 // dzslides with embedded assets:
 //
-//   $ asciidoc -a data-uri slides.adoc 
+//   $ asciidoc -a data-uri slides.adoc
 //
 // HTML5 (print):
 //
 //   $ asciidoc -b html5 -o outline.html slides.adoc
 //
 // PDF:
-// 
+//
 //   $ dzslides2pdf.rb slides.adoc
 //
-//   PDF conversion requires: ruby, qt4-make, ruby-qt4, ruby-qt4-webkit, 
+//   PDF conversion requires: ruby, qt4-make, ruby-qt4, ruby-qt4-webkit,
 //   capybara, capybara-webkit,
 //
 // You need to install in asciidoc backends the gvsig theme.
 // Its a private theme located into https://svn.disid.com/svn/disid-presentaciones/resources-dzslides.
 // If not access, change "dzslides-style" property with value "stormy".
- 
-= **gvNIX** - Desarrollo rápido de geoportales para visualización y gestión de datos 
+
+= **gvNIX** - Desarrollo rápido de geoportales para visualización y gestión de datos
 v1.2, 01 dic 2014
 :title: gvNIX - Desarrollo rápido de geoportales para visualización y gestión de datos
 :description: These slides are a strategic overview to gvNIX Geo component support included in release 1.4 for 10 international gvSIG Conference
@@ -52,7 +52,7 @@ Esta charla va enfocada a presentar la problemática de la explotación
 de datos alfanuméricos y geográficos en aplicaciones.
 
 Explicaremos a grandes rasgos qué es la herramienta de desarrollo gvNIX.
-Haremos un repaso de las funcionalidades que nos ofrece para el 
+Haremos un repaso de las funcionalidades que nos ofrece para el
 desarrollo de aplicaciones web, centrándose en la componente geográfica
 de los datos.
 
@@ -193,7 +193,7 @@ facilitar el mantenimiento y la evolución.
   Las aplicaciones generadas por gvNIX están sobre una base
   tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
   nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas
-  con gvNIX. 
+  con gvNIX.
 * *Buenas prácticas*:
   La herramienta fomenta buenas prácticas en lo referente a la estructura de los
   proyectos y su codificación.
@@ -217,12 +217,12 @@ endif::[]
 ====
 *CHARLA (HOW):*
 
-Desde el punto de vista de su uso, gvNIX está diseñado como 
-un intérprete de comandos interactivo. 
+Desde el punto de vista de su uso, gvNIX está diseñado como
+un intérprete de comandos interactivo.
 
-Para facilitar su uso tiene auto completado de los comandos y ayuda contextual. 
-Además en todo momento nos mostrará solo los comandos que sean válidos y nos 
-dará pistas de cuál es la siguiente tarea a realizar si estamos un poco 
+Para facilitar su uso tiene auto completado de los comandos y ayuda contextual.
+Además en todo momento nos mostrará solo los comandos que sean válidos y nos
+dará pistas de cuál es la siguiente tarea a realizar si estamos un poco
 perdidos.
 
 Cada componente proporciona al intérprete un conjunto de comandos a través de los
@@ -288,7 +288,7 @@ A continuación vamos a ver con mas detalle todas estas funcionalidades.
 Para ello seguiremos un ejemplo de un pequeño callejero en el que disponemos
 de calles y edificios. Cabe destacar que todas todas las funcionalidades que
 vamos a ver son generadas automáticamente por la herramienta de desarrollo
-sin necesidad de implementar ni una sola línea de código.  
+sin necesidad de implementar ni una sola línea de código.
 
 ====
 
@@ -391,7 +391,7 @@ endif::[]
   ** Línea
   ** Multi línea
   ** Polígono
-  ** Geometría 
+  ** Geometría
 
 * Cada uno de los datos geográficos se muestra en una capa en el geoportal.
   La visualización de cada una de estas capas pueden ser activada o desactivada.
@@ -420,7 +420,7 @@ endif::[]
 Las aplicaciones desarrolladas con la herramienta de desarrollo gvNIX
 incluyen un diseño adaptativo de forma que la misma aplicación se visualiza
 correctamente en distintos dispositivos. La aplicación adapta su visualización
-de forma automática en función del tamaño de pantalla del dispositivo.  
+de forma automática en función del tamaño de pantalla del dispositivo.
 
 ====
 
@@ -494,7 +494,7 @@ La herramienta de desarrollo gvNIX está orientada al desarrollo
 de aplicaciones de explotación de datos, facilita en gran medida
 la gestión de datos geográficos, su explotación en un geoportal,
 la inclusión de los procesos de negocio de la organización
-y su visualización en entornos web y móvil. 
+y su visualización en entornos web y móvil.
 
 Un ejemplo de todo ello es la aplicación:
 
@@ -514,9 +514,16 @@ Gracias +
 ====
 *CHARLA (WHAT):*
 
-Existe un taller práctico en el que se verá todo esto con detalle.  
+Existe un taller práctico en el que se verá todo esto con detalle.
 
 ====
+
+== \\
+
+[{middle}]
+
+http://creativecommons.org/licenses/by-sa/3.0/es/[Este obra está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 3.0 España.]
+
 
 ////
 
