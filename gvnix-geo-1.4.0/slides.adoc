@@ -31,7 +31,8 @@ v1.2, 01 dic 2014
 :linkcss!:
 :source-highlighter: highlightjs
 :backend: dzslides
-:dzslides-style: gvsig-jornadas
+:dzslides-style: stormy
+// :dzslides-style: gvsig-jornadas
 :dzslides-aspect: 4-3
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
@@ -62,7 +63,7 @@ cómo construir un geoportal y cómo explotar dicha información.
 ====
 
 [{intro}]
-== *Problemática*
+== Problemática
 
 [{topic}]
 == *Problemática*
@@ -94,20 +95,25 @@ La explotación de datos geográficos se realiza desde una aplicación,
 por ejemplo una aplicación de escritorio, a la que accede un perfil de
 usuarios expertos en materia geográfica.
 
-La explotación de datos alfanuméricos se realiza desde una aplicación,
-por ejemplo una aplicación web, a la que accede un perfil de usuarios
-sin conocimientos en materia geográfica.
+Por otro lado, la explotación de datos alfanuméricos se realiza desde 
+otra aplicación, por ejemplo una aplicación web, a la que accede un perfil 
+de usuarios sin conocimientos en materia geográfica.
 
-La problemática radica en que información común es mantenida desde distintas
-aplicaciones debido al tipo de dato que deben gestionar.
+La problemática radica en que un mismo bloque de información, como por ejemplo
+datos de una calle, debe ser mantenida desde distintas aplicaciones
+simplemente porque las aplicaciones de gestión de datos alfanuméricos no
+soportan geometrías. Siguiendo con el ejemplo anterior, el nombre de la calle
+y el ancho se actualizarían por un usuario desde una aplicación y
+la geometría se actualizaría por un usuario especializado desde gvSIG
+Desktop.
 
 ====
 
 [{intro}]
-== *Objetivo*
+== Características y beneficios de *gvNIX* Geo
 
 [{topic}]
-== *Objetivo*
+== *Características de gvNIX Geo*
 
 [role="incremental scatter"]
 * Presentar la información geográfica al *Usuario*
@@ -115,7 +121,7 @@ aplicaciones debido al tipo de dato que deben gestionar.
 * Explotar la información en un geoportal
 
 [{topic}]
-== *Objetivo*
+== *Beneficios de gvNIX Geo*
 
 ifndef::backend-dzslides[]
 image::callejero-web-mvc-geo-field.png[width="700"]
@@ -138,11 +144,17 @@ endif::[]
 ====
 *CHARLA (WHAT):*
 
-El objetivo sería integrar en una misma aplicación la gestión
-de la información alfanumérica y geográfica para que los usuarios
-pudiesen explotar dicha información sin hacer uso de otras
-aplicaciones especializadas en la materia que serían del dominio
-de los perfiles expertos.
+gvNIX permite desarrollar rápidamente aplicaciones de gestión de información
+alfanumérica y geográfica, con las que los usuarios podrán mantener y explotar
+la información de forma homogénea y desde una sóla aplicación, sin necesidad
+de hacer uso de aplicaciones especializadas.
+
+*Consiguiendo:*
+
+* Mayor productividad: se finalizan los trabajos más rápidamente ya que un
+  único usuario gestiona la información y no se requiere la intervención de
+  diversos usuarios.
+* Mayor eficiencia: ya que cada usuario se especializa en su labor.
 
 ====
 
