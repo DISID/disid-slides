@@ -43,16 +43,15 @@ v1.4, 30 oct 2014
 ====
 *CHARLA (INTRODUCCIÓN):*
 
-Presentación: Nombre, cargo en DISID
+Presentación: Enrique Ruiz, Director de I+D en DISID y Director del proyecto gvNIX
 
 En esta charla/presentación explicaremos qué es gvNIX, en qué se diferencia de
-un framework de desarrollo.
+un framework de desarrollo y por qué utilizar una herramienta de desarrollo.
 
-Haremos un repaso de las funcionalidades y componentes que nos ofrece para el
-desarrollo de aplicaciones web.
+Haremos un repaso de la base tecnológica de gvNIX y las funcionalidades que
+ofrece a los desarrolladores.
 
-Veremos las nuevas funcionalidades de la nueva versión 1.4 que saldrá en
-noviembre y una demo de una aplicación desarrollada con gvNIX.
+Veremos un vídeo demo de una aplicación desarrollada con gvNIX.
 
 ====
 
@@ -69,6 +68,7 @@ noviembre y una demo de una aplicación desarrollada con gvNIX.
 *CHARLA (WHY):*
 
 *Lenguaje + Librerías API*
+
 Habitualmente cualquier plataforma de
 desarrollo: Java, C#, Python, Groovy, etc. además del lenguaje, ofrece un
 conjunto de librerías que no son más que conjuntos de funciones ya
@@ -76,6 +76,7 @@ implementadas básicas con funcionalidad imprescindible, en el caso
 de la plataforma Java estas librerías se conocen como el *API Java*.
 
 *Problema programar sólo con lenguaje*
+
 Si tratamos de programar una aplicación con cualquier lenguaje, desde cero
 usando solo el lenguaje y las librerías básicas tendríamos un problema, ya que
 sólo ofrecen utilidades de bajo nivel (programación concurrente, sockets,
@@ -84,6 +85,7 @@ tan necesarios como manejo de sesiones web, componentes de interfaz de
 usuario, envío de correo, etc. tendríamos que desarrollarlas a mano.
 
 *Más productividad = librerías de terceros*
+
 En lugar de ello es más productivo y eficiente usar librerías de terceros que
 ofrezcan estas funciones de más alto nivel.
 
@@ -106,10 +108,10 @@ ofrezcan estas funciones de más alto nivel.
 
 Esto que a priori es bueno, supone una nueva problemática para los proyectos
 de desarrollo ya que en la mayoría de las ocasiones para desarrollar la
-aplicación que necesitamos no nos es suficiente con usar un única librería
+aplicación que necesitamos no nos es suficiente con usar una única librería
 sino que necesitamos utilizar varias.
 
-Usar varias librerías genera nueva problemática:
+Utilizar varias librerías genera nueva problemática:
 
 * Cada *librería es totalmente independiente*, con su propia configuración.
 * Es necesaria una *configuración e instalación manual particulares* para cada
@@ -144,12 +146,12 @@ poder dar una solución que genere mayor productividad:
 Los frameworks son sinónimo de productividad porque facilitan y
 aceleran el proceso de desarrollo debido a:
 
-* Define una estructura de aplicación, una forma homogénea de configurar y
+* Define *una estructura de aplicación*, una *forma homogénea de configurar* y
   usar todas las librerías que integra.
-* Especifica mecanismos para integrar nuevas funciones o librerías.
-* Facilita la colaboración, ya que está todo más estandarizado y definido
+* Especifica *mecanismos para integrar nuevas funciones* o librerías.
+* *Facilita la colaboración*, ya que está todo más estandarizado y definido
   según el framework. Es un código menos personal.
-* Promueve el uso de patrones y buenas prácticas, por ejemplo arquitectura
+* *Promueve el uso de patrones y buenas prácticas*, por ejemplo arquitectura
   MVC.
   .
   Ayudan al desarrollador a enfocarse principalmente en la lógica del negocio
@@ -178,7 +180,8 @@ funciones de utilidad, los frameworks agrupan librerías que dan solución a un
 aspecto concreto de una aplicación.
 
 Por ejemplo, es fácil o habitual que nuestras aplicaciones web necesiten usar
-varios de los siguientes frameworks:
+*múltiples frameworks* que cada uno cubre un *aspecto funcional concreto* de 
+la aplicación:
 
 * Spring Framework, soluciona cómo se suministran los objetos a otros objetos
   en lugar de dejar que sean éstos quienes creen el propio objeto.
@@ -188,11 +191,11 @@ varios de los siguientes frameworks:
 * JasperReports, desarrollo de informes
 * Bootstrap, jQuery, etc.
 
-Ahora el problema no está en integrar librerías, sino en integrar frameworks,
+Ahora el *problema no está en integrar librerías, sino en integrar frameworks*,
 en configurarlos, en resolver colisiones de dependencias, etc etc etc
 
 Aunque es cierto que los frameworks permiten que distintas aplicaciones tengan
-la misma estructura y por tanto introduce cierta homogeneidad en los proyectos
+la misma estructura y por tanto introduce *cierta homogeneidad* en los proyectos
 de una organización, existe un problema: cada framework define su propia
 estructura, por lo que si por cualquier circunstancia utilizamos frameworks
 diferentes en distintas aplicaciones se pierde la homogeneidad en esos
@@ -212,18 +215,30 @@ proyectos.
 ====
 *CHARLA (WHAT):*
 
-* Una herramienta de desarrollo es una aplicación para crear otras aplicaciones
-  basadas en varios frameworks y además integrar, configurar esos frameworks y
-  cómo se relacionan.
-* Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
-  allá de cada framework o librería:
-- El ciclo de vida va desde el análisis hasta el mantenimiento
-* Mayor porcentaje del tiempo dedicado a lógica de negocio ya que dedicamos el
-  tiempo de buscar cómo se configuran los frameworks, como se integran, etc
-  etc a programar.
-* La homogeneidad no depende de cada framework, la define la herramienta de
-  desarrollo, pudiendo crear una estructura de proyectos única para
-  cualquier tipo de proyecto.
+*Crear, integrar, configurar, ...*
+
+Una herramienta de desarrollo es una aplicación para crear otras aplicaciones
+basadas en varios frameworks y además integrar, configurar esos frameworks y
+cómo se relacionan.
+
+*Patrones y buenas prácticas++*
+
+Las herramientas de desarrollo proporcionan patrones y buenas prácticas más
+allá de cada framework o librería:
+
+* El ciclo de vida va desde el análisis hasta el mantenimiento
+
+*Focalizar++ en lógica de negocio*
+
+Mayor porcentaje del tiempo dedicado a lógica de negocio ya que dedicamos el
+tiempo de buscar cómo se configuran los frameworks, como se integran, etc
+etc a programar.
+
+*Homogeneidad++*
+
+La homogeneidad no depende de cada framework, la define la herramienta de
+desarrollo, pudiendo crear una estructura de proyectos única para
+cualquier tipo de proyecto.
 
 ====
 
@@ -257,6 +272,8 @@ beneficios de un herramienta de desarrollo para crear aplicaciones web.
 
 Beneficios:
 
+*Libertad evolutivo y correctivo*
+
 * La evolucion de las aplicaciones no está bloqueda por la evolución de
   gvNIX. Ejemplos:
 ** Integrar una nueva funcionalidad en una aplicación no requiere que
@@ -280,19 +297,28 @@ Beneficios:
    3. el equipo de desarrollo reporta la incidencia en el ámbito de gvNIX al
       proyecto gvNIX, incluyendola en la hoja de ruta y corrigiendola dentro
       de la siguiente versión de gvNIX.
-* gvNIX puede generar cualquiera de las capas de la arquitectura de la
-  aplicación. Se pueden utilizar gvNIX para generar cualquiera de las capas de
-  la aplicación: sólo modelo, modelo-controlador o modelo-vista-controlador.
-  De esta forma gvNIX ayuda en aquello que necesita el proyecto y permite
-  integrar otras tecnologías en una aplicación desarrollada con gvNIX. Por
-  ejemplo, se puede desarrollar una aplicación con gvNIX cuya vista esté
-  desarrollada con ExtJS.
-* Diferencia explícita entre desarrolladores de aplicaciones como el usuario
-  tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
-* Importante es que al *no contener ningún componente en tiempo de ejecución*
-  no interfiere en el despliegue de las soluciones ni crea dependencias con el
-  producto final, de forma tal que resulta transparente para el despliegue en
-  producción.
+
+*Uso por capas: modelo, modelo-control, modelo-control-vista*
+
+gvNIX puede generar cualquiera de las capas de la arquitectura de la
+aplicación. Se pueden utilizar gvNIX para generar cualquiera de las capas de
+la aplicación: sólo modelo, modelo-controlador o modelo-vista-controlador.
+De esta forma gvNIX ayuda en aquello que necesita el proyecto y permite
+integrar otras tecnologías en una aplicación desarrollada con gvNIX. Por
+ejemplo, se puede desarrollar una aplicación con gvNIX cuya vista esté
+desarrollada con ExtJS.
+
+*Usuario gvNIX: desarrollador de aplicaciones*
+
+Diferencia explícita entre desarrolladores de aplicaciones como el usuario
+tipo de gvNIX, y usuarios finales de la aplicaciones desarrolladas.
+
+*Independencia aplicaciones -> gvNIX*
+
+Importante es que al *no contener ningún componente en tiempo de ejecución*
+no interfiere en el despliegue de las soluciones ni crea dependencias con el
+producto final, de forma tal que resulta transparente para el despliegue en
+producción.
 
 ====
 
@@ -310,34 +336,39 @@ Beneficios:
 ====
 *CHARLA (HOW):*
 
-* *Multiplataforma y fácil de instalar*.
-  gvNIX es fácil de instalar tanto como herramienta independiente que funciona
-  en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
-  desarrollo: STS o Eclipse.
-  Los únicos requerimientos son Java (6 o superior) SDK y Apache Maven 3. Una vez
-  instalados, se descarga la distribución de gvNIX, se descomprime y se añade
-  al PATH del sistema y lanzamos el entorno con el comando gvnix.
-* *Generación no-intrusiva de código*
-  Crea código en unidades de compilación separadas del código fuente creado
-  por los desarrolladores, de esta forma, la generación de código es
-  totalmente inocua porque independiza el ciclo de vida del código generado del
-  ciclo de vida del código mantenido por los desarrolladores.
-* *Buenas prácticas desde Análisis*
-  Todo proyecto de gvNIX comienza por un análisis del dominio del problema
-  plasmado sobre un modelo de clases que sirve como punto de partida del
-  proyecto.
-  .
-  A diferencia de herramientas de construcción como Maven que no dirigen hacía
-  un análisis previo.
-* *Proyectos JEE estándar*
-  Los proyectos creados con gvNIX son aplicaciones Java
-  que cumplen con el estándar JEE
-* *No añade dependencias de componentes*
-  gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
+*Multiplataforma y fácil de instalar*.
 
-TODO: Pensar diferencia con un sistema de trabajo basado en Maven, donde nos
-presentaban que ellos tenían una forma de trabajar muy ordenada que les
-permitía focalizar en la lógica de negocio.
+gvNIX es fácil de instalar tanto como herramienta independiente que funciona
+en Windows, Mac OSX, Linux o como herramienta integrada en un entorno de
+desarrollo: STS o Eclipse.
+Los únicos requerimientos son Java (6 o superior) SDK y Apache Maven 3. Una vez
+instalados, se descarga la distribución de gvNIX, se descomprime y se añade
+al PATH del sistema y lanzamos el entorno con el comando gvnix.
+
+*Generación no-intrusiva de código*
+
+Crea código en unidades de compilación separadas del código fuente creado
+por los desarrolladores, de esta forma, la generación de código es
+totalmente inocua porque independiza el ciclo de vida del código generado del
+ciclo de vida del código mantenido por los desarrolladores.
+
+*Buenas prácticas desde Análisis*
+
+Todo proyecto de gvNIX comienza por un análisis del dominio del problema
+plasmado sobre un modelo de clases que sirve como punto de partida del
+proyecto.
+
+A diferencia de herramientas de construcción como Maven que no dirigen hacía
+un análisis previo.
+
+*Proyectos JEE estándar*
+
+Los proyectos creados con gvNIX son aplicaciones Java
+que cumplen con el estándar JEE
+
+*No añade dependencias de componentes*
+
+gvNIX no añade ningún tipo de librería requerida en tiempo de ejecución.
 
 ====
 
@@ -425,32 +456,118 @@ para facilitar el desarrollo. Los más destacados son:
 
 ====
 
-[{topic}]
-== Madurez de gvNIX
+== Tecnología
 
-[role="incremental scatter"]
-* *Funcionalidades* que incluye
-* *Tecnología* de las aplicaciones
-* *Casos* de *uso*
-* *Sostenibilidad* del proyecto
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="370"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
+endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-Muy bien, está claro por qué gvNIX es más que un framework, que no
-bloquea el ciclo de vida de las aplicaciones, es decir no tiene sentido
-aquello de *si gvNIX no lo soporta -> no se puede hacer con gvNIX*, que se
-ha utilizado una tecnología que va a permitir que gvNIX crezca en la medida
-que se necesite en la DGTI. Pero, *¿está gvNIX lo suficientemente maduro?*
+Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
+capa web, la de control y la de modelo del dominio.
 
-Para contestar a esta pregunta vamos a ver:
+La capa de dominio del problema suele contener una "sub-capa" de servicios
+que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos.
+Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos
+los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
+clases que modelan las entidades del dominio, que se encargan no solo de
+modelar el dominio sino también de la validación de sus datos e incluso su
+serialización a JSON.
 
-* *Funcionalidades* desarrolladas hasta la fecha y *nuevas funcionalidades* de
-  la versión 1.4
-* Tecnologías que gvNIX incluye como base de las aplicaciones que genera.
-* *Sostenibilidad* del proyecto
+====
 
+== Tecnología
+
+ifndef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada",width="370"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-web-fw-report.png[caption="Tecnología consolidada"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+¿Y que hay de la tecnología que incluye gvNIX en las aplicaciones? Pues es la
+tecnología más utilizada en la actualidad. Spring MVC es el framework web
+comunmente utilizado. El 40% de la población de estudio manifestó que
+utilizaba Spring MVC.
+
+Dos datos muy rápidos sobre las tecnologías que integra gvNIX en las
+aplicaciones:
+
+* Spring MVC es el framework para desarrollo web más utilizado
+
+====
+
+== Tecnología
+
+ifndef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="370"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Por qué esta pila tecnológica?*
+
+Las aplicaciones generadas por gvNIX están sobre una base
+tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
+nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
+gvNIX.
+
+Por tanto, *está maduro gvNIX*, claro, *lo contrario sería decir que Spring,
+que jQuery, que Hibernate no están maduros*, pues como hemos visto gvNIX no es
+un FW sino una herramienta de desarrollo que surge para solventar el problema
+de la proliferación de tantos FW independientes.
+
+====
+
+== Aplicación con ExtJS
+
+ifndef::backend-dzslides[]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="370"]
+endif::[]
+
+ifdef::backend-dzslides[]
+image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS"]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Vamos a ver un ejemplo, ¿qué pasa si queremos usar una tecnología diferente
+con gvNIX? Nada, podemos utilizar gvNIX para aquellas capas en las que nos
+pueda ayudar y facilitar el desarrollo y aquellas capas que queremos una
+tecnología diferente hacerlo a mano.
+
+Una de las grandes ventajas de Spring Framework es que permite cambiar
+fácilmente cualquiera de los elementos de una aplicación, no sólo los
+soportados, sino que proporciona los mecanismos necesarios para integrar
+cualquier librería o estándar nuevo en cualquiera de las versiones del
+framework. A diferencia por ejemplo de entornos como Developer.
+
+Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
+no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
+mano ExtJS en la aplicación generada con gvNIX.
+
+Aún así el desarrollador obtendrá toda la productividad que le brinda gvNIX,
+aunque evidentemente sólo en 2 capas de la aplicación.
 ====
 
 [{topic}]
@@ -482,7 +599,7 @@ Para contestar a esta pregunta vamos a ver:
 * Maestro -> detalle *multinivel*
 
 [{topic}]
-== Nuevas funcionalidades de gvNIX
+== Funcionalidades de gvNIX
 
 [role="incremental scatter"]
 * Monitorización *rendimiento* en producción
@@ -529,8 +646,8 @@ remotos como si de llamadas a servicios locales se tratara.
 
 *Pruebas de integración y funcionales*
 
-Genera automáticamente pruebas de validación de código, tanto de integración con Junit
-como funcionales con Selenium.
+Genera automáticamente pruebas de validación de código, tanto de integración 
+con Junit como funcionales con Selenium.
 
 *Informes*
 
@@ -631,204 +748,309 @@ usuario elegir la operación de filtrado por columna.
 
 ====
 
-== Componente geográfica
+== ¿Qué es la "Componente geográfica"?
 
 ifndef::backend-dzslides[]
-image::console-screens.png[caption="Componente Geo",width="570"]
+image::geoportal-problem.png[caption="Componente Geo",width="570"]
 endif::[]
 
 ifdef::backend-dzslides[]
-image::console-screens.png[caption="Geo"]
+image::geoportal-problem.png[caption="Componente Geo"]
 endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-Cada vez son más las áreas del saber que requieren el uso de datos geoespaciales
-para cumplir con mayor acierto sus procesos, como la gestión pública, gestión
-medioambiental, ingeniería, entre otras, por lo que existe hoy en día una
-creciente necesidad de aplicaciones web que requieren compartir e integrar
-datos georeferenciados con datos alfanuméricos para realizar diferentes tipos
-de análisis espacio-territoriales y ayudar en la toma de decisiones.
+Históricamente la explotación de datos geográficos y alfanuméricos
+se ha realizado desde distintas aplicaciones.
 
-No estamos hablando de que nuestra aplicación integre un plugin Javascript que
-muestre un *mapita de Google Maps* donde geoposicionamos información concreta de
-la aplicación, estamos hablando de:
+La explotación de datos geográficos se realiza desde una aplicación,
+por ejemplo una aplicación de escritorio, a la que accede un perfil de
+usuarios expertos en materia geográfica.
 
-* Edición de datos de tipo GEO
-* Cruzar información de múltiples entidades en un mapa
-* Poder filtrar registros del mapa
-* Mostrar en el mapa sólo registros seleccionados
-* Generar listado de capas disponibles
-* Añadir fácilmente nuevas capas:
-- Datos de entidades
-- open street map,
-- GVA IDE
-- ...
-* Habilitar herramientas de mapas y permitir crear nuevas herramientas:
-  medición, zoom, escala, ...
-* Accesible desde cualquier dispositivo: tableta, móvil, PC ...
+Por otro lado, la explotación de datos alfanuméricos se realiza desde 
+otra aplicación, por ejemplo una aplicación web, a la que accede un perfil 
+de usuarios sin conocimientos en materia geográfica.
 
-Qué proporciona gvNIX a los desarrolladores que deseen incorporar estas
-funcionalidades a sus aplicaciones:
-
-* A nivel de modelo de datos:
-- Configurar soporte para BBDD espaciales. Ejemplos de ello son: PostgreSQL
-  con PostGIS, Oracle con Spatial, etc. que permiten unir datos
-  alfanuméricos habituales con nuevos campos geométricos que representen la
-  localización y forma de los datos. Por ejemplo, si tenemos una tabla con las
-  ciudades de un país, tendremos datos como el nombre, el número de habitantes,
-  etc. y por otro lado podemos tener un punto geográfico que indique la posición
-  de la ciudad en el mapa, o un polígono con la forma del término municipal.
-- Incorporar campos geográficos vectoriales como un dato más en el modelo
-  de datos de una aplicación, integrando y configurando las librerías
-  necesarias para ello.
-- Soporte para consultas a BBDD con filtros espaciales. Es decir, poder buscar
-  datos no sólo por sus valores alfanuméricos, sino también por sus
-  características geográficas: elementos que estén cerca de una localización,
-  dentro de un área determinada, etc.
-* A nivel de presentación:
-- gvNIX genera automáticamente páginas para la visualización, listado,
-  búsqueda, creación y edición de datos alfanuméricos y además incorpora la
-  visualización sobre un mapa de estos mismos datos. Por ejemplo, si tenemos
-  un listado de ciudades que se muestran sobre una tabla, se podría incorporar
-  también un mapa en el que se muestre la localización de estas ciudades.
-- Permite la edición de la localización de elementos. Incorpora a los
-  formularios de creación y edición de datos que genera gvNIX el poder
-  establecer la localización del dato que se está editando mediante la
-  selección de un punto sobre un mapa.
-- Generación de geoportales. Cualquier aplicación gvNIX puede incorporar
-  un geoportal en el que se muestren todos los datos que se gestionan desde la
-  aplicación como diferentes capas, con opciones de búsqueda, activación,
-  etc., así como integración con el resto de páginas de la aplicación:
-  herramienta de edición que al seleccionar un elemento sobre el mapa, nos
-  lleva al formulario de edición de dicho elemento.
-* A nivel de proyecto:
-- gvNIX permite integrar y combinar distintos frameworks y librerías de tal
-  forma que desarrolladores sin conocimientos geo serán perfectamente capaces
-  de desarrollar aplicaciones de gestión con componente geográfica.
-
-Este es el ejemplo más claro de los beneficios de gvNIX, en la versión 1.4
-conseguirá integrar no sólo Spring Framework, CXF, JasperReports, etc. con
-frameworks propios de aplicaciones de geomática como Leaflet, JTS (Java
-Topology Suite), Hibernate Spatial, etc.
-
+La problemática radica en que un mismo bloque de información, como por ejemplo
+datos de una calle, debe ser mantenida desde distintas aplicaciones
+simplemente porque las aplicaciones de gestión de datos alfanuméricos no
+soportan geometrías. Siguiendo con el ejemplo anterior, el nombre de la calle
+y el ancho se actualizarían por un usuario desde una aplicación y
+la geometría se actualizaría por un usuario especializado desde gvSIG
+Desktop.
 ====
 
-== Tecnología
+== Beneficios de gvNIX Geo
 
 ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas",width="370"]
+image::callejero-web-mvc-geo-field.png[caption="Gestión calles",width="570"]
 endif::[]
 
 ifdef::backend-dzslides[]
-image::gvnix-arquitectura-runtime.png[caption="Arquitectura 3 capas"]
+image::callejero-web-mvc-geo-field.png[caption="Gestión calles"]
 endif::[]
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-Habitualmente las aplicaciones web JavaEE se estructuran en tres capas: la
-capa web, la de control y la de modelo del dominio.
+gvNIX permite desarrollar rápidamente aplicaciones de gestión de información
+alfanumérica y geográfica, con las que los usuarios podrán mantener y explotar
+la información de forma homogénea y desde una sóla aplicación, sin necesidad
+de hacer uso de aplicaciones especializadas.
 
-La capa de dominio del problema suele contener una "sub-capa" de servicios
-que ofrecen eso, servicios, al resto de capa e incluso a clientes remotos.
-Tiene otra "sub-capa" de acceso a datos donde habitualmente tenemos
-los DAOs, que se encargan de la persistencia de datos. Finalmente incluye las
-clases que modelan las entidades del dominio, que se encargan no solo de
-modelar el dominio sino también de la validación de sus datos e incluso su
-serialización a JSON.
+*Consiguiendo:*
 
-TODO: Lo que ofrece Spring Framework en ejecución.
+* Mayor productividad: se finalizan los trabajos más rápidamente ya que un
+  único usuario gestiona la información y no se requiere la intervención de
+  diversos usuarios.
+* Mayor eficiencia: ya que cada usuario se especializa en su labor.
+
+Es un nuevo paradigma para trabajar con información Geo, similar a como lo son
+las IDE frente al concepto clásico de los SIG.
+
 ====
 
-== Tecnología
+[{topic}]
+== Tecnología Geo: *Modelo de datos*
 
-ifndef::backend-dzslides[]
-image::Java-web-fw-report.png[caption="Tecnología consolidada",width="370"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::Java-web-fw-report.png[caption="Tecnología consolidada"]
-endif::[]
+[role="incremental"]
+* Soporte *BBDD espaciales* [detail]#PostgreSQL con *PostGIS*, Oracle con *Spatial*#
+* *Campos* geográficos *vectoriales*
+* *Consultas* a BBDD con filtros *espaciales*
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-¿Y que hay de la tecnología que incluye gvNIX en las aplicaciones? Pues es la
-tecnología más utilizada en la actualidad. Spring MVC es el framework web
-comunmente utilizado. El 40% de la población de estudio manifestó que
-utilizaba Spring MVC.
+*Soporte BBDD espaciales*
 
-Dos datos muy rápidos sobre las tecnologías que integra gvNIX en las
-aplicaciones:
+Configurar soporte para BBDD espaciales. Ejemplos de ello son: PostgreSQL
+con PostGIS, Oracle con Spatial, etc. que permiten unir datos
+alfanuméricos habituales con nuevos campos geométricos que representen la
+localización y forma de los datos. Por ejemplo, si tenemos una tabla con las
+ciudades de un país, tendremos datos como el nombre, el número de habitantes,
+etc. y por otro lado podemos tener un punto geográfico que indique la posición
+de la ciudad en el mapa, o un polígono con la forma del término municipal.
 
-* Spring MVC es el framework para desarrollo web más utilizado
+*Incorporar campos geográficos vectoriales* como un dato más en el modelo
+de datos de una aplicación, integrando y configurando las librerías
+necesarias para ello.
 
+*Consultas a BBDD con filtros espaciales*
+
+Soporte para consultas a BBDD con filtros espaciales. Es decir, poder buscar
+datos no sólo por sus valores alfanuméricos, sino también por sus
+características geográficas: elementos que estén cerca de una localización,
+dentro de un área determinada, etc.
 ====
 
-== Tecnología
+[{topic}]
+== Tecnología Geo: *Capa de presentación*
 
-ifndef::backend-dzslides[]
-image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014",width="370"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::Java-tools-and-technologies-2014.jpg[caption="Enterprise Java 2014"]
-endif::[]
+[role="incremental"]
+* *Automáticamente* genera la *gestión* de información *geolocalizada*
+* *Edición* geometrías
+* *Generación* de *geoportales*
+* *Integración* tecnología soporte *geo*
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-*Por qué esta pila tecnológica?*
+*gvNIX genera automáticamente páginas para explotación de datos*, listado,
+búsqueda, creación y edición de datos alfanuméricos y además incorpora la
+visualización sobre un mapa de estos mismos datos. Por ejemplo, si tenemos
+un listado de ciudades que se muestran sobre una tabla, se podría incorporar
+también un mapa en el que se muestre la localización de estas ciudades.
 
-Las aplicaciones generadas por gvNIX están sobre una base
-tecnológica asentada, robusta, moderna y sobre todo ampliamente utilizada a
-nivel mundial lo que garantiza el futuro de las aplicaciones desarrolladas con
-gvNIX.
+*Edición geometrías*
 
-Por tanto, *está maduro gvNIX*, claro, *lo contrario sería decir que Spring,
-que jQuery, que Hibernate no están maduros*, pues como hemos visto gvNIX no es
-un FW sino una herramienta de desarrollo que surge para solventar el problema
-de la proliferación de tantos FW independientes.
+Permite la edición de la localización de elementos. Incorpora a los
+formularios de creación y edición de datos que genera gvNIX el poder
+establecer la localización del dato que se está editando mediante la
+selección de un punto sobre un mapa.
+
+*Generación de geoportales*
+
+Cualquier aplicación gvNIX puede incorporar
+un geoportal en el que se muestren todos los datos que se gestionan desde la
+aplicación como diferentes capas, con opciones de búsqueda, activación,
+etc., así como integración con el resto de páginas de la aplicación:
+herramienta de edición que al seleccionar un elemento sobre el mapa, nos
+lleva al formulario de edición de dicho elemento.
+
+*Integración tecnología soporte geo*
+
+gvNIX permite integrar y combinar distintos frameworks y librerías de tal
+forma que cualquier desarrollador será perfectamente capaz
+de desarrollar aplicaciones de gestión con componente geográfica.
 
 ====
 
-== Aplicación con ExtJS
+[{topic}]
+== *Hoja de ruta* Geo
 
-ifndef::backend-dzslides[]
-image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS",width="370"]
-endif::[]
-
-ifdef::backend-dzslides[]
-image::gvnix-arquitectura-runtime-ExtJS.png[caption="Aplicación con ExtJS"]
-endif::[]
+[role="incremental scatter"]
+* Generar *mapa de referencia*
+* *Mostrar* las *coordenadas* del ratón
+* *Escala* gráfica y numérica
+* Soporte para crear *grupos de capas*
+* *Ordenación* de capas
+* *Gestión* de capas por *usuario*
+* Gestión de *transparencia*
+* *Imprimir* mapas
+* Buscador por *callejero*
 
 [template="notesblock"]
 ====
 *CHARLA (HOW):*
 
-Vamos a ver un ejemplo, ¿qué pasa si queremos usar una tecnología diferente
-con gvNIX? Nada, podemos utilizar gvNIX para aquellas capas en las que nos
-pueda ayudar y facilitar el desarrollo y aquellas capas que queremos una
-tecnología diferente hacerlo a mano.
+*Generar mapa de referencia*
 
-Una de las grandes ventajas de Spring Framework es que permite cambiar
-fácilmente cualquiera de los elementos de una aplicación, no sólo los
-soportados, sino que proporciona los mecanismos necesarios para integrar
-cualquier librería o estándar nuevo en cualquiera de las versiones del
-framework. A diferencia por ejemplo de entornos como Developer.
+Permite tener una vista completa del mapa siempre, en el que se muestra un rectángulo con el bounding box de la vista central. Como funcionalidad añadida, además de visualización se podría permitir mover el encuadre de la vista central sobre el propio mapa de referencia.
 
-Por ejemplo, el echo que gvNIX no genere aplicaciones con ExtJS no implica que
-no se pueda usar gvNIX, simplemente el desarrollador tendrá que incluir a
-mano ExtJS en la aplicación generada con gvNIX.
+*Mostrar las coordenadas del ratón*
 
-Aún así el desarrollador obtendrá toda la productividad que le brinda gvNIX,
-aunque evidentemente sólo en 2 capas de la aplicación.
+Ver las coordenadas de mapa sobre las que está el puntero de ratón en cada momento.
+
+*Escala gráfica y numérica*
+
+Visualizar la escala en función del nivel de zoom actual.
+
+*Ordenación de capas*
+
+Permitir al usuario cambiar el orden de las capas
+
+*Gestión de capas por usuario*
+
+Permitir al usuario añadir o quitar capas, bien de una lista predefinida en una opción del geoportal, bien con una opción que le permita especificar directamente la URL. 
+
+*Gestión de transparencia*
+
+Modificar el nivel de transparencia de una capa.
+
+*Imprimir mapas*
+
+Imprimir la vista actual, o generar un PDF.
+
+*Buscador por callejero*
+
+Herramienta de buscador por callejero: escribimos un nombre de calle, nos muestra una lista de coincidencias y al elegir una nos cambia el encuadre para mostrar la calle. Quizás se pueda hacer algo más avanzado o usable.
+
+====
+
+[{topic}]
+== Sostenibilidad
+
+[role="incremental"]
+* *Software libre* en empresas
+* Fortaleza = *múltiples contribuidores*
+* Comunidad de desarrollo [detail]#empresas, organizaciones, universidades#
+* Cooperación = *mayor calidad*
+* Sostenibilidad <- facilitar y gestionar la cooperación
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+*Software libre en empresas*
+
+Es innegable el papel que está jugando el software libre en el ámbito de la
+gestión de empresas y administraciones públicas. Hasta hace unos pocos años,
+se consideraba una rareza y aventurarse en un proyecto Open Source en la
+empresa o en una administración pública, era cuanto menos, bastante
+arriesgado. Hoy día, estos proyectos, en algunos ámbitos, están desplazando
+a sus homólogos de software privativo.
+
+*Fortaleza = múltiples contribuidores*
+
+Una de las fortalezas mayores desde nuestro punto de vista es la posibilidad
+de *escalar el producto en base a las aportaciones de múltiples
+contribuidores*, y que en el software privativo queda reducido a los
+recursos de los que dispone la empresa propietaria.
+
+*Comunidad de desarrollo*
+
+Estos colaboradores constituyen la *comunidad de desarrollo*, cuyo objetivo es
+aglutinar grupos de personas, empresas, organizaciones, universidades e
+individuos con un objetivo y beneficio común sobre la base de promover el
+acceso y distribución de una herramienta software permitiendo la libertad de
+su uso, estudio, copia, modificación y redistribución a todo aquel que lo
+desee.  Empresas que entorno al desarrollo de un modelo de negocio basado en
+el conocimiento compartido, ve que el hecho de que las herramientas que
+utilizan para la producción de las soluciones que ofrece, sean cada vez más
+potentes, le ofrece más oportunidades. De ahí que a esas empresas y
+organizaciones les puede interesar que se potencie gvNIX, etc.
+
+*Cooperación = mayor calidad*
+
+La *cooperación* entre estos grupos de personas y organizaciones en todos
+los ámbitos de la producción del software (usuarios, desarrolladores,
+documentadores, testers, traductores, ...) permite generar las sinergias
+necesarias para conseguir una *mejora sustancial de la calidad del
+software*, así como de una mayor difusión y sostenibilidad en el tiempo, y
+primando el beneficio de la sociedad sobre cualquier otro.
+
+*Sostenibilidad <- facilitar y gestionar la cooperación*
+
+Esa *sostenibilidad* pasa por potenciar, facilitar y dirigir todas esas
+colaboraciones y aportaciones de empresas y organizaciones que, por afinidad
+con los intereses en el modelo de negocio, quieran partiendo de gvNIX
+enriquecerlo.
+
+====
+
+[{topic}]
+== Crear las condiciones para un proyecto sostenible
+
+[role="incremental scatter"]
+* Distribuciones [detail]#pública y privada#
+* Fomentar la cooperación
+* Internacionalización
+* Entidad gestora
+
+[template="notesblock"]
+====
+*CHARLA (HOW):*
+
+Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y
+organizaciones que hacen falta 4 elementos fundamentales:
+
+*Distribuciones pública y privada*
+
+*Diferenciar distribuciones públicas*, como gvNIX, de las privadas, como gvNIX
+DGTI, con el objetivo de facilitar la contribución al código fuente de gvNIX.
+
+Desde esta visión, generar y potenciar una distribución pública repercutirá en
+el beneficio de toda la comunidad, tanto aquellos que utilicen la distribución
+pública como aquellos que utilicen una distribución privada, ya que todos los
+complementos de interés general contribuidos a la distribución pública estarán
+automáticamente y por defecto incluidos en cualquier distribución privada.
+
+*Fomentar la cooperación*
+
+Más allá de los conceptos teóricos, filosóficos y jurídicos, un proyecto
+software se desarrolla gracias a una serie de herramientas técnicas: gestores
+de proyectos, control de versiones de código, wikis, listas de correo,
+gestores de errores o bugs, etc.; que facilitan la colaboración simultánea,
+deslocalizada y la coordinación de los miembros.
+
+*Internacionalización*
+
+Trabajar para que el proyecto pueda expandirse a distintas regiones, como
+forma de crecimiento de la comunidad de desarrollo y así conseguir involucrar
+a más organizaciones y empresas para ganar en calidad, desarrollo del
+producto, etc.
+
+*Entidad gestora*
+
+Una *entidad gestora del proyecto*, que vele por los intereses del proyecto, que
+defina y modere el modelo de sostenibilidad, que organice la comunidad de
+desarrollo, la difusión, los recursos del proyecto, etc.
+
 ====
 
 [{topic}]
@@ -909,105 +1131,17 @@ Proof geo
 
 Ejemplos:
 
-* gvSIG Roads DIVAL: Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
-* GeoTIC: Geoportal de los recursos TIC de la Generalitat Valenciana en el territorio, incluyendo recursos de telecomunicaciones, microinformática y sistemas.
+* *gvSIG Roads DIVAL*: Gestión del Mantenimiento Integral de Carreteras de la
+  Diputación de Valencia.
+* *GeoTIC*: Geoportal de los recursos TIC de la Generalitat Valenciana en el
+  territorio, incluyendo recursos de telecomunicaciones, microinformática y 
+  sistemas.
 
 *Aplicaciones incrustadas en portales Liferay*
 
 Ejemplos:
 
 * Gestión de inmuebles en un entorno de portlets Liferay para Cúspide Inmobiliaria
-
-====
-
-[{topic}]
-== Sostenibilidad
-
-[role="incremental"]
-* *Software libre* en empresas
-* Fortaleza = *múltiples contribuidores*
-* Comunidad de desarrollo [detail]#empresas, organizaciones, universidades#
-* Cooperación = *mayor calidad*
-* Sostenibilidad <- facilitar y gestionar la cooperación
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-* Es innegable el papel que está jugando el software libre en el ámbito de la
-  gestión de empresas y administraciones públicas. Hasta hace unos pocos años,
-  se consideraba una rareza y aventurarse en un proyecto Open Source en la
-  empresa o en una administración pública, era cuanto menos, bastante
-  arriesgado. Hoy día, estos proyectos, en algunos ámbitos, están desplazando
-  a sus homólogos de software privativo.
-* Una de las fortalezas mayores desde nuestro punto de vista es la posibilidad
-  de *escalar el producto en base a las aportaciones de múltiples
-  contribuidores*, y que en el software privativo queda reducido a los
-  recursos de los que dispone la empresa propietaria.
-* Estos colaboradores constituyen la *comunidad de desarrollo*,
-  cuyo objetivo es aglutinar
-  grupos de personas, empresas, organizaciones, universidades e individuos con
-  un objetivo y beneficio común sobre la base de promover el acceso y
-  distribución de una herramienta software permitiendo la libertad de su uso,
-  estudio, copia, modificación y redistribución a todo aquel que lo desee.
-  Empresas que entorno al desarrollo de un modelo de negocio basado en el
-  conocimiento compartido, ve que el hecho de que las herramientas que
-  utilizan para la producción de las soluciones que ofrece, sean cada vez más
-  potentes, le ofrece más oportunidades. De ahí que a esas empresas y
-  organizaciones les puede interesar que se potencie gvNIX, etc.
-* La *cooperación* entre estos grupos de personas y organizaciones en todos
-  los ámbitos de la producción del software (usuarios, desarrolladores,
-  documentadores, testers, traductores, ...) permite generar las sinergias
-  necesarias para conseguir una *mejora sustancial de la calidad del
-  software*, así como de una mayor difusión y sostenibilidad en el tiempo, y
-  primando el beneficio de la sociedad sobre cualquier otro.
-* Esa *sostenibilidad* pasa por potenciar, facilitar y dirigir todas esas
-  colaboraciones y aportaciones de empresas y organizaciones que, por afinidad
-  con los intereses en el modelo de negocio, quieran partiendo de gvNIX
-  enriquecerlo.
-
-====
-
-[{topic}]
-== Crear las condiciones para un proyecto sostenible
-
-[role="incremental scatter"]
-* Distribuciones [detail]#pública y privada#
-* Fomentar la cooperación
-* Internacionalización
-* Entidad gestora
-
-[template="notesblock"]
-====
-*CHARLA (HOW):*
-
-Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y
-organizaciones que hacen falta 4 elementos fundamentales:
-
-*Diferenciar distribuciones públicas*, como gvNIX, de las privadas, como gvNIX
-DGTI, con el objetivo de facilitar la contribución al código fuente de gvNIX.
-
-Desde esta visión, generar y potenciar una distribución pública repercutirá en
-el beneficio de toda la comunidad, tanto aquellos que utilicen la distribución
-pública como aquellos que utilicen una distribución privada, ya que todos los
-complementos de interés general contribuidos a la distribución pública estarán
-automáticamente y por defecto incluidos en cualquier distribución privada.
-
-*Fomentar la cooperación*, es decir, más allá de los conceptos teóricos,
-filosóficos y jurídicos, un proyecto software se desarrolla gracias a una
-serie de herramientas técnicas: gestores de proyectos, control de versiones de
-código, wikis, listas de correo, gestores de errores o bugs, etc.; que
-facilitan la colaboración simultánea, deslocalizada y la coordinación de
-los miembros.
-
-*Internacionalización* o conjunto de tareas a realizar para que el
-proyecto pueda expandirse a distintas regiones, como forma de crecimiento de
-la comunidad de desarrollo y así conseguir involucrar a más organizaciones
-y empresas para ganar en calidad, desarrollo del producto, etc.
-
-Una *entidad gestora del proyecto*, que vele por los intereses del proyecto, que
-defina y modere el modelo de sostenibilidad, que organice la comunidad de
-desarrollo, la difusión, los recursos del proyecto, etc.
 
 ====
 
