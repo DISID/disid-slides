@@ -1007,9 +1007,9 @@ enriquecerlo.
 == Crear las condiciones para un proyecto sostenible
 
 [role="incremental scatter"]
-* Distribuciones [detail]#pública y privada#
-* Fomentar la cooperación
-* Internacionalización
+* Potenciar distribuciones *personalizadas*
+* Fomentar la *cooperación*
+* *Internacionalización*
 * Entidad gestora
 
 [template="notesblock"]
@@ -1019,16 +1019,21 @@ enriquecerlo.
 Para facilitar y dirigir todas las colaboraciones y aportaciones de empresas y
 organizaciones que hacen falta 4 elementos fundamentales:
 
-*Distribuciones pública y privada*
+*Potenciar distribuciones personalizadas*
 
-*Diferenciar distribuciones públicas*, como gvNIX, de las privadas, como gvNIX
-DGTI, con el objetivo de facilitar la contribución al código fuente de gvNIX.
+El propio gvNIX incluye el soporte necesario para personalizar la distribución
+pública, de tal forma que cada organismo puede ajustar, mejorar o
+incluir nuevas funcionalidades a gvNIX consiguiendo una mayor eficiencia y
+productividad en sus desarrollos sin perder los beneficios de la contribución
+al código fuente de la distribución pública que realizan los diferentes
+miembros de la comunidad.
 
 Desde esta visión, generar y potenciar una distribución pública repercutirá en
 el beneficio de toda la comunidad, tanto aquellos que utilicen la distribución
-pública como aquellos que utilicen una distribución privada, ya que todos los
-complementos de interés general contribuidos a la distribución pública estarán
-automáticamente y por defecto incluidos en cualquier distribución privada.
+pública como aquellos que utilicen una distribución personalizada, ya que 
+todos los complementos de interés general contribuidos a la distribución 
+pública estarán automáticamente y por defecto incluidos en cualquier 
+distribución personalizada.
 
 *Fomentar la cooperación*
 
