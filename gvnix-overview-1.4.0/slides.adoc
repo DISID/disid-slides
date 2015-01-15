@@ -909,7 +909,8 @@ Proof geo
 
 Ejemplos:
 
-* Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
+* gvSIG Roads DIVAL: Gestión del Mantenimiento Integral de Carreteras de la Diputación de Valencia.
+* GeoTIC: Geoportal de los recursos TIC de la Generalitat Valenciana en el territorio, incluyendo recursos de telecomunicaciones, microinformática y sistemas.
 
 *Aplicaciones incrustadas en portales Liferay*
 
