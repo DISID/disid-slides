@@ -1,0 +1,360 @@
+//
+// > Install gvSIG Jornadas style backend
+//
+// Download CSS file gvsig-jornadas.css at https://svn.disid.com/svn/disid-presentaciones/resources-dzslides/themes/gvsig/css/gvsig-jornadas.css
+// Copy to $HOME/.asciidoc/backends/dzslides/dzslides/themes/style/
+//
+// Copy folder with images files at https://svn.disid.com/svn/disid-presentaciones/resources-dzslides/themes/gvsig/images
+// to inside folder `/images/` in the same repository of adoc document
+//
+// Modify the select theme at the attribute :dzslides-style: gvsig-jornadas
+//
+// > Build the presentation
+//
+// dzslides with embedded assets:
+// asciidoc -a data-uri gvsig-jornadas-geotic.adoc
+//
+// HTML5 (print with notes):
+// asciidoc -b html5 -o gvsig-jornadas-geotic-notas.html gvsig-jornadas-geotic.adoc
+//
+// pdf:
+//
+
+
+= **GeoTIC** [subtitle]#- Gestión geo de recursos TIC del Servicio de Atención al Usuario y al Puesto de Trabajo#
+ v1.2, Nov 30, 2015
+:title: GeoTIC
+:description: Presentación de GeoTIC para las 11as jornadas de gvSIG
+:gvnixsite: www.gvnix.org
+:copyright: CC BY-NC-SA 3.0
+:website: www.disid.com
+:imagesdir: images
+:linkcss!:
+:source-highlighter: highlightjs
+:backend: dzslides
+:dzslides-style: gvsig-jornadas
+:dzslides-aspect: 4-3
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300|Covered+By+Your+Grace
+:dzslides-highlight: monokai
+// disable syntax highlighting unless turned on explicitly
+:syntax: no-highlight
+
+////
+
+////
+
+[template="notesblock"]
+====
+*CHARLA (introducción):*
+
+Presentación: César Ordiñana y Laura Casanova.
+
+En esta charla se va a presentar la aplicación GeoTIC, en la que se hablará de la *problemática* que suscitó su desarrollo, la *tecnología* utilizada y la *solución* implementada.
+
+====
+
+
+[{intro}]
+== ¿Qué es *GeoTIC*?
+
+
+[{topic}]
+== *Geoportal*
+
+ifndef::backend-dzslides[]
+image::geoportal.png[width=700]
+endif::[]
+ifdef::backend-dzslides[]
+image::geoportal.png[width=700]
+endif::[]
+
+
+[template="notesblock"]
+====
+*CHARLA (geoportal):*
+
+El geoportal de GeoTIC está dedicado al *manejo de recursos TIC de la DGTIC*, atendiendo a los requerimientos del *Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT)*.
+
+Este geoportal muestra las *sedes* a la que presta servicio el Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT), pudiendo acceder y gestionar la información a través de ellas.
+
+GeoTIC es tanto una *herramienta para técnicos*, la cual facilita su trabajo diario, como un *cuadro de mandos*, que ayuda en la toma de decisiones para optimizar los recursos de los que dispone dicho servicio.
+
+==== 
+
+[{intro}]
+== Problemática
+== \\
+
+
+[role="incremental middle"]
+* Gestión en hojas de cálculo
+* Información descentralizada
+* No se disponía de una visión de conjunto
+
+
+[template="notesblock"]
+====
+*CHARLA (problemática):*
+
+La problemática que tenia el Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT) era la siguiente:
+
+* Parte de la gestión se realizaba en *hojas de cálculo*.
+
+* La *información* que necesitaban para realizar sus funciones estaba *descentralizada*, necesitando acceder a diferentes sistemas para obtenerla, y por lo tanto *no se disponía de una visión de conjunto*.
+
+Como solución a esta problemática nació GeoTIC.
+====
+
+[{intro}]
+== Tecnología
+== \\
+
+[role="secret"]
+*gvNIX* = productividad +
+ +
+ +
+[incremental pull-right]#con componente *geo* {nbsp} {nbsp}#
+
+
+
+[template="notesblock"]
+====
+*CHARLA (tecnología - gvNIX):*
+
+La aplicación se ha desarrollado utilizando *gvNIX* porque aumenta la *productividad*, disminuyendo los tiempos de desarrollo.
+
+gvNIX ha facilitado la incorporación del componente geo, integrando la *dimensión geográfica como una más*.
+
+====
+
+
+[{topic}]
+== Integra datos *geográficos* y *alfanuméricos*
+
+image::geoportal.png[role="pull-left", height="175"]
+
+image::listado_cis.png[role="pull-right", height="175"]
+
+
+[template="notesblock"]
+====
+*CHARLA (tecnología - datos geogŕaficos y alfanuméricos):*
+
+Con el desarrollo de gvNIX se obtiene como resultado una aplicación que integra *tanto datos geográficos como alfanuméricos*.
+
+====
+
+[{topic}]
+== Soporte para objetos *geográficos*
+
+image::postgresql-postgis.png[role="middle", width="400"]
+
+
+[template="notesblock"]
+====
+*CHARLA (tecnología - postgresql-postgis):*
+
+Para añadir la dimensión geográfica se ha utilizado *PostgreSQL + PostGIS*. 
+
+El módulo PostGIS es el que añade este soporte a la base de datos relacional PostGreSQL, convirtiéndola en una base de datos espacial.
+
+====
+
+
+[{topic}]
+== *Aplicación web adaptativa*
+
+ifndef::backend-dzslides[]
+image::responsive.png[width=700]
+endif::[]
+ifdef::backend-dzslides[]
+image::responsive.png[width=700]
+endif::[]
+
+[template="notesblock"]
+====
+*CHARLA (adaptativa):*
+
+GeoTIC es una aplicación web *adaptativa*, pudiéndose utilizar en dispositivos con diferentes resoluciones: sobremesas, portáliles, tablets o móviles .
+
+====
+
+
+[{intro}]
+== Infraestructura
+== \\
+
+image::geotic.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - GeoTIC):*
+
+GeoTIC se nutre de *diferentes bases de datos* (GUC, CESTA, GeoTIC), que utilizan *diferentes tecnologías* (PostgreSQL y Oracle) y de *diferentes servicios web* (JIRA, SAFE, OSM, Cartografía oficial).
+
+====
+
+== \\
+
+image::cestaDB.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - CESTA):*
+
+*CESTA* es una base de datos Oracle, que contiene el inventario de los *activos TIC* de la GVA.
+
+====
+
+== \\
+
+image::gucDB.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - GUC):*
+
+*GUC* también es una base de datos Oracle, con el inventario de *sedes* de la GVA.
+
+====
+
+== \\
+
+image::geoticDB.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - GeoTIC DB):*
+
+La *base de datos de GeoTIC* está implementada con postgreSQL + PostGIS donde se almacena la información que estaba en hojas de cálculo. Además, está base de datos es la que le da el *soporte espacial* a la aplicación.
+
+====
+
+== \\
+
+image::jira.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - JIRA):*
+
+*JIRA* es una aplicación para la gestión y planificación de proyectos mediante la gestión de incidencias.
+
+GeoTIC realiza *sincronizaciones automáticas* por la noche, cuando los usuarios no están trabajando, para tener siempre actualizados los datos que obtiene de GUC y JIRA. También ofrece la posibilidad de realizar *sincronizaciones manuales*.
+
+====
+
+== \\
+
+image::mapServices.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - OSM, IGN):*
+
+La aplicación también necesita acceder a *servidores de mapas* para obtener la cartografía. Obtiene los mapas de *OpenStreetMap* y de *cartografía oficial*.
+
+====
+
+== \\
+
+image::safe.png[role="middle", width="700"]
+
+
+[template="notesblock"]
+====
+*CHARLA (infraestructura - SAFE):*
+
+*SAFE* es el servicio de *autenticación y autorización* que ofrece la GVA.
+
+====
+
+[{intro}]
+== Solución
+
+[{topic}]
+== *GeoTIC*
+
+++++
+<video width="700" controls>
+  <source src="images/geotic_video.webm" type="video/webm" />
+</video>
+++++
+
+
+[template="notesblock"]
+====
+*CHARLA (solución - demo):*
+
+Se le da paso a Laura Casanova para presentar la *solución implementada*.
+
+====
+
+[{ending}, hrole="name"]
+== //
+
+
+[role="footer text-center"]
+
+Gracias 
+
+
+[template="notesblock"]
+====
+*CHARLA (finalización):*
+
+Se da las gracias al auditorio por su asistencia.
+
+====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
