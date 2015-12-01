@@ -20,9 +20,8 @@
 // pdf:
 //
 
-
-= **GeoTIC** [subtitle]#- Gestión geo de recursos TIC del Servicio de Atención al Usuario y al Puesto de Trabajo#
- v1.2, Nov 30, 2015
+= **GeoTIC** 
+ v1.3, Dic 1, 2015
 :title: GeoTIC
 :description: Presentación de GeoTIC para las 11as jornadas de gvSIG
 :gvnixsite: www.gvnix.org
@@ -51,47 +50,32 @@
 Presentación: César Ordiñana y Laura Casanova.
 
 En esta charla se va a presentar la aplicación GeoTIC, en la que se hablará de la *problemática* que suscitó su desarrollo, la *tecnología* utilizada y la *solución* implementada.
-
 ====
 
 
 [{intro}]
-== ¿Qué es *GeoTIC*?
+== Objetivo
 
 
+== Objetivo
 [{topic}]
-== *Geoportal*
+El Servicio de Atención al Usuario y al Puesto de Trabajo de la **DGTIC** 
+(SAUPT) tenía una seríe de necesidades en su proceso de gestión
 
-ifndef::backend-dzslides[]
-image::geoportal.png[width=700]
-endif::[]
-ifdef::backend-dzslides[]
-image::geoportal.png[width=700]
-endif::[]
-
-
-[template="notesblock"]
-====
-*CHARLA (geoportal):*
-
-El geoportal de GeoTIC está dedicado al *manejo de recursos TIC de la DGTIC*, atendiendo a los requerimientos del *Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT)*.
-
-Este geoportal muestra las *sedes* a la que presta servicio el Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT), pudiendo acceder y gestionar la información a través de ellas.
-
-GeoTIC es tanto una *herramienta para técnicos*, la cual facilita su trabajo diario, como un *cuadro de mandos*, que ayuda en la toma de decisiones para optimizar los recursos de los que dispone dicho servicio.
-
-==== 
 
 [{intro}]
 == Problemática
-== \\
 
 
+== Problemas
 [role="incremental middle"]
 * Gestión en hojas de cálculo
 * Información descentralizada
+* **Tareas en JIRA**
+* **Sedes en GUC**
+* **Activos TIC en CESTA**
 * No se disponía de una visión de conjunto
-
+* Ni visualización sobre el territorio
 
 [template="notesblock"]
 ====
@@ -106,6 +90,31 @@ La problemática que tenia el Servicio de Atención al Usuario y al Puesto de Tr
 Como solución a esta problemática nació GeoTIC.
 ====
 
+
+[{intro}]
+== Proyecto
+
+[{topic}]
+== GeoTIC
+
+image::geoportal.png[width=700,role="pull-right"]
+
+[role="incremental"]
+* Aplicación geográfica para gestión de *recursos TIC* del *SAUPT*
+
+
+[template="notesblock"]
+====
+*CHARLA (geoportal):*
+
+El geoportal de GeoTIC está dedicado al *manejo de recursos TIC de la DGTIC*, atendiendo a los requerimientos del *Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT)*.
+
+Este geoportal muestra las *sedes* a la que presta servicio el Servicio de Atención al Usuario y al Puesto de Trabajo (SAUPT), pudiendo acceder y gestionar la información a través de ellas.
+
+GeoTIC es tanto una *herramienta para técnicos*, la cual facilita su trabajo diario, como un *cuadro de mandos*, que ayuda en la toma de decisiones para optimizar los recursos de los que dispone dicho servicio.
+==== 
+
+
 [{intro}]
 == Tecnología
 == \\
@@ -116,8 +125,6 @@ Como solución a esta problemática nació GeoTIC.
  +
 [incremental pull-right]#con componente *geo* {nbsp} {nbsp}#
 
-
-
 [template="notesblock"]
 ====
 *CHARLA (tecnología - gvNIX):*
@@ -125,7 +132,6 @@ Como solución a esta problemática nació GeoTIC.
 La aplicación se ha desarrollado utilizando *gvNIX* porque aumenta la *productividad*, disminuyendo los tiempos de desarrollo.
 
 gvNIX ha facilitado la incorporación del componente geo, integrando la *dimensión geográfica como una más*.
-
 ====
 
 
@@ -136,20 +142,18 @@ image::geoportal.png[role="pull-left", height="175"]
 
 image::listado_cis.png[role="pull-right", height="175"]
 
-
 [template="notesblock"]
 ====
 *CHARLA (tecnología - datos geogŕaficos y alfanuméricos):*
 
 Con el desarrollo de gvNIX se obtiene como resultado una aplicación que integra *tanto datos geográficos como alfanuméricos*.
-
 ====
+
 
 [{topic}]
 == Soporte para objetos *geográficos*
 
 image::postgresql-postgis.png[role="middle", width="400"]
-
 
 [template="notesblock"]
 ====
@@ -158,7 +162,6 @@ image::postgresql-postgis.png[role="middle", width="400"]
 Para añadir la dimensión geográfica se ha utilizado *PostgreSQL + PostGIS*. 
 
 El módulo PostGIS es el que añade este soporte a la base de datos relacional PostGreSQL, convirtiéndola en una base de datos espacial.
-
 ====
 
 
